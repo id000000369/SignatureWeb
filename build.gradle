@@ -1,0 +1,45 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+
+plugins {
+    id 'war'
+    id 'org.gretty' version '4.0.3'
+    id 'com.vaadin'
+}
+
+defaultTasks("build")
+
+repositories {
+    mavenCentral()
+    maven { setUrl("https://maven.vaadin.com/vaadin-prereleases") }
+    maven { url "https://plugins.gradle.org/m2/" }
+}
+
+gretty {
+    contextPath = "/"
+    servletContainer = 'jetty11'
+}
+
+// The following pnpmEnable = false is not needed as npm is used by default,
+// this is just an example of how to configure the Gradle Vaadin Plugin:
+// for more configuraion options please see: https://vaadin.com/docs/latest/guide/start/gradle/#all-options
+vaadin {
+    pnpmEnable = false
+}
+
+dependencies {
+    implementation enforcedPlatform("com.vaadin:vaadin-bom:$vaadinVersion")
+
+    // Vaadin
+    implementation("com.vaadin:vaadin-core")
+    providedCompile "javax.servlet:javax.servlet-api:3.1.0"
+
+    // logging
+    // currently we are logging through the SLF4J API to SLF4J-Simple. See src/main/resources/simplelogger.properties file for the logger configuration
+    implementation "org.slf4j:slf4j-simple:1.7.30"
+}
