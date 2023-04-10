@@ -1,0 +1,53 @@
+.reserve-view {
+    background-color: rgba(0, 32, 36, 1);
+    width: 650px;
+    height: 650px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reserve-items {
+    width: 500px;
+    height: 600px;
+display: grid;
+margin-left: 25%;
+}
+
+.first-header-text {
+    color:rgba(145, 121, 58, 1);
+    font-size: 35px;
+}
+
+.second-header-text {
+    color:rgba(145, 121, 58, 1);
+    font-size: 35px;
+    font-weight: lighter;
+}
+
+.name-text {
+    color:rgba(145, 121, 58, 1);
+}
+
+.phone-number-text {
+    color:rgba(145, 121, 58, 1);
+}
+
+.date-time-picker {
+    color:rgba(145, 121, 58, 1);
+}
+
+.guest-count-text {
+    color:rgba(145, 121, 58, 1);
+}
+
+.reminder-text {
+    color:rgba(145, 121, 58, 1);
+    font-size: 22px;
+}
+
+.info-text {
+    color:rgba(145, 121, 58, 1);
+    font-size: 18px;
+}
