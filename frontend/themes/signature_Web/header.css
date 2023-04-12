@@ -11,9 +11,11 @@
 }
 
 .header-logo {
-    width: 310px;
-    height: 85px;
-    padding-right: 130px;
+    display: flex;
+    align-items: stretch;
+    width: 210px;
+    height: 65px;
+    padding-right: 40px;
     padding-left: 5px;
 }
 

@@ -1,22 +1,13 @@
 package it.mifsoft.signature.web.view;
 
 import com.vaadin.flow.component.AttachEvent;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.StreamResource;
-import com.vaadin.flow.server.VaadinService;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
-import it.mifsoft.signature.web.list.DishesShortList;
 import it.mifsoft.signature.web.ui.ExpandableButton;
-import it.mifsoft.signature.web.ui.menu.MenuItems;
-import org.apache.catalina.webresources.FileResource;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
-
-import java.io.File;
 
 @Component
 @UIScope
@@ -28,11 +19,12 @@ public class WelcomePage extends Div {
     private final ExpandableButton menuButton;
     private final ExpandableButton vineGalleryButton;
     private final ExpandableButton contactsButton;
-
     private final ExpandableButton guestButton;
     private final ExpandableButton bronButton;
 
     private final Image mainImg;
+    //private final Image headerImg;
+
     private final Image menuLine;
     private final Image contactsLine;
     private final Image bronLine;
@@ -62,12 +54,19 @@ public class WelcomePage extends Div {
         this.menuLine = createMenuLine();
 
         this.mainImg = createContentImg();
-
+        //this.headerImg = createHeaderImg();
         this.add(expositionButton, aboutUsButton, menuButton,
                 vineGalleryButton, contactsButton, guestButton, bronButton,
                 mainImg,
                 contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine);
     }
+    public Image createContentImg() {
+        Image content = new Image("img/main-img.png", "");
+        content.addClassName("content-img");
+        this.add(content);
+        return content;
+    }
+
     public Image createContactsLine() {
         Image line = new Image("img/contacts-line.png","");
         line.addClassName("contacts-line");
@@ -102,12 +101,6 @@ public class WelcomePage extends Div {
         Image line = new Image("img/menu-line.png","");
         line.addClassName("menu-line");
         return line;
-    }
-    public Image createContentImg() {
-        Image content = new Image("img/main-image.png", "");
-        content.addClassName("content-img");
-        this.add(content);
-        return content;
     }
 
     public ExpandableButton createExpositionButton() {

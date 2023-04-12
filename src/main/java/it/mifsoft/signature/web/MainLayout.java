@@ -20,6 +20,8 @@ public class MainLayout extends VerticalLayout implements RouterLayout {
                       FooterView footerView) {
         this.contentView = contentView;
         this.footerView = footerView;
+        this.setSpacing(false);
+        this.setHeight("100vh");
     }
     @Override
     protected void onAttach(AttachEvent attachEvent) {

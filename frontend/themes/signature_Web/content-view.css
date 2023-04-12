@@ -1,82 +1,119 @@
 .content-view {
     width: 100%;
+    height: calc(100vh - 200px);
+
 }
 
 .content-img {
-    height: 900px;
-    justify-content: center;
+    height: calc(100vh - 200px);
+    justify-content: left start;
     top: 0;
 }
 
 .exposition-button {
-    width: 200px;
+    width: 13%;
     position: absolute;
-    left: 57px;
-    top: 218px;
+    left: 3%;
+    top: 18%;
+    z-index: 1000;
+    font-size: 14px;
 }
 .exposition-line {
     position: absolute;
-    left: 370px;
-    top: 270px;
+    width: 4%;
+    left: 15%;
+    top: 22%;
 }
 
 .expandable-button {
     background-color: rgba(145, 121, 58, 1);
     color: white;
-    width: 330px;
-    height: 50px;
+    width: 100%;
+    height: 35px;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 10px;
+    font-size: 100%;
 }
+
 
 .about-us-button {
+    width: 12.9%;
     position: absolute;
-    left: 1450px;
-    top: 607px;
+    left: 58%;
+    top: 49.4%;
+    font-size: 14px;
 }
 
+.about-us-view {
+    width: 30%;
+    height: 40px;
+    padding: 20px 55px 20px 55px;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-size: 4px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: url("https://i.ibb.co/SJZWQcd/art-image.png");
+    background-size: 70%;
+}
+.art-img {
+
+}
+
+
 .menu-button {
+    width: 13%;
     position: absolute;
-    left: 675px;
-    top: 530px;
+    left: 27.1%;
+    top: 41.5%;
+    font-size: 14px;
 }
 .menu-line {
+    width: 6%;
     position: absolute;
-    left: 735px;
-    top: 455px;
+    left: 29.4%;
+    top: 37%;
 }
 
 .vine-gallery-button{
     position: absolute;
     left: 2310px;
-    top: 402px;
+    top: 202px;
     border-radius: 30px;
 }
 
 .bron-button {
+    width: 13.5%;
     position: absolute;
-    width: 45px;
-    height: 75px;
-    left: 205px;
-    top: 720px;
+    left: 8%;
+    top: 57%;
+    font-size: 12px;
 }
 .bron-line {
+    width: 2.5%;
     position: absolute;
-    left: 315px;
-    top: 635px;
+    left: 13%;
+    top: 51.5%;
 }
 
 .guest-button {
+    width: 14%;
     position: absolute;
-    left: 1000px;
-    top: 245px;
+    left: 39.5%;
+    top: 18.5%;
+    font-size: 12px;
 }
 .guest-line {
+    width: 2%;
     position: absolute;
-    left: 1145px;
-    top: 280px;
+    left: 45.5%;
+    top: 23%;
 }
 
 .contacts-button {
@@ -97,3 +134,4 @@
     left: 2450px;
     top: 350px;
 }
+

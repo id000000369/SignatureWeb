@@ -26,7 +26,7 @@ public class HeaderView extends HorizontalLayout {
     private final SignatureNavigator navigator;
 
     public HeaderView(SignatureNavigator navigator) {
-        this.getStyle().set("background-image", "url('https://i.ibb.co/Vtn861j/light-gradient.png')");
+//        this.getStyle().set("background-image", "url('https://i.ibb.co/Vtn861j/light-gradient.png')");
 
         this.navigator = navigator;
         this.logoImage = createImage();

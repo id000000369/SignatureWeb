@@ -3,6 +3,7 @@ package it.mifsoft.signature.web.ui;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 
 public class ExpandableButton extends Div {
     private static final String WIDTH = "405px";
@@ -33,6 +34,14 @@ public class ExpandableButton extends Div {
             }
         });
         this.button.addClassName("expandable-button");
+        this.addClassName("expandable-button-container");
         this.add(this.button, this.content);
+    }
+
+    public Image createHeaderImg() {
+        Image headerImg = new Image("img/header-image.png", "");
+        headerImg.addClassName("header-img");
+        this.add(headerImg);
+        return headerImg;
     }
 }
