@@ -40,12 +40,12 @@
 .menu-button {
     position: absolute;
     left: 675px;
-    top: 525px;
+    top: 530px;
 }
 .menu-line {
     position: absolute;
     left: 735px;
-    top: 465px;
+    top: 455px;
 }
 
 .vine-gallery-button{
@@ -55,20 +55,28 @@
     border-radius: 30px;
 }
 
-.bron-line {
+.bron-button {
     position: absolute;
     width: 45px;
     height: 75px;
+    left: 205px;
+    top: 720px;
+}
+.bron-line {
+    position: absolute;
     left: 315px;
-    top: 645px;
+    top: 635px;
 }
 
+.guest-button {
+    position: absolute;
+    left: 1000px;
+    top: 245px;
+}
 .guest-line {
     position: absolute;
-    width: 35px;
-    height: 95px;
-    left: 1160px;
-    top: 308px;
+    left: 1145px;
+    top: 280px;
 }
 
 .contacts-button {

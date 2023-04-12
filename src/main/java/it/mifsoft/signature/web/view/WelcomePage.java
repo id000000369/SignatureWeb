@@ -29,8 +29,8 @@ public class WelcomePage extends Div {
     private final ExpandableButton vineGalleryButton;
     private final ExpandableButton contactsButton;
 
-    //private final ExpandableButton guestButton;
-    //private final ExpandableButton bronButton;
+    private final ExpandableButton guestButton;
+    private final ExpandableButton bronButton;
 
     private final Image mainImg;
     private final Image menuLine;
@@ -51,6 +51,8 @@ public class WelcomePage extends Div {
         this.menuButton = createMenuButton();
         this.vineGalleryButton = createVineGalleryButton();
         this.contactsButton = createContactsButton();
+        this.guestButton = createGuestButton();
+        this.bronButton = createBronButton();
 
         this.contactsLine = createContactsLine();
         this.bronLine = createBronLine();
@@ -61,7 +63,8 @@ public class WelcomePage extends Div {
 
         this.mainImg = createContentImg();
 
-        this.add(expositionButton, aboutUsButton, menuButton, vineGalleryButton, contactsButton,
+        this.add(expositionButton, aboutUsButton, menuButton,
+                vineGalleryButton, contactsButton, guestButton, bronButton,
                 mainImg,
                 contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine);
     }
@@ -137,10 +140,16 @@ public class WelcomePage extends Div {
         return contactsButton;
     }
 
-    public Button createGuestButton() {
-        final Button contactsButton = new Button("Оформить карту гостя", new AboutView());
-        contactsButton.addClassName("contacts-button");
-        return contactsButton;
+    public ExpandableButton createGuestButton() {
+        final ExpandableButton guestButton = new ExpandableButton("Оформить карту гостя", new AboutView());
+        guestButton.addClassName("guest-button");
+        return guestButton;
+    }
+
+    public ExpandableButton createBronButton() {
+        final ExpandableButton bronButton = new ExpandableButton("Забронировать столик", new AboutView());
+        bronButton.addClassName("bron-button");
+        return bronButton;
     }
 
     @Override
