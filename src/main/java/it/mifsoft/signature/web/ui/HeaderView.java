@@ -15,7 +15,7 @@ import java.util.List;
 @UIScope
 public class HeaderView extends HorizontalLayout {
 
-    private final String LOGO_IMAGE_SRC = "https://upload.wikimedia.org/wikipedia/commons/2/24/LEGO_logo.svg";
+    private final String LOGO_IMAGE_SRC = "https://i.ibb.co/GQm92bq/Vector-1.png";
 
     private Collection<String> menuItemsNames = List.of(
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
@@ -27,15 +27,17 @@ public class HeaderView extends HorizontalLayout {
     private final SignatureNavigator navigator;
 
     public HeaderView(SignatureNavigator navigator) {
+        this.getStyle().set("background-image", "url('https://i.ibb.co/Vtn861j/light-gradient.png')");
+
         this.navigator = navigator;
         this.logoImage = createImage();
         this.menuList = createMenu();
 
-        this.getStyle().setBackground("green");
         this.addClassName("header");
 
         logoImage.addClassName("header-logo");
         menuList.addClassName("menu-list");
+
 
         this.add(logoImage, menuList);
     }

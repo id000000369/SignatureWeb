@@ -2,19 +2,31 @@
     width: 100%;
     height: 150px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 30px; 
+    background-size: auto 100%;
 }
 
 .header-logo {
-width: 100px;
-height: 100px;
-}
-
-.menu-list {
-
+    padding-left: 42px;
+    width: 170px;
+    height: 45px;
 }
 
 vaadin-menu-bar-item {
-    color: black;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-left: 30px;
+    
 }
+
+vaadin-menu-bar-button {
+    background-color: transparent;
+    color: rgba(145, 121, 58, 1)
+}
+vaadin-menu-bar-button::before {
+    background-color: transparent;   
+}
+
+
+
+

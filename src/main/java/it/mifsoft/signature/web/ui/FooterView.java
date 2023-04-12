@@ -2,6 +2,7 @@ package it.mifsoft.signature.web.ui;
 
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
@@ -17,29 +18,15 @@ public class FooterView extends HorizontalLayout {
 
     private final HasModal modalContainer;
     private final ReserveForm reserveForm;
-    private final String logoImageSrc;
-    private final String contacts;
-    private final String reserveButtonTitle;
 
     private final Image logoImage;
-    private final Text contactsText;
+    private final H1 contactsText;
     private final Button reserveButton;
 
-    public FooterView(HasModal modalContainer,
-                      ReserveForm reserveForm,
-                      @Value("${signature.web.logo-img}") String logoImageSrc,
-                      @Value("${signature.web.footer.contacts}") String contacts,
-                      @Value("${signature.web.footer.reserve}") String reserveButtonTitle) {
-        this.getStyle().setBackground("black");
-
+    public FooterView(HasModal modalContainer, ReserveForm reserveForm) {
         this.modalContainer = modalContainer;
         this.reserveForm = reserveForm;
         this.modalContainer.setModal(this.reserveForm);
-
-        this.logoImageSrc = logoImageSrc;
-        this.contacts = contacts;
-        this.reserveButtonTitle = reserveButtonTitle;
-
 
         this.logoImage = createLogoImage();
         this.contactsText = createContactsText();
@@ -51,20 +38,21 @@ public class FooterView extends HorizontalLayout {
 
     private Image createLogoImage() {
         final Image image = new Image();
-        image.setSrc(this.logoImageSrc);
+        image.setSrc("https://i.ibb.co/Cbr2Zpg/Vector-2.png");
         image.addClassName("footer-logo");
         return image;
     }
 
-    private Text createContactsText() {
-        final Text text = new Text("Contacts");
-        //todo add class name
+    private H1 createContactsText() {
+        final H1 text = new H1();
+        text.setText("Котельническая наб., 1/15, к.В, Москва +7 495 915 35 00");
+        text.addClassName("footer-contacts");
         return text;
     }
 
     private Button createReserveButton() {
         final Button button = new Button();
-        button.setText(this.reserveButtonTitle);
+        button.setText("Забронировать столик");
         button.addClickListener(event -> this.modalContainer.showModal());
         button.addClassName("reserve-button");
         return button;
