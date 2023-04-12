@@ -5,11 +5,9 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 
 public class ExpandableButton extends Div {
-
     private static final String WIDTH = "405px";
 
     private boolean isExpanded = false;
-
     private final Button button;
     private final Div content;
 

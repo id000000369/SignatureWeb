@@ -23,7 +23,6 @@ public class HeaderView extends HorizontalLayout {
 
     private final Image logoImage;
     private final MenuBar menuList;
-
     private final SignatureNavigator navigator;
 
     public HeaderView(SignatureNavigator navigator) {
@@ -37,7 +36,6 @@ public class HeaderView extends HorizontalLayout {
 
         logoImage.addClassName("header-logo");
         menuList.addClassName("menu-list");
-
 
         this.add(logoImage, menuList);
     }

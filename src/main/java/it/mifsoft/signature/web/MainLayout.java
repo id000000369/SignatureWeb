@@ -21,7 +21,6 @@ public class MainLayout extends VerticalLayout implements RouterLayout {
         this.contentView = contentView;
         this.footerView = footerView;
     }
-
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
