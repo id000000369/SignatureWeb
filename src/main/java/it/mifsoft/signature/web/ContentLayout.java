@@ -1,6 +1,7 @@
 package it.mifsoft.signature.web;
 
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.router.ParentLayout;
 import com.vaadin.flow.router.RoutePrefix;
 import com.vaadin.flow.router.RouterLayout;
@@ -13,12 +14,11 @@ import org.springframework.stereotype.Component;
 @ParentLayout(MainLayout.class)
 @RoutePrefix("main")
 public final class ContentLayout extends Div implements HasModal, RouterLayout {
+
     private final HeaderView headerView;
 
     public ContentLayout(HeaderView headerView) {
         this.headerView = headerView;
-
-        this.getStyle().setBackground("orange");
         this.addClassName("content-view");
         this.add(headerView);
     }

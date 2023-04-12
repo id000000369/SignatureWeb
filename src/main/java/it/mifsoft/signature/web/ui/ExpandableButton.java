@@ -15,16 +15,16 @@ public class ExpandableButton extends Div {
 
     public ExpandableButton(String title, Component... components) {
         this.content = new Div();
-        this.content.setWidth(WIDTH);
-        this.content.setHeight("100%");
-        this.content.setMaxHeight("400px");
+        //this.content.setWidth(WIDTH);
+        //this.content.setHeight("100%");
+        //this.content.setMaxHeight("400px");
         this.content.setVisible(false);
 
         this.content.add(components);
 
         this.button = new Button(title);
-        this.button.setWidth(WIDTH);
-        this.button.setHeight("70px");
+        //this.button.setWidth(WIDTH);
+        //this.button.setHeight("70px");
         this.button.addClickListener(event -> {
             if (!isExpanded) {
                 this.content.setVisible(true);
@@ -34,8 +34,7 @@ public class ExpandableButton extends Div {
                 isExpanded = false;
             }
         });
-
+        this.button.addClassName("expandable-button");
         this.add(this.button, this.content);
     }
-
 }
