@@ -1,0 +1,17 @@
+{
+  "productionMode": false,
+  "eagerServerLoad": false,
+  "npmFolder": "C:\\Users\\Byzantium\\Documents\\Java\\SignatureWeb",
+  "node.version": "v18.15.0",
+  "node.download.root": "https://nodejs.org/dist/",
+  "generatedFolder": "C:\\Users\\Byzantium\\Documents\\Java\\SignatureWeb\\build\\frontend",
+  "frontendFolder": "C:\\Users\\Byzantium\\Documents\\Java\\SignatureWeb\\frontend",
+  "connect.javaSourceFolder": "C:\\Users\\Byzantium\\Documents\\Java\\SignatureWeb\\src\\main\\java",
+  "javaResourceFolder": "C:\\Users\\Byzantium\\Documents\\Java\\SignatureWeb\\src\\main\\resources",
+  "connect.applicationProperties": "C:\\Users\\Byzantium\\Documents\\Java\\SignatureWeb\\src\\main\\resources\\application.properties",
+  "connect.openApiFile": "C:\\Users\\Byzantium\\Documents\\Java\\SignatureWeb\\build\\generated-resources\\openapi.json",
+  "project.frontend.generated": "C:\\Users\\Byzantium\\Documents\\Java\\SignatureWeb\\frontend\\generated",
+  "pnpm.enable": false,
+  "require.home.node": false,
+  "build.folder": "build"
+}
