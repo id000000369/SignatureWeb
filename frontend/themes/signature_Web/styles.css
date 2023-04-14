@@ -3,6 +3,11 @@
 @import url('./content-view.css');
 @import url('./reserve-form.css');
 @import url('./contacts-view.css');
+@import url('./reserve.css');
+@import url('./vine-list-item.css');
+@import url('./picture-list-item.css');
+@import url('./dish.css');
+@import url('./category.css');
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
 
 @font-face {
