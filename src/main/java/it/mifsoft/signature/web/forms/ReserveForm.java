@@ -1,8 +1,8 @@
 package it.mifsoft.signature.web.forms;
 
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
-import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -27,6 +27,7 @@ public class ReserveForm extends Div {
     private final TextField phoneNumber;
     private final DateTimePicker date;
     private final TextField guestCount;
+    private final Button reserveButton;
 
     private final Image namePrefix = new Image();
     private final Image phonePrefix = new Image();
@@ -41,16 +42,23 @@ public class ReserveForm extends Div {
         this.guestCount = createGuestCountField();
         this.reminderText = createReminderText();
         this.infoText = createInfoText();
-
+        this.reserveButton = createReserveButton();
 
         this.add(reserveItems());
 
         this.addClassName("reserve-view");
     }
 
+    private Button createReserveButton() {
+        Button button = new Button();
+        button.setText("Забронировать столик");
+        button.addClassName("reserve-button");
+        return button;
+    }
+
     public Div reserveItems() {
         Div items = new Div();
-        items.add(firstHeaderText, name, phoneNumber, date, guestCount, reminderText, infoText);
+        items.add(firstHeaderText, name, phoneNumber, date, guestCount, reserveButton, reminderText, infoText);
         items.addClassName("reserve-items");
         return items;
     }
