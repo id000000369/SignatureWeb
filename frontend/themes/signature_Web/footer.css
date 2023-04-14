@@ -23,8 +23,10 @@ justify-content: center;
 .footer-contacts {
     color: aliceblue;
     font-size: 12px;
+    font-weight: 300;
     padding-left: 90px;
     padding-right: 90px;
+    white-space:break-spaces;
 }
 
 .footer-button {

@@ -45,7 +45,7 @@ public class FooterView extends HorizontalLayout {
 
     private H1 createContactsText() {
         final H1 text = new H1();
-        text.setText("Котельническая наб., 1/15, к.В, Москва +7 495 915 35 00");
+        text.setText("Котельническая наб., 1/15, к.В, Москва \n +7 495 915 35 00");
         text.addClassName("footer-contacts");
         return text;
     }

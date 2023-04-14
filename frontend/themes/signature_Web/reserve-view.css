@@ -61,14 +61,21 @@
     font-weight: 300;
 }
 
+.guest-count-text {
+    color: rgba(160, 174, 175, 1);
+}
+.guest-count-text::placeholder {
+    color: rgba(160, 174, 175, 1);
+}
+.phone-number-text {
+    color: rgba(160, 174, 175, 1);
+}
 
 vaadin-text-field > label {
     color: rgba(145, 121, 58, 1);
     font-weight: 700;
 }
-vaadin-text-field > input:placeholder-shown {
-    color: rgba(160, 174, 175, 1);
-}
+
 vaadin-text-field > [slot="prefix"] {
     color: rgba(145, 121, 58, 1);
     padding-right: 10px;
@@ -90,7 +97,7 @@ vaadin-date-picker::part(input-field) {
     border-bottom: 1px solid rgb(145, 121, 58, 1);
     border-radius: 0;
     width: 170px;
-
+    color: rgba(160, 174, 175, 1);
 }
 vaadin-time-picker::part(input-field) {
     background-color: transparent; 
