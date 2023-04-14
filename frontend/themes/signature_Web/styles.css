@@ -6,7 +6,7 @@
 @import url('./vine-list-item.css');
 @import url('./picture-list-item.css');
 @import url('./dish.css');
-@import url('./category.css');
+@import url('./archives.css');
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
 
 @font-face {

@@ -1,0 +1,136 @@
+.archives-main {
+  display: flex;
+  background-image: url("https://i.ibb.co/1TrWtBb/background-1.png");
+}
+
+.window-one-archives {
+  width: 350px;
+  height: 633px;
+  left: 160px;
+  top: 40px;
+  margin-left: 40px;
+  margin-right: 200px;
+  border-radius: 15px;
+  background-image: url("https://i.ibb.co/4Znp481/2-cards-1.png");
+}
+
+.window-two-archives {
+  width: 350px;
+  height: 633px;
+  left: 720px;
+  top: 40px;
+  margin-right: 200px;
+  border-radius: 15px;
+  background-image: url("https://i.ibb.co/dKz8c7R/3-cards.png");
+}
+
+.window-tree-archives {
+  width: 350px;
+  height: 633px;
+  left: 1280px;
+  top: 40px;
+  border-radius: 15px;
+  background-image: url("https://i.ibb.co/3m70Q8m/4-cards.png");
+}
+
+.with-love-text-archives {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.our-concentration-text-archives {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.team-profession-text-archives {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.awards-image-archives {
+  width: 301px;
+}
+
+.with-love-image-archives {
+}
+
+.with-love-image-archives {
+}
+
+.team-profession-image-archives {
+}
+
+.description-with-love-label-archives {
+  width: 380px;
+  height: 78px;
+    top: 100px;
+  font-family: "Futura New";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 125%;
+  display: table-cell;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.description-our-concentration-archives {
+  font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 125%;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.05em;
+  color: #ffffff;
+
+}
+
+.description-awards-archives {
+  font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 125%;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.05em;
+  color: #ffffff;
+
+}
+
+.reserve-a-table-button-archives {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 4px;
+    width: 80%;
+    left: 10px;
+    top: 250px;    
+    border: 2px solid #FFFFFF;
+    border-radius: 15px;
+}
