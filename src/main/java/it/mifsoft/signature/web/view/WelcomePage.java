@@ -32,12 +32,15 @@ public class WelcomePage extends Div {
     private final Image vineGalleryLine;
     private final Image expositionLine;
 
+    private final Image firstSideIcon;
+    private final Image secondSideIcon;
+    private final Image thirdSideIcon;
+    private final Image fourthSideIcon;
     public WelcomePage() {
 //        MenuItems.MENU_ITEM_NAMES.forEach(title -> {
 //            var button = new ExpandableButton(title, new AboutView());
 //            this.add(button);
 //        });
-
         this.expositionButton = createExpositionButton();
         this.aboutUsButton = createAboutUsButton();
         this.menuButton = createMenuButton();
@@ -53,52 +56,81 @@ public class WelcomePage extends Div {
         this.expositionLine = createExpositionLine();
         this.menuLine = createMenuLine();
 
+        this.firstSideIcon = createFirstSideIcon();
+        this.secondSideIcon = createSecondSideIcon();
+        this.thirdSideIcon = createThirdSideIcon();
+        this.fourthSideIcon = createFourthSideIcon();
+
         this.mainImg = createContentImg();
         //this.headerImg = createHeaderImg();
         this.add(expositionButton, aboutUsButton, menuButton,
                 vineGalleryButton, contactsButton, guestButton, bronButton,
                 mainImg,
-                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine);
+                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
+                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon);
+    }
+    public Image createFirstSideIcon() {
+        final Image sideIcon = new Image("img/first-side-icon.png", "");
+        sideIcon.addClassName("first-side-icon");
+        this.add(sideIcon);
+        return sideIcon;
+    }
+    public Image createSecondSideIcon() {
+        final Image sideIcon = new Image("img/second-side-icon", "");
+        sideIcon.addClassName("second-side-icon");
+        this.add(sideIcon);
+        return sideIcon;
+    }
+    public Image createThirdSideIcon() {
+        final Image sideIcon = new Image("img/third-side-icon", "");
+        sideIcon.addClassName("third-side-icon");
+        this.add(sideIcon);
+        return sideIcon;
+    }
+    public Image createFourthSideIcon() {
+        final Image sideIcon = new Image("img/fourth-side-icon", "");
+        sideIcon.addClassName("fourth-side-icon");
+        this.add(sideIcon);
+        return sideIcon;
     }
     public Image createContentImg() {
-        Image content = new Image("img/main-img.png", "");
+        final Image content = new Image("img/main-img.png", "");
         content.addClassName("content-img");
         this.add(content);
         return content;
     }
-
     public Image createContactsLine() {
-        Image line = new Image("img/contacts-line.png","");
+        final Image line = new Image("img/contacts-line.png","");
         line.addClassName("contacts-line");
         return line;
     }
 
     public Image createBronLine() {
-        Image line = new Image("img/bron-line.png","");
+        final Image line = new Image("img/bron-line.png","");
         line.addClassName("bron-line");
         return line;
     }
 
     public Image createGuestLine() {
-        Image line = new Image("img/guest-line.png","");
+        final Image line = new Image("img/guest-line.png","");
         line.addClassName("guest-line");
         return line;
     }
 
     public Image createVineGalleryLine() {
-        Image line = new Image("img/vine-gallery-line.png","");
+        final Image line = new Image("img/vine-gallery-line.png","");
         line.addClassName("vine-gallery-line");
         return line;
     }
 
     public Image createExpositionLine() {
-        Image line = new Image("img/exposition-line.png","");
+        final Image line = new Image("img/exposition-line.png","");
         line.addClassName("exposition-line");
         return line;
     }
 
     public Image createMenuLine() {
-        Image line = new Image("img/menu-line.png","");
+        final Image line = new Image("img/menu-line.png","");
         line.addClassName("menu-line");
         return line;
     }
