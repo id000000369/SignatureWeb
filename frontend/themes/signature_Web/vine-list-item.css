@@ -1,0 +1,130 @@
+.window-items{
+    display: grid;
+    padding: 10px;
+}
+
+.window-main-items{
+    display: grid;
+    padding: 10px;
+}
+
+.window-one-items{
+    padding: 10px;
+}
+
+.window-two-items{
+    padding: 10px;
+}
+
+.window-tree-items{
+    display: grid;
+    padding: 10px;
+}
+
+.window{
+    position: absolute;
+    width: 860px;
+    height: 674px;
+    left: 0px;
+    top: 0px;
+    background: #002024;
+    border-radius: 15px;
+}
+
+.mainWindow{
+    margin: 20px 0px 0px 0px;
+    border: none;
+    border-radius: 0;
+    color: rgba(127, 110, 55);
+    background-color: transparent;
+    font-size: 45px;
+}
+
+
+
+.subMain {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    font-size: 20px;
+    color: rgba(127, 110, 55);
+    background-color: transparent;   
+    
+}
+
+
+
+.sparklingWineOrChampagne{
+    width: 45%;
+    margin-right: 5%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+
+}
+
+.region{
+    width: 45%;
+    margin-right: 5%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.grape{
+    width: 100%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.fortress{
+    width: 22%;
+    margin-right: 5%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.volume{
+    width: 23%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.perfectFor{
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.andAlso{
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.manufacturer {
+    width: 50%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.signUpForATasting{
+    width: 29%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: aliceblue;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+vaadin-text-field::part(input-field) {
+    border: none;
+    border-radius: 0;
+    border-color: rgba(145, 121, 58, 1);
+    background-color: transparent;   
+}
+
+vaadin-text-field::part(label){
+    color: rgba(145, 121, 58, 1);
+    
+
+}
+
+vaadin-text-field::part(input-field){
+    color: rgba(160, 174, 175, 1);
+    
+    
+}
+
+vaadin-button::part(label){
+    color: rgba(160, 174, 175, 1);
+    
+}

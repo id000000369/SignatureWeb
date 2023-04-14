@@ -1,4 +1,200 @@
 package it.mifsoft.signature.web.list.item;
 
-public class DishListItem {
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
+
+@Route("dish")
+@AnonymousAllowed
+public class DishListItem extends Div {
+
+    H1 mainText;
+    Label peculiarities;
+    TextField calories;
+    TextField protein;
+    TextField fats;
+    TextField carbohydrates;
+    Label allergicReaction;
+    TextField ingredientOneAllergicReaction;
+    TextField ingredientTwoAllergicReaction;
+    H1 price;
+    Button purchase;
+    Label ingredients;
+    TextField ingredientTree;
+    TextField ingredientFour;
+    Label tasteIsBestRevealedWith;
+    Label bestDishOne;
+    Label bestDishTwo;
+    Label bestDishTree;
+    Image dishIcon;
+
+    public DishListItem() {
+
+        this.mainText = createMainText();
+        this.peculiarities = createPeculiarities();
+        this.calories = createCaloriesText();
+        this.protein = createProteinText();
+        this.fats = createFatsText();
+        this.carbohydrates = createCarbohydratesText();
+        this.allergicReaction = createAllergicReaction();
+        this.ingredientOneAllergicReaction = createIngredientOneAllergicReaction();
+        this.ingredientTwoAllergicReaction = createIngredientTwoAllergicReaction();
+        this.price = createPriceText();
+        this.purchase = createPurchaseText();
+        this.ingredients = createIngredientsText();
+//        this.ingredientTree =;
+//        this.ingredientFour =;
+//        this.tasteIsBestRevealedWith =;
+//        this.bestDishOne =;
+//        this.bestDishTwo =;
+//        this.bestDishTree =;
+        this.dishIcon = createImage();
+
+        addClassNames("dish-main");
+
+        add(mainText, mainComponent());
+    }
+
+    public Div mainComponent() {
+        Div items = new Div();
+        items.add(windowOne(), dishIcon, windowTwo());
+        items.addClassNames("main-component-dishes");
+        return items;
+    }
+
+    public H1 createMainText() {
+        H1 main = new H1();
+        main.setText("Томленое говяжье ребро со сливочным полбой");
+        main.addClassNames("main-text-dish");
+        return main;
+    }
+
+
+    public Div windowOne() {
+        Div items = new Div();
+        items.add(peculiarities, calories, containerTwoElement(), allergicReaction,
+                ingredientOneAllergicReaction, ingredientTwoAllergicReaction);
+        items.addClassNames("window-one-dishes");
+        return items;
+    }
+
+    public Div containerTwoElement() {
+        Div items = new Div();
+        items.add(protein, fats, carbohydrates);
+//        items.addClassNames("window-one-dishes");
+        return items;
+    }
+
+    public Div containerTreeElement() {
+        Div items = new Div();
+        items.add(price, purchase);
+        items.addClassNames("window-tree-dishes");
+        return items;
+    }
+
+    public Div windowTwo() {
+        Div items = new Div();
+        items.add(containerTreeElement(), ingredients);
+        items.addClassNames("window-two-dishes");
+        return items;
+    }
+
+
+    public Label createPeculiarities() {
+        Label peculiaritiesText = new Label();
+        peculiaritiesText.setText("ОСОБЕННОСТИ");
+        peculiaritiesText.addClassNames("peculiarities-text");
+        return peculiaritiesText;
+    }
+
+    public TextField createCaloriesText() {
+        TextField caloriesText = new TextField();
+        caloriesText.setReadOnly(true);
+        caloriesText.setLabel("КАЛОРИЙНОСТЬ");
+        caloriesText.setValue("300 Ккал / 100 г.");
+        caloriesText.addClassNames("calories-text");
+        return caloriesText;
+    }
+
+    public TextField createFatsText() {
+        TextField fatsText = new TextField();
+        fatsText.setReadOnly(true);
+        fatsText.setLabel("ЖИРЫ");
+        fatsText.setValue("12% 8г.");
+        fatsText.addClassNames("fats-text");
+        return fatsText;
+    }
+
+    public TextField createProteinText() {
+        TextField proteinText = new TextField();
+        proteinText.setReadOnly(true);
+        proteinText.setLabel("БЕЛКИ");
+        proteinText.setValue("12% 120г.");
+        proteinText.addClassNames("protein-text");
+        return proteinText;
+    }
+
+    public TextField createCarbohydratesText() {
+        TextField carbohydratesText = new TextField();
+        carbohydratesText.setReadOnly(true);
+        carbohydratesText.setLabel("УГЛЕВОДЫ");
+        carbohydratesText.setValue("12% 8г.");
+        carbohydratesText.addClassNames("carbohydrates-text");
+        return carbohydratesText;
+    }
+
+    public Label createAllergicReaction() {
+        Label allergicReactionText = new Label();
+        allergicReactionText.setText("АЛЕРГИЧЕСКАЯ РЕАКЦИЯ");
+        allergicReactionText.addClassNames("allergic-reaction");
+        return allergicReactionText;
+    }
+
+    public TextField createIngredientOneAllergicReaction() {
+        TextField ingredientOneAllergicReactionText = new TextField();
+        ingredientOneAllergicReactionText.setReadOnly(true);
+        ingredientOneAllergicReactionText.setValue("Octopus regularis");
+        ingredientOneAllergicReactionText.addClassNames("ingredient-one-allergic-reaction-text");
+        return ingredientOneAllergicReactionText;
+    }
+
+    public TextField createIngredientTwoAllergicReaction() {
+        TextField ingredientTwoAllergicReactionText = new TextField();
+        ingredientTwoAllergicReactionText.setReadOnly(true);
+        ingredientTwoAllergicReactionText.setValue("Tomatus");
+        ingredientTwoAllergicReactionText.addClassNames("ingredient-two-allergic-reaction-text");
+        return ingredientTwoAllergicReactionText;
+    }
+
+    public H1 createPriceText() {
+        H1 priceText = new H1();
+        priceText.setText("2180₽");
+        priceText.addClassNames("price-dish");
+        return priceText;
+    }
+
+    public Button createPurchaseText() {
+        Button purchaseIcon = new Button(new Image("https://i.ibb.co/74S3dTh/Button.png","bag"));
+        purchaseIcon.addClassNames("purchase-dish");
+        return purchaseIcon;
+    }
+
+    public Label createIngredientsText() {
+        Label ingredientsText = new Label();
+        ingredientsText.setText("ИНГРИДИЕНТЫ");
+        ingredientsText.addClassNames("main-dishes-text");
+        return ingredientsText;
+    }
+
+    public Image createImage() {
+        Image image = new Image("https://i.ibb.co/XsVJCr6/plate-1513116566-1.png", "Image");
+        image.addClassNames("image-dish");
+        return image;
+    }
+
 }
