@@ -2,6 +2,9 @@
 @import url('./footer.css');
 @import url('./content-view.css');
 @import url('./reserve.css');
+@import url('./vine-list-item.css');
+@import url('./picture-list-item.css');
+@import url('./dish.css');
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
 
 @font-face {

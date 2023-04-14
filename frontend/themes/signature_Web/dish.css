@@ -1,0 +1,155 @@
+.dish-main{
+    background-image: url("https://i.ibb.co/12NYh16/background.png");
+
+}
+
+.main-component-dishes{
+    display: flex;
+}
+
+.main-text-dish{
+    height: 177px;
+    font-family: 'Futura New';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 90%;
+    text-align: center; 
+    color: white;
+
+}
+
+.main-text-dish::last-word{
+    font-size: 100px;
+}
+
+.image-dish {
+    width: 574px;
+    height: 556px;
+}
+
+.window-one-dishes{
+    width: 405px;
+    height: 365px;
+    left: 0px;
+    top: 0px;
+    background: #002024;
+    opacity: 0.66;
+    border-radius: 15px;
+}
+
+.window-two-dishes {
+    width: 405px;
+    height: 650px;
+    left: 0px;
+    top: 0px;
+
+    background: #002024;
+    opacity: 0.66;
+    border-radius: 15px;
+}
+
+.window-tree-dishes {
+    display: flex;
+}
+
+.main-dishes-text{
+    display: flex;
+    align-items: center;
+    color: rgba(127, 110, 55);
+    font-size: 20px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 14px;
+    margin-top: 10px;
+
+}
+
+.window-two{
+    display: grid;
+    width: 405px;
+    height: 650px;
+    left: 0px;
+    top: 0px;
+}
+
+.allergic-reaction{
+    font-size: 18px;
+    margin-left: 5%;
+    color: #A0AEAF;
+}
+
+.peculiarities-text{
+    display: flex;
+    align-items: center;
+    color: rgba(127, 110, 55);
+    font-size: 20px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    padding: 14px;
+}
+
+.calories-text{
+    width: 95%;
+    margin-left: 5%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.fats-text{
+    margin-left: 5%;
+    width: 26%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.protein-text{
+    margin-left: 5%;
+    width: 26%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.carbohydrates-text{
+    margin-left: 5%;
+    width: 33%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+.price-dish{
+    margin-right: auto;
+    color: white;
+    border-radius: 15px;
+    background: #91793A;
+    width: 75%;
+    padding: 0 0 0 10px;
+
+
+    font-size: 45px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.purchase-dish{
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    font-size: 32px;
+    padding: 3px;
+    background: #91793A;
+}
+
+
+
+.ingredient-one-allergic-reaction-text{
+    width: 95%;
+    margin-left: 5%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+.ingredient-two-allergic-reaction-text{
+    width: 95%;
+    margin-left: 5%;
+    border-bottom: 1px solid rgba(127, 110, 55);
+}

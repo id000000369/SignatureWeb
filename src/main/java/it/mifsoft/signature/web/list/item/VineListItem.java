@@ -1,4 +1,173 @@
 package it.mifsoft.signature.web.list.item;
 
-public class VineListItem {
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.auth.AnonymousAllowed;
+
+@Route(value = "vine")
+@AnonymousAllowed
+public class VineListItem extends Div {
+
+    private final H1 mainText;
+    private final H1 subMainText;
+    private final TextField sparklingWineOrChampagneText;
+    private final TextField regionText;
+    private final TextField grapeText;
+    private final TextField fortressText;
+    private final TextField volumeText;
+    private final TextField manufacturerText;
+    private final TextField perfectForText;
+    private final TextField andAlsoText;
+    private final Button signUpForATasting;
+
+
+    public VineListItem() {
+        this.mainText = createMainText();
+        this.subMainText = createSubMainText();
+        this.sparklingWineOrChampagneText = createSparklingWineOrChampagneText();
+        this.regionText = createRegionText();
+        this.grapeText = createGrapeText();
+        this.fortressText = createFortressText();
+        this.volumeText = createVolumeText();
+        this.manufacturerText = createManufacturerText();
+        this.perfectForText = createPerfectForText();
+        this.andAlsoText = createAndAlsoText();
+        this.signUpForATasting = createSignUpForATastingText();
+
+        addClassNames("window");
+        add(windowMainItems(), windowOneItems(), windowTwoItems(), windowTreeItems());
+    }
+
+
+    public Div windowMainItems() {
+        Div items = new Div();
+        items.add(mainText, subMainText);
+        items.addClassNames("window-main-items");
+        return items;
+    }
+
+    public Div windowOneItems() {
+        Div items = new Div();
+        items.add(sparklingWineOrChampagneText,
+                fortressText,
+                volumeText);
+        items.addClassNames("window-one-items");
+        return items;
+    }
+
+    public Div windowTwoItems() {
+        Div items = new Div();
+        items.add(regionText, manufacturerText);
+        items.addClassNames("window-two-items");
+        return items;
+    }
+
+    public Div windowTreeItems() {
+        Div items = new Div();
+        items.add(grapeText, perfectForText, andAlsoText, signUpForATasting);
+        items.addClassNames("window-tree-items");
+        return items;
+    }
+
+    public H1 createMainText() {
+        H1 main = new H1();
+        main.setText("ПОЛЬ РОЖЕ БРЮТ РЕЗЕРВ");
+        main.addClassNames("mainWindow");
+        return main;
+    }
+
+    public H1 createSubMainText() {
+        H1 subMain = new H1();
+        subMain.setText("POL ROGER, BRUT RESERVE. FRANCE,");
+        subMain.addClassNames("subMain");
+        return subMain;
+    }
+
+    public TextField createSparklingWineOrChampagneText() {
+        TextField sparklingWineOrChampagne = new TextField();
+        sparklingWineOrChampagne.setReadOnly(true);
+        sparklingWineOrChampagne.setLabel("ИГРИСТОЕ ВИНО/ШАМПАНСКОЕ");
+        sparklingWineOrChampagne.setValue("Шампанское, сухое, брют");
+        sparklingWineOrChampagne.addClassNames("sparklingWineOrChampagne");
+        return sparklingWineOrChampagne;
+    }
+
+    public TextField createRegionText() {
+        TextField regionText = new TextField();
+        regionText.setReadOnly(true);
+        regionText.setLabel("РЕГИОН");
+        regionText.setValue("Франция, Шампань");
+        regionText.addClassNames("region");
+        return regionText;
+    }
+
+    public TextField createGrapeText() {
+        TextField grapeText = new TextField();
+        grapeText.setReadOnly(true);
+        grapeText.setLabel("ВИНОГРАД");
+        grapeText.setValue("Шардоне: 34%, Пино Менье: 33%, Пино Нуар: 33%");
+        grapeText.addClassNames("grape");
+        return grapeText;
+    }
+
+
+    public TextField createFortressText() {
+        TextField fortressText = new TextField();
+        fortressText.setReadOnly(true);
+        fortressText.setLabel("КРЕПОСТЬ");
+        fortressText.setValue("12%");
+        fortressText.addClassNames("fortress");
+        return fortressText;
+    }
+
+    public TextField createVolumeText() {
+        TextField volumeText = new TextField();
+        volumeText.setReadOnly(true);
+        volumeText.setLabel("ОБЪЕМ");
+        volumeText.setValue("0,75");
+        volumeText.addClassNames("volume");
+        return volumeText;
+    }
+
+    public TextField createPerfectForText() {
+        TextField perfectForText = new TextField();
+        perfectForText.setReadOnly(true);
+        perfectForText.setLabel("ИДЕАЛЬНО ПОДХОДИТ К");
+        perfectForText.setValue("Осьминогу на стейке томата, \" +\n" +
+                "                \"Палтус с жженым горошком, Томленая ножка кролика с рагу из овощей, \" +\n" +
+                "                \"Осьминогу на стейке томата, \" +\n" +
+                "                \"Палтус с жженым горошком, \" +\n" +
+                "                \"Томленая ножка кролика с рагу из овощей");
+        perfectForText.addClassNames("perfectFor");
+        return perfectForText;
+    }
+
+    public TextField createAndAlsoText() {
+        TextField andAlsoText = new TextField();
+        andAlsoText.setReadOnly(true);
+        andAlsoText.setLabel("А ЕЩЕ");
+        andAlsoText.setValue("Это вино принимает участие в дегустационной программе");
+        andAlsoText.addClassNames("andAlso");
+        return andAlsoText;
+    }
+
+    public TextField createManufacturerText() {
+        TextField manufacturerText = new TextField();
+        manufacturerText.setReadOnly(true);
+        manufacturerText.setLabel("ПРОИЗВОДИТЕЛЬ");
+        manufacturerText.setValue("Pol Roger");
+        manufacturerText.addClassNames("manufacturer");
+        return manufacturerText;
+    }
+
+    public Button createSignUpForATastingText() {
+        Button signUpForATasting = new Button();
+        signUpForATasting.setText("Записаться на дегустацию");
+        signUpForATasting.addClassNames("signUpForATasting");
+        return signUpForATasting;
+    }
 }
+

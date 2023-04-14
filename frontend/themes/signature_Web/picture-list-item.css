@@ -1,0 +1,48 @@
+.picture {
+    position: absolute;
+    width: 860px;
+    height: 1380px;
+    left: 20%;
+    top: 0px;
+    background: #002024;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.picture-main {
+    display: flex;
+    margin-left: 5%;
+    margin-bottom: 3%;
+}
+
+.main-picture-text {
+    font-size: 45px;
+    margin: 0px 0px 3% 5%;
+    color: rgba(127, 110, 55);
+}
+
+.image-picture {
+    margin: 0;
+}
+
+.avatar {
+    width: 75px;
+    height: 75px;
+}
+
+.picture-sub {
+    display: grid;
+    margin-left: 2%;
+}
+
+.data-person {
+    display: contents;
+    margin-left: 2%;
+    font-size: 32px;
+    color: rgba(160, 174, 175, 1);
+}
+
+.description-picture {
+    margin: 5%;
+    font-size: 22px;
+    color: rgba(160, 174, 175, 1);
+}
