@@ -69,6 +69,7 @@ public class WelcomePage extends Div {
                 contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
                 firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon);
     }
+
     public Image createFirstSideIcon() {
         final Image sideIcon = new Image("img/first-side-icon.png", "");
         sideIcon.addClassName("first-side-icon");

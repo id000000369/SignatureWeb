@@ -230,7 +230,7 @@ function statsExtracterPlugin(): PluginOption {
       const generatedImports = readFileSync(path.resolve(generatedFlowImportsFolder, "generated-flow-imports.js"), {encoding: 'utf-8'})
           .split("\n")
           .filter((line: string) => line.startsWith("import"))
-          .map((line: string) => line.substring(line.indexOf("'")+1, line.lastIndexOf("'")))
+          .map((line: string) => line.substring(line.indexOf("'") + 1, line.lastIndexOf("'")))
           .map((line: string) => line.includes('?') ? line.substring(0, line.lastIndexOf('?')) : line);
 
       const frontendFiles: Record<string, string> = { };
@@ -520,48 +520,11 @@ function themePlugin(opts): PluginOption {
     async transform(raw, id, options) {
       // rewrite urls for the application theme css files
       const [bareId, query] = id.split('?');
-      if (!bareId?.startsWith(themeFolder) || !bareId?.endsWith('.css')) {
+      if ((!bareId?.startsWith(themeFolder) && !bareId?.startsWith(themeOptions.themeResourceFolder)) || !bareId?.endsWith('.css')) {
         return;
       }
       const [themeName] = bareId.substring(themeFolder.length + 1).split('/');
       return rewriteCssUrls(raw, path.dirname(bareId), path.resolve(themeFolder, themeName), console, opts);
-    }
-  };
-}
-function lenientLitImportPlugin(): PluginOption {
-  return {
-    name: 'vaadin:lenient-lit-import',
-    async transform(code, id) {
-      const decoratorImports = [
-        /import (.*?) from (['"])(lit\/decorators)(['"])/,
-        /import (.*?) from (['"])(lit-element\/decorators)(['"])/
-      ];
-      const directiveImports = [
-        /import (.*?) from (['"])(lit\/directives\/)([^\\.]*?)(['"])/,
-        /import (.*?) from (['"])(lit-html\/directives\/)([^\\.]*?)(['"])/
-      ];
-
-      decoratorImports.forEach((decoratorImport) => {
-        let decoratorMatch;
-        while ((decoratorMatch = code.match(decoratorImport))) {
-          console.warn(
-              `Warning: the file ${id} imports from '${decoratorMatch[3]}' when it should import from '${decoratorMatch[3]}.js'`
-          );
-          code = code.replace(decoratorImport, 'import $1 from $2$3.js$4');
-        }
-      });
-
-      directiveImports.forEach((directiveImport) => {
-        let directiveMatch;
-        while ((directiveMatch = code.match(directiveImport))) {
-          console.warn(
-              `Warning: the file ${id} imports from '${directiveMatch[3]}${directiveMatch[4]}' when it should import from '${directiveMatch[3]}${directiveMatch[4]}.js'`
-          );
-          code = code.replace(directiveImport, 'import $1 from $2$3$4.js$5');
-        }
-      });
-
-      return code;
     }
   };
 }
@@ -703,7 +666,6 @@ export const vaadinConfig: UserConfigFn = (env) => {
       !devMode && statsExtracterPlugin(),
       devBundle && preserveUsageStats(),
       themePlugin({devMode}),
-      lenientLitImportPlugin(),
       postcssLit({
         include: ['**/*.css', /.*\/.*\.css\?.*/],
         exclude: [

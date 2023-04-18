@@ -67,7 +67,7 @@
 .phone-info-text {
     position: relative;
     color: white;
-    font-size: 26px;
+    font-size: 24px;
     text-align: center;
     top: 355px; 
     font-weight: 300;
@@ -80,4 +80,9 @@
     text-align: center;
     top: 375px;
     font-weight: 300;
+}
+
+.map-container-view iframe  {
+position: absolute;
+width: 100%;
 }

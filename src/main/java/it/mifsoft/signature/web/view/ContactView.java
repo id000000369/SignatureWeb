@@ -1,5 +1,8 @@
 package it.mifsoft.signature.web.view;
 
+import com.vaadin.flow.component.AttachEvent;
+import com.vaadin.flow.component.HtmlComponent;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
@@ -9,23 +12,34 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
 import org.springframework.stereotype.Component;
 
+import javax.swing.text.html.HTMLEditorKit;
+
 @Component
 @UIScope
 @Route(value = "contacts", layout = ContentLayout.class)
 public class ContactView extends Div {
     private final Div contactsContainer;
-
-    //private final Map mapView;
     private final Image backgroundImg;
     private final Image vkIco;
     private final Image ytIco;
     private final Image instaIco;
-
     private final H1 addressInfo;
     private final H1 phoneInfo;
     private final H1 adminLabel;
     private final H1 copyRights;
+    HtmlComponent html = new HtmlComponent("div");
+    private final Div mapContainer = new Div();
+
     public ContactView() {
+        //html.getElement().setProperty("innerHTML", "<div id=\"map\"></div>");
+        html.getElement().setProperty("innerHTML", "<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A04b70d8dd3abbde806619bb744e739aa46ce275958140fbdb2ecd095244b134f&amp;source=constructor\" width=\"100%\" height=\"300\" zoom=\"55\" frameborder=\"0\"></iframe>");
+       // html.getElement().getStyle().set("border-radius", "15px");
+//        String yandexMapScriptUrl = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A04b70d8dd3abbde806619bb744e739aa46ce275958140fbdb2ecd095244b134f&amp;width=650&amp;height=422&amp;lang=ru_RU";
+
+//        html.getElement().executeJs("var script = document.createElement('script');"
+//                + "script.type = 'text/javascript';"
+//                + "script.src = '" + yandexMapScriptUrl + "';"
+//                + "document.head.appendChild(script);");
 
         this.contactsContainer = new Div();
         this.contactsContainer.addClassName("contacts-container");
@@ -41,13 +55,16 @@ public class ContactView extends Div {
         this.adminLabel = createAdminLabel();
         this.copyRights = createCopyRights();
 
-        this.contactsContainer.add(createAddressInfo(), createAdminLabel(),
+        this.mapContainer.add(html);
+        this.mapContainer.addClassName("map-container-view");
+        this.html.addClassName("map-view");
+
+        this.contactsContainer.add(mapContainer, createAddressInfo(), createAdminLabel(),
                 createPhoneInfo(), createSocialContainer(), createCopyRights());
 
         this.addClassName("contacts-main");
         this.add(backgroundImg, contactsContainer);
     }
-
     public Div createSocialContainer() {
         final Div container = new Div();
         container.addClassName("social-container");
