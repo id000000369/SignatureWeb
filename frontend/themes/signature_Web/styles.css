@@ -8,13 +8,5 @@
 @import url('./dish.css');
 @import url('./archives.css');
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
-
-@font-face {
-    font-family: 'Futura New';
-    src: local('Futura New Light Reg'), local('Futura-New-Light-Reg'),
-        url('FuturaNewLight-Reg.woff2') format('woff2'),
-        url('FuturaNewLight-Reg.woff') format('woff'),
-        url('FuturaNewLight-Reg.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
+@StyleSheet("context://fonts/FuturaNewLight-Reg/stylesheet.css")
+@CssImport(value = "./fonts.css", themeFor = "vaadin")

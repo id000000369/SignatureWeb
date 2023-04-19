@@ -82,7 +82,9 @@
     font-weight: 300;
 }
 
-.map-container-view iframe  {
+.map-container-view {
 position: absolute;
 width: 100%;
+-moz-border-radius: 20px;
+-webkit-border-radius: 20px;
 }
