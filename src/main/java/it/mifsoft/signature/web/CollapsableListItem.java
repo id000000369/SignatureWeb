@@ -18,8 +18,8 @@ public class CollapsableListItem extends Div {
 //            "https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png"
 //    );
 
-    public CollapsableListItem(String mainText, String personData, String personIconUrl, String instaLink) {
-        this.state = new CollapsableListItemState(mainText, personData, personIconUrl);
+    public CollapsableListItem(String mainText, String personData, String avatarUrl) {
+        this.state = new CollapsableListItemState(mainText, personData, avatarUrl);
         this.personIcon = createImage();
 
         render();
@@ -74,7 +74,6 @@ public class CollapsableListItem extends Div {
         this.state.setDisplayType(displayType);
         render();
     }
-
     public CollapsableListItemDisplayType getDisplayType() {
         return this.state.displayType;
     }
@@ -84,22 +83,15 @@ public class CollapsableListItem extends Div {
         final String mainText;
         final String personData;
         final String personIcon;
-        final String instaLink;
-        final String description;
-
-        public CollapsableListItemState(String mainText, String personData, String personIcon, String instaLink, String description) {
+        public CollapsableListItemState(String mainText, String personData, String personIcon) {
             this.mainText = mainText;
             this.personData = personData;
             this.personIcon = personIcon;
-            this.instaLink = instaLink;
-            this.description = description;
         }
-
         public void setDisplayType(CollapsableListItemDisplayType displayType) {
             this.displayType = displayType;
         }
     }
-
     public enum CollapsableListItemDisplayType {
         COLLAPSED,
         EXPANDED
