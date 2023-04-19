@@ -5,8 +5,8 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.dto.DishData;
-import it.mifsoft.signature.web.list.item.DishListItem;
+import it.mifsoft.signature.web.dto.PictureData;
+import it.mifsoft.signature.web.list.item.PictureListItem;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -14,21 +14,22 @@ import java.util.List;
 
 @Component
 @UIScope
-public class DishesList extends Div {
+public class PicturesList extends Div {
 
-    private final DishesListState state;
-    private List<DishListItem> items;
-    private DishListItem currentItem;
+    private final PicturesListState state;
+    private List<PictureListItem> items;
+    private PictureListItem currentItem;
 
     private Image previousButton;
     private Image nextButton;
     private final Div scrollableContainer;
 
-    public DishesList() {
+
+    public PicturesList() {
         //long categoryId
         this.getStyle().setPosition(Style.Position.RELATIVE);
 
-        this.state = new DishesListState(0);
+        this.state = new PicturesListState(0);
 
         this.previousButton = createPreviousButton();
         this.nextButton = createNextButton();
@@ -47,7 +48,7 @@ public class DishesList extends Div {
     private void next(ClickEvent<Image> imageClickEvent) {
         final int currentIndex = this.state.currentIndex();
         final int nextIndex = currentIndex + 1;
-        final DishListItem item = this.items.get(nextIndex);
+        final PictureListItem item = this.items.get(nextIndex);
         this.state.setCurrent(nextIndex);
         moveTo(item);
     }
@@ -55,12 +56,12 @@ public class DishesList extends Div {
     private void previous(ClickEvent<Image> imageClickEvent) {
         final int currentIndex = this.state.currentIndex();
         final int previousIndex = currentIndex - 1;
-        final DishListItem item = this.items.get(previousIndex);
+        final PictureListItem item = this.items.get(previousIndex);
         this.state.setCurrent(previousIndex);
         moveTo(item);
     }
 
-    private void moveTo(DishListItem item) {
+    private void moveTo(PictureListItem item) {
         final String script = "document.getElementById('%s').scrollIntoView({behavior: \"smooth\", inline: \"center\"})";
         if (item.getId().isPresent())
             item.getElement().executeJs(String.format(script, item.getId().get()));
@@ -95,11 +96,11 @@ public class DishesList extends Div {
         container.getStyle().set("overflow-x", "hidden");
         container.getStyle().set("overflow-y", "none");
 
-        final List<DishListItem> items = state.getDishes()
+        final List<PictureListItem> items = state.getPicture()
                 .stream()
-                .map(dishData -> {
-                    final DishListItem listItem = new DishListItem();
-                    listItem.setId(String.valueOf(dishData.getId()));
+                .map(pictureData -> {
+                    final PictureListItem listItem = new PictureListItem();
+                    listItem.setId(String.valueOf(pictureData.getId()));
                     listItem.getStyle().setWidth("100vw");
                     listItem.getStyle().set("min-width", "100vw");
                     listItem.getStyle().setHeight("100vh");
@@ -113,40 +114,40 @@ public class DishesList extends Div {
         return container;
     }
 
-    private static class DishesListState {
+    private static class PicturesListState {
         private final long categoryId;
-        private DishData current;
-        private final List<DishData> dishes = new ArrayList<>();
+        private PictureData current;
+        private final List<PictureData> picture = new ArrayList<>();
 
-        DishesListState(final long categoryId) {
+        PicturesListState(final long categoryId) {
             this.categoryId = categoryId;
 
             //test
             for (int i = 1; i < 10; i++) {
-                final DishData dishData = new DishData(i, "", "", 1, "");
-                dishes.add(dishData);
+                final PictureData pictureData = new PictureData(i, "", "", 1, "");
+                picture.add(pictureData);
             }
-            this.current = dishes.get(0);
+            this.current = picture.get(0);
         }
 
         public long getCategoryId() {
             return categoryId;
         }
 
-        public DishData getCurrent() {
+        public PictureData getCurrent() {
             return current;
         }
 
-        public List<DishData> getDishes() {
-            return dishes;
+        public List<PictureData> getPicture() {
+            return picture;
         }
 
         public void setCurrent(int index) {
-            this.current = dishes.get(index);
+            this.current = picture.get(index);
         }
 
         public int currentIndex() {
-            return dishes.indexOf(current);
+            return picture.indexOf(current);
         }
     }
 }

@@ -1,0 +1,10 @@
+.categories-list-main {
+    align-items: center;
+    justify-content: center;
+    display: flex;  
+}
+
+.category-list-item-main {
+    padding-left: 28px;
+
+}

@@ -6,21 +6,18 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.router.Route;
+import it.mifsoft.signature.web.ContentLayout;
 
-@Route("archives")
 public class ArchivesListItem extends Div {
 
-    H1 withLove;
-    Label descriptionWithLove;
-    Button reserveATable;
-    H1 ourConcentration;
-    Label descriptionOurConcentration;
-    H1 teamProfession;
-    Image awards;
-    Image imageWithLove;
-    Image imageOurConcentration;
-    Image imageTeamProfession;
-    Label descriptionAwards;
+    private final H1 withLove;
+    private final Label descriptionWithLove;
+    private final Button reserveATable;
+    private final H1 ourConcentration;
+    private final Label descriptionOurConcentration;
+    private final H1 teamProfession;
+    private final Image awards;
+    private final Label descriptionAwards;
 
     public ArchivesListItem() {
 

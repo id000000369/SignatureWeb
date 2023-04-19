@@ -6,32 +6,22 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.auth.AnonymousAllowed;
 
-@Route("dish")
-@AnonymousAllowed
 public class DishListItem extends Div {
 
-    H1 mainText;
-    Label peculiarities;
-    TextField calories;
-    TextField protein;
-    TextField fats;
-    TextField carbohydrates;
-    Label allergicReaction;
-    TextField ingredientOneAllergicReaction;
-    TextField ingredientTwoAllergicReaction;
-    H1 price;
-    Button purchase;
-    Label ingredients;
-    TextField ingredientTree;
-    TextField ingredientFour;
-    Label tasteIsBestRevealedWith;
-    Label bestDishOne;
-    Label bestDishTwo;
-    Label bestDishTree;
-    Image dishIcon;
+    private final H1 mainText;
+    private final Label peculiarities;
+    private final TextField calories;
+    private final TextField protein;
+    private final TextField fats;
+    private final TextField carbohydrates;
+    private final Label allergicReaction;
+    private final TextField ingredientOneAllergicReaction;
+    private final TextField ingredientTwoAllergicReaction;
+    private final H1 price;
+    private final Button purchase;
+    private final Label ingredients;
+    private final Image dishIcon;
 
     public DishListItem() {
 
@@ -47,12 +37,6 @@ public class DishListItem extends Div {
         this.price = createPriceText();
         this.purchase = createPurchaseText();
         this.ingredients = createIngredientsText();
-//        this.ingredientTree =;
-//        this.ingredientFour =;
-//        this.tasteIsBestRevealedWith =;
-//        this.bestDishOne =;
-//        this.bestDishTwo =;
-//        this.bestDishTree =;
         this.dishIcon = createImage();
 
         addClassNames("dish-main");
@@ -179,7 +163,7 @@ public class DishListItem extends Div {
     }
 
     public Button createPurchaseText() {
-        Button purchaseIcon = new Button(new Image("https://i.ibb.co/74S3dTh/Button.png","bag"));
+        Button purchaseIcon = new Button(new Image("https://i.ibb.co/74S3dTh/Button.png", "bag"));
         purchaseIcon.addClassNames("purchase-dish");
         return purchaseIcon;
     }

@@ -6,8 +6,7 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 
-@Route("picture")
-@AnonymousAllowed
+
 public class PictureListItem extends Div {
 
     private final Image image;

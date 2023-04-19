@@ -1,9 +1,21 @@
 .dish-main{
+    
     background-image: url("https://i.ibb.co/12NYh16/background.png");
+}
+
+.dish-previous-button{
+    display: flex;
+}
+
+.dish-next-button{
+    display: flex;
 
 }
 
 .main-component-dishes{
+    align-items: center;
+
+    justify-content: center;
     display: flex;
 }
 
@@ -40,7 +52,7 @@
 
 .window-two-dishes {
     width: 405px;
-    height: 650px;
+    height: 500px;
     left: 0px;
     top: 0px;
 
