@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 @UIScope
-@Route(value = "archive", layout = ContentLayout.class)
-public class ArchivePage extends Div {
-
+@Route(value = "vines", layout = ContentLayout.class)
+public class VinesPage extends Div {
 }

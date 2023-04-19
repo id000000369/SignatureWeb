@@ -1,4 +1,4 @@
-package it.mifsoft.signature.web.view;
+package it.mifsoft.signature.web.page;
 
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.html.Div;
@@ -7,6 +7,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
 import it.mifsoft.signature.web.ui.ExpandableButton;
+import it.mifsoft.signature.web.view.AboutView;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -69,6 +70,7 @@ public class WelcomePage extends Div {
                 contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
                 firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon);
     }
+
     public Image createFirstSideIcon() {
         final Image sideIcon = new Image("img/first-side-icon.png", "");
         sideIcon.addClassName("first-side-icon");

@@ -1,6 +1,5 @@
 package it.mifsoft.signature.web.list.item;
 
-
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.router.Route;
@@ -8,13 +7,17 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 
 public class PictureListItem extends Div {
-
+    private boolean isExpanded;
+    private boolean isCollapsed;
     private final Image image;
     private final H1 mainText;
     private final Avatar iconPerson;
     private final Label dataPerson;
     private final Anchor linkInst;
     private final H2 description;
+    private final Div leftDiv;
+    private final Div middleDiv;
+    private final Div rightDiv;
 
     public PictureListItem() {
 
@@ -24,13 +27,45 @@ public class PictureListItem extends Div {
         this.dataPerson = createDataPerson();
         this.linkInst = createLinkInst();
         this.description = createDescription();
-
+        this.leftDiv = createLeftDiv();
+        this.rightDiv = createRightDiv();
+        this.middleDiv = createMiddleDiv();
 
         addClassNames("picture");
 
-        add(image, mainText, windowMainItems(), description);
+        if (isCollapsed)
+            add();
+        else {
+            add(image, mainText, windowMainItems(), description);
+        }
+    }
+    public Div createLeftDiv() {
+        Div leftDiv = new Div();
+        leftDiv.add(new Image("/img/left-image.png", ""));
+        leftDiv.addClickListener(event -> {
+            middleDiv.removeAll();
+            middleDiv.add(new Image("/img/left-image.png", ""));
+        });
+        leftDiv.addClassName("left-div");
+        return leftDiv;
     }
 
+    public Div createRightDiv() {
+        Div rightDiv = new Div();
+        rightDiv.add(new Image("/img/right-image.png", ""));
+        rightDiv.addClickListener(event -> {
+            middleDiv.removeAll();
+            middleDiv.add(new Image("/img/right-image.png", ""));
+        });
+        rightDiv.addClassName("right-div");
+        return rightDiv;
+    }
+
+    public Div createMiddleDiv() {
+        Div middleDiv = new Div();
+        middleDiv.addClassNames("middle-div");
+        return middleDiv;
+    }
 
     public Div windowMainItems() {
         Div items = new Div();
