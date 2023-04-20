@@ -22,6 +22,4 @@ public class PicturesPage extends Div {
 
         this.add(this.picturesList);
     }
-
-
 }

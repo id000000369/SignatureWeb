@@ -12,10 +12,8 @@ import org.springframework.stereotype.Component;
 @UIScope
 @Route(value = "dishes", layout = ContentLayout.class)
 public class DishesPage extends Div {
-
     private final CategoriesList categoriesList;
     private final DishesList dishesList;
-
     public DishesPage(CategoriesList categoriesList, DishesList dishesList) {
         this.setWidthFull();
         this.setHeightFull();
@@ -25,6 +23,4 @@ public class DishesPage extends Div {
 
         this.add(this.categoriesList, this.dishesList);
     }
-
-
 }

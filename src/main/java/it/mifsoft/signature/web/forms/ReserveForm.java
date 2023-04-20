@@ -7,16 +7,11 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 import org.springframework.stereotype.Component;
 
-import javax.swing.*;
-import java.awt.*;
-
 @Component
 @UIScope
-@Route(value = "reserve")
 public class ReserveForm extends Div {
 
     private final H1 firstHeaderText;
