@@ -13,12 +13,14 @@ import org.springframework.stereotype.Component;
 @Route(value = "hello", layout = ContentLayout.class)
 public class AboutView extends Div {
    // private final Image art;
+    private final Paragraph paragraph;
     public AboutView() {
 
       //  this.art = createArtImg();
-
-        this.add(new Paragraph("Наш ресторан Signature Art\nтранслирует уникальную\nконцепцию арт-пространства.\nМы дарим гостям новый опыт,\nвозможность прожить новый\nэкспириенс – стать ценителем\nискусства и дегустатором.\n" +
-                "Подробности..."));
+        this.paragraph = new Paragraph("Наш ресторан Signature Art\nтранслирует уникальную\nконцепцию арт-пространства.\nМы дарим гостям новый опыт,\nвозможность прожить новый\nэкспириенс – стать ценителем\nискусства и дегустатором.\n" +
+                "Подробности...");
+        this.paragraph.addClassName("about-us-paragraph");
+        this.add(paragraph);
      //   this.add(art);
         this.addClassName("about-us-view");
     }

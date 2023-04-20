@@ -48,22 +48,29 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 9px;
   font-size: 100%;
   cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
 }
 
 .about-us-button {
-  width: 12.9%;
+  width: 15.5%;
   position: absolute;
-  left: 58%;
-  top: 49.4%;
+  left: 69.5%;
+  top: 56.5%;
   font-size: 14px;
 }
 
 .about-us-view {
-  width: 30%;
-  height: 40px;
+  position: absolute;   
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 128px;
+  height: 130x;
   padding: 20px 55px 20px 55px;
   background-repeat: no-repeat;
   color: white;
@@ -71,15 +78,18 @@ body::-webkit-scrollbar {
   align-items: center;
   text-align: center;
   letter-spacing: 0.05em;
-  font-size: 4px;
+  font-size: 8px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background: url("https://i.ibb.co/SJZWQcd/art-image.png");
-  background-size: 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about-us-paragraph{
+    margin-top: 35px;
 }
 .art-img {
 }
-
 .menu-button {
   width: 15%;
   min-width: 250px;
