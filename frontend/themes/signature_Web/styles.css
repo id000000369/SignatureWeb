@@ -3,7 +3,7 @@
 @import url('./content-view.css');
 @import url('./reserve-form.css');
 @import url('./contacts-view.css');
-@import url('./vine-list-item.css');
+@import url('./vine.css');
 @import url('./picture-list-item.css');
 @import url('./dish.css');
 @import url('./archives.css');
@@ -11,3 +11,7 @@
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
 @StyleSheet("context://fonts/FuturaNewLight-Reg/stylesheet.css")
 @CssImport(value = "./fonts.css", themeFor = "vaadin")
+@font-face {
+  font-family: "futuranewlight";
+  src: url('./fonts/futuranewlight-reg-webfont.woff') format("woff");
+}

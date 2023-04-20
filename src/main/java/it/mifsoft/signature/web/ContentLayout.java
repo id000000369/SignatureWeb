@@ -15,12 +15,9 @@ import org.springframework.stereotype.Component;
 @RoutePrefix("main")
 public final class ContentLayout extends Div implements HasModal, RouterLayout {
 
-    private final HeaderView headerView;
 
-    public ContentLayout(HeaderView headerView) {
-        this.headerView = headerView;
+    public ContentLayout() {
         this.addClassName("content-view");
-        this.add(headerView);
     }
 
     @Override

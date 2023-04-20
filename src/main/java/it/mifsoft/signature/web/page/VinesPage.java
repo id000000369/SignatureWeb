@@ -38,6 +38,7 @@ public class VinesPage extends Div {
         rightSide.setHeight("100vh");
 
         FlexStyleUtils.doItCenteredRow(this.getElement());
+
         this.add(leftSide, rightSide);
     }
 }

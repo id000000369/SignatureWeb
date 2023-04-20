@@ -1,10 +1,10 @@
 .content-view {
     width: 100%;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 25vh - 12.5vh);
 }
 
 .content-img {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 25vh);
     justify-content: left start;
     top: 0;
 }

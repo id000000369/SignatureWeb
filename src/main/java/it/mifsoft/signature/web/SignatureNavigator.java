@@ -8,33 +8,36 @@ import org.springframework.stereotype.Component;
 @UIScope
 public class SignatureNavigator extends AbstractSignatureNavigator implements MenuNavigator {
 
+    public SignatureNavigator() {
+    }
+
     @Override
     public void navigateToHome() {
-        super.route(UI.getCurrent(), "/home");
+        super.route(UI.getCurrent(), "/main/welcome");
     }
 
     @Override
     public void navigateToAbout() {
-        super.route(UI.getCurrent(), "/about");
+        super.route(UI.getCurrent(), "/main/archives");
     }
 
     @Override
     public void navigateToVinesGallery() {
-        super.route(UI.getCurrent(), "/vines");
+        super.route(UI.getCurrent(), "/main/vines");
     }
 
     @Override
     public void navigateToMenu() {
-        super.route(UI.getCurrent(), "/dishes");
+        super.route(UI.getCurrent(), "/main/dishes");
     }
 
     @Override
     public void navigateToPicturesGallery() {
-        super.route(UI.getCurrent(), "/pictures");
+        super.route(UI.getCurrent(), "/main/pictures");
     }
 
     @Override
     public void navigateToContacts() {
-        super.route(UI.getCurrent(), "/contacts");
+        super.route(UI.getCurrent(), "/main/contacts");
     }
 }

@@ -4,8 +4,13 @@ import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
+import com.vaadin.flow.spring.annotation.UIScope;
+import it.mifsoft.signature.web.ContentLayout;
+import org.springframework.stereotype.Component;
 
-
+@Component
+@UIScope
+@Route(value = "pictures", layout = ContentLayout.class)
 public class PictureListItem extends Div {
     private boolean isExpanded;
     private boolean isCollapsed;

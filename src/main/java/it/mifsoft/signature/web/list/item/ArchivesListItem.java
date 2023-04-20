@@ -6,8 +6,13 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
+import org.springframework.stereotype.Component;
 
+@Component
+@UIScope
+@Route(value = "archives", layout = ContentLayout.class)
 public class ArchivesListItem extends Div {
 
     private final H1 withLove;

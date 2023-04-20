@@ -5,7 +5,7 @@ import com.vaadin.flow.router.Route;
 import it.mifsoft.signature.web.ContentLayout;
 
 
-@Route(value = "archives", layout = ContentLayout.class)
+//@Route(value = "archives", layout = ContentLayout.class)
 public class ArchivesList extends Div {
     
 
