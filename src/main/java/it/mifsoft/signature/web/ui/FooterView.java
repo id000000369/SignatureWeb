@@ -21,7 +21,7 @@ public class FooterView extends HorizontalLayout {
 
     private final Image logoImage;
     private final H1 contactsText;
-    private final Button reserveButton;
+    public final Button reserveButton;
 
     public FooterView(HasModal modalContainer, ReserveForm reserveForm) {
         this.modalContainer = modalContainer;
