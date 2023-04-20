@@ -20,9 +20,8 @@ public class CategoriesList extends Div {
     private CategoryListItem selectedItem;
 
     private final DishesList dishesList;
-    private final ArchivesList archivesList;
 
-    public CategoriesList(DishesList dishesList, ArchivesList archivesList) {
+    public CategoriesList(DishesList dishesList) {
 
         FlexStyleUtils.doItRow(this.getElement());
 
@@ -37,7 +36,6 @@ public class CategoriesList extends Div {
 
         this.addClassNames("categories-list-main");
         this.dishesList = dishesList;
-        this.archivesList = archivesList;
         this.listItems = createListItems();
 
         this.listItems.forEach(this::add);

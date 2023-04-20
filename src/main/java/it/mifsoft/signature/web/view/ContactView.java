@@ -1,22 +1,14 @@
 package it.mifsoft.signature.web.view;
 
-import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.HtmlComponent;
-import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.ContentLayout;
 import org.springframework.stereotype.Component;
-
-import javax.swing.text.html.HTMLEditorKit;
 
 @Component
 @UIScope
-@Route(value = "contacts", layout = ContentLayout.class)
 public class ContactView extends Div {
     private final Div contactsContainer;
     private final Image backgroundImg;

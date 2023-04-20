@@ -5,6 +5,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
+import it.mifsoft.signature.web.AbstractSignatureNavigator;
 import it.mifsoft.signature.web.SignatureNavigator;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @UIScope
 public class HeaderView extends HorizontalLayout {
 
+    AbstractSignatureNavigator navigate;
     private final String LOGO_IMAGE_SRC = "https://i.ibb.co/GQm92bq/Vector-1.png";
 
     private Collection<String> menuItemsNames = List.of(

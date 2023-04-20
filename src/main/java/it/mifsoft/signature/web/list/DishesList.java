@@ -15,7 +15,6 @@ import java.util.List;
 @Component
 @UIScope
 public class DishesList extends Div {
-
     private final DishesListState state;
     private List<DishListItem> items;
     private DishListItem currentItem;
