@@ -9,6 +9,7 @@
 @import url('./archives.css');
 @import url('./categories.css');
 @import url('./achievment.css');
+@import url('./dish-short.css');
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
 @StyleSheet("context://fonts/FuturaNewLight-Reg/stylesheet.css")
 @CssImport(value = "./fonts.css", themeFor = "vaadin")

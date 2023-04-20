@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+
 @Component
 @UIScope
 public class AchievmentsList extends Div {
@@ -93,6 +94,7 @@ public class AchievmentsList extends Div {
         archiveListItem.addClassName("archiveListItem");
         add(archiveListItem);
     }
+
     class AchievementData {
         final String title;
         final String subtitle;
@@ -100,12 +102,14 @@ public class AchievmentsList extends Div {
         final String backgroundImage;
         final Optional<String> image;
         final Optional<String> buttonTitle;
+
         public AchievementData(String title,
                                String subtitle,
                                String description,
                                String backgroundImage) {
             this(title, subtitle, description, backgroundImage, null, null);
         }
+
         public AchievementData(String title,
                                String subtitle,
                                String description,
@@ -113,6 +117,7 @@ public class AchievmentsList extends Div {
                                String image) {
             this(title, subtitle, description, backgroundImage, image, null);
         }
+
         public AchievementData(String title,
                                String subtitle,
                                String description,

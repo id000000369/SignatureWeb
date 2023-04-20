@@ -16,9 +16,10 @@ public class AchievementListItem extends Div {
         this.content = content;
         this.titleH = createTitleH();
         this.addClassNames("achievment-main");
-        this.getStyle().set("background-image", "url('"+imageUrl+"')");
+        this.getStyle().set("background-image", "url('" + imageUrl + "')");
         this.add(titleH, content);
     }
+
     public H1 createTitleH() {
         final H1 title = new H1();
         title.setText(this.title);

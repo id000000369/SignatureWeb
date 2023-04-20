@@ -11,12 +11,13 @@ import org.springframework.stereotype.Component;
 @Component
 @UIScope
 @Route(value = "reserve", layout = ContentLayout.class)
-public class ReservePage extends Div  {
+public class ReservePage extends Div {
     private final FooterView footerView;
     private final ReserveForm reserveForm;
+
     public ReservePage(ReserveForm reserveForm, FooterView footerView) {
-     this.reserveForm = reserveForm;
-     this.footerView = footerView;
-     this.add(this.reserveForm, this.footerView);
+        this.reserveForm = reserveForm;
+        this.footerView = footerView;
+        this.add(this.reserveForm, this.footerView);
     }
 }
