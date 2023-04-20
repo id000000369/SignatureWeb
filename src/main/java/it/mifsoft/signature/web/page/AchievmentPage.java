@@ -11,8 +11,10 @@ import org.springframework.stereotype.Component;
 @UIScope
 @Route(value = "achievment", layout = ContentLayout.class)
 public class AchievmentPage extends Div {
+
     private final AchievementsList achivmentsList;
     public AchievmentPage(AchievementsList achivmentsList) {
+
         this.setWidthFull();
         this.setHeightFull();
         this.achivmentsList = achivmentsList;

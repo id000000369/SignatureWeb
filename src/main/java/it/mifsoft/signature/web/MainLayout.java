@@ -2,6 +2,7 @@ package it.mifsoft.signature.web;
 
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
@@ -21,6 +22,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
     private final HeaderView headerView;
     private final ContentLayout contentView;
+    private final Image contentImage;
     private final FooterView footerView;
     private final ReserveForm reserveForm;
     private final Div modalView;
@@ -28,17 +30,21 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
     public MainLayout(HeaderView headerView,
                       ContentLayout contentView,
-                      FooterView footerView, ReserveForm reserveForm) {
+                      FooterView footerView,
+                      ReserveForm reserveForm) {
         this.headerView = headerView;
         this.contentView = contentView;
         this.footerView = footerView;
         this.reserveForm = reserveForm;
+
+        this.contentImage = createContentImg();
+
         this.setHeight("100vh");
         this.getStyle().setOverflow(Style.Overflow.HIDDEN);
+        this.getStyle().set("background-repeat", "repeat-x");
 
         this.modalView = createModalView(this.reserveForm);
-
-        add(headerView);
+        this.add(headerView);
     }
 
     public void showModal() {
@@ -97,13 +103,26 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     public void afterNavigation(AfterNavigationEvent event) {
         final var location = event.getLocation();
         final String path = location.getPath();
-
-        if (location.getPath().equals("main/vines")) {
-            this.getStyle().set("background-image", "url('./img/background-vine.png')");
-        } else if (location.getPath().equals("main/pictures")) {
-            this.getStyle().set("background-image", "url('./img/background-vine.png')");
-        } else if (location.getPath().equals("main/dishes")) {
-            this.getStyle().set("background-image", "url('./img/background-vine.png')");
+        if (path.equals("main/welcome")) {
+            if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
+                this.add(this.contentImage);
+            }
+            return;
         }
+        if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
+            this.remove(this.contentImage);
+        }
+
+        switch (path) {
+            case "main/vines" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
+            case "main/pictures" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
+            case "main/dishes" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
+        }
+    }
+
+    public Image createContentImg() {
+        final Image content = new Image("img/main-img.png", "");
+        content.addClassName("content-img");
+        return content;
     }
 }

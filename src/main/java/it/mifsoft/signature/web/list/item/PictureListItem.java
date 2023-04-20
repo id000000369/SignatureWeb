@@ -44,6 +44,7 @@ public class PictureListItem extends Div {
             add(image, mainText, windowMainItems(), description);
         }
     }
+
     public Div createLeftDiv() {
         Div leftDiv = new Div();
         leftDiv.add(new Image("/img/left-image.png", ""));

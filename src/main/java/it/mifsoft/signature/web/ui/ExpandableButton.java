@@ -14,6 +14,7 @@ public class ExpandableButton extends Div {
 
     public ExpandableButton(String title, Component... components) {
         this.content = new Div();
+
         //this.content.setWidth(WIDTH);
         //this.content.setHeight("100%");
         //this.content.setMaxHeight("400px");
@@ -22,8 +23,9 @@ public class ExpandableButton extends Div {
         this.content.add(components);
 
         this.button = new Button(title);
+
         //this.button.setWidth(WIDTH);
-        //this.button.setHeight("70px");
+        //this.button.setHeight("15%");
         this.button.addClickListener(event -> {
             if (!isExpanded) {
                 this.content.setVisible(true);

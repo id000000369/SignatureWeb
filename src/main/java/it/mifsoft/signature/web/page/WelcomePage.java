@@ -6,6 +6,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
+import it.mifsoft.signature.web.list.DishesShortList;
 import it.mifsoft.signature.web.ui.ExpandableButton;
 import it.mifsoft.signature.web.view.AboutView;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,7 @@ public class WelcomePage extends Div {
     private final ExpandableButton guestButton;
     private final ExpandableButton bronButton;
 
-    private final Image mainImg;
+//    private final Image mainImg;
     //private final Image headerImg;
 
     private final Image menuLine;
@@ -37,6 +38,7 @@ public class WelcomePage extends Div {
     private final Image secondSideIcon;
     private final Image thirdSideIcon;
     private final Image fourthSideIcon;
+
     public WelcomePage() {
 //        MenuItems.MENU_ITEM_NAMES.forEach(title -> {
 //            var button = new ExpandableButton(title, new AboutView());
@@ -62,11 +64,11 @@ public class WelcomePage extends Div {
         this.thirdSideIcon = createThirdSideIcon();
         this.fourthSideIcon = createFourthSideIcon();
 
-        this.mainImg = createContentImg();
+//        this.mainImg = createContentImg();
         //this.headerImg = createHeaderImg();
         this.add(expositionButton, aboutUsButton, menuButton,
                 vineGalleryButton, contactsButton, guestButton, bronButton,
-                mainImg,
+//                mainImg,
                 contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
                 firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon);
     }
@@ -77,62 +79,67 @@ public class WelcomePage extends Div {
         this.add(sideIcon);
         return sideIcon;
     }
+
     public Image createSecondSideIcon() {
         final Image sideIcon = new Image("img/second-side-icon", "");
         sideIcon.addClassName("second-side-icon");
         this.add(sideIcon);
         return sideIcon;
     }
+
     public Image createThirdSideIcon() {
         final Image sideIcon = new Image("img/third-side-icon", "");
         sideIcon.addClassName("third-side-icon");
         this.add(sideIcon);
         return sideIcon;
     }
+
     public Image createFourthSideIcon() {
         final Image sideIcon = new Image("img/fourth-side-icon", "");
         sideIcon.addClassName("fourth-side-icon");
         this.add(sideIcon);
         return sideIcon;
     }
-    public Image createContentImg() {
-        final Image content = new Image("img/main-img.png", "");
-        content.addClassName("content-img");
-        this.add(content);
-        return content;
-    }
+
+//    public Image createContentImg() {
+//        final Image content = new Image("img/main-img.png", "");
+//        content.addClassName("content-img");
+//        this.add(content);
+//        return content;
+//    }
+
     public Image createContactsLine() {
-        final Image line = new Image("img/contacts-line.png","");
+        final Image line = new Image("img/contacts-line.png", "");
         line.addClassName("contacts-line");
         return line;
     }
 
     public Image createBronLine() {
-        final Image line = new Image("img/bron-line.png","");
+        final Image line = new Image("img/bron-line.png", "");
         line.addClassName("bron-line");
         return line;
     }
 
     public Image createGuestLine() {
-        final Image line = new Image("img/guest-line.png","");
+        final Image line = new Image("img/guest-line.png", "");
         line.addClassName("guest-line");
         return line;
     }
 
     public Image createVineGalleryLine() {
-        final Image line = new Image("img/vine-gallery-line.png","");
+        final Image line = new Image("img/vine-gallery-line.png", "");
         line.addClassName("vine-gallery-line");
         return line;
     }
 
     public Image createExpositionLine() {
-        final Image line = new Image("img/exposition-line.png","");
+        final Image line = new Image("img/exposition-line.png", "");
         line.addClassName("exposition-line");
         return line;
     }
 
     public Image createMenuLine() {
-        final Image line = new Image("img/menu-line.png","");
+        final Image line = new Image("img/menu-line.png", "");
         line.addClassName("menu-line");
         return line;
     }
@@ -150,7 +157,7 @@ public class WelcomePage extends Div {
     }
 
     public ExpandableButton createMenuButton() {
-        final ExpandableButton menuButton = new ExpandableButton("Меню", new AboutView());
+        final ExpandableButton menuButton = new ExpandableButton("Меню", new DishesShortList());
         menuButton.addClassName("menu-button");
         return menuButton;
     }
@@ -182,6 +189,6 @@ public class WelcomePage extends Div {
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
-       // this.getStyle().set("background-image", "url('https://i.ibb.co/HNgSvkm/main-image-IMG-4926-1.png')");
+        // this.getStyle().set("background-image", "url('https://i.ibb.co/HNgSvkm/main-image-IMG-4926-1.png')");
     }
 }

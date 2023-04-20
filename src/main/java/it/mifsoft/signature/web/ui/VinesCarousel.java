@@ -108,7 +108,7 @@ public class VinesCarousel extends Div {
                 throw new NullPointerException("All images in vine carousel need position. Position is null");
             }
             image.getStyle().setPosition(Style.Position.ABSOLUTE);
-            image.getStyle().setTransition("width 2s, height 2s, left 2s, top 2s");
+            image.getStyle().setTransition("width 2s, height 2s, left 2s, top 2s, z-index 2s");
             return stylizeImage(image, this.position, this.isSymmetric, VinesCarousel.this.fullWidth);
         }
 
