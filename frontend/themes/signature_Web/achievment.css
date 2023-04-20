@@ -1,17 +1,49 @@
-.achievment-main {
+.achievements-list {
+    display: flex;
+    flex-direction: row;
     width: 100%;
+    overflow-x: scroll;
+}
+.achievment-main {
+    width: 500%;
     height: 100vh;
+    min-width: 400px;
     background-repeat: no-repeat;
     border-top-right-radius: 15px;
     margin-left: 20px;
 }
 
+.image-achievements{
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    height: 110px;
+}
+
 .achievment-title {
     padding-top: 10%;
+    width: 100%;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+}
+
+.achievment-subtitle{
     width: 100%;
     display: flex;
     justify-content: center;
     color: aliceblue;
+}
+.achievment-description{
+    font-size: 22px;
+    font-weight: 100;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: aliceblue;
+
 }
 
 .achievment-reserve-button {
@@ -32,7 +64,8 @@
     color: aliceblue;
 }
 
-.some-class-name {
+.content-some-class-name {
+    padding: 10% 14%;
     color: aliceblue;
     height: 100px;
 }
@@ -42,6 +75,7 @@
     background-color: yellowgreen;
 }
 
-.item {
+.achievments-item {
+    
     background-color: rgb(10, 96, 172);
 }

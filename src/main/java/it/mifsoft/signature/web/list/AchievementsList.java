@@ -2,8 +2,8 @@ package it.mifsoft.signature.web.list;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.list.item.AchievementListItem;
 import it.mifsoft.signature.web.utils.FlexStyleUtils;
@@ -11,9 +11,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+
 @Component
 @UIScope
-public class AchievmentsList extends Div {
+public class AchievementsList extends Div {
     private final List<AchievementData> achievements = List.of(
             new AchievementData(
                     "ОТ НАС",
@@ -42,15 +43,42 @@ public class AchievmentsList extends Div {
                     "ПРОФЕССИОНАЛОВ",
                     "Наша команда оправдает ваши самые высокие ожидания.",
                     "/img/team.png",
-                    "/img/medal.png"
-            )
+                    "/img/achievment-medals.png"),
+            new AchievementData(
+                    "ОТ НАС",
+                    "С ЛЮБОВЬЮ",
+                    "В каждом нашем блюде есть секретный ингредиент – любовь. Любовь к еде и к нашим клиентам.",
+                    "/img/otnas.png ",
+                    null,
+                    "Забронировать столик"
+            ),
+            new AchievementData(
+                    "НАША",
+                    "КОНЦЕПЦИЯ",
+                    "Наш ресторан Signature Art транслирует уникальную концепцию " +
+                            "арт-пространства. Мы дарим гостям новый опыт, " +
+                            "возможность прожить новый экспириенс – стать ценителем искусства и дегустатором. " +
+                            "Высотка на Котельнической набережной - примечательное место Москвы, " +
+                            "место притяжения, дом-эпоха, дом личностей, дом стиля. " +
+                            "Уже это требует наполнения вкусом и искусством, эмоциями и красотой." +
+                            "Рады сообщить вам, что уже в марте мы откроем для вас двери арт ресторана, " +
+                            "где вы сможете не просто вкусно поесть, а также ощутить новое особенное внимательное " +
+                            "к вам пространство.",
+                    "/img/conception.png"),
+
+            new AchievementData(
+                    "КОМАНДА",
+                    "ПРОФЕССИОНАЛОВ",
+                    "Наша команда оправдает ваши самые высокие ожидания.",
+                    "/img/team.png",
+                    "/img/achievment-medals.png")
     );
     private List<AchievementListItem> achievementsListItems;
 
-    public AchievmentsList() {
-        FlexStyleUtils.doItCenteredRow(this.getElement());
+    public AchievementsList() {
         this.achievementsListItems = createListItems();
         this.achievementsListItems.forEach(this::add);
+        this.addClassName("achievements-list");
     }
 
 
@@ -62,16 +90,18 @@ public class AchievmentsList extends Div {
 
     private AchievementListItem createAchievmentListItem(AchievementData data) {
         final Div content = new Div();
-        content.addClassName("some-class-name");
+        content.addClassName("content-some-class-name");
         if (data.image.isPresent()) {
             final Image img = new Image();
             img.setSrc(data.image.get());
+            img.addClassNames("image-achievements");
             content.add(img);
         }
 
-        final Paragraph text = new Paragraph();
-        this.addClassName("achievment-paragraph");
-        content.add(text);
+        final H2 description = new H2();
+        description.setText(data.description);
+        description.addClassName("achievment-description");
+        content.add(description);
 
         if (data.buttonTitle.isPresent()) {
             final Button button = new Button();
@@ -81,18 +111,17 @@ public class AchievmentsList extends Div {
         }
 
         final AchievementListItem item =
-                new AchievementListItem(data.title, data.backgroundImage, content);
-        item.setWidth("500px");
-        item.addClassName("item");
+                new AchievementListItem(data.title, data.subtitle, data.backgroundImage, content);
         return item;
     }
 
-    public void addArchiveListItem(String title, String imageUrl, Div content) {
-        AchievementListItem archiveListItem = new AchievementListItem(title, imageUrl, content);
+    public void addArchiveListItem(String title, String subTitle, String imageUrl, Div content) {
+        AchievementListItem archiveListItem = new AchievementListItem(title, subTitle, imageUrl, content);
         achievementsListItems.add(archiveListItem);
         archiveListItem.addClassName("archiveListItem");
         add(archiveListItem);
     }
+
     class AchievementData {
         final String title;
         final String subtitle;
@@ -100,12 +129,14 @@ public class AchievmentsList extends Div {
         final String backgroundImage;
         final Optional<String> image;
         final Optional<String> buttonTitle;
+
         public AchievementData(String title,
                                String subtitle,
                                String description,
                                String backgroundImage) {
             this(title, subtitle, description, backgroundImage, null, null);
         }
+
         public AchievementData(String title,
                                String subtitle,
                                String description,
@@ -113,6 +144,7 @@ public class AchievmentsList extends Div {
                                String image) {
             this(title, subtitle, description, backgroundImage, image, null);
         }
+
         public AchievementData(String title,
                                String subtitle,
                                String description,
