@@ -4,8 +4,6 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
-import it.mifsoft.signature.web.list.CategoriesList;
-import it.mifsoft.signature.web.list.DishesList;
 import it.mifsoft.signature.web.list.PicturesList;
 import org.springframework.stereotype.Component;
 

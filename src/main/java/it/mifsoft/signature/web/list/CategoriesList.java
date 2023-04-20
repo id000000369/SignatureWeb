@@ -4,7 +4,7 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.dto.CategoryData;
 import it.mifsoft.signature.web.list.item.CategoryListItem;
-import it.mifsoft.signature.web.utils.SignatureStyleUtils;
+import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class CategoriesList extends Div {
 
     public CategoriesList(DishesList dishesList, ArchivesList archivesList) {
 
-        SignatureStyleUtils.doItRow(this.getElement());
+        FlexStyleUtils.doItRow(this.getElement());
 
         //test
         for (int i = 0; i < 10; i++) {

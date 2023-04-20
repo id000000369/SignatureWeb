@@ -22,11 +22,6 @@
 }
 
 .window{
-    position: absolute;
-    width: 860px;
-    height: 674px;
-    left: 0px;
-    top: 0px;
     background: #002024;
     border-radius: 15px;
 }
