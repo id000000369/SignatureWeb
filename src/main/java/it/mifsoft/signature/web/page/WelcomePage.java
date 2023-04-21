@@ -9,6 +9,7 @@ import it.mifsoft.signature.web.ContentLayout;
 import it.mifsoft.signature.web.list.DishesShortList;
 import it.mifsoft.signature.web.ui.ExpandableButton;
 import it.mifsoft.signature.web.view.AboutView;
+import it.mifsoft.signature.web.view.ExpositionView;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -145,7 +146,7 @@ public class WelcomePage extends Div {
     }
 
     public ExpandableButton createExpositionButton() {
-        final ExpandableButton expositionButton = new ExpandableButton("Экспозиция", new AboutView());
+        final ExpandableButton expositionButton = new ExpandableButton("Экспозиция", new ExpositionView());
         expositionButton.addClassName("exposition-button");
         return expositionButton;
     }
