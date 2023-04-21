@@ -85,6 +85,8 @@ public class VineListItem extends Div {
     public TextField createSparklingWineOrChampagneText() {
         TextField sparklingWineOrChampagne = new TextField();
         sparklingWineOrChampagne.setReadOnly(true);
+        sparklingWineOrChampagne.getStyle().set("padding", "3px");
+
         sparklingWineOrChampagne.setLabel("ИГРИСТОЕ ВИНО/ШАМПАНСКОЕ");
         sparklingWineOrChampagne.setValue("Шампанское, сухое, брют");
         sparklingWineOrChampagne.addClassNames("sparklingWineOrChampagne");
@@ -94,6 +96,8 @@ public class VineListItem extends Div {
     public TextField createRegionText() {
         TextField regionText = new TextField();
         regionText.setReadOnly(true);
+        regionText.getStyle().set("padding", "3px");
+
         regionText.setLabel("РЕГИОН");
         regionText.setValue("Франция, Шампань");
         regionText.addClassNames("region");
@@ -103,6 +107,8 @@ public class VineListItem extends Div {
     public TextField createGrapeText() {
         TextField grapeText = new TextField();
         grapeText.setReadOnly(true);
+        grapeText.getStyle().set("padding", "3px");
+
         grapeText.setLabel("ВИНОГРАД");
         grapeText.setValue("Шардоне: 34%, Пино Менье: 33%, Пино Нуар: 33%");
         grapeText.addClassNames("grape");
@@ -113,6 +119,8 @@ public class VineListItem extends Div {
     public TextField createFortressText() {
         TextField fortressText = new TextField();
         fortressText.setReadOnly(true);
+        fortressText.getStyle().set("padding", "3px");
+
         fortressText.setLabel("КРЕПОСТЬ");
         fortressText.setValue("12%");
         fortressText.addClassNames("fortress");
@@ -122,6 +130,7 @@ public class VineListItem extends Div {
     public TextField createVolumeText() {
         TextField volumeText = new TextField();
         volumeText.setReadOnly(true);
+        volumeText.getStyle().set("padding", "3px");
         volumeText.setLabel("ОБЪЕМ");
         volumeText.setValue("0,75");
         volumeText.addClassNames("volume");
@@ -131,6 +140,7 @@ public class VineListItem extends Div {
     public TextField createPerfectForText() {
         TextField perfectForText = new TextField();
         perfectForText.setReadOnly(true);
+        perfectForText.getStyle().set("padding", "3px");
         perfectForText.setLabel("ИДЕАЛЬНО ПОДХОДИТ К");
         perfectForText.setValue("Осьминогу на стейке томата, \" +\n" +
                 "                \"Палтус с жженым горошком, Томленая ножка кролика с рагу из овощей, \" +\n" +
@@ -144,6 +154,8 @@ public class VineListItem extends Div {
     public TextField createAndAlsoText() {
         TextField andAlsoText = new TextField();
         andAlsoText.setReadOnly(true);
+        andAlsoText.getStyle().set("padding", "3px");
+
         andAlsoText.setLabel("А ЕЩЕ");
         andAlsoText.setValue("Это вино принимает участие в дегустационной программе");
         andAlsoText.addClassNames("andAlso");
@@ -154,6 +166,8 @@ public class VineListItem extends Div {
         TextField manufacturerText = new TextField();
         manufacturerText.setReadOnly(true);
         manufacturerText.setLabel("ПРОИЗВОДИТЕЛЬ");
+        manufacturerText.getStyle().set("padding", "3px");
+
         manufacturerText.setValue("Pol Roger");
         manufacturerText.addClassNames("manufacturer");
         return manufacturerText;

@@ -25,7 +25,7 @@ public class VineCategoryListItem extends Div {
 
     private void stylize() {
         FlexStyleUtils.doItCenteredColumn(this.getElement());
-        SizeStyleUtils.sizeIt(this.getElement(), 74, 68);
+//        SizeStyleUtils.sizeIt(this.getElement(), 74, 68);
         this.getStyle().set("padding-left", "10px");
         this.getStyle().set("padding-right", "10px");
     }
@@ -65,7 +65,7 @@ public class VineCategoryListItem extends Div {
                 final Image image = new Image();
                 image.setWidth("35px");
                 image.setHeight("35px");
-                image.setSrc(super.colorOrImage);
+                image.setSrc("/img/category-img.png");
                 container.add(image);
                 return container;
             }

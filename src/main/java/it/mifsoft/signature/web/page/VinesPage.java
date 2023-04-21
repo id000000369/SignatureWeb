@@ -32,7 +32,7 @@ public class VinesPage extends Div {
         leftSide.add(categoriesList, carousel);
 
         final Div rightSide = new Div();
-        FlexStyleUtils.doItCenteredColumn(rightSide.getElement());
+
         rightSide.add(new VineListItem());
         rightSide.setWidth("50vw");
         rightSide.setHeight("100vh");

@@ -26,11 +26,11 @@ public class VinesCarousel extends Div {
 
     private int currentIndex = 5;
     private VinesCarouselItem currentItem;
-    double fullWidth = 644;
+    double fullWidth = 350;
 
     public VinesCarousel() {
-        this.getStyle().setWidth("644px");
-        this.getStyle().setHeight("882px");
+        this.getStyle().setWidth("350px");
+        this.getStyle().setHeight("502px");
         this.getStyle().setPosition(Style.Position.RELATIVE);
         this.items = createItems();
         this.items.forEach(item -> this.add(item.image));
@@ -126,13 +126,14 @@ public class VinesCarousel extends Div {
     }
 
     enum VinePositions {
-        GRAND(193, 710, 227, 0),
-        SECOND(163, 600, 63,85),
-        THIRD(123, 450, 0, 180),
-        FOURTH(110, 406, 59, 202),
-        FIVE(100, 366, 145,212),
-        SIX(85, 314, 189,248),
-        HIDDEN(0,0,0,0);
+        GRAND(113, 400, 118, 0),
+        SECOND(93, 350, 35, 32),
+        THIRD(73, 280, 0, 45),
+        FOURTH(59, 256, 40, 50),
+        FIVE(53, 166, 80, 65),
+        SIX(27, 124, 110, 75),
+        HIDDEN(0, 0, 0, 0);
+
 
         final double width;
         final double height;
