@@ -28,6 +28,8 @@ public class ReserveForm extends Div {
     private final Image phonePrefix = new Image();
     private final Image guestPrefix = new Image();
 
+    private final Div reservView;
+
     public ReserveForm () {
         this.firstHeaderText = createFirstHeaderText();
         //this.secondHeaderText = createSecondHeaderText();
@@ -38,10 +40,18 @@ public class ReserveForm extends Div {
         this.reminderText = createReminderText();
         this.infoText = createInfoText();
         this.reserveButton = createReserveButton();
+        this.reservView = createReserveView();
 
-        this.add(reserveItems());
+        this.add(createReserveView());
 
-        this.addClassName("reserve-view");
+        this.addClassName("reserve-container");
+    }
+
+    private Div createReserveView(){
+        final Div view = new Div();
+        view.add(reserveItems());
+        view.addClassName("reserve-view");
+        return view;
     }
 
     private Button createReserveButton() {
