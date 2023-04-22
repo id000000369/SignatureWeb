@@ -54,8 +54,8 @@ public class FooterView extends HorizontalLayout {
         final Button button = new Button();
         button.setText("Забронировать столик");
         //button.addClickListener(event -> this.modalContainer.showModal());
-        button.addClickListener(event -> button.getUI().ifPresent(ui ->
-                ui.navigate("main/reserve")));
+//        button.addClickListener(event -> button.getUI().ifPresent(ui ->
+//                ui.navigate("main/reserve")));
         button.addClassName("footer-button");
         return button;
     }

@@ -7,9 +7,9 @@ import it.mifsoft.signature.web.ContentLayout;
 import it.mifsoft.signature.web.list.PicturesList;
 import org.springframework.stereotype.Component;
 
-//@Component
-//@UIScope
-//@Route(value = "pictures", layout = ContentLayout.class)
+@Component
+@UIScope
+@Route(value = "pictures", layout = ContentLayout.class)
 public class PicturesPage extends Div {
 
     private final PicturesList picturesList;

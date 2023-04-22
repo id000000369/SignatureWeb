@@ -102,13 +102,6 @@ public class WelcomePage extends Div {
         return sideIcon;
     }
 
-//    public Image createContentImg() {
-//        final Image content = new Image("img/main-img.png", "");
-//        content.addClassName("content-img");
-//        this.add(content);
-//        return content;
-//    }
-
     public Image createContactsLine() {
         final Image line = new Image("img/contacts-line.png", "");
         line.addClassName("contacts-line");

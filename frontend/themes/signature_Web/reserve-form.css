@@ -1,126 +1,149 @@
 .reserve-container {
-    justify-content: center;
-    display: flex;
-    }
-
-.reserve-view {
-    background-color: rgba(0, 32, 36, 1);
-    width: 650px;
-    height: 750px;
-    border-radius: 15px;
-    color: aliceblue;
+  background-color: rgba(0, 32, 36, 1);
+  border-radius: 15px;
+  width: 34%;
+  color: aliceblue;
+  align-items: center;
+  padding: 2% 3% 2% 3%;
 }
 
 .reserve-items {
-    display: grid;
-    padding: 10%;
+  display: grid;
+  padding: 5%;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-text {
-    color: rgba(145, 121, 58, 1);
-    font-size: 35px;
-    letter-spacing: 0.5px;
-    margin-bottom: 50px;
+  color: rgba(145, 121, 58, 1);
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  margin-bottom: 30px;
 }
 
-.header-text::after{
-    font-weight: 1px;
+.header-text::after {
+  font-weight: 1px;
 }
 
 .reminder-text {
-    position: relative;
-    font-size: 20px;
-    top: 65px;
-    left: 73px;
-    color: rgba(160, 174, 175, 1);
-    font-size: 18px;
-    font-weight: 400;
+  font-size: 20px;
+  top: 20px;
+  left: 15%;
+  color: rgba(160, 174, 175, 1);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 25px 10px 25px 10px;
+}
+.reminder-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .info-text {
-    position: relative;
-    font-size: 15px;
-    top: 100px;
-    left: 90px;
-    color: rgba(99, 121, 122, 1);
-    font-size: 15px;
-    flex-direction: column;
-    width: 350px;
-
+  position: relative;
+  font-size: 15px;
+  top: 10px;
+  white-space: break-spaces;
+  color: rgba(99, 121, 122, 1);
+  font-size: 11px;
+  align-items: center;
+}
+.info-text-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
 .name-text {
-    color: rgba(160, 174, 175, 1);
+  color: rgba(160, 174, 175, 1);
 }
 
 .reserve-button {
-    width: 380px;
-    height: 55px;
-    background-color:  rgba(145, 121, 58, 1);
-    color: white;
-    cursor: pointer;
-    border-radius: 15px;
-    left: 70px;
-    top: 35px;
-    font-size: 20px;
-    font-weight: 300;
+  width: 280px;
+  height: 40px;
+  background-color: rgba(145, 121, 58, 1);
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 35px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.reserve-button-container {
+  display: flex;
+  justify-content: center;
 }
 
 .guest-count-text {
-    color: rgba(160, 174, 175, 1);
+  color: rgba(160, 174, 175, 1);
 }
 .guest-count-text::placeholder {
-    color: rgba(160, 174, 175, 1);
+  color: rgba(160, 174, 175, 1);
 }
 .phone-number-text {
-    color: rgba(160, 174, 175, 1);
+  color: rgba(160, 174, 175, 1);
 }
 
-vaadin-text-field > input:placeholder-shown{
-    color: rgba(160, 174, 175, 1);
+vaadin-text-field > input:placeholder-shown {
+  color: rgba(160, 174, 175, 1);
+  font-size: 14px;
+  font-weight: 300;
 }
 
 vaadin-text-field > label {
-    color: rgba(145, 121, 58, 1);
-    font-weight: 700;
+  color: rgba(145, 121, 58, 1);
+  font-weight: 700;
+  font-size: 10px;
 }
 
 vaadin-text-field > [slot="prefix"] {
-    color: rgba(145, 121, 58, 1);
-    padding-right: 10px;
+  color: rgb(145, 58, 58);
+  padding-right: 10px;
 }
 vaadin-date-picker > input:placeholder-shown {
-    color: rgba(160, 174, 175, 1);
+  color: rgba(160, 174, 175, 1);
+  font-size: 17px;
+  font-weight: 400;
 }
 vaadin-time-picker > input:placeholder-shown {
-    color: rgba(160, 174, 175, 1);
+  color: rgba(160, 174, 175, 1);
+  font-size: 17px;
+  font-weight: 400;
 }
 
 vaadin-text-field > label {
-    color: rgba(145, 121, 58, 1);
-    font-weight: 700;
+  color: rgba(145, 121, 58, 1);
+  font-weight: 700;
+  font-size: 10px;
 }
 vaadin-text-field::part(input-field) {
-    background-color: transparent; 
-    border-bottom: 1px solid rgb(145, 121, 58, 1);
-    border-radius: 0;
-
+  background-color: transparent;
+  border-bottom: 1px solid rgb(145, 121, 58, 1);
+  border-radius: 0;
 }
 vaadin-date-picker::part(input-field) {
-    background-color: transparent; 
-    border-bottom: 1px solid rgb(145, 121, 58, 1);
-    border-radius: 0;
-    width: 170px;
-    color: rgba(160, 174, 175, 1);
+  background-color: transparent;
+  border-bottom: 1px solid rgb(145, 121, 58, 1);
+  border-radius: 0;
+  width: 170px;
+  color: rgba(160, 174, 175, 1);
 }
 vaadin-time-picker::part(input-field) {
-    background-color: transparent; 
-    border-bottom: 1px solid rgb(145, 121, 58, 1);
-    border-radius: 0;
-    width: 100px;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(145, 121, 58, 1);
+  border-radius: 0;
+  width: 100px;
 }
 
 vaadin-date-time-picker > [slot="prefix"] {
-    padding-right: 2000px;
+  padding-right: 2000px;
 }
 
+vaadin-date-time-picker > label {
+    color: rgba(145, 121, 58, 1);
+    font-weight: 700;
+    font-size: 10px;
+  }
