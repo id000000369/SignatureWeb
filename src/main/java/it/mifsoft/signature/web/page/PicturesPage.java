@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @UIScope
-
+@Route(value = "pictures", layout = ContentLayout.class)
 public class PicturesPage extends Div {
 
     private final PicturesList picturesList;

@@ -27,6 +27,6 @@ public class FlexStyleUtils {
 
     private static void doItCentered(Element element) {
         element.getStyle().set("align-items", "center");
-
+        element.getStyle().set("justify-content", "center");
     }
 }

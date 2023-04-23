@@ -1,13 +1,11 @@
 package it.mifsoft.signature.web.list;
 
-import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.dom.Style;
-import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.ContentLayout;
-import it.mifsoft.signature.web.dto.PictureData;
+import it.mifsoft.signature.web.list.item.DishListItem;
 import it.mifsoft.signature.web.list.item.PictureListItem;
 import org.springframework.stereotype.Component;
 
@@ -19,141 +17,119 @@ import java.util.List;
 
 public class PicturesList extends Div {
 
-    private final PicturesListState state;
-    private List<PictureListItem> items;
-    private PictureListItem currentItem;
-
-    private Image previousButton;
-    private Image nextButton;
-    private final Div scrollableContainer;
-
+    private final List<PicturesList.PicturesData> pictures;
+    private List<PictureListItem> pictureListItems;
+    private PictureListItem selectedPictureListItem;
 
     public PicturesList() {
-        //long categoryId
-        this.getStyle().setPosition(Style.Position.RELATIVE);
-
-        this.state = new PicturesListState(0);
-
-        this.previousButton = createPreviousButton();
-        this.nextButton = createNextButton();
-        this.scrollableContainer = createScrollableContainer();
-
-        previousButton.addClassNames("dish-previous-button");
-        nextButton.addClassNames("dish-next-button");
-
-        this.add(previousButton,
-                scrollableContainer,
-                nextButton);
-        if (this.currentItem != null) {
-            moveTo(this.currentItem);
+        //testt
+        pictures = new ArrayList<>(20);
+        for (int i = 0; i < 20; i++) {
+            pictures.add(new PicturesList.PicturesData(
+                    i,
+                    i % 2 == 0 ? "./img/picture_3.png" : "./img/picture_2.png",
+                    "НОКТЮРН В ХОЛОДНЫХ ТОНАХ " + i,
+                    "https://i.ibb.co/JFRWgJQ/artist-portrait-322224352-732690051793933-7383961788090724650-n-1.png",
+                    "Иван Федоров " + i,
+                    "https://i.ibb.co/JFRWgJQ/artist-portrait-322224352-732690051793933-7383961788090724650-n-1.png",
+                    "Иван Федотов — выпускник Дальневосточной государственной академии искусств. Пусть вас не обманывает молодой возраст, за его плечами уже множество проектов. Произведения художника выставляются в галереях Дальнего Востока, а также в музеях. Работы Ивана Федотова находятся в частных коллекциях, в том числе в личной коллекции губернатора Приморского края."
+            ));
         }
-    }
+        this.pictureListItems = createListItems();
+        this.pictureListItems.forEach(this::add);
+        this.addClassName("achievements-list");
 
-
-    private void next(ClickEvent<Image> imageClickEvent) {
-        final int currentIndex = this.state.currentIndex();
-        final int nextIndex = currentIndex + 1;
-        final PictureListItem item = this.items.get(nextIndex);
-        this.state.setCurrent(nextIndex);
-        moveTo(item);
-    }
-
-    private void previous(ClickEvent<Image> imageClickEvent) {
-        final int currentIndex = this.state.currentIndex();
-        final int previousIndex = currentIndex - 1;
-        final PictureListItem item = this.items.get(previousIndex);
-        this.state.setCurrent(previousIndex);
-        moveTo(item);
     }
 
     private void moveTo(PictureListItem item) {
-        final String script = "document.getElementById('%s').scrollIntoView({behavior: \"smooth\", inline: \"center\"})";
+        final String script = "document.getElementById('%s').scrollIntoView({behavior: \"smooth\", block: \"center\"})";
         if (item.getId().isPresent())
             item.getElement().executeJs(String.format(script, item.getId().get()));
     }
 
-    private Image createPreviousButton() {
-        final Image previous = new Image();
-        previous.getStyle().setPosition(Style.Position.ABSOLUTE);
-        previous.getStyle().setTop("20%");
-        previous.getStyle().setLeft("0px");
-        previous.getStyle().setZIndex(Integer.MAX_VALUE);
-        previous.setSrc("https://i.ibb.co/yVxCF4Q/plate-1513116566-1-1.png");
-        previous.addClickListener(this::previous);
-        return previous;
-    }
-
-    private Image createNextButton() {
-        final Image next = new Image();
-        next.getStyle().setPosition(Style.Position.ABSOLUTE);
-        next.getStyle().setTop("20%");
-        next.getStyle().setRight("0px");
-        next.getStyle().setZIndex(Integer.MAX_VALUE);
-        next.setSrc("https://i.ibb.co/j379CsM/plate-1513116566-2.png");
-        next.addClickListener(this::next);
-        return next;
-    }
-
-    private Div createScrollableContainer() {
-        final Div container = new Div();
-        container.getStyle().setDisplay(Style.Display.FLEX);
-        container.getStyle().set("flex-direction", "row");
-        container.getStyle().set("overflow-x", "hidden");
-        container.getStyle().set("overflow-y", "none");
-
-        final List<PictureListItem> items = state.getPicture()
-                .stream()
-                .map(pictureData -> {
-                    final PictureListItem listItem = new PictureListItem();
-                    listItem.setId(String.valueOf(pictureData.getId()));
-                    listItem.getStyle().setWidth("100vw");
-                    listItem.getStyle().set("min-width", "100vw");
-                    listItem.getStyle().setHeight("100vh");
-                    listItem.getStyle().set("max-height", "100vh");
-                    return listItem;
+    private List<PictureListItem> createListItems() {
+        return pictures.stream()
+                .map(item -> {
+                    if (item.id == 1)
+                        return createPictureListItem(item, true);
+                    else
+                        return createPictureListItem(item, false);
                 })
                 .toList();
-        this.items = items;
-        this.currentItem = this.items.size() > 0 ? this.items.get(0) : null;
-        items.forEach(container::add);
-        container.addClassName("test-div");
-        return container;
     }
 
-    private static class PicturesListState {
-        private final long categoryId;
-        private PictureData current;
-        private final List<PictureData> picture = new ArrayList<>();
+    @Override
+    protected void onAttach(AttachEvent attachEvent) {
+        super.onAttach(attachEvent);
+        pictureListItems.stream()
+                .filter(i -> i.getId().orElse("").equals("1"))
+                .findFirst()
+                .ifPresent(i -> {
+                    moveTo(i);
+                    this.selectedPictureListItem = i;
+                });
+    }
 
-        PicturesListState(final long categoryId) {
-            this.categoryId = categoryId;
+    private PictureListItem createPictureListItem(PicturesList.PicturesData data, boolean expanded) {
+        final Div content = new Div();
+        content.addClassName("content-some-class-name");
+        final Image img = new Image();
+        img.setSrc(data.image);
+        img.addClassNames("image-achievements");
+        content.add(img);
 
-            //test
-            for (int i = 1; i < 10; i++) {
-                final PictureData pictureData = new PictureData(i, "", "", 1, "");
-                picture.add(pictureData);
+        final H2 description = new H2();
+        description.setText(data.description);
+        description.addClassName("achievment-description");
+        content.add(description);
+
+        final PictureListItem item = new PictureListItem(
+                data.image,
+                data.mainText,
+                data.iconPerson,
+                data.dataPerson,
+                data.linkInst,
+                data.description,
+                expanded
+        );
+        item.addClickListener(event -> {
+            if (item.equals(selectedPictureListItem))
+                return;
+            item.expand();
+            if (selectedPictureListItem != null) {
+                selectedPictureListItem.collapse();
             }
-            this.current = picture.get(0);
-        }
+            selectedPictureListItem = item;
+            moveTo(selectedPictureListItem);
+        });
+        item.setId(""+data.id);
+        return item;
+    }
 
-        public long getCategoryId() {
-            return categoryId;
-        }
+    class PicturesData {
+        int id;
+        String image;
+        String mainText;
+        String iconPerson;
+        String dataPerson;
+        String linkInst;
+        String description;
 
-        public PictureData getCurrent() {
-            return current;
-        }
 
-        public List<PictureData> getPicture() {
-            return picture;
-        }
-
-        public void setCurrent(int index) {
-            this.current = picture.get(index);
-        }
-
-        public int currentIndex() {
-            return picture.indexOf(current);
+        public PicturesData(int id,
+                            String image,
+                            String mainText,
+                            String iconPerson,
+                            String dataPerson,
+                            String linkInst,
+                            String description) {
+            this.id = id;
+            this.image = image;
+            this.mainText = mainText;
+            this.iconPerson = iconPerson;
+            this.dataPerson = dataPerson;
+            this.linkInst = linkInst;
+            this.description = description;
         }
     }
 }

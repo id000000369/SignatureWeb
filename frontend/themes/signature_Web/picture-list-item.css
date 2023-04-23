@@ -3,17 +3,12 @@
     flex-direction: column;
     display: flex;
     align-items: center;
-    width: 30%;
+    width: 45vw;
+    min-width: 45vw;
     background: #002024;
     border-radius: 15px;
     z-index: 1000;
-    overflow: hidden;
-}
-
-.test-div{
-    display: flex;
-    justify-content: center;
-
+    margin-right: 10vw;
 }
 
 .picture-main {
@@ -32,10 +27,9 @@
 }
 
 .image-picture {
-    width: 80%;
-    padding-left: 16%;
-    padding-right: 16%;
-    padding-top: 4%;
+    width: 30vw;
+    height: 50vh;
+    margin: 3vh ;
 }
 
 .avatar {
