@@ -4,7 +4,9 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.dom.Style;
+import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
+import it.mifsoft.signature.web.ContentLayout;
 import it.mifsoft.signature.web.dto.PictureData;
 import it.mifsoft.signature.web.list.item.PictureListItem;
 import org.springframework.stereotype.Component;
@@ -14,6 +16,7 @@ import java.util.List;
 
 @Component
 @UIScope
+
 public class PicturesList extends Div {
 
     private final PicturesListState state;
@@ -38,7 +41,9 @@ public class PicturesList extends Div {
         previousButton.addClassNames("dish-previous-button");
         nextButton.addClassNames("dish-next-button");
 
-        this.add(previousButton, scrollableContainer, nextButton);
+        this.add(previousButton,
+                scrollableContainer,
+                nextButton);
         if (this.currentItem != null) {
             moveTo(this.currentItem);
         }
@@ -111,6 +116,7 @@ public class PicturesList extends Div {
         this.items = items;
         this.currentItem = this.items.size() > 0 ? this.items.get(0) : null;
         items.forEach(container::add);
+        container.addClassName("test-div");
         return container;
     }
 

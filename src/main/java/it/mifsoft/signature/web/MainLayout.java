@@ -1,6 +1,7 @@
 package it.mifsoft.signature.web;
 
 import com.vaadin.flow.component.AttachEvent;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.dom.Style;
@@ -104,6 +105,8 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         final var location = event.getLocation();
         final String path = location.getPath();
         if (path.equals("main/welcome")) {
+
+            this.headerView.yellowColor();
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
             }
@@ -115,10 +118,17 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         }
 
         switch (path) {
-            case "main/vines" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
-            case "main/pictures" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
-            case "main/dishes" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
+            case "main/vines", "main/dishes", "main/pictures" -> {
+                this.getStyle().set("background-image", "url('./img/background-vine.png')");
+                this.headerView.yellowColor();
+
+            }
             default -> this.getStyle().remove("background-image");
+
+            case "main/contacts", "main/achievement" -> {
+                this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
+                this.headerView.whiteColor();
+            }
         }
     }
 

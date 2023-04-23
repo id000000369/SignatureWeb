@@ -1,32 +1,32 @@
-.dish-main{
-    
-    background-image: url("https://i.ibb.co/12NYh16/background.png");
-}
-
-
 
 .dish-previous-button{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 6%;
 }
 
 .dish-next-button{
     display: flex;
-
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 6%;
 }
 
 .main-component-dishes{
     align-items: center;
-
     justify-content: center;
     display: flex;
 }
 
 .main-text-dish{
-    height: 177px;
+    height: 77px;
     font-family: 'Futura New';
     font-style: normal;
     font-weight: 400;
-    font-size: 54px;
+    font-size: 40px;
     line-height: 90%;
     text-align: center; 
     color: white;
@@ -38,25 +38,21 @@
 }
 
 .image-dish {
-    width: 574px;
-    height: 556px;
+    width: 25%;
+    height: 25%;
 }
 
 .window-one-dishes{
-    width: 405px;
-    height: 365px;
-    left: 0px;
-    top: 0px;
+    width: 25%;
     background: #002024;
     opacity: 0.66;
     border-radius: 15px;
+    padding-bottom: 30px;
 }
 
 .window-two-dishes {
-    width: 405px;
-    height: 500px;
-    left: 0px;
-    top: 0px;
+    width: 30%;
+    height: 380px;
 
     background: #002024;
     opacity: 0.66;
@@ -65,6 +61,7 @@
 
 .window-tree-dishes {
     display: flex;
+    align-items: center;
 }
 
 .main-dishes-text{
@@ -132,26 +129,21 @@
     border-radius: 15px;
     background: #91793A;
     width: 75%;
-    padding: 0 0 0 10px;
-
-
-    font-size: 45px;
+    padding: 4px 10px;
+    font-size: 40px;
     line-height: 150%;
-
     display: flex;
     align-items: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
-.purchase-dish{
-    color: white;
-    width: 70px;
-    height: 70px;
+.purchase-dish{    
+    width: 20%;
+    top: 2px;
+    padding: 0;
     border-radius: 15px;
-    font-size: 32px;
-    padding: 3px;
-    background: #91793A;
+    cursor: pointer;
 }
 
 
@@ -165,5 +157,12 @@
 .ingredient-two-allergic-reaction-text{
     width: 95%;
     margin-left: 5%;
+    margin-bottom: 15px;
     border-bottom: 1px solid rgba(127, 110, 55);
+}
+
+
+.dish-list-item {
+    width: 100vw;
+    min-width: 100vw;
 }

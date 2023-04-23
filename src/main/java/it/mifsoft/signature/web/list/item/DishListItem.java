@@ -9,7 +9,8 @@ import com.vaadin.flow.component.textfield.TextField;
 
 public class DishListItem extends Div {
 
-    private final H1 mainText;
+
+    public  H1 mainText;
     private final Label peculiarities;
     private final TextField calories;
     private final TextField protein;
@@ -38,8 +39,7 @@ public class DishListItem extends Div {
         this.purchase = createPurchaseText();
         this.ingredients = createIngredientsText();
         this.dishIcon = createImage();
-
-        addClassNames("dish-main");
+        this.addClassName("dish-list-item");
 
         add(mainText, mainComponent());
     }
@@ -61,8 +61,7 @@ public class DishListItem extends Div {
 
     public Div windowOne() {
         Div items = new Div();
-        items.add(peculiarities, calories, containerTwoElement(), allergicReaction,
-                ingredientOneAllergicReaction, ingredientTwoAllergicReaction);
+        items.add(peculiarities, calories, containerTwoElement());
         items.addClassNames("window-one-dishes");
         return items;
     }
@@ -163,7 +162,8 @@ public class DishListItem extends Div {
     }
 
     public Button createPurchaseText() {
-        Button purchaseIcon = new Button(new Image("https://i.ibb.co/74S3dTh/Button.png", "bag"));
+        Button purchaseIcon = new Button(new Image("./img/bag.png", "bag"));
+
         purchaseIcon.addClassNames("purchase-dish");
         return purchaseIcon;
     }

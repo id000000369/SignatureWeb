@@ -18,7 +18,7 @@ public class SignatureNavigator extends AbstractSignatureNavigator implements Me
 
     @Override
     public void navigateToAbout() {
-        super.route(UI.getCurrent(), "/main/achievment");
+        super.route(UI.getCurrent(), "main/achievement");
     }
 
     @Override

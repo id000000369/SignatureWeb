@@ -23,12 +23,12 @@ public class CategoryListItem extends Paragraph {
 
     public void select() {
         this.isSelected = true;
-        this.getStyle().set("color", "black");
+        this.getStyle().set("color", "#FFFFFF");
     }
 
     public void unselect() {
         this.isSelected = false;
-        this.getStyle().set("color", "red");
+        this.getStyle().set("color", "#A0AEAF");
     }
 
     public boolean isSelected() {

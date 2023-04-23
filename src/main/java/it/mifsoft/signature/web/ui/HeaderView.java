@@ -1,6 +1,7 @@
 package it.mifsoft.signature.web.ui;
 
 
+import com.vaadin.flow.component.contextmenu.MenuItem;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -25,6 +26,7 @@ public class HeaderView extends HorizontalLayout {
 
     private final Image logoImage;
     private final MenuBar menuList;
+    private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
 
     public HeaderView(SignatureNavigator navigator) {
@@ -33,6 +35,7 @@ public class HeaderView extends HorizontalLayout {
         this.navigator = navigator;
         this.logoImage = createImage();
         this.menuList = createMenu();
+        this.menuItems = createMenuItems(this.menuList);
 
         this.addClassName("header");
 
@@ -51,7 +54,24 @@ public class HeaderView extends HorizontalLayout {
 
     private MenuBar createMenu() {
         final MenuBar menu = new MenuBar();
-        this.menuItemsNames.forEach(title -> menu.addItem(title, event -> this.navigator.router(title)));
         return menu;
+    }
+
+    private List<MenuItem> createMenuItems(MenuBar menu) {
+        return this.menuItemsNames.stream().map(title -> {
+            final MenuItem item = menu.addItem(title, event -> this.navigator.router(title));
+            item.addClassName("menu-item");
+            return item;
+        }).toList();
+    }
+
+    public void whiteColor() {
+        this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
+        this.logoImage.setSrc("https://i.ibb.co/Cbr2Zpg/Vector-2.png");
+    }
+
+    public void yellowColor() {
+        this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
+        this.logoImage.setSrc("https://i.ibb.co/GQm92bq/Vector-1.png");
     }
 }

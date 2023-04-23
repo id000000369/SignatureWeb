@@ -132,7 +132,7 @@ public class VinesCarousel extends Div {
         FOURTH(59, 256, 40, 50),
         FIVE(53, 166, 80, 65),
         SIX(27, 124, 110, 75),
-        HIDDEN(0, 0, 0, 0);
+        HIDDEN(0, 0, 120, 50);
 
 
         final double width;

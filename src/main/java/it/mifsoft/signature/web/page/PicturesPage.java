@@ -9,15 +9,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 @UIScope
-@Route(value = "pictures", layout = ContentLayout.class)
+
 public class PicturesPage extends Div {
 
     private final PicturesList picturesList;
 
     public PicturesPage(PicturesList picturesList) {
-        this.setWidthFull();
-        this.setHeightFull();
 
+
+        this.addClassNames("picture-main-div");
         this.picturesList = picturesList;
 
         this.add(this.picturesList);
