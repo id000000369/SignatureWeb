@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @UIScope
+
 public class PicturesPage extends Div {
 
     private final PicturesList picturesList;

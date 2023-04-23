@@ -39,6 +39,27 @@ body::-webkit-scrollbar {
   left: 15%;
   top: 22%;
 }
+.exposition-view {
+  position: absolute;
+  z-index: 1;
+  top: 9px;
+  left: 0;
+  border-bottom-left-radius: 15px;
+  background-color: white;
+  width: 350px;
+  height: 150px;
+}
+
+.exposition-text{
+  margin-top: 55px;
+  color: rgba(145, 121, 58, 1);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+  white-space:break-spaces;
+}
+
 
 .expandable-button {
   background-color: rgba(145, 121, 58, 1);
@@ -64,7 +85,7 @@ body::-webkit-scrollbar {
 }
 
 .about-us-view {
-  position: absolute;   
+  position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
@@ -84,8 +105,8 @@ body::-webkit-scrollbar {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.about-us-paragraph{
-    margin-top: 35px;
+.about-us-paragraph {
+  margin-top: 35px;
 }
 .art-img {
 }
@@ -104,7 +125,6 @@ body::-webkit-scrollbar {
   top: 41%;
 }
 
-
 .bron-button {
   width: 16%;
   position: absolute;
@@ -121,7 +141,7 @@ body::-webkit-scrollbar {
 
 .guest-button {
   width: 16%;
-  
+
   position: absolute;
   left: 46%;
   top: 22%;
@@ -135,25 +155,25 @@ body::-webkit-scrollbar {
 }
 
 .contacts-button {
-    width: 15.5%;
+  width: 15.5%;
   position: absolute;
   left: 85.2%;
   top: 27%;
 }
 .contacts-line {
-    width: 118px;
-    height: 73px;
+  width: 118px;
+  height: 73px;
   position: absolute;
   left: 93%;
   top: 31%;
 }
 .vine-gallery-button {
-    position: absolute;
-    width: 16%;
-    left: 110%;
-    top: 37%;
-    border-radius: 30px;
-  }
+  position: absolute;
+  width: 16%;
+  left: 110%;
+  top: 37%;
+  border-radius: 30px;
+}
 
 .vine-gallery-line {
   position: absolute;

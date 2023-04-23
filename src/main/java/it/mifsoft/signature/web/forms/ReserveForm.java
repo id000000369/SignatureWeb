@@ -1,10 +1,8 @@
 package it.mifsoft.signature.web.forms;
 
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
-import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.spring.annotation.UIScope;
@@ -23,14 +21,17 @@ public class ReserveForm extends Div {
     private final DateTimePicker date;
     private final TextField guestCount;
     private final Button reserveButton;
-
+    private final Div buttonContainer;
+    private final Div infoTextContainer;
+    private final Div reminderTextContainer;
     private final Image namePrefix = new Image();
     private final Image phonePrefix = new Image();
     private final Image guestPrefix = new Image();
+    private final Label checkbox;
 
-    public ReserveForm () {
+    public ReserveForm() {
         this.firstHeaderText = createFirstHeaderText();
-        //this.secondHeaderText = createSecondHeaderText();
+
         this.name = createNameField();
         this.phoneNumber = createPhoneNumberField();
         this.date = createDateTimePicker();
@@ -39,9 +40,35 @@ public class ReserveForm extends Div {
         this.infoText = createInfoText();
         this.reserveButton = createReserveButton();
 
-        this.add(reserveItems());
+        this.buttonContainer = createButtonContainer();
+        this.infoTextContainer = createInfoTextContainer();
 
-        this.addClassName("reserve-view");
+        this.reminderTextContainer = createReminderTextContainer();
+        this.checkbox = createCheckbox();
+
+        this.add(reserveItems());
+        this.addClassName("reserve-container");
+    }
+
+    private Div createReminderTextContainer() {
+        final Div container = new Div();
+        container.add(reminderText, createCheckbox());
+        container.addClassName("reminder-text-container");
+        return container;
+    }
+
+    private Div createInfoTextContainer() {
+        final Div container = new Div();
+        container.add(infoText);
+        container.addClassName("info-text-container");
+        return container;
+    }
+
+    private Div createButtonContainer() {
+        final Div container = new Div();
+        container.add(reserveButton);
+        container.addClassName("reserve-button-container");
+        return container;
     }
 
     private Button createReserveButton() {
@@ -51,14 +78,35 @@ public class ReserveForm extends Div {
         return button;
     }
 
+    private Label createCheckbox() {
+        final Label label = new Label();
+        label.addClassName("switch");
+        final Input input = new Input();
+        input.setType("checkbox");
+        final Span span = new Span();
+        span.addClassNames("slider", "round");
+        label.add(input, span);
+        return label;
+    }
+
     public Div reserveItems() {
         Div items = new Div();
-        items.add(firstHeaderText, name, phoneNumber, date, guestCount, reserveButton, reminderText, infoText);
+        items.add(
+                firstHeaderText,
+                name,
+                phoneNumber,
+                date,
+                guestCount,
+                createButtonContainer(),
+                createReminderTextContainer(),
+                createInfoTextContainer()
+        );
+
         items.addClassName("reserve-items");
         return items;
     }
 
-    public H1 createFirstHeaderText(){
+    public H1 createFirstHeaderText() {
         H1 name = new H1("ЗАБРОНИРОВАТЬ СТОЛИК");
         name.addClassName("header-text");
         return name;
@@ -71,18 +119,19 @@ public class ReserveForm extends Div {
 //    }
 
 
-    public H1 createReminderText(){
+    public H1 createReminderText() {
         H1 name = new H1("Напомните мне о бронировании");
         name.addClassName("reminder-text");
         return name;
     }
 
-    public H1 createInfoText(){
-        H1 name = new H1( "Вам придет пуш-уведомление о бронировании, чтобы мы с вами точно встретились :)");
+    public H1 createInfoText() {
+        H1 name = new H1("Вам придет пуш-уведомление о бронировании,\nчтобы мы с вами точно встретились :)");
         name.addClassName("info-text");
         return name;
     }
-    public TextField createNameField(){
+
+    public TextField createNameField() {
         TextField name = new TextField();
         name.setLabel("ПРЕДСТАВЬТЕСЬ ПОЖАЛУЙСТА");
         name.setPrefixComponent(VaadinIcon.USER.create());
@@ -95,7 +144,7 @@ public class ReserveForm extends Div {
         return name;
     }
 
-    public TextField createPhoneNumberField(){
+    public TextField createPhoneNumberField() {
         TextField phoneNumber = new TextField("ТЕЛЕФОН");
         phoneNumber.setPrefixComponent(VaadinIcon.USER.create());
         phoneNumber.setPlaceholder("+7 (---) --- -- --");
@@ -105,7 +154,7 @@ public class ReserveForm extends Div {
         return phoneNumber;
     }
 
-    public DateTimePicker createDateTimePicker(){
+    public DateTimePicker createDateTimePicker() {
         DateTimePicker dateTimePicker = new DateTimePicker("ДАТА");
         dateTimePicker.setDatePlaceholder("18 апреля 2023");
         dateTimePicker.setTimePlaceholder("18:00");
@@ -115,7 +164,7 @@ public class ReserveForm extends Div {
         return dateTimePicker;
     }
 
-    public TextField createGuestCountField(){
+    public TextField createGuestCountField() {
         TextField countField = new TextField("НАС БУДЕТ");
         countField.setPlaceholder("4 гостя");
         countField.addClassName("guest-count-text");

@@ -9,6 +9,7 @@ import it.mifsoft.signature.web.ContentLayout;
 import it.mifsoft.signature.web.list.DishesShortList;
 import it.mifsoft.signature.web.ui.ExpandableButton;
 import it.mifsoft.signature.web.view.AboutView;
+import it.mifsoft.signature.web.view.ExpositionView;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -101,13 +102,6 @@ public class WelcomePage extends Div {
         return sideIcon;
     }
 
-//    public Image createContentImg() {
-//        final Image content = new Image("img/main-img.png", "");
-//        content.addClassName("content-img");
-//        this.add(content);
-//        return content;
-//    }
-
     public Image createContactsLine() {
         final Image line = new Image("img/contacts-line.png", "");
         line.addClassName("contacts-line");
@@ -145,7 +139,7 @@ public class WelcomePage extends Div {
     }
 
     public ExpandableButton createExpositionButton() {
-        final ExpandableButton expositionButton = new ExpandableButton("Экспозиция", new AboutView());
+        final ExpandableButton expositionButton = new ExpandableButton("Экспозиция", new ExpositionView());
         expositionButton.addClassName("exposition-button");
         return expositionButton;
     }

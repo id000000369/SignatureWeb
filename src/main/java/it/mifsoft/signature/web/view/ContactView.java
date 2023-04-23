@@ -19,7 +19,7 @@ public class ContactView extends Div {
     private final H1 phoneInfo;
     private final H1 adminLabel;
     private final H1 copyRights;
-    HtmlComponent html = new HtmlComponent("div");
+    private final HtmlComponent html = new HtmlComponent("div");
     private final Div mapContainer = new Div();
 
     public ContactView() {

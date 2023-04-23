@@ -77,7 +77,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().setPosition(Style.Position.ABSOLUTE);
         div.getStyle().setLeft("0px");
         div.getStyle().setTop("0px");
-        div.getStyle().setZIndex(Integer.MAX_VALUE - Byte.MAX_VALUE);
+        div.getStyle().setZIndex(1);
         form.getStyle().setZIndex(Integer.MAX_VALUE);
         div.getStyle().set("background", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
