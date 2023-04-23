@@ -25,7 +25,7 @@ public class ContactView extends Div {
     public ContactView() {
         this.getElement().getStyle().set("font-family", "FuturaNewLight-Reg");
         //html.getElement().setProperty("innerHTML", "<div id=\"map\"></div>");
-        html.getElement().setProperty("innerHTML", "<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A04b70d8dd3abbde806619bb744e739aa46ce275958140fbdb2ecd095244b134f&amp;source=constructor\" width=\"100%\" height=\"300\" zoom=\"55\" frameborder=\"0\"></iframe>");
+        html.getElement().setProperty("innerHTML", "<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A04b70d8dd3abbde806619bb744e739aa46ce275958140fbdb2ecd095244b134f&amp;source=constructor\" width=\"100%\" height=\"190\" zoom=\"55\" frameborder=\"0\"></iframe>");
        // html.getElement().getStyle().set("border-radius", "15px");
 //        String yandexMapScriptUrl = "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A04b70d8dd3abbde806619bb744e739aa46ce275958140fbdb2ecd095244b134f&amp;width=650&amp;height=422&amp;lang=ru_RU";
 
