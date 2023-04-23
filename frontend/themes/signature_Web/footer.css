@@ -8,6 +8,7 @@
     color: white;
     text-align: center;
     justify-content: center;
+    padding-bottom: 35px;
 }
 
 :host([theme~='spacing']) {
@@ -15,8 +16,8 @@
 }
 
 .footer-logo {
-    width: 260px;
-    height: 69px;
+    width: 210px;
+    height: 45px;
 }
 
 .footer-contacts {
