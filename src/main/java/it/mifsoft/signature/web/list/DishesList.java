@@ -16,11 +16,12 @@ import java.util.List;
 @UIScope
 public class DishesList extends Div {
     private final DishesListState state;
+    private final DishListItem dishListItem;
     private List<DishListItem> items;
     private DishListItem currentItem;
 
-    private Image previousButton;
-    private Image nextButton;
+    public Image previousButton;
+    public Image nextButton;
     private final Div scrollableContainer;
 
     public DishesList() {
@@ -28,6 +29,7 @@ public class DishesList extends Div {
         this.getStyle().setPosition(Style.Position.RELATIVE);
 
         this.state = new DishesListState(0);
+        this.dishListItem = new DishListItem();
 
         this.previousButton = createPreviousButton();
         this.nextButton = createNextButton();
@@ -35,12 +37,15 @@ public class DishesList extends Div {
 
         previousButton.addClassNames("dish-previous-button");
         nextButton.addClassNames("dish-next-button");
+        this.addClassNames("main-component-dishes");
 
-        this.add(previousButton, scrollableContainer, nextButton);
+        this.add(previousButton,  scrollableContainer, nextButton);
         if (this.currentItem != null) {
             moveTo(this.currentItem);
         }
     }
+
+
 
 
     private void next(ClickEvent<Image> imageClickEvent) {
@@ -60,7 +65,7 @@ public class DishesList extends Div {
     }
 
     private void moveTo(DishListItem item) {
-        final String script = "document.getElementById('%s').scrollIntoView({behavior: \"smooth\", inline: \"center\"})";
+        final String script = "document.getElementById('%s').scrollIntoView({behavior: \"smooth\", block: \"center\"})";
         if (item.getId().isPresent())
             item.getElement().executeJs(String.format(script, item.getId().get()));
     }
@@ -68,7 +73,7 @@ public class DishesList extends Div {
     private Image createPreviousButton() {
         final Image previous = new Image();
         previous.getStyle().setPosition(Style.Position.ABSOLUTE);
-        previous.getStyle().setTop("20%");
+        previous.getStyle().setTop("14%");
         previous.getStyle().setLeft("0px");
         previous.getStyle().setZIndex(Integer.MAX_VALUE);
         previous.setSrc("https://i.ibb.co/yVxCF4Q/plate-1513116566-1-1.png");
@@ -79,7 +84,7 @@ public class DishesList extends Div {
     private Image createNextButton() {
         final Image next = new Image();
         next.getStyle().setPosition(Style.Position.ABSOLUTE);
-        next.getStyle().setTop("20%");
+        next.getStyle().setTop("14%");
         next.getStyle().setRight("0px");
         next.getStyle().setZIndex(Integer.MAX_VALUE);
         next.setSrc("https://i.ibb.co/j379CsM/plate-1513116566-2.png");
@@ -99,10 +104,10 @@ public class DishesList extends Div {
                 .map(dishData -> {
                     final DishListItem listItem = new DishListItem();
                     listItem.setId(String.valueOf(dishData.getId()));
-                    listItem.getStyle().setWidth("100vw");
-                    listItem.getStyle().set("min-width", "100vw");
-                    listItem.getStyle().setHeight("100vh");
-                    listItem.getStyle().set("max-height", "100vh");
+//                    listItem.getStyle().setWidth("100vw");
+//                    listItem.getStyle().set("min-width", "100vw");
+//                    listItem.getStyle().setHeight("100vh");
+//                    listItem.getStyle().set("max-height", "100vh");
                     return listItem;
                 })
                 .toList();

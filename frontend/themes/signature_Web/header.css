@@ -12,6 +12,7 @@
     height: 65px;
     padding-right: 20%;
     padding-left: 3%;
+    cursor: pointer;
 }
 
 vaadin-menu-bar-item {
@@ -23,7 +24,6 @@ vaadin-menu-bar-item {
 
 vaadin-menu-bar-button {
     background-color: transparent;
-    color: rgba(145, 121, 58, 1)
 }
 vaadin-menu-bar-button::before {
     background-color: transparent;   

@@ -65,7 +65,7 @@ public class ContactView extends Div {
         return container;
     }
     public Image createBackgroundImg() {
-        final Image img = new Image("img/contacts-background-img.png", "");
+        final Image img = new Image("", "");
         img.addClassName("contacts-background-img");
         return img;
     }
