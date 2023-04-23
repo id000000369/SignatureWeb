@@ -25,9 +25,6 @@ public class WelcomePage extends Div {
     private final ExpandableButton guestButton;
     private final ExpandableButton bronButton;
 
-//    private final Image mainImg;
-    //private final Image headerImg;
-
     private final Image menuLine;
     private final Image contactsLine;
     private final Image bronLine;
@@ -40,11 +37,26 @@ public class WelcomePage extends Div {
     private final Image thirdSideIcon;
     private final Image fourthSideIcon;
 
+    private final Div fisrtDiv;
+    private final Div secondDiv;
+    private final Div thirdDiv;
+    private final Div fourthDiv;
+    private final Div fiveDiv;
+    private final Div sixDiv;
+    private final Div sevenDiv;
+    private final Div eightDiv;
+    private final Div nineDiv;
+    private final Div tenDiv;
+    private final Div elevenDiv;
+    private final Div twelveDiv;
+    private final Div thirteenDiv;
+    private final Div fourteenDiv;
+    private final Div fifteenDiv;
+    private final Div sixteenDiv;
+    private final Div columnContainer;
+
+
     public WelcomePage() {
-//        MenuItems.MENU_ITEM_NAMES.forEach(title -> {
-//            var button = new ExpandableButton(title, new AboutView());
-//            this.add(button);
-//        });
         this.expositionButton = createExpositionButton();
         this.aboutUsButton = createAboutUsButton();
         this.menuButton = createMenuButton();
@@ -65,13 +77,149 @@ public class WelcomePage extends Div {
         this.thirdSideIcon = createThirdSideIcon();
         this.fourthSideIcon = createFourthSideIcon();
 
-//        this.mainImg = createContentImg();
-        //this.headerImg = createHeaderImg();
-        this.add(expositionButton, aboutUsButton, menuButton,
-                vineGalleryButton, contactsButton, guestButton, bronButton,
+        this.fisrtDiv = createFirstColumn();
+        this.secondDiv = createSecondColumn();
+        this.thirdDiv = createThirdColumn();
+        this.fourthDiv = createFourthColumn();
+        this.fiveDiv = createFiveColumn();
+        this.sixDiv = createSixColumn();
+        this.sevenDiv = createSevenColumn();
+        this.eightDiv = createEightColumn();
+        this.nineDiv = createNineColumn();
+        this.tenDiv = createTenColumn();
+        this.elevenDiv = createElevenColumn();
+        this.twelveDiv = createTwelveColumn();
+        this.thirteenDiv = createThirteenColumn();
+        this.fourteenDiv = createFourteenColumn();
+        this.fifteenDiv = createFifteenColumn();
+        this.sixteenDiv = createSixteenColumn();
+        this.columnContainer = createColumnContainer();
+
+
+        this.add(
+                createColumnContainer()
 //                mainImg,
-                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
-                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon);
+//                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
+//                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
+        );
+    }
+    public Div createColumnContainer(){
+        final Div columnContainer = new Div();
+        columnContainer.add(fisrtDiv, secondDiv, thirdDiv,fourthDiv, fiveDiv, sixDiv, sevenDiv, eightDiv,
+                nineDiv, tenDiv, elevenDiv, twelveDiv, thirteenDiv, fourteenDiv, fifteenDiv, sixteenDiv);
+        columnContainer.addClassName("column-container");
+        return columnContainer;
+    }
+    public Div createFirstColumn(){
+        final Div firstColumn = new Div();
+        firstColumn.add();
+        firstColumn.addClassName("first-empty-column");
+        return firstColumn;
+    }
+
+    public Div createSecondColumn(){
+        final Div secondColumn = new Div();
+        secondColumn.add(expositionButton);
+        secondColumn.addClassName("second-exposition-column");
+        return secondColumn;
+    }
+
+    public Div createThirdColumn(){
+        final Div thirdColumn = new Div();
+        thirdColumn.add();
+        thirdColumn.addClassName("third-bottom-empty-column");
+        return thirdColumn;
+    }
+
+    public Div createFourthColumn(){
+        final Div fourthColumn = new Div();
+        fourthColumn.add();
+        fourthColumn.addClassName("fourth-bottom-reserve-column");
+        return fourthColumn;
+    }
+
+    public Div createFiveColumn(){
+        final Div fiveColumn = new Div();
+        fiveColumn.add(bronButton);
+        fiveColumn.addClassName("five-top-empty-column");
+        return fiveColumn;
+    }
+
+    public Div createSixColumn(){
+        final Div sixColumn = new Div();
+        sixColumn.add();
+        sixColumn.addClassName("six-empty-column");
+        return sixColumn;
+    }
+
+    public Div createSevenColumn(){
+        final Div sevenColumn = new Div();
+        sevenColumn.add(menuButton);
+        sevenColumn.addClassName("seven-menu-column");
+        return sevenColumn;
+    }
+
+    public Div createEightColumn(){
+        final Div eightColumn = new Div();
+        eightColumn.add();
+        eightColumn.addClassName("eight-empty-column");
+        return eightColumn;
+    }
+
+    public Div createNineColumn(){
+        final Div nineColumn = new Div();
+        nineColumn.add(guestButton);
+        nineColumn.addClassName("nine-guest-column");
+        return nineColumn;
+    }
+
+    public Div createTenColumn(){
+        final Div tenColumn = new Div();
+        tenColumn.add();
+        tenColumn.addClassName("ten-empty-column");
+        return tenColumn;
+    }
+
+    public Div createElevenColumn(){
+        final Div elevenColumn = new Div();
+        elevenColumn.add(aboutUsButton);
+        elevenColumn.addClassName("eleven-about-column");
+        return elevenColumn;
+    }
+
+    public Div createTwelveColumn(){
+        final Div twelveColumn = new Div();
+        twelveColumn.add();
+        twelveColumn.addClassName("twelve-empty-column");
+        return twelveColumn;
+    }
+
+    public Div createThirteenColumn(){
+        final Div thirteenColumn = new Div();
+        thirteenColumn.add(contactsButton);
+        thirteenColumn.addClassName("thirteen-contacts-column");
+        return thirteenColumn;
+    }
+
+    public Div createFourteenColumn(){
+        final Div fourteenColumn = new Div();
+        fourteenColumn.add();
+        fourteenColumn.addClassName("fourteen-empty-column");
+        return fourteenColumn;
+    }
+
+    public Div createFifteenColumn(){
+        final Div fifteenColumn = new Div();
+        fifteenColumn.add(vineGalleryButton);
+        fifteenColumn.addClassName("fifteen-vine-column");
+        return fifteenColumn;
+    }
+
+    public Div createSixteenColumn(){
+        final Div sixteenColumn = new Div();
+        sixteenColumn.add();
+        sixteenColumn.addClassName("sixteen-empty-column");
+        return sixteenColumn;
     }
 
     public Image createFirstSideIcon() {

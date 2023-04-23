@@ -26,12 +26,10 @@ body::-webkit-scrollbar {
 }
 
 .exposition-button {
-  width: 13%;
-  position: absolute;
-  left: 3%;
-  top: 18%;
+  width: 170%;
   z-index: 1000;
   font-size: 14px;
+  border-bottom-right-radius: 0;
 }
 .exposition-line {
   position: absolute;
@@ -46,12 +44,13 @@ body::-webkit-scrollbar {
   left: 0;
   border-bottom-left-radius: 15px;
   background-color: white;
-  width: 350px;
-  height: 150px;
+  width: 194px;
+  height: 130px;
+  font-size: 10px;
 }
 
 .exposition-text{
-  margin-top: 55px;
+  margin-top: 45px;
   color: rgba(145, 121, 58, 1);
   align-items: center;
   justify-content: center;
@@ -77,21 +76,12 @@ body::-webkit-scrollbar {
 }
 
 .about-us-button {
-  width: 15.5%;
-  position: absolute;
-  left: 69.5%;
-  top: 56.5%;
-  font-size: 14px;
+width: 190%;
+font-size: 13px;
 }
 
 .about-us-view {
-  position: absolute;
   z-index: 1;
-  top: 0;
-  left: 0;
-  width: 128px;
-  height: 130x;
-  padding: 20px 55px 20px 55px;
   background-repeat: no-repeat;
   color: white;
   display: flex;
@@ -111,12 +101,8 @@ body::-webkit-scrollbar {
 .art-img {
 }
 .menu-button {
-  width: 15%;
-  min-width: 250px;
-  position: absolute;
-  left: 32%;
-  top: 47.2%;
-  font-size: 14px;
+width: 200%;
+font-size: 13px;
 }
 .menu-line {
   width: 5.5%;
@@ -126,11 +112,9 @@ body::-webkit-scrollbar {
 }
 
 .bron-button {
-  width: 16%;
-  position: absolute;
-  left: 8%;
-  top: 67%;
-  font-size: 12px;
+width: 125%;
+border-top-left-radius: 0;
+font-size: 14px;
 }
 .bron-line {
   width: 2.1%;
@@ -140,12 +124,8 @@ body::-webkit-scrollbar {
 }
 
 .guest-button {
-  width: 16%;
-
-  position: absolute;
-  left: 46%;
-  top: 22%;
-  font-size: 12px;
+width: 180%;
+font-size: 12px;
 }
 .guest-line {
   width: 2%;
@@ -155,10 +135,8 @@ body::-webkit-scrollbar {
 }
 
 .contacts-button {
-  width: 15.5%;
-  position: absolute;
-  left: 85.2%;
-  top: 27%;
+width: 195%;
+font-size: 13px;
 }
 .contacts-line {
   width: 118px;
@@ -168,11 +146,8 @@ body::-webkit-scrollbar {
   top: 31%;
 }
 .vine-gallery-button {
-  position: absolute;
-  width: 16%;
-  left: 110%;
-  top: 37%;
-  border-radius: 30px;
+width: 190%;
+font-size: 13px;
 }
 
 .vine-gallery-line {
@@ -199,4 +174,110 @@ body::-webkit-scrollbar {
 .fourth-side-icon {
   position: absolute;
   left: 20px;
+}
+
+/*//////////////////// Column positioning area ////////////////////*/
+.column-container{
+  width: calc((3500 * (100vh - 12.5vh)) / 1100);
+  height: 100%;
+  display: flex;
+  position: absolute;
+  background-color: transparent;
+}
+
+.first-empty-column {
+
+}
+
+.second-exposition-column{
+  min-width: 6.25%;
+  height: 5%;
+  left: 1%;
+  top: 4%;
+  position: relative;
+
+}
+
+.third-bottom-empty-column{
+
+}
+
+.fourth-bottom-reserve-column{
+
+}
+
+.five-top-empty-column{
+  min-width: 6.25%;
+  display: inline-block;
+  position: absolute;
+
+  left: 6%;
+  top: 50%
+}
+
+.six-empty-column{
+
+}
+
+.seven-menu-column{
+  min-width: 6.25%;
+  height: 5%;
+  display: inline-block;
+  position: absolute;
+  left: 23%;
+  top: 33%;
+}
+
+.eight-empty-column{
+
+}
+
+.nine-guest-column{
+  min-width: 6.25%;
+  display: inline-block;
+  position: absolute;
+  left: 32.5%;
+  top:7%;
+ 
+}
+
+.ten-empty-column{
+
+}
+
+.eleven-about-column{
+  min-width: 6.25%;
+  display: inline-block;
+  position: absolute;
+  left: 50.3%;
+  top: 41%;
+}
+
+.twelve-empty-column{
+
+}
+
+.thirteen-contacts-column{
+  min-width: 6.25%;
+  display: inline-block;
+  position: absolute;
+  left: 62.5%;
+  top: 12%;
+}
+
+.fourteen-empty-column{
+
+}
+
+.fifteen-vine-column{
+  min-width: 6.25%;
+  display: inline-block;
+  position: absolute;
+  left: 80.5%;
+  top: 21%;
+}
+
+.sixteen-empty-column{
+
+
 }
