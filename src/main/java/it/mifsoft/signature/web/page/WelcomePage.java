@@ -34,10 +34,10 @@ public class WelcomePage extends Div {
     private final Image vineGalleryLine;
     private final Image expositionLine;
 
-    private final Image firstSideIcon;
-    private final Image secondSideIcon;
-    private final Image thirdSideIcon;
-    private final Image fourthSideIcon;
+//    private final Image firstSideIcon;
+//    private final Image secondSideIcon;
+//    private final Image thirdSideIcon;
+//    private final Image fourthSideIcon;
 
     private final Div fisrtDiv;
     private final Div secondDiv;
@@ -77,10 +77,10 @@ public class WelcomePage extends Div {
         this.expositionLine = createExpositionLine();
         this.menuLine = createMenuLine();
 
-        this.firstSideIcon = createFirstSideIcon();
-        this.secondSideIcon = createSecondSideIcon();
-        this.thirdSideIcon = createThirdSideIcon();
-        this.fourthSideIcon = createFourthSideIcon();
+//        this.firstSideIcon = createFirstSideIcon();
+//        this.secondSideIcon = createSecondSideIcon();
+//        this.thirdSideIcon = createThirdSideIcon();
+//        this.fourthSideIcon = createFourthSideIcon();
 
         this.fisrtDiv = createFirstColumn();
         this.secondDiv = createSecondColumn();
