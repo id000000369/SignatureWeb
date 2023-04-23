@@ -26,16 +26,17 @@ body::-webkit-scrollbar {
 }
 
 .exposition-button {
-  width: 170%;
+  width: 207%;
   z-index: 1000;
   font-size: 14px;
   border-bottom-right-radius: 0;
 }
 .exposition-line {
   position: absolute;
-  width: 4%;
-  left: 15%;
-  top: 22%;
+  left:190%;
+  top: 40%;
+  width: 60px;
+  height: 55px;
 }
 .exposition-view {
   position: absolute;
@@ -43,10 +44,11 @@ body::-webkit-scrollbar {
   top: 9px;
   left: 0;
   border-bottom-left-radius: 15px;
+  padding: 0px 10px 10px 10px;
   background-color: white;
-  width: 216px;
+  width: 217px;
   height: 130px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .exposition-text {
@@ -106,14 +108,15 @@ body::-webkit-scrollbar {
 .art-img {
 }
 .menu-button {
-  width: 185%;
+  width: 245px;
   font-size: 13px;
 }
 .menu-line {
-  width: 5.5%;
   position: absolute;
-  left: 34.5%;
-  top: 41%;
+  top: -140%;
+  left: 15%;
+  width: 100px;
+  height: 70px;
 }
 
 .bron-button {
@@ -122,10 +125,9 @@ body::-webkit-scrollbar {
   font-size: 14px;
 }
 .bron-line {
-  width: 2.1%;
   position: absolute;
-  left: 14.5%;
-  top: 60%;
+  left:50%;
+  top: -145%;
 }
 
 .guest-button {
@@ -133,10 +135,11 @@ body::-webkit-scrollbar {
   font-size: 12px;
 }
 .guest-line {
-  width: 2%;
   position: absolute;
-  left: 54.5%;
-  top: 26.5%;
+  left: 69%;
+  top: 80%;
+  width: 42px;
+  height: 70px;
 }
 
 .contacts-button {
@@ -144,11 +147,11 @@ body::-webkit-scrollbar {
   font-size: 13px;
 }
 .contacts-line {
-  width: 118px;
-  height: 73px;
+  width: 120px;
+  height: 83px;
   position: absolute;
-  left: 93%;
-  top: 31%;
+  left: 75%;
+  top: 20%;
 }
 .vine-gallery-button {
   width: 185%;
@@ -157,10 +160,10 @@ body::-webkit-scrollbar {
 
 .vine-gallery-line {
   position: absolute;
-  width: 100px;
-  height: 48px;
-  left: 117%;
-  top: 32%;
+  width: 115px;
+  height: 55px;
+  left: 50%;
+  top: -100%;
 }
 
 .first-side-icon {

@@ -124,7 +124,7 @@ public class WelcomePage extends Div {
 
     public Div createSecondColumn(){
         final Div secondColumn = new Div();
-        secondColumn.add(expositionButton);
+        secondColumn.add(expositionButton, expositionLine);
         secondColumn.addClassName("second-exposition-column");
         return secondColumn;
     }
@@ -145,7 +145,7 @@ public class WelcomePage extends Div {
 
     public Div createFiveColumn(){
         final Div fiveColumn = new Div();
-        fiveColumn.add(bronButton);
+        fiveColumn.add(bronButton, bronLine);
         fiveColumn.addClassName("five-top-empty-column");
         return fiveColumn;
     }
@@ -159,7 +159,7 @@ public class WelcomePage extends Div {
 
     public Div createSevenColumn(){
         final Div sevenColumn = new Div();
-        sevenColumn.add(menuButton);
+        sevenColumn.add(menuButton, menuLine);
         sevenColumn.addClassName("seven-menu-column");
         return sevenColumn;
     }
@@ -173,7 +173,7 @@ public class WelcomePage extends Div {
 
     public Div createNineColumn(){
         final Div nineColumn = new Div();
-        nineColumn.add(guestButton);
+        nineColumn.add(guestButton, guestLine);
         nineColumn.addClassName("nine-guest-column");
         return nineColumn;
     }
@@ -201,7 +201,7 @@ public class WelcomePage extends Div {
 
     public Div createThirteenColumn(){
         final Div thirteenColumn = new Div();
-        thirteenColumn.add(contactsButton);
+        thirteenColumn.add(contactsButton, contactsLine);
         thirteenColumn.addClassName("thirteen-contacts-column");
         return thirteenColumn;
     }
@@ -215,7 +215,7 @@ public class WelcomePage extends Div {
 
     public Div createFifteenColumn(){
         final Div fifteenColumn = new Div();
-        fifteenColumn.add(vineGalleryButton);
+        fifteenColumn.add(vineGalleryButton, vineGalleryLine);
         fifteenColumn.addClassName("fifteen-vine-column");
         return fifteenColumn;
     }
