@@ -136,8 +136,3 @@ vaadin-text-field::part(input-field){
     
     
 }
-
-vaadin-button::part(label){
-    color: rgba(160, 174, 175, 1);
-    
-}

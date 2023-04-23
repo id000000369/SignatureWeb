@@ -63,13 +63,15 @@ body::-webkit-scrollbar {
 
 .expandable-button {
   background-color: rgba(145, 121, 58, 1);
-  color: white;
+  color: rgb(230, 230, 230);
   width: 100%;
   justify-content: center;
   align-items: center;
   text-align: center;
   border-radius: 9px;
   font-size: 100%;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   z-index: 1;
   padding: 0;
