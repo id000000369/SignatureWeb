@@ -83,6 +83,5 @@
 .map-container-view {
 position: absolute;
 width: 100%;
--moz-border-radius: 20px;
--webkit-border-radius: 20px;
+border-top-right-radius: 20px;
 }
