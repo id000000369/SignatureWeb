@@ -39,26 +39,25 @@ body::-webkit-scrollbar {
 }
 .exposition-view {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   top: 9px;
   left: 0;
   border-bottom-left-radius: 15px;
   background-color: white;
-  width: 194px;
+  width: 216px;
   height: 130px;
   font-size: 10px;
 }
 
-.exposition-text{
+.exposition-text {
   margin-top: 45px;
   color: rgba(145, 121, 58, 1);
   align-items: center;
   justify-content: center;
   text-align: center;
   letter-spacing: 0.05em;
-  white-space:break-spaces;
+  white-space: break-spaces;
 }
-
 
 .expandable-button {
   background-color: rgba(145, 121, 58, 1);
@@ -70,18 +69,24 @@ body::-webkit-scrollbar {
   border-radius: 9px;
   font-size: 100%;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1;
   padding: 0;
   margin: 0;
 }
 
 .about-us-button {
-width: 190%;
-font-size: 13px;
+  width: 190%;
+  font-size: 13px;
 }
 
 .about-us-view {
-  z-index: 1;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 131px;
+  height: 130x;
+  padding: 20px 55px 20px 55px;
   background-repeat: no-repeat;
   color: white;
   display: flex;
@@ -101,8 +106,8 @@ font-size: 13px;
 .art-img {
 }
 .menu-button {
-width: 200%;
-font-size: 13px;
+  width: 185%;
+  font-size: 13px;
 }
 .menu-line {
   width: 5.5%;
@@ -112,9 +117,9 @@ font-size: 13px;
 }
 
 .bron-button {
-width: 125%;
-border-top-left-radius: 0;
-font-size: 14px;
+  width: 160%;
+  border-top-left-radius: 0;
+  font-size: 14px;
 }
 .bron-line {
   width: 2.1%;
@@ -124,8 +129,8 @@ font-size: 14px;
 }
 
 .guest-button {
-width: 180%;
-font-size: 12px;
+  width: 180%;
+  font-size: 12px;
 }
 .guest-line {
   width: 2%;
@@ -135,8 +140,8 @@ font-size: 12px;
 }
 
 .contacts-button {
-width: 195%;
-font-size: 13px;
+  width: 195%;
+  font-size: 13px;
 }
 .contacts-line {
   width: 118px;
@@ -146,8 +151,8 @@ font-size: 13px;
   top: 31%;
 }
 .vine-gallery-button {
-width: 190%;
-font-size: 13px;
+  width: 185%;
+  font-size: 13px;
 }
 
 .vine-gallery-line {
@@ -177,7 +182,7 @@ font-size: 13px;
 }
 
 /*//////////////////// Column positioning area ////////////////////*/
-.column-container{
+.column-container {
   width: calc((3500 * (100vh - 12.5vh)) / 1100);
   height: 100%;
   display: flex;
@@ -186,98 +191,87 @@ font-size: 13px;
 }
 
 .first-empty-column {
-
 }
 
-.second-exposition-column{
+.second-exposition-column {
   min-width: 6.25%;
   height: 5%;
-  left: 1%;
+  left: 2.2%;
   top: 4%;
   position: relative;
+}
+
+.third-bottom-empty-column {
+}
+
+.fourth-bottom-reserve-column {
 
 }
 
-.third-bottom-empty-column{
-
-}
-
-.fourth-bottom-reserve-column{
-
-}
-
-.five-top-empty-column{
+.five-top-empty-column {
   min-width: 6.25%;
   display: inline-block;
   position: absolute;
 
-  left: 6%;
-  top: 50%
+  left: 6.5%;
+  top: 52%;
 }
 
-.six-empty-column{
-
+.six-empty-column {
 }
 
-.seven-menu-column{
+.seven-menu-column {
   min-width: 6.25%;
   height: 5%;
   display: inline-block;
   position: absolute;
-  left: 23%;
-  top: 33%;
+  left: 23.2%;
+  top: 34%;
 }
 
-.eight-empty-column{
-
+.eight-empty-column {
 }
 
-.nine-guest-column{
+.nine-guest-column {
   min-width: 6.25%;
   display: inline-block;
   position: absolute;
-  left: 32.5%;
-  top:7%;
- 
+  left: 34.5%;
+  top: 8%;
 }
 
-.ten-empty-column{
-
+.ten-empty-column {
 }
 
-.eleven-about-column{
+.eleven-about-column {
   min-width: 6.25%;
   display: inline-block;
   position: absolute;
   left: 50.3%;
-  top: 41%;
+  top: 42.5%;
 }
 
-.twelve-empty-column{
-
+.twelve-empty-column {
 }
 
-.thirteen-contacts-column{
+.thirteen-contacts-column {
   min-width: 6.25%;
   display: inline-block;
   position: absolute;
-  left: 62.5%;
-  top: 12%;
+  left: 62.3%;
+  top: 12.5%;
 }
 
-.fourteen-empty-column{
-
+.fourteen-empty-column {
 }
 
-.fifteen-vine-column{
+.fifteen-vine-column {
   min-width: 6.25%;
   display: inline-block;
   position: absolute;
-  left: 80.5%;
-  top: 21%;
+  left: 80.9%;
+  top: 23.1%;
 }
 
-.sixteen-empty-column{
-
-
+.sixteen-empty-column {
 }

@@ -76,7 +76,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().setPosition(Style.Position.ABSOLUTE);
         div.getStyle().setLeft("0px");
         div.getStyle().setTop("0px");
-        div.getStyle().setZIndex(1);
+        div.getStyle().setZIndex(3);
         form.getStyle().setZIndex(Integer.MAX_VALUE);
         div.getStyle().set("background", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
@@ -107,16 +107,18 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
             }
-            return;
-        }
-        if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
-            this.remove(this.contentImage);
+            this.contentImage.setVisible(true);
+        } else {
+            if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
+                this.contentImage.setVisible(false);
+            }
         }
 
         switch (path) {
             case "main/vines" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
             case "main/pictures" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
             case "main/dishes" -> this.getStyle().set("background-image", "url('./img/background-vine.png')");
+            default -> this.getStyle().remove("background-image");
         }
     }
 

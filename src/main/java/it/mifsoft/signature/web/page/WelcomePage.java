@@ -6,6 +6,8 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
+import it.mifsoft.signature.web.MainLayout;
+import it.mifsoft.signature.web.SignatureNavigator;
 import it.mifsoft.signature.web.list.DishesShortList;
 import it.mifsoft.signature.web.ui.ExpandableButton;
 import it.mifsoft.signature.web.view.AboutView;
@@ -16,7 +18,7 @@ import org.springframework.stereotype.Component;
 @UIScope
 @Route(value = "welcome", layout = ContentLayout.class)
 public class WelcomePage extends Div {
-
+    private final SignatureNavigator navigator;
     private final ExpandableButton expositionButton;
     private final ExpandableButton aboutUsButton;
     private final ExpandableButton menuButton;
@@ -55,8 +57,11 @@ public class WelcomePage extends Div {
     private final Div sixteenDiv;
     private final Div columnContainer;
 
+    private final MainLayout mainLayout;
 
-    public WelcomePage() {
+    public WelcomePage(SignatureNavigator navigator, MainLayout mainLayout) {
+        this.navigator = navigator;
+        this.mainLayout = mainLayout;
         this.expositionButton = createExpositionButton();
         this.aboutUsButton = createAboutUsButton();
         this.menuButton = createMenuButton();
@@ -305,25 +310,28 @@ public class WelcomePage extends Div {
     }
 
     public ExpandableButton createVineGalleryButton() {
-        final ExpandableButton vineGalleryButton = new ExpandableButton("Винная галерея", new AboutView());
+        final ExpandableButton vineGalleryButton = new ExpandableButton("Винная галерея");
+        vineGalleryButton.addClickListener(event -> this.navigator.navigateToVinesGallery());
         vineGalleryButton.addClassName("vine-gallery-button");
         return vineGalleryButton;
     }
 
     public ExpandableButton createContactsButton() {
-        final ExpandableButton contactsButton = new ExpandableButton("Контакты", new AboutView());
+        final ExpandableButton contactsButton = new ExpandableButton("Контакты");
+        contactsButton.addClickListener(event -> this.navigator.navigateToContacts());
         contactsButton.addClassName("contacts-button");
         return contactsButton;
     }
 
     public ExpandableButton createGuestButton() {
-        final ExpandableButton guestButton = new ExpandableButton("Оформить карту гостя", new AboutView());
+        final ExpandableButton guestButton = new ExpandableButton("Оформить карту гостя");
         guestButton.addClassName("guest-button");
         return guestButton;
     }
 
     public ExpandableButton createBronButton() {
-        final ExpandableButton bronButton = new ExpandableButton("Забронировать столик", new AboutView());
+        final ExpandableButton bronButton = new ExpandableButton("Забронировать столик");
+        bronButton.addClickListener(event -> this.mainLayout.showModal());
         bronButton.addClassName("bron-button");
         return bronButton;
     }
