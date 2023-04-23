@@ -84,7 +84,7 @@ body::-webkit-scrollbar {
   z-index: 0;
   top: 0;
   left: 0;
-  width: 131px;
+  width: 106px;
   height: 130x;
   padding: 20px 55px 20px 55px;
   background-repeat: no-repeat;
@@ -117,7 +117,7 @@ body::-webkit-scrollbar {
 }
 
 .bron-button {
-  width: 160%;
+  width: 140%;
   border-top-left-radius: 0;
   font-size: 14px;
 }
@@ -129,7 +129,7 @@ body::-webkit-scrollbar {
 }
 
 .guest-button {
-  width: 180%;
+  width: 170%;
   font-size: 12px;
 }
 .guest-line {
@@ -197,7 +197,7 @@ body::-webkit-scrollbar {
   min-width: 6.25%;
   height: 5%;
   left: 2.2%;
-  top: 4%;
+  top: 3%;
   position: relative;
 }
 
@@ -214,7 +214,7 @@ body::-webkit-scrollbar {
   position: absolute;
 
   left: 6.5%;
-  top: 52%;
+  top: 51%;
 }
 
 .six-empty-column {
@@ -226,7 +226,7 @@ body::-webkit-scrollbar {
   display: inline-block;
   position: absolute;
   left: 23.2%;
-  top: 34%;
+  top: 32.5%;
 }
 
 .eight-empty-column {
@@ -237,7 +237,7 @@ body::-webkit-scrollbar {
   display: inline-block;
   position: absolute;
   left: 34.5%;
-  top: 8%;
+  top: 6%;
 }
 
 .ten-empty-column {
@@ -248,7 +248,7 @@ body::-webkit-scrollbar {
   display: inline-block;
   position: absolute;
   left: 50.3%;
-  top: 42.5%;
+  top: 41%;
 }
 
 .twelve-empty-column {
@@ -270,7 +270,7 @@ body::-webkit-scrollbar {
   display: inline-block;
   position: absolute;
   left: 80.9%;
-  top: 23.1%;
+  top: 21.1%;
 }
 
 .sixteen-empty-column {
