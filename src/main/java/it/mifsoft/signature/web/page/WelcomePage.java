@@ -5,6 +5,7 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
+import com.vaadin.flow.theme.Theme;
 import it.mifsoft.signature.web.ContentLayout;
 import it.mifsoft.signature.web.MainLayout;
 import it.mifsoft.signature.web.SignatureNavigator;
