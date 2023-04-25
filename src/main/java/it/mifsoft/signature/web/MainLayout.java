@@ -121,7 +121,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             case "main/vines", "main/dishes", "main/pictures" -> {
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
                 this.headerView.yellowColor();
-
             }
             default -> this.getStyle().remove("background-image");
 
