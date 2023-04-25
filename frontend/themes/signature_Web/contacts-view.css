@@ -81,7 +81,13 @@
 }
 
 .map-container-view {
-position: absolute;
-width: 100%;
-border-top-right-radius: 20px;
+    position: absolute;
+    width: 100%;
+    }
+
+.map-view {
+    position: relative;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow:hidden;
 }
