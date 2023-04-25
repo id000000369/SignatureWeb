@@ -10,17 +10,25 @@ import java.util.stream.Collectors;
 public class VinesCarousel extends Div {
 
     private final List<String> vines = List.of(
-            "/img/blackVineImg.png",
-            "/img/orangeVineImg.png",
-            "/img/blackVineImg1.png",
-            "/img/orangeVineImg3.png",
-            "/img/blackVineImg2.png",
-            "/img/orangeVineImg1.png",
-            "/img/blackVineImg3.png",
-            "/img/orangeVineImg2.png",
-            "/img/redVineImg.png",
-            "/img/redVineImg1.png",
-            "/img/redVineImg2.png"
+            "/img/bottle-2.png",
+            "/img/bottle-3.png",
+            "/img/bottle-5.png",
+            "/img/bottle-6.png",
+            "/img/bottle-8.png",
+            "/img/bottle-9.png",
+            "/img/bottle-10.png",
+            "/img/bottle-11.png",
+            "/img/bottle-12.png",
+            "/img/bottle-13.png",
+            "/img/bottle-14.png",
+            "/img/bottle-15.png",
+            "/img/bottle-16.png",
+            "/img/bottle-17.png",
+            "/img/bottle-18.png",
+            "/img/bottle-19.png",
+            "/img/bottle-20.png",
+            "/img/bottle-21.png",
+            "/img/bottle-22.png"
     );
     private final List<VinesCarouselItem> items;
 

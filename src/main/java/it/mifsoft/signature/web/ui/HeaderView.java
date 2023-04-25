@@ -67,11 +67,11 @@ public class HeaderView extends HorizontalLayout {
 
     public void whiteColor() {
         this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
-        this.logoImage.setSrc("https://i.ibb.co/Cbr2Zpg/Vector-2.png");
+        this.logoImage.setSrc("/img/signature-white.png");
     }
 
     public void yellowColor() {
         this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
-        this.logoImage.setSrc("https://i.ibb.co/GQm92bq/Vector-1.png");
+        this.logoImage.setSrc("/img/signature-yellow.png");
     }
 }

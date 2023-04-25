@@ -1,6 +1,6 @@
 .archives-main {
   display: flex;
-  background-image: url("https://i.ibb.co/1TrWtBb/background-1.png");
+  background-image: url("/img/background-yellow.png");
 }
 
 .window-one-archives {
@@ -11,7 +11,7 @@
   margin-left: 40px;
   margin-right: 200px;
   border-radius: 15px;
-  background-image: url("https://i.ibb.co/4Znp481/2-cards-1.png");
+  background-image: url("/img/cards-1.png");
 }
 
 .window-two-archives {
@@ -21,7 +21,7 @@
   top: 40px;
   margin-right: 200px;
   border-radius: 15px;
-  background-image: url("https://i.ibb.co/dKz8c7R/3-cards.png");
+  background-image: url("/img/cards-2.png");
 }
 
 .window-tree-archives {
@@ -30,7 +30,7 @@
   left: 1280px;
   top: 40px;
   border-radius: 15px;
-  background-image: url("https://i.ibb.co/3m70Q8m/4-cards.png");
+  background-image: url("/img/cards-3.png");
 }
 
 .with-love-text-archives {

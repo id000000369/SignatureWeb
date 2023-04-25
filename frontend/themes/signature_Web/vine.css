@@ -108,6 +108,7 @@
 .signUpForATasting{
     font-size: 15px;
     cursor: pointer;
+    color: rgba(160, 174, 175, 1);
     width: 40%;
     border-width: 1px;
     border-style: solid;
