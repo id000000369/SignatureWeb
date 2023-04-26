@@ -1,10 +1,7 @@
 package it.mifsoft.signature.web.list.item;
 
-import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Paragraph;
 import it.mifsoft.signature.web.dto.MenuCategoryData;
-
-import java.util.Objects;
 
 public class CategoryListItem extends Paragraph {
 

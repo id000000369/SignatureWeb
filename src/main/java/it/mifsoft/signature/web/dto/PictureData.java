@@ -4,18 +4,16 @@ public class PictureData {
     private long id;
     private String name;
     private String description;
-    private double price;
     private String image;
 
     public PictureData() {
 
     }
 
-    public PictureData(long id, String name, String description, double price, String image) {
+    public PictureData(long id, String name, String description, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.price = price;
         this.image = image;
     }
 
@@ -29,10 +27,6 @@ public class PictureData {
 
     public String getDescription() {
         return description;
-    }
-
-    public double getPrice() {
-        return price;
     }
 
     public String getImage() {

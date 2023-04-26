@@ -5,7 +5,6 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.list.item.DishListItem;
 import it.mifsoft.signature.web.list.item.PictureListItem;
 import org.springframework.stereotype.Component;
 
@@ -90,8 +89,8 @@ public class PicturesList extends Div {
                 data.dataPerson,
                 data.linkInst,
                 data.description,
-                expanded
-        );
+                expanded,
+                pictureData);
         item.addClickListener(event -> {
             if (item.equals(selectedPictureListItem))
                 return;
