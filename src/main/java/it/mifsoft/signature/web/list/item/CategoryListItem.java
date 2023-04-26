@@ -2,22 +2,24 @@ package it.mifsoft.signature.web.list.item;
 
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.html.Paragraph;
+import it.mifsoft.signature.web.dto.MenuCategoryData;
 
 import java.util.Objects;
 
 public class CategoryListItem extends Paragraph {
 
     private boolean isSelected;
-    private String title;
+    private final MenuCategoryData category;
 
-    public CategoryListItem(String title) {
-        this.title = title;
+    public CategoryListItem(MenuCategoryData category) {
+        this.category = category;
         this.addClassNames("category-list-item-main");
         stylize();
     }
 
     private void stylize() {
-        this.setText(this.title);
+        if (this.category != null)
+            this.setText(this.category.getName());
         this.getStyle().setBackground("transparent");
     }
 
@@ -35,16 +37,7 @@ public class CategoryListItem extends Paragraph {
         return isSelected;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CategoryListItem listItem = (CategoryListItem) o;
-        return Objects.equals(title, listItem.title);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(title);
+    public MenuCategoryData getCategory() {
+        return category;
     }
 }

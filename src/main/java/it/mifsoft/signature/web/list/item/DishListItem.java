@@ -6,6 +6,7 @@ import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
+import it.mifsoft.signature.web.dto.DishData;
 
 public class DishListItem extends Div {
 
@@ -24,7 +25,10 @@ public class DishListItem extends Div {
     private final Label ingredients;
     private final Image dishIcon;
 
-    public DishListItem() {
+    private final DishData dishData;
+
+    public DishListItem(DishData dishData) {
+        this.dishData = dishData;
 
         this.mainText = createMainText();
         this.peculiarities = createPeculiarities();
@@ -53,7 +57,7 @@ public class DishListItem extends Div {
 
     public H1 createMainText() {
         H1 main = new H1();
-        main.setText("Томленое говяжье ребро со сливочным полбой");
+        main.setText(dishData.getName());
         main.addClassNames("main-text-dish");
         return main;
     }
@@ -156,7 +160,7 @@ public class DishListItem extends Div {
 
     public H1 createPriceText() {
         H1 priceText = new H1();
-        priceText.setText("2180₽");
+        priceText.setText(dishData.getPrice() + "₽");
         priceText.addClassNames("price-dish");
         return priceText;
     }

@@ -1,50 +1,43 @@
 package it.mifsoft.signature.web.list;
 
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.dto.CategoryData;
+import it.mifsoft.signature.web.dto.MenuCategoryData;
 import it.mifsoft.signature.web.list.item.CategoryListItem;
+import it.mifsoft.signature.web.service.MenuCategoriesApiService;
 import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
 @UIScope
 public class CategoriesList extends Div {
 
-    private final List<CategoryData> categories = new ArrayList<>();
+    private List<MenuCategoryData> categories = new ArrayList<>();
 
-    private final List<CategoryListItem> listItems;
+    private List<CategoryListItem> listItems = new ArrayList<>();
     private CategoryListItem selectedItem;
 
     private final DishesList dishesList;
 
-//    private Collection<String> categoryItemsNames = List.of(
-//            "RAW БАР", "САЛАТЫ", "ОВОЩИ", "СУПЫ", "ГОРЯЧИЕ БЛЮДА", "ДЕСЕРТЫ", "НАПИТКИ"
-//    );
+    private final MenuCategoriesApiService categoriesApiService;
 
-    public CategoriesList(DishesList dishesList) {
+    public CategoriesList(DishesList dishesList,
+                          MenuCategoriesApiService categoriesApiService) {
+        this.categoriesApiService = categoriesApiService;
 
         FlexStyleUtils.doItRow(this.getElement());
 
-        //test
-        for (int i = 0; i < 10; i++) {
-            CategoryData data = new CategoryData();
-            data.setID(i);
-            data.setName("Title " + i);
-            this.categories.add(data);
-        }
-
-
         this.addClassNames("categories-list-main");
         this.dishesList = dishesList;
-        this.listItems = createListItems();
 
-        this.listItems.forEach(this::add);
+        categoriesApiService.getAll().doOnSuccess(categories -> {
+            this.categories = categories;
+            this.updateCategories();
+        }).block();
     }
 
     private List<CategoryListItem> createListItems() {
@@ -53,8 +46,14 @@ public class CategoriesList extends Div {
                 .toList();
     }
 
-    private CategoryListItem createItem(CategoryData categoryData) {
-        final CategoryListItem listItem = new CategoryListItem(categoryData.getName());
+    private void updateCategories() {
+        this.removeAll();
+        this.listItems = createListItems();
+        this.listItems.forEach(this::add);
+    }
+
+    private CategoryListItem createItem(MenuCategoryData categoryData) {
+        final CategoryListItem listItem = new CategoryListItem(categoryData);
         listItem.addClickListener(event -> {
             if (listItem.equals(selectedItem)) {
                 selectedItem.unselect();
@@ -65,9 +64,15 @@ public class CategoriesList extends Div {
             if (selectedItem != null)
                 selectedItem.unselect();
             this.selectedItem = listItem;
+
+            if (this.selectedItem.getCategory() != null) {
+                this.dishesList.setCategoryId(this.selectedItem.getCategory().getID());
+            }
         });
         return listItem;
     }
+
+
 
 
 //    private MenuBar createMenu() {

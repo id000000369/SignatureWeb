@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.dto.DishData;
 import it.mifsoft.signature.web.list.item.DishListItem;
+import it.mifsoft.signature.web.service.MenuItemsApiService;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -16,7 +17,6 @@ import java.util.List;
 @UIScope
 public class DishesList extends Div {
     private final DishesListState state;
-    private final DishListItem dishListItem;
     private List<DishListItem> items;
     private DishListItem currentItem;
 
@@ -24,12 +24,14 @@ public class DishesList extends Div {
     public Image nextButton;
     private final Div scrollableContainer;
 
-    public DishesList() {
+    private final MenuItemsApiService menuItemsApiService;
+
+    public DishesList(MenuItemsApiService menuItemsApiService) {
+        this.menuItemsApiService = menuItemsApiService;
         //long categoryId
         this.getStyle().setPosition(Style.Position.RELATIVE);
 
-        this.state = new DishesListState(0);
-        this.dishListItem = new DishListItem();
+        this.state = new DishesListState();
 
         this.previousButton = createPreviousButton();
         this.nextButton = createNextButton();
@@ -44,9 +46,6 @@ public class DishesList extends Div {
             moveTo(this.currentItem);
         }
     }
-
-
-
 
     private void next(ClickEvent<Image> imageClickEvent) {
         final int currentIndex = this.state.currentIndex();
@@ -99,10 +98,14 @@ public class DishesList extends Div {
         container.getStyle().set("overflow-x", "hidden");
         container.getStyle().set("overflow-y", "none");
 
-        final List<DishListItem> items = state.getDishes()
+        return container;
+    }
+
+    private void createItems() {
+        this.items = state.getDishes()
                 .stream()
                 .map(dishData -> {
-                    final DishListItem listItem = new DishListItem();
+                    final DishListItem listItem = new DishListItem(dishData);
                     listItem.setId(String.valueOf(dishData.getId()));
 //                    listItem.getStyle().setWidth("100vw");
 //                    listItem.getStyle().set("min-width", "100vw");
@@ -110,27 +113,34 @@ public class DishesList extends Div {
 //                    listItem.getStyle().set("max-height", "100vh");
                     return listItem;
                 })
-                .toList();
-        this.items = items;
+                .toList();;
         this.currentItem = this.items.size() > 0 ? this.items.get(0) : null;
-        items.forEach(container::add);
-        return container;
+        getUI().ifPresent(ui -> ui.access(() -> items.forEach(scrollableContainer::add)));
+    }
+
+    public void setCategoryId(long categoryId) {
+        if (categoryId == this.state.categoryId)
+            return;
+
+        menuItemsApiService.getDishesByCategoryId(categoryId).doOnSuccess(dishes -> {
+            updateDishes(dishes, categoryId);
+        }).block();
+    }
+
+    private void updateDishes(final List<DishData> dishes, final long categoryId) {
+        dishes.forEach(d -> System.out.println("Dish in category " + categoryId + " with name " +d.getName()));
+        getUI().ifPresent(ui -> ui.access(this.scrollableContainer::removeAll));
+        this.state.categoryId = categoryId;
+        this.state.dishes = dishes;
+        createItems();
     }
 
     private static class DishesListState {
-        private final long categoryId;
+        private long categoryId = -1;
         private DishData current;
-        private final List<DishData> dishes = new ArrayList<>();
+        private List<DishData> dishes = new ArrayList<>();
 
-        DishesListState(final long categoryId) {
-            this.categoryId = categoryId;
-
-            //test
-            for (int i = 1; i < 10; i++) {
-                final DishData dishData = new DishData(i, "", "", 1, "");
-                dishes.add(dishData);
-            }
-            this.current = dishes.get(0);
+        DishesListState() {
         }
 
         public long getCategoryId() {

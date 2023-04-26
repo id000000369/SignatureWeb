@@ -39,6 +39,7 @@ vaadin {
 dependencies {
     implementation("com.vaadin:vaadin-spring-boot-starter:$vaadinVersion")
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    implementation group: 'org.springframework', name: 'spring-webflux'
     implementation enforcedPlatform("com.vaadin:vaadin-bom:$vaadinVersion")
 // https://mvnrepository.com/artifact/com.vaadin/flow-html-components
     implementation group: 'com.vaadin', name: 'flow-html-components', version: '24.0.4'

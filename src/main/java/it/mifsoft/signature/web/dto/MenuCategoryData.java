@@ -1,6 +1,6 @@
 package it.mifsoft.signature.web.dto;
 
-public class CategoryData {
+public class MenuCategoryData {
     private long id;
     private String name;
     private String image;
