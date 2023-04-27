@@ -3,12 +3,12 @@
     flex-direction: column;
     display: flex;
     align-items: center;
-    width: 45vw;
-    min-width: 45vw;
+    width: 35vw;
+    min-width: 35vw;
     background: #002024;
     border-radius: 15px;
     z-index: 1000;
-    margin-right: 10vw;
+    margin-right: 5vw;
 }
 
 .picture-main {
@@ -29,7 +29,6 @@
 .image-picture {
     width: 30vw;
     height: 50vh;
-    margin: 3vh ;
 }
 
 .avatar {

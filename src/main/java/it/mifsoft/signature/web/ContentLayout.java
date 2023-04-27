@@ -17,8 +17,8 @@ public final class ContentLayout extends Div implements HasModal, RouterLayout {
 
 
     public ContentLayout() {
-        this.addClassName("content-view");
     }
+
 
     @Override
     public void setModal(com.vaadin.flow.component.Component component) {

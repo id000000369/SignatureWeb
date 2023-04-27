@@ -131,7 +131,7 @@ public class PictureListItem extends Div {
         this.getStyle().set("height", "17%");
         this.imageI.getStyle().set("min-width", "100%");
         this.imageI.getStyle().set("min-height", "100%");
-        this.imageI.getStyle().set("margin", "0");
+        this.imageI.getStyle().set("margin-top", "10vh");
         this.imageI.getStyle().remove("box-shadow");
         this.mainTextH.setVisible(false);
         this.middleDiv.setVisible(false);
@@ -140,10 +140,10 @@ public class PictureListItem extends Div {
     }
 
     public void expand() {
-        this.imageI.getStyle().set("min-width", "30vw");
-        this.imageI.getStyle().set("min-height", "50vh");
-        this.imageI.getStyle().set("max-width", "30vw");
-        this.imageI.getStyle().set("max-height", "50vh");
+        this.imageI.getStyle().set("min-width", "20vw");
+        this.imageI.getStyle().set("min-height", "40vh");
+        this.imageI.getStyle().set("max-width", "20vw");
+        this.imageI.getStyle().set("max-height", "40vh");
 
         this.imageI.getStyle().remove("margin");
         this.imageI.getStyle().set("margin-top", "4%");

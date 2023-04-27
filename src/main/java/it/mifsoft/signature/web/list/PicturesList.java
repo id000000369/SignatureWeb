@@ -56,7 +56,8 @@ public class PicturesList extends Div {
     }
 
     private void moveTo(PictureListItem item) {
-        final String script = "document.getElementById('%s').scrollIntoView({behavior: \"smooth\", inline: \"center\"})";
+        final String script = "document.getElementById('%s').scrollIntoView({behavior: 'smooth', " +
+                "block: 'center', inline: 'center'})";
         if (item.getId().isPresent())
             item.getElement().executeJs(String.format(script, item.getId().get()));
     }

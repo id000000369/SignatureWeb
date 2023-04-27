@@ -117,6 +117,14 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
         }
 
+
+        if (path.equals("main/pictures")) {
+            this.contentView.setClassName("content-view-pictures");
+        } else {
+            this.contentView.setClassName("content-view");
+        }
+
+
         switch (path) {
             case "main/vines", "main/dishes", "main/pictures" -> {
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
