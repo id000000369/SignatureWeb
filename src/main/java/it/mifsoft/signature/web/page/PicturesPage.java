@@ -11,11 +11,8 @@ import org.springframework.stereotype.Component;
 @UIScope
 @Route(value = "pictures", layout = ContentLayout.class)
 public class PicturesPage extends Div {
-
     private final PicturesList picturesList;
-
     public PicturesPage(PicturesList picturesList) {
-
 
         this.addClassNames("picture-main-div");
         this.picturesList = picturesList;

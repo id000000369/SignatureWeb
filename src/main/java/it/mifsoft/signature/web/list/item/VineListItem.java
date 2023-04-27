@@ -3,6 +3,7 @@ package it.mifsoft.signature.web.list.item;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.textfield.TextField;
 
 public class VineListItem extends Div {
@@ -18,8 +19,8 @@ public class VineListItem extends Div {
     private final TextField perfectForText;
     private final TextField andAlsoText;
     private final Button signUpForATasting;
-
-
+    private final Image verticalSeparator;
+    private final Div itemsContainer;
     public VineListItem() {
         this.mainText = createMainText();
         this.subMainText = createSubMainText();
@@ -32,12 +33,24 @@ public class VineListItem extends Div {
         this.perfectForText = createPerfectForText();
         this.andAlsoText = createAndAlsoText();
         this.signUpForATasting = createSignUpForATastingText();
+        this.verticalSeparator = createVerticalSeparator();
+        this.itemsContainer = createItemsContainer();
 
         addClassNames("window");
-        add(windowMainItems(), windowOneItems(), windowTwoItems(), windowTreeItems());
+        add(createVerticalSeparator(), createItemsContainer());
     }
 
-
+    public Div createItemsContainer(){
+        final Div items = new Div();
+        items.add(windowMainItems(), windowOneItems(), windowTwoItems(), windowTreeItems());
+        items.addClassName("vine-items-container");
+        return items;
+    }
+    public Image createVerticalSeparator(){
+        final Image image = new Image("/img/vertical-separator.png","");
+        image.addClassNames("vertical-separator");
+        return image;
+    }
     public Div windowMainItems() {
         Div items = new Div();
         items.add(mainText, subMainText);

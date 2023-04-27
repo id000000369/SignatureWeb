@@ -11,7 +11,6 @@ public class AchievementListItem extends Div {
     private final String subTitle;
     private final Div content;
     private final H1 titleH;
-
     private final H1 subTitleH;
 
     public AchievementListItem(String title, String subTitle, String imageUrl, Div content) {
