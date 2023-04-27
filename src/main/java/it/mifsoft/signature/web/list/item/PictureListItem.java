@@ -3,7 +3,7 @@ package it.mifsoft.signature.web.list.item;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.dto.PictureData;
+import it.mifsoft.signature.web.dto.PicturesData;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -28,12 +28,13 @@ public class PictureListItem extends Div {
 
     private boolean isExpanded;
 
-    private final PictureData pictureData;
+    private final PicturesData pictureData;
 
     public PictureListItem(String image, String mainText, String iconPerson,
                            String dataPerson, String linkInst, String description,
-                           boolean isExpanded, PictureData pictureData) {
+                           boolean isExpanded, PicturesData pictureData) {
 
+        this.setId(String.valueOf(pictureData.getId()));
         this.image = image;
         this.mainText = mainText;
         this.iconPerson = iconPerson;
@@ -121,7 +122,7 @@ public class PictureListItem extends Div {
 
     public H2 createDescription() {
         H2 descriptionLabel = new H2();
-        descriptionLabel.setText(pictureData.getDescription());
+        descriptionLabel.getElement().setProperty("innerHTML", pictureData.getDescription());
         descriptionLabel.addClassNames("description-picture");
         return descriptionLabel;
     }

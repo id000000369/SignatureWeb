@@ -5,7 +5,10 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.spring.annotation.UIScope;
+import it.mifsoft.signature.web.dto.GalleryItemsData;
+import it.mifsoft.signature.web.dto.PicturesData;
 import it.mifsoft.signature.web.list.item.PictureListItem;
+import it.mifsoft.signature.web.service.GalleryItemsApiService;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -13,35 +16,47 @@ import java.util.List;
 
 @Component
 @UIScope
-
 public class PicturesList extends Div {
 
-    private final List<PicturesList.PicturesData> pictures;
-    private List<PictureListItem> pictureListItems;
+    public static final long PICTURES_GALLERY_ID = 1;
+
+    private List<PicturesData> pictures = new ArrayList<>();
+    private List<PictureListItem> pictureListItems = new ArrayList<>();
     private PictureListItem selectedPictureListItem;
 
-    public PicturesList() {
-        //testt
-        pictures = new ArrayList<>(20);
-        for (int i = 0; i < 20; i++) {
-            pictures.add(new PicturesList.PicturesData(
-                    i,
-                    i % 2 == 0 ? "./img/picture_3.png" : "./img/picture_2.png",
-                    "НОКТЮРН В ХОЛОДНЫХ ТОНАХ " + i,
-                    "/img/avatar.png",
-                    "Иван Федоров " + i,
-                    "/img/avatar.png",
-                    "Иван Федотов — выпускник Дальневосточной государственной академии искусств. Пусть вас не обманывает молодой возраст, за его плечами уже множество проектов. Произведения художника выставляются в галереях Дальнего Востока, а также в музеях. Работы Ивана Федотова находятся в частных коллекциях, в том числе в личной коллекции губернатора Приморского края."
-            ));
-        }
-        this.pictureListItems = createListItems();
-        this.pictureListItems.forEach(this::add);
+    private final GalleryItemsApiService galleryItemsApiService;
+
+    public PicturesList(GalleryItemsApiService galleryItemsApiService) {
+        this.galleryItemsApiService = galleryItemsApiService;
+
+        galleryItemsApiService
+                .getAllByGalleryId(PICTURES_GALLERY_ID)
+                .doOnSuccess(this::updatePicturesList)
+                .subscribe();
+
         this.addClassName("achievements-list");
 
     }
 
+    private void updatePicturesList(List<GalleryItemsData> galleryItems) {
+        getUI().ifPresent(ui -> ui.access(() -> {
+            this.removeAll();
+            this.pictures = galleryItems.stream().map(item -> new PicturesData(
+                    item.getId(),
+                    item.getImage(),
+                    item.getName(),
+                    "",
+                    "",
+                    "",
+                    item.getDescription()
+            )).toList();
+            this.pictureListItems = createListItems();
+            this.pictureListItems.forEach(this::add);
+        }));
+    }
+
     private void moveTo(PictureListItem item) {
-        final String script = "document.getElementById('%s').scrollIntoView({behavior: \"smooth\", block: \"center\"})";
+        final String script = "document.getElementById('%s').scrollIntoView({behavior: \"smooth\", inline: \"center\"})";
         if (item.getId().isPresent())
             item.getElement().executeJs(String.format(script, item.getId().get()));
     }
@@ -49,7 +64,7 @@ public class PicturesList extends Div {
     private List<PictureListItem> createListItems() {
         return pictures.stream()
                 .map(item -> {
-                    if (item.id == 1)
+                    if (item.getId() == 1)
                         return createPictureListItem(item, true);
                     else
                         return createPictureListItem(item, false);
@@ -69,28 +84,28 @@ public class PicturesList extends Div {
                 });
     }
 
-    private PictureListItem createPictureListItem(PicturesList.PicturesData data, boolean expanded) {
+    private PictureListItem createPictureListItem(PicturesData data, boolean expanded) {
         final Div content = new Div();
         content.addClassName("content-some-class-name");
         final Image img = new Image();
-        img.setSrc(data.image);
+        img.setSrc(data.getImage());
         img.addClassNames("image-achievements");
         content.add(img);
 
         final H2 description = new H2();
-        description.setText(data.description);
+        description.setText(data.getDescription());
         description.addClassName("achievment-description");
         content.add(description);
 
         final PictureListItem item = new PictureListItem(
-                data.image,
-                data.mainText,
-                data.iconPerson,
-                data.dataPerson,
-                data.linkInst,
-                data.description,
+                data.getImage(),
+                data.getMainText(),
+                data.getIconPerson(),
+                data.getDataPerson(),
+                data.getLinkInst(),
+                data.getDescription(),
                 expanded,
-                pictureData);
+                data);
         item.addClickListener(event -> {
             if (item.equals(selectedPictureListItem))
                 return;
@@ -101,34 +116,7 @@ public class PicturesList extends Div {
             selectedPictureListItem = item;
             moveTo(selectedPictureListItem);
         });
-        item.setId(""+data.id);
+        item.setId("" + data.getId());
         return item;
-    }
-
-    class PicturesData {
-        int id;
-        String image;
-        String mainText;
-        String iconPerson;
-        String dataPerson;
-        String linkInst;
-        String description;
-
-
-        public PicturesData(int id,
-                            String image,
-                            String mainText,
-                            String iconPerson,
-                            String dataPerson,
-                            String linkInst,
-                            String description) {
-            this.id = id;
-            this.image = image;
-            this.mainText = mainText;
-            this.iconPerson = iconPerson;
-            this.dataPerson = dataPerson;
-            this.linkInst = linkInst;
-            this.description = description;
-        }
     }
 }

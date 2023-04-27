@@ -1,16 +1,16 @@
 package it.mifsoft.signature.web.dto;
 
-public class PictureData {
+public class GalleryItemsData {
     private long id;
     private String name;
     private String description;
     private String image;
 
-    public PictureData() {
+    public GalleryItemsData() {
 
     }
 
-    public PictureData(long id, String name, String description, String image) {
+    public GalleryItemsData(long id, String name, String description, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -42,7 +42,7 @@ public class PictureData {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PictureData pictureData = (PictureData) o;
+        GalleryItemsData pictureData = (GalleryItemsData) o;
         return id == pictureData.id;
     }
 }
