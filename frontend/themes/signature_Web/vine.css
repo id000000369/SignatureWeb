@@ -22,8 +22,21 @@
 }
 
 .window{
+    flex-direction: column;
     background: #002024;
     border-radius: 15px;
+    padding: 35px 0 35px 10px;
+}
+
+.vertical-separator {
+    position: absolute;
+    height: 492px;
+    padding-left: 15px;
+    top: 196px;
+}
+
+.vine-items-container{
+    padding-left: 55px;
 }
 
 .mainWindow{
