@@ -35,7 +35,6 @@ public class PicturesList extends Div {
                 .subscribe();
 
         this.addClassName("achievements-list");
-
     }
 
     private void updatePicturesList(List<GalleryItemsData> galleryItems) {

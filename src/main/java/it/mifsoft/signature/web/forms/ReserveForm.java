@@ -28,6 +28,8 @@ public class ReserveForm extends Div {
     private final Image phonePrefix = new Image();
     private final Image guestPrefix = new Image();
     private final Label checkbox;
+    private final Image verticalSeparator;
+    private final Div itemsContainer;
 
     public ReserveForm() {
         this.firstHeaderText = createFirstHeaderText();
@@ -46,10 +48,25 @@ public class ReserveForm extends Div {
         this.reminderTextContainer = createReminderTextContainer();
         this.checkbox = createCheckbox();
 
-        this.add(reserveItems());
+        this.verticalSeparator = createVerticalSeparator();
+
+        this.itemsContainer = createItemsContainer();
+
+        this.add(createVerticalSeparator(), createItemsContainer());
         this.addClassName("reserve-container");
     }
 
+    private Div createItemsContainer(){
+        final Div items = new Div();
+        items.add(reserveItems());
+        items.addClassName("reserve-items-container");
+        return items;
+    }
+    private Image createVerticalSeparator() {
+        final Image separator = new Image("/img/vertical-separator.png","");
+        separator.addClassNames("reserve-separator");
+        return separator;
+    }
     private Div createReminderTextContainer() {
         final Div container = new Div();
         container.add(reminderText, createCheckbox());

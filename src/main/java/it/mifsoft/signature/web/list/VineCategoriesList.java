@@ -13,7 +13,6 @@ import java.util.Set;
 @Component
 @UIScope
 public class VineCategoriesList extends Div {
-
     private final List<VineCategoryListItem.VinesType> vines = List.of(
             VineCategoryListItem.VinesType.ALL,
             VineCategoryListItem.VinesType.RED,
@@ -25,7 +24,6 @@ public class VineCategoriesList extends Div {
     private final List<VineCategoryListItem> listItems = vines.stream()
             .map(this::createItem)
             .toList();
-
     private final Set<VineCategoryListItem> selectedItems = new HashSet<>();
 
     public VineCategoriesList() {

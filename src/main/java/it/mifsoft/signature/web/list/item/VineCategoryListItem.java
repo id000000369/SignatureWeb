@@ -3,16 +3,15 @@ package it.mifsoft.signature.web.list.item;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
+import it.mifsoft.signature.web.dto.GalleryData;
 import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import it.mifsoft.signature.web.utils.SizeStyleUtils;
 
 public class VineCategoryListItem extends Div {
 
     private final VinesType type;
-
     private final Div image;
     private final Paragraph titleParagraph;
-
     private boolean isSelected = false;
 
     public VineCategoryListItem(final VinesType type) {

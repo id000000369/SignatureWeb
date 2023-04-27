@@ -4,12 +4,11 @@
   width: 34%;
   color: aliceblue;
   align-items: center;
-  padding: 2% 3% 2% 3%;
 }
 
 .reserve-items {
   display: grid;
-  padding: 5%;
+  padding: 5% 3% 8% 2%;
   align-items: center;
   justify-content: center;
 }
@@ -85,6 +84,15 @@
 }
 .phone-number-text {
   color: rgba(160, 174, 175, 1);
+}
+
+.reserve-separator {
+  position: absolute;
+}
+
+.reserve-items-container{
+  display: flex;
+  padding: 20px;
 }
 
 vaadin-text-field > input:placeholder-shown {
