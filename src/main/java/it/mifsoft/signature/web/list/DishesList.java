@@ -100,7 +100,6 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
         previous.getStyle().setPosition(Style.Position.ABSOLUTE);
         previous.getStyle().setTop("14%");
         previous.getStyle().setLeft("0px");
-        previous.getStyle().setZIndex(Integer.MAX_VALUE);
             previous.setSrc("/img/plate-left.png");
         previous.addClickListener(this::previous);
         return previous;
@@ -111,7 +110,6 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
         next.getStyle().setPosition(Style.Position.ABSOLUTE);
         next.getStyle().setTop("14%");
         next.getStyle().setRight("0px");
-        next.getStyle().setZIndex(Integer.MAX_VALUE);
         next.setSrc("/img/plate-right.png");
         next.addClickListener(this::next);
         return next;
