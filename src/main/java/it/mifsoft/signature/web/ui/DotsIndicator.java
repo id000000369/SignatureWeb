@@ -38,6 +38,7 @@ public class DotsIndicator extends Div {
         this.selectedColor = selectedColor;
         this.defaultColor = defaultColor;
         this.delegate = delegate;
+        this.addClassName("dots-indicator");
         setup();
     }
 
