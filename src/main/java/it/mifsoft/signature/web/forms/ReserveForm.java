@@ -31,6 +31,8 @@ public class ReserveForm extends Div {
     private final Image verticalSeparator;
     private final Div itemsContainer;
 
+    private final Image closeIcon;
+
     public ReserveForm() {
         this.firstHeaderText = createFirstHeaderText();
 
@@ -47,9 +49,15 @@ public class ReserveForm extends Div {
         this.checkbox = createCheckbox();
         this.verticalSeparator = createVerticalSeparator();
         this.itemsContainer = createItemsContainer();
+        this.closeIcon = createCloseIcon();
 
-        this.add(createVerticalSeparator(), createItemsContainer());
+        this.add(createVerticalSeparator(),createCloseIcon(), createItemsContainer());
         this.addClassName("reserve-container");
+    }
+    private Image createCloseIcon(){
+        final Image icon = new Image("/img/close-icon.png","");
+        icon.addClassName("reserve-close-icon");
+        return icon;
     }
 
     private Div createItemsContainer(){
