@@ -8,14 +8,17 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.dto.DishData;
 import it.mifsoft.signature.web.list.item.DishListItem;
 import it.mifsoft.signature.web.service.MenuItemsApiService;
+import it.mifsoft.signature.web.ui.DotsIndicator;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 @UIScope
-public class DishesList extends Div {
+public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelegate {
+
     private final DishesListState state;
     private List<DishListItem> items;
     private DishListItem currentItem;
@@ -23,6 +26,8 @@ public class DishesList extends Div {
     public Image previousButton;
     public Image nextButton;
     private final Div scrollableContainer;
+    private final Div dotsIndicatorContainer;
+    private DotsIndicator dotsIndicator;
 
     private final MenuItemsApiService menuItemsApiService;
 
@@ -36,15 +41,36 @@ public class DishesList extends Div {
         this.previousButton = createPreviousButton();
         this.nextButton = createNextButton();
         this.scrollableContainer = createScrollableContainer();
+        this.dotsIndicatorContainer = createDotsContainer();
+        this.dotsIndicator = createDotsIndicator(state.dishes);
+        this.dotsIndicatorContainer.add(this.dotsIndicator);
+        this.dotsIndicatorContainer.addClassName("dots-indicator-container");
 
         previousButton.addClassNames("dish-previous-button");
         nextButton.addClassNames("dish-next-button");
         this.addClassNames("main-component-dishes");
 
-        this.add(previousButton,  scrollableContainer, nextButton);
+        this.add(dotsIndicatorContainer, previousButton,  scrollableContainer, nextButton);
         if (this.currentItem != null) {
             moveTo(this.currentItem);
         }
+    }
+
+    private Div createDotsContainer() {
+        final Div container = new Div();
+        container.setWidthFull();
+        container.setHeight("60px");
+        return container;
+    }
+
+    private DotsIndicator createDotsIndicator(List<DishData> dishes) {
+        final List<String> dishesIds = dishes.stream()
+                .map(dish -> String.valueOf(dish.getId()))
+                .toList();
+        final DotsIndicator indicator = new DotsIndicator(dishesIds, this);
+        indicator.setWidthFull();
+        indicator.setHeightFull();
+        return indicator;
     }
 
     private void next(ClickEvent<Image> imageClickEvent) {
@@ -53,6 +79,7 @@ public class DishesList extends Div {
         final DishListItem item = this.items.get(nextIndex);
         this.state.setCurrent(nextIndex);
         moveTo(item);
+        dotsIndicator.select(String.valueOf(this.state.current.getId()));
     }
 
     private void previous(ClickEvent<Image> imageClickEvent) {
@@ -61,6 +88,7 @@ public class DishesList extends Div {
         final DishListItem item = this.items.get(previousIndex);
         this.state.setCurrent(previousIndex);
         moveTo(item);
+        dotsIndicator.select(String.valueOf(this.state.current.getId()));
     }
 
     private void moveTo(DishListItem item) {
@@ -128,11 +156,32 @@ public class DishesList extends Div {
     }
 
     private void updateDishes(final List<DishData> dishes, final long categoryId) {
-        dishes.forEach(d -> System.out.println("Dish in category " + categoryId + " with name " +d.getName()));
-        getUI().ifPresent(ui -> ui.access(this.scrollableContainer::removeAll));
-        this.state.categoryId = categoryId;
-        this.state.dishes = dishes;
-        createItems();
+        getUI().ifPresent(ui -> ui.access(() -> {
+            dishes.forEach(d -> System.out.println("Dish in category " + categoryId + " with name " +d.getName()));
+            this.scrollableContainer.removeAll();
+            this.state.categoryId = categoryId;
+            this.state.dishes = dishes;
+            createItems();
+            final DotsIndicator indicator = createDotsIndicator(state.dishes);
+            this.dotsIndicatorContainer.removeAll();
+            this.dotsIndicatorContainer.add(indicator);
+            this.dotsIndicator = indicator;
+        }));
+    }
+
+    @Override
+    public void dotChangedAction(DotsIndicator.Dot oldDot, DotsIndicator.Dot newDot) {
+        final Optional<DishListItem> item = items.stream().filter(i -> {
+            final String itemId = "dot_" + i.getDishData().getId();
+            final String newDotId = newDot.getId().orElse("");
+            return itemId.equals(newDotId);
+        }).findFirst();
+
+        item.ifPresent(dishListItem -> {
+            final int index = items.indexOf(dishListItem);
+            this.state.setCurrent(index);
+            this.moveTo(dishListItem);
+        });
     }
 
     private static class DishesListState {

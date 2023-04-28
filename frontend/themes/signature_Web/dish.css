@@ -1,10 +1,13 @@
-
 .dish-previous-button{
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     width: 6%;
+}
+
+.dish-previous-button{
+
 }
 
 .dish-next-button{
@@ -22,6 +25,7 @@
 }
 
 .main-text-dish{
+    padding-top: 30px;
     height: 77px;
     font-family: 'Futura New';
     font-style: normal;
@@ -30,6 +34,12 @@
     line-height: 90%;
     text-align: center; 
     color: white;
+
+}
+
+.testttttttttttt{
+    height: 0;
+    display: block;
 
 }
 

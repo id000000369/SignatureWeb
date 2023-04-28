@@ -7,11 +7,12 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.textfield.TextField;
 import it.mifsoft.signature.web.dto.DishData;
+import it.mifsoft.signature.web.dto.PicturesData;
 
 public class DishListItem extends Div {
 
 
-    public  H1 mainText;
+    public H1 mainText;
     private final Label peculiarities;
     private final TextField calories;
     private final TextField protein;
@@ -185,4 +186,7 @@ public class DishListItem extends Div {
         return image;
     }
 
+    public DishData getDishData() {
+        return dishData;
+    }
 }
