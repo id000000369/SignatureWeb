@@ -58,8 +58,6 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
 
     private Div createDotsContainer() {
         final Div container = new Div();
-        container.setWidthFull();
-        container.setHeight("60px");
         return container;
     }
 
