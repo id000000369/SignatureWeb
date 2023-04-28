@@ -12,7 +12,7 @@ import java.util.Optional;
 public class DotsIndicator extends Div {
 
     private final static String DEFAULT_SELECTED_COLOR = "white";
-    private final static String DEFAULT_COLOR = "black";
+    private final static String DEFAULT_COLOR = "rgba(145, 121, 58, 1)";
 
     private final List<Dot> dots;
     private Dot selectedDot;
@@ -123,9 +123,9 @@ public class DotsIndicator extends Div {
         private void setup() {
             this.getStyle().set("border-radius", "50%");
             this.getStyle().set("display", "inline-block");
-            this.getStyle().set("width", "12px");
-            this.getStyle().set("height", "12px");
-            this.getStyle().set("margin", "8px");
+            this.getStyle().set("width", "8px");
+            this.getStyle().set("height", "8px");
+            this.getStyle().set("margin", "11px");
 
             setSecondary();
         }

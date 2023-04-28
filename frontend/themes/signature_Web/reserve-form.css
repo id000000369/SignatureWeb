@@ -1,24 +1,27 @@
 .reserve-container {
   background-color: rgba(0, 32, 36, 1);
   border-radius: 15px;
-  width: 34%;
+  /*width: 33.5%;*/
   color: aliceblue;
   align-items: center;
-  padding: 2% 2% 2% 2.5%;
+  padding: 4% 4% 4% 3%;
+  display: flex;
 }
 
 .reserve-separator {
-  position: absolute;
-
+  width: 4px;
+  margin-right: 10%;
 }
 
-.reserve-items-container{
-position: relative;
+.reserve-items-container {
+  /* display: flex; */
+  /* width: 45000px; */
 }
 
 .reserve-items {
   display: grid;
-  padding: 5% 3% 8% 2%;
+  /* padding: 5% 3% 8% 2%; */
+  left: 20;
   align-items: center;
   justify-content: center;
 }
@@ -43,9 +46,10 @@ position: relative;
   font-weight: 400;
   padding: 25px 10px 25px 10px;
 }
+
 .reminder-text-container {
   display: flex;
-  justify-content: center;
+   justify-content: center; 
   align-items: center;
 }
 
@@ -60,8 +64,9 @@ position: relative;
 }
 .info-text-container {
   display: flex;
-  justify-content: center;
+   justify-content: center; 
   margin-bottom: 5px;
+  letter-spacing: 0.02em;
 }
 
 .name-text {
@@ -82,7 +87,7 @@ position: relative;
 }
 
 .reserve-button-container {
-  display: flex;
+  display: flex; 
   justify-content: center;
 }
 
