@@ -4,13 +4,13 @@
   /*width: 33.5%;*/
   color: aliceblue;
   align-items: center;
-  padding: 0 5% 0 3%;
+  padding: 0 7% 0 1.5%;
   display: flex;
 }
 
 .reserve-separator {
-  width: 4px;
-  margin-right: 12%;
+  width: 5px;
+  margin-right: 15%;
   height: 600px;
   margin-top: 14%;
 }
@@ -73,6 +73,7 @@
 
 .name-text {
   color: rgba(160, 174, 175, 1);
+  flex: auto 0;
 }
 
 .reserve-button {
@@ -108,6 +109,7 @@ vaadin-text-field > input:placeholder-shown {
   font-size: 16px;
   font-weight: 300;
   border-bottom: 1px solid rgba(127, 110, 55);
+
 }
 
 vaadin-text-field > label {
@@ -164,3 +166,5 @@ vaadin-date-time-picker > label {
     font-weight: 700;
     font-size: 10px;
   }
+
+  
