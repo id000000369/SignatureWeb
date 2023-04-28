@@ -41,15 +41,11 @@ public class ReserveForm extends Div {
         this.reminderText = createReminderText();
         this.infoText = createInfoText();
         this.reserveButton = createReserveButton();
-
         this.buttonContainer = createButtonContainer();
         this.infoTextContainer = createInfoTextContainer();
-
         this.reminderTextContainer = createReminderTextContainer();
         this.checkbox = createCheckbox();
-
         this.verticalSeparator = createVerticalSeparator();
-
         this.itemsContainer = createItemsContainer();
 
         this.add(createVerticalSeparator(), createItemsContainer());
@@ -134,7 +130,6 @@ public class ReserveForm extends Div {
 //        name.addClassName("second-header-text");
 //        return name;
 //    }
-
 
     public H1 createReminderText() {
         H1 name = new H1("Напомните мне о бронировании");
