@@ -33,6 +33,11 @@ public class WelcomePage extends Div {
     private final Image guestLine;
     private final Image vineGalleryLine;
     private final Image expositionLine;
+    private final Image mainFirstMobileImg;
+    private final Image mainSecondMobileImg;
+    private final Image mainThirdMobileImg;
+    private final Image mobileHeaderGradient;
+    private final Image mobileMenuButtonImg;
 
 //    private final Image firstSideIcon;
 //    private final Image secondSideIcon;
@@ -56,6 +61,7 @@ public class WelcomePage extends Div {
     private final Div fifteenDiv;
     private final Div sixteenDiv;
     private final Div columnContainer;
+
 
     private final MainLayout mainLayout;
 
@@ -99,19 +105,57 @@ public class WelcomePage extends Div {
         this.fifteenDiv = createFifteenColumn();
         this.sixteenDiv = createSixteenColumn();
         this.columnContainer = createColumnContainer();
+        this.mainFirstMobileImg = createFirstMainMobileImg();
+        this.mainSecondMobileImg = createSecondMainMobileImg();
+        this.mainThirdMobileImg = createThirdMainMobileImg();
+        this.mobileHeaderGradient = createMobileHeaderGradient();
+        this.mobileMenuButtonImg = createMobileMenuButtonImg();
 
+        this.add(createColumnContainer(), createMobileMenuButtonImg(), createMobileHeaderGradient(),
 
-        this.add(
-                createColumnContainer()
+                createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg()
 //                mainImg,
 //                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
 //                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
         );
     }
+
+    public Image createMobileMenuButtonImg(){
+        final Image img = new Image("/img/mobile-menu-button.png","");
+        img.addClassName("mobile-menu-button");
+        return img;
+    }
+
+    public Image createMobileHeaderGradient(){
+        final Image img = new Image("/img/mobile-header-gradient.png","");
+        img.addClassNames("mobile-header-gradient");
+        return img;
+    }
+
+    public Image createFirstMainMobileImg(){
+        final Image img = new Image("/img/main-first-mobile-background.png","");
+        img.addClassNames("mainFirstMobileImg");
+        return img;
+    }
+
+    public Image createSecondMainMobileImg(){
+        final Image img = new Image("/img/main-second-mobile-background.png","");
+        img.addClassNames("mainSecondMobileImg");
+        return img;
+    }
+
+    public Image createThirdMainMobileImg(){
+        final Image img = new Image("/img/main-third-mobile-background.png","");
+        img.addClassNames("mainThirdMobileImg");
+        return img;
+    }
+
     public Div createColumnContainer(){
         final Div columnContainer = new Div();
-        columnContainer.add(fisrtDiv, secondDiv, thirdDiv,fourthDiv, fiveDiv, sixDiv, sevenDiv, eightDiv,
-                nineDiv, tenDiv, elevenDiv, twelveDiv, thirteenDiv, fourteenDiv, fifteenDiv, sixteenDiv);
+        columnContainer.add(
+                fisrtDiv, secondDiv, thirdDiv,fourthDiv, fiveDiv, sixDiv, sevenDiv, eightDiv,
+                nineDiv, tenDiv, elevenDiv, twelveDiv, thirteenDiv, fourteenDiv, fifteenDiv, sixteenDiv
+        );
         columnContainer.addClassName("column-container");
         return columnContainer;
     }

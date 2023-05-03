@@ -1,0 +1,138 @@
+/*//////- MOBILE ADAPTIVE CSS -//////*/
+@media only screen and (max-width: 470px) {
+  /*HIDE MAIN CSS*/
+  .exposition-button {
+    visibility: collapse;
+  }
+  .menu-button {
+    visibility: collapse;
+  }
+  .guest-button {
+    visibility: collapse;
+  }
+  .contacts-button {
+    visibility: collapse;
+  }
+  .about-us-button {
+    visibility: collapse;
+  }
+  .vine-gallery-button {
+    visibility: collapse;
+  }
+
+  .exposition-line {
+    visibility: collapse;
+  }
+
+  .bron-line {
+    visibility: collapse;
+  }
+  .contacts-line {
+    visibility: collapse;
+  }
+  .guest-line {
+    visibility: collapse;
+  }
+  .vine-gallery-line {
+    visibility: collapse;
+  }
+  .menu-line {
+    visibility: collapse;
+  }
+  .menu-item {
+    visibility: collapse;
+  }
+  .column-container {
+    width: 470px;
+  }
+  .content-img {
+    visibility: collapse;
+  }
+  .footer-contacts {
+    visibility: collapse;
+  }
+  .footer-logo {
+    visibility: collapse;
+  }
+  /*MAIN MOBILE CSS*/
+
+
+  .mainFirstMobileImg {
+    width: 100%;
+    display: flex;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    visibility: visible;
+  }
+
+  .mainSecondMobileImg {
+    width: 100%;
+    display: flex;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    visibility: visible;
+  }
+
+  .mainThirdMobileImg {
+    width: 100%;
+    display: flex;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    visibility: visible;
+  }
+
+  .mobile-header-gradient {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    visibility: visible;
+  }
+  .mobile-menu-button {
+    position: absolute;
+    cursor: pointer;
+    left: 28px;
+    top: 42px;
+    z-index: 1;
+    width: 24px;
+    height: 20px;
+    visibility: visible;
+  }
+
+  .header-logo {
+    position: absolute;
+    z-index: 1;
+    width: 317.77px;
+    height: 89px;
+    left: 18%;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .column-container{
+    height: 75%;
+  }
+
+  .bron-button {
+    visibility: hidden;
+  }
+
+  .footer {
+    position: absolute;
+    display: flex;
+  }
+  .footer-button {
+    position: absolute;
+    display: flex;
+    margin-bottom: 100%;
+  }
+}
