@@ -176,11 +176,12 @@ public class ReserveForm extends Div {
         TextField name = new TextField();
         name.setLabel("ПРЕДСТАВЬТЕСЬ ПОЖАЛУЙСТА");
         name.setPrefixComponent(VaadinIcon.USER.create());
-        name.setPlaceholder("Имя");
+        name.setPlaceholder("Виктория");
         name.addClassName("name-text");
         namePrefix.setSrc("https://i.ibb.co/bKSrRHK/Rectangle-890.png");
+        namePrefix.addClassName("name-prefix");
+        name.addClassName("adaptive-reserve-name-text");
         name.setPrefixComponent(namePrefix);
-
         add(name);
         return name;
     }
@@ -191,6 +192,8 @@ public class ReserveForm extends Div {
         phoneNumber.setPlaceholder("+7 (---) --- -- --");
         phoneNumber.addClassName("phone-number-text");
         phonePrefix.setSrc("https://i.ibb.co/m9JzsJJ/Vector.png");
+        phonePrefix.addClassName("phone-prefix");
+        phoneNumber.addClassName("adaptive-reserve-phone-text");
         phoneNumber.setPrefixComponent(phonePrefix);
         return phoneNumber;
     }
@@ -200,8 +203,6 @@ public class ReserveForm extends Div {
         dateTimePicker.setDatePlaceholder("18 апреля 2023");
         dateTimePicker.setTimePlaceholder("18:00");
         dateTimePicker.addClassName("date-time-picker");
-
-
         return dateTimePicker;
     }
 
@@ -210,6 +211,7 @@ public class ReserveForm extends Div {
         countField.setPlaceholder("4 гостя");
         countField.addClassName("guest-count-text");
         guestPrefix.setSrc("https://i.ibb.co/tCywqWy/Group-37387.png");
+        guestPrefix.addClassName("guest-prefix");
         countField.setPrefixComponent(guestPrefix);
         return countField;
     }
