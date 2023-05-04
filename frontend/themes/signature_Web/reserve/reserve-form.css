@@ -3,10 +3,10 @@
   display: none;
 }
 .adaptive-header-logo{
-  visibility: hidden;
+  display: none;
 }
 .adaptive-reserve-close-icon{
-  visibility: hidden;
+  display: none;
 }
 /*///////////////////////////////////////*/
 
