@@ -2,6 +2,7 @@ package it.mifsoft.signature.web.page;
 
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
@@ -62,7 +63,6 @@ public class WelcomePage extends Div {
     private final Div sixteenDiv;
     private final Div columnContainer;
 
-
     private final MainLayout mainLayout;
 
     public WelcomePage(SignatureNavigator navigator, MainLayout mainLayout) {
@@ -111,6 +111,9 @@ public class WelcomePage extends Div {
         this.mobileHeaderGradient = createMobileHeaderGradient();
         this.mobileMenuButtonImg = createMobileMenuButtonImg();
 
+
+
+
         this.add(createColumnContainer(), createMobileMenuButtonImg(), createMobileHeaderGradient(),
 
                 createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg()
@@ -119,6 +122,8 @@ public class WelcomePage extends Div {
 //                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
         );
     }
+
+
 
     public Image createMobileMenuButtonImg(){
         final Image img = new Image("/img/mobile-menu-button.png","");

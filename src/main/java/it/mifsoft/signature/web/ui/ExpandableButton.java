@@ -23,7 +23,7 @@ public class ExpandableButton extends Div {
         this.content.add(components);
 
         this.button = new Button(title);
-
+        this.button.getElement().getStyle().set("textDecoration", "underline");
         //this.button.setWidth(WIDTH);
         //this.button.setHeight("15%");
         this.button.addClickListener(event -> {

@@ -1,17 +1,22 @@
-@import url('./header.css');
-@import url('./footer.css');
-@import url('./content-view.css');
-@import url('./reserve-form.css');
-@import url('./contacts-view.css');
-@import url('./vine.css');
-@import url('./picture-list-item.css');
-@import url('./dish.css');
+@import url('./header/header.css');
+@import url('./footer/footer.css');
+@import url('./main/main-view.css');
+@import url('./reserve/reserve-form.css');
+@import url('./contacts/contacts-view.css');
+@import url('./vine/vine.css');
+@import url('./pictures/picture-list-item.css');
+@import url('./dish/dish.css');
 @import url('./archives.css');
-@import url('./categories.css');
-@import url('./achievment.css');
-@import url('./dish-short.css');
-@import url('./toggle-button.css');
-@import url('./adaptive.css');
+@import url('./categories/categories.css');
+@import url('./achievment/achievment.css');
+@import url('./dish/dish-short.css');
+@import url('./tools/toggle-button.css');
+@import url('./main/main-adaptive.css');
+
+/*///////////- ADAPTIVE CSS -/////////////*/
+@import url('./reserve/adaptive-reserve.css');
+
+/*////////////////////////////////////////*/
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
 @StyleSheet("context://fonts/FuturaNewLight-Reg/stylesheet.css")
 @CssImport(value = "./fonts.css", themeFor = "vaadin")
