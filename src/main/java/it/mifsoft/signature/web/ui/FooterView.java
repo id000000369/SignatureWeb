@@ -23,6 +23,13 @@ public class FooterView extends HorizontalLayout {
     private final H1 contactsText;
     public final Button reserveButton;
 
+    ///////////- Adaptive -/////////////////
+    private final H1 addressInfo;
+    private final H1 phoneInfo;
+    private final H1 adminLabel;
+    private final Image adaptivePhoneImg;
+    ////////////////////////////////////////
+
     public FooterView(HasModal modalContainer, ReserveForm reserveForm) {
         this.modalContainer = modalContainer;
         this.reserveForm = reserveForm;
@@ -32,8 +39,18 @@ public class FooterView extends HorizontalLayout {
         this.contactsText = createContactsText();
         this.reserveButton = createReserveButton();
 
+        ///////////- Adaptive -/////////////////
+        this.adminLabel = createAdminLabel();
+        this.phoneInfo = createPhoneInfo();
+        this.addressInfo = createAddressInfo();
+        this.adaptivePhoneImg = createAdaptivePhoneImg();
+        ////////////////////////////////////////
+
         this.addClassName("footer");
-        this.add(this.logoImage, this.contactsText, this.reserveButton);
+        this.add(this.logoImage, this.contactsText, this.reserveButton,
+                createAdminLabel(), createPhoneInfo(),
+                createAddressInfo(), createAdaptivePhoneImg()
+                );
     }
 
     private Image createLogoImage() {
@@ -59,4 +76,27 @@ public class FooterView extends HorizontalLayout {
         button.addClassName("footer-button");
         return button;
     }
+
+    /////////////////////- For adaptive ///////////////////
+    private H1 createAdminLabel() {
+        final H1 text = new H1("Администратор");
+        text.addClassName("adaptive-admin-label-text");
+        return text;
+    }
+    private H1 createPhoneInfo() {
+        final H1 text = new H1("+7 989 077 70 07");
+        text.addClassName("adaptive-phone-info-text");
+        return text;
+    }
+    private H1 createAddressInfo() {
+        final H1 text = new H1("Котельническая наб., 1/15, к.В, Москва");
+        text.addClassName("adaptive-address-info-text");
+        return text;
+    }
+    private Image createAdaptivePhoneImg() {
+        final Image img = new Image("/img/adaptive-phone-img.png","");
+        img.addClassName("adaptive-phone-button-img");
+        return img;
+    }
+    /////////////////////////////////////////////////////////
 }

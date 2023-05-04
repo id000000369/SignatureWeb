@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 @Component
 @UIScope
 public class ReserveForm extends Div {
-
     private final H1 firstHeaderText;
     //private final H1 secondHeaderText;
     private final H1 reminderText;
@@ -30,6 +29,11 @@ public class ReserveForm extends Div {
     private final Label checkbox;
     private final Image verticalSeparator;
     private final Div itemsContainer;
+    private final Image closeIcon;
+    /////////////- ADAPTIVE - //////////////
+    private final Image adaptiveBackgroundImg;
+    private final Image adaptiveReserveCloseIcon;
+    private final Image adaptiveHeaderLogo;
 
     public ReserveForm() {
         this.firstHeaderText = createFirstHeaderText();
@@ -47,9 +51,34 @@ public class ReserveForm extends Div {
         this.checkbox = createCheckbox();
         this.verticalSeparator = createVerticalSeparator();
         this.itemsContainer = createItemsContainer();
-
-        this.add(createVerticalSeparator(), createItemsContainer());
+        this.closeIcon = createCloseIcon();
+        ////////////////ADAPTIVE///////////////////////////////////////////
+        this.adaptiveBackgroundImg = createAdaptiveBackgroundImg();
+        this.adaptiveHeaderLogo = createAdaptiveHeaderLogo();
+        this.adaptiveReserveCloseIcon = createAdaptiveReserveCloseIcon();
+        //////////////////////////////////////////////////////////////////
+        this.add(createAdaptiveReserveCloseIcon(), createAdaptiveHeaderLogo(), createVerticalSeparator(),createCloseIcon(), createItemsContainer(), createAdaptiveBackgroundImg());
         this.addClassName("reserve-container");
+    }
+    private final Image createAdaptiveReserveCloseIcon() {
+        final Image img = new Image("/img/gold-close-icon.png","");
+        img.addClassName("adaptive-reserve-close-icon");
+        return img;
+    }
+    private final Image createAdaptiveHeaderLogo() {
+        final Image img = new Image("/img/adaptive-header-logo.png","");
+        img.addClassName("adaptive-header-logo");
+        return img;
+    }
+    private final Image createAdaptiveBackgroundImg() {
+        final Image img = new Image("/img/adaptive-reserve-background-img.png","");
+        img.addClassName("adaptive-reserve-background-img");
+        return img;
+    }
+    private Image createCloseIcon(){
+        final Image icon = new Image("/img/close-icon.png","");
+        icon.addClassName("reserve-close-icon");
+        return icon;
     }
 
     private Div createItemsContainer(){

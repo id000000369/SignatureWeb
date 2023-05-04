@@ -1,16 +1,33 @@
+/*////////////- ADAPTIVE CSS -///////////*/
+.adaptive-reserve-background-img {
+  display: none;
+}
+.adaptive-header-logo{
+  visibility: hidden;
+}
+.adaptive-reserve-close-icon{
+  visibility: hidden;
+}
+/*///////////////////////////////////////*/
+
 .reserve-container {
   background-color: rgba(0, 32, 36, 1);
   border-radius: 15px;
-  /*width: 33.5%;*/
   color: aliceblue;
   align-items: center;
-  padding: 0 5% 0 3%;
+  padding: 0 7% 0 1.5%;
   display: flex;
 }
 
+.reserve-close-icon {
+  position: absolute;
+  width: 100%;
+}
+
 .reserve-separator {
-  width: 4px;
-  margin-right: 12%;
+  visibility: visible;
+  width: 5px;
+  margin-right: 15%;
   height: 600px;
   margin-top: 14%;
 }
@@ -51,7 +68,7 @@
 
 .reminder-text-container {
   display: flex;
-   justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
 
@@ -66,13 +83,14 @@
 }
 .info-text-container {
   display: flex;
-   justify-content: center; 
+  justify-content: center;
   margin-bottom: 5px;
   letter-spacing: 0.02em;
 }
 
 .name-text {
   color: rgba(160, 174, 175, 1);
+  flex: auto 0;
 }
 
 .reserve-button {
@@ -89,7 +107,7 @@
 }
 
 .reserve-button-container {
-  display: flex; 
+  display: flex;
   justify-content: center;
 }
 
@@ -160,7 +178,7 @@ vaadin-date-time-picker > [slot="prefix"] {
 }
 
 vaadin-date-time-picker > label {
-    color: rgba(145, 121, 58, 1);
-    font-weight: 700;
-    font-size: 10px;
-  }
+  color: rgba(145, 121, 58, 1);
+  font-weight: 700;
+  font-size: 10px;
+}

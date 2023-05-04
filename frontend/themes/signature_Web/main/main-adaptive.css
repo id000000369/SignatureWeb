@@ -1,0 +1,210 @@
+@media only screen and (max-width: 470px) {
+    @keyframes blink {
+        0% { opacity: 1; }
+        33% { opacity: 0; }
+        66% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+  /*////////////- CSS FROM MAIN -////////////*/
+  .exposition-button {
+    visibility: collapse;
+  }
+  .menu-button {
+    visibility: collapse;
+  }
+  .guest-button {
+    visibility: collapse;
+  }
+  .contacts-button {
+    visibility: collapse;
+  }
+  .about-us-button {
+    visibility: collapse;
+  }
+  .vine-gallery-button {
+    visibility: collapse;
+  }
+  .exposition-line {
+    visibility: collapse;
+  }
+  .bron-line {
+    visibility: collapse;
+  }
+  .contacts-line {
+    visibility: collapse;
+  }
+  .guest-line {
+    visibility: collapse;
+  }
+  .vine-gallery-line {
+    visibility: collapse;
+  }
+  .menu-line {
+    visibility: collapse;
+  }
+  .menu-item {
+    visibility: collapse;
+  }
+  .column-container {
+    width: 470px;
+  }
+  .content-img {
+    visibility: collapse;
+  }
+  .footer-contacts {
+    visibility: collapse;
+  }
+  .footer-logo {
+    visibility: collapse;
+  }
+/*//////- MAIN ADAPTIVE CSS -//////*/
+  .mainFirstMobileImg {
+    width: 100%;
+    display: flex;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    visibility: visible;
+
+    animation: blink 9s infinite;
+    opacity: 0;
+  }
+  .mainSecondMobileImg {
+    width: 100%;
+    display: flex;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    visibility: visible;
+    animation: blink 9s infinite;
+    animation-delay: 3s;
+  }
+  .mainThirdMobileImg {
+    width: 100%;
+    display: flex;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    visibility: visible;
+    animation: blink 9s infinite;
+    animation-delay: 6s;
+  }
+  .mobile-header-gradient {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.9;
+    visibility: visible;
+  }
+  .mobile-menu-button {
+    position: absolute;
+    cursor: pointer;
+    left: 28px;
+    top: 42px;
+    z-index: 1;
+    width: 24px;
+    height: 20px;
+    visibility: visible;
+  }
+  .expandable-button{
+    position: absolute;
+    width: 382px;
+    height: 80px;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.2);
+    justify-content: center;
+    border-color: white;
+    border-radius: 10px;
+    color: white;
+    border-style:solid;
+    border-width: 1px;
+    font-size: 26px;
+    font-weight: 100;
+    letter-spacing: 0.05em;
+    padding: 20px 15px 20px 15px;
+  }
+
+  .five-top-empty-column {
+  position: absolute;
+  top: 47%;
+  left: 9%;
+  width: 470px;
+  height: 470px;
+  }
+
+  .bron-button {
+
+  }
+  
+  /*/////////////- HEADER -/////////////*/
+  .header-logo {
+    position: absolute;
+    z-index: 1;
+    width: 317.77px;
+    height: 89px;
+    left: 18%;
+  }
+  .header {
+    width: 100%;
+  }
+   /*/////////////////////////////*/
+  .column-container{
+    height: 75%;
+  }
+  /*/////////- FOOTER -//////////*/
+  .footer {
+    position: absolute;
+    display: flex;
+    height: 200px;
+    background-image: linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%); /* Градиентный фон, который переходит из синего в зеленый на 50% высоты */
+  }
+  .footer-button {
+    visibility: hidden;
+  }
+  .adaptive-admin-label-text{
+    visibility: visible;
+    position: absolute;
+    color: rgba(145, 121, 58, 1);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    top: 17px;
+    left: 44px;
+  }
+  .adaptive-phone-info-text{
+    visibility: visible;
+    position: absolute;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 30px;
+    top: 52px;
+    left: 44px;
+  }
+  .adaptive-address-info-text{
+    visibility: visible;
+    position: absolute;
+    color: rgba(255, 255, 255, 1);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 30px;
+    top: 67%;
+    left: 44px;
+  }
+  .adaptive-phone-button-img{
+    visibility: visible;
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    right: 24px;
+  }
+  /*/////////////////////////////*/
+}

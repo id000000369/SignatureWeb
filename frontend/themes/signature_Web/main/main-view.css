@@ -9,10 +9,31 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+
+/*Hide mobile css in main*/
+.mainFirstMobileImg {
+  visibility: hidden;
+}
+.mainSecondMobileImg {
+  visibility: hidden;
+}
+.mainThirdMobileImg {
+  visibility: hidden;
+}
+.mobile-menu-button{
+  visibility: hidden;
+}
+.mobile-header-gradient{
+  visibility: hidden;
+}
+
+
+/*//////- MAIN CSS -//////*/
 .content-view {
-  width: 100%;
+  /*width: 100%;
   height: 100%;
-  overflow-y: hidden;
+  overflow-y: hidden;*/
+  
 }
 
 .content-view-pictures {
