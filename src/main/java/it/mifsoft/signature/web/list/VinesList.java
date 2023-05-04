@@ -19,6 +19,7 @@ public class VinesList extends Div {
     private void setup() {
         final Div leftSide = new Div();
         FlexStyleUtils.doItCenteredColumn(leftSide.getElement());
+        leftSide.getStyle().set("justify-content", "unset");
         leftSide.setWidth("50vw");
         leftSide.setHeight("100vh");
 
