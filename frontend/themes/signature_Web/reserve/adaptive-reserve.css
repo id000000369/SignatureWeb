@@ -141,5 +141,8 @@
   }
   .adaptive-reserve-close-icon {
     visibility: visible;
+    position: absolute;
+    top: 7%;
+    left: 5%;
   }
 }
