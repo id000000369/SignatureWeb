@@ -40,6 +40,7 @@ public class VinesCarousel extends Div {
         this.getStyle().setWidth("350px");
         this.getStyle().setHeight("502px");
         this.getStyle().setPosition(Style.Position.RELATIVE);
+        this.getStyle().set("justify-content", "unset");
         this.items = createItems();
         this.items.forEach(item -> this.add(item.image));
     }
