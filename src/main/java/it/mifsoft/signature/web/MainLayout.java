@@ -1,6 +1,7 @@
 package it.mifsoft.signature.web;
 
 import com.vaadin.flow.component.AttachEvent;
+import com.vaadin.flow.component.HtmlComponent;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
@@ -68,7 +69,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         }
     }
 
-    private Div createModalView(ReserveForm form) {
+    private Div createModalView(HtmlComponent form) {
         final Div div = new Div();
         div.setWidthFull();
         div.setHeightFull();

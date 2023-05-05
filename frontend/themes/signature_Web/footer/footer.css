@@ -45,14 +45,14 @@
 }
 /*/////////- ADAPTIVE -///////////*/
 .adaptive-admin-label-text {
-  visibility: hidden;
+  display: none;
 }
 .adaptive-phone-info-text {
-  visibility: hidden;
+  display: none;
 }
 .adaptive-address-info-text {
-  visibility: hidden;
+  display: none;
 }
 .adaptive-phone-button-img {
-  visibility: hidden;
+  display: none;
 }
