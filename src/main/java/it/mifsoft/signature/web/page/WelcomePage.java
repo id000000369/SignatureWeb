@@ -37,8 +37,7 @@ public class WelcomePage extends Div {
     private final Image mainFirstMobileImg;
     private final Image mainSecondMobileImg;
     private final Image mainThirdMobileImg;
-    private final Image mobileHeaderGradient;
-    private final Image mobileMenuButtonImg;
+
 
 //    private final Image firstSideIcon;
 //    private final Image secondSideIcon;
@@ -108,13 +107,12 @@ public class WelcomePage extends Div {
         this.mainFirstMobileImg = createFirstMainMobileImg();
         this.mainSecondMobileImg = createSecondMainMobileImg();
         this.mainThirdMobileImg = createThirdMainMobileImg();
-        this.mobileHeaderGradient = createMobileHeaderGradient();
-        this.mobileMenuButtonImg = createMobileMenuButtonImg();
 
 
 
 
-        this.add(createColumnContainer(), createMobileMenuButtonImg(), createMobileHeaderGradient(),
+
+        this.add(createColumnContainer(),
 
                 createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg()
 //                mainImg,
@@ -125,18 +123,7 @@ public class WelcomePage extends Div {
 
 
 
-    public Image createMobileMenuButtonImg(){
-        final Image img = new Image("/img/mobile-menu-button.png","");
-        img.addClassName("mobile-menu-button");
-       // mobileMenuButtonImg.addClickListener(event -> this.mainLayout.showModal());
-        return img;
-    }
 
-    public Image createMobileHeaderGradient(){
-        final Image img = new Image("/img/mobile-header-gradient.png","");
-        img.addClassNames("mobile-header-gradient");
-        return img;
-    }
 
     public Image createFirstMainMobileImg(){
         final Image img = new Image("/img/main-first-mobile-background.png","");

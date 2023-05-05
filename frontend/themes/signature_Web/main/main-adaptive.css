@@ -98,7 +98,7 @@
     left: 0;
     top: 0;
     opacity: 0.9;
-    visibility: visible;
+    display: block;
   }
   .mobile-menu-button {
     position: absolute;
@@ -108,7 +108,7 @@
     z-index: 1;
     width: 24px;
     height: 20px;
-    visibility: visible;
+    display: block;
   }
   .expandable-button{
     position: absolute;

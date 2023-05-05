@@ -21,11 +21,12 @@ body::-webkit-scrollbar {
   visibility: hidden;
 }
 .mobile-menu-button{
-  visibility: hidden;
+  display: none;
 }
 .mobile-header-gradient{
-  visibility: hidden;
+  display: none;
 }
+
 
 
 /*//////- MAIN CSS -//////*/

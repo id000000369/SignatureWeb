@@ -7,6 +7,7 @@ import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.AbstractSignatureNavigator;
+import it.mifsoft.signature.web.MainLayout;
 import it.mifsoft.signature.web.SignatureNavigator;
 import org.springframework.stereotype.Component;
 
@@ -28,21 +29,36 @@ public class HeaderView extends HorizontalLayout {
     private final MenuBar menuList;
     private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
+    private final Image mobileHeaderGradient;
+    private final Image mobileMenuButtonImg;
 
     public HeaderView(SignatureNavigator navigator) {
 //        this.getStyle().set("background-image", "url('https://i.ibb.co/Vtn861j/light-gradient.png')");
-
         this.navigator = navigator;
         this.logoImage = createImage();
         this.menuList = createMenu();
         this.menuItems = createMenuItems(this.menuList);
+        this.mobileHeaderGradient = createMobileHeaderGradient();
+        this.mobileMenuButtonImg = createMobileMenuButtonImg();
 
         this.addClassName("header");
 
         logoImage.addClassName("header-logo");
         menuList.addClassName("menu-list");
 
-        this.add(logoImage, menuList);
+        this.add(logoImage, menuList, createMobileMenuButtonImg(), createMobileHeaderGradient());
+    }
+
+    public Image createMobileMenuButtonImg(){
+        final Image img = new Image("/img/mobile-menu-button.png","");
+        img.addClassName("mobile-menu-button");
+        return img;
+    }
+
+    public Image createMobileHeaderGradient(){
+        final Image img = new Image("/img/mobile-header-gradient.png","");
+        img.addClassNames("mobile-header-gradient");
+        return img;
     }
 
     private Image createImage() {
