@@ -128,6 +128,7 @@ public class WelcomePage extends Div {
     public Image createMobileMenuButtonImg(){
         final Image img = new Image("/img/mobile-menu-button.png","");
         img.addClassName("mobile-menu-button");
+       // mobileMenuButtonImg.addClickListener(event -> this.mainLayout.showModal());
         return img;
     }
 

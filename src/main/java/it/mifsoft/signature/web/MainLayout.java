@@ -58,7 +58,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             this.isModalVisible = true;
         }
     }
-
     public void hideModal() {
         if (!isModalVisible) {
             return;

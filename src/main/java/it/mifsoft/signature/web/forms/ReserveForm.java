@@ -5,7 +5,11 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
+import it.mifsoft.signature.web.ContentLayout;
+import it.mifsoft.signature.web.MainLayout;
+import it.mifsoft.signature.web.SignatureNavigator;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -34,10 +38,8 @@ public class ReserveForm extends Div {
     private final Image adaptiveBackgroundImg;
     private final Image adaptiveReserveCloseIcon;
     private final Image adaptiveHeaderLogo;
-
     public ReserveForm() {
         this.firstHeaderText = createFirstHeaderText();
-
         this.name = createNameField();
         this.phoneNumber = createPhoneNumberField();
         this.date = createDateTimePicker();

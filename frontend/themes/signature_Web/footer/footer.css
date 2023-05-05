@@ -43,8 +43,6 @@
   font-weight: 400;
   padding: 20px 50px 20px 50px;
 }
-
-
 /*/////////- ADAPTIVE -///////////*/
 .adaptive-admin-label-text {
   visibility: hidden;
@@ -58,4 +56,3 @@
 .adaptive-phone-button-img {
   visibility: hidden;
 }
-

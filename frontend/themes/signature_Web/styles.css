@@ -15,7 +15,7 @@
 
 /*///////////- ADAPTIVE CSS -/////////////*/
 @import url('./reserve/adaptive-reserve.css');
-
+@import url('./footer/adaptive-footer.css');
 /*////////////////////////////////////////*/
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
 @StyleSheet("context://fonts/FuturaNewLight-Reg/stylesheet.css")
