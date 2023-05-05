@@ -47,7 +47,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.contentImage = createContentImg();
 
         this.setHeight("100vh");
-        this.getStyle().setOverflow(Style.Overflow.HIDDEN);
+        this.getStyle().setOverflow(Style.Overflow.AUTO);
         this.getStyle().set("background-repeat", "repeat-x");
 
         this.modalView = createModalView(this.reserveForm);

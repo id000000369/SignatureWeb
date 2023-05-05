@@ -82,3 +82,22 @@
     
     background-color: rgb(10, 96, 172);
 }
+
+@media(max-width: 767px) {
+
+    .achievements-list {
+        display: table-cell;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .achievment-main {
+        position: relative;
+        min-height: calc(65vh - 1vh);
+        min-width: 300px;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        margin-left: 20px;
+        margin-bottom: 15px;
+    }
+}
