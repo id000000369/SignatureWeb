@@ -29,16 +29,14 @@ public class HeaderView extends HorizontalLayout {
     private final MenuBar menuList;
     private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
-    private final Image mobileHeaderGradient;
     private final Image mobileMenuButtonImg;
 
     public HeaderView(SignatureNavigator navigator) {
-//        this.getStyle().set("background-image", "url('https://i.ibb.co/Vtn861j/light-gradient.png')");
         this.navigator = navigator;
+
         this.logoImage = createImage();
         this.menuList = createMenu();
         this.menuItems = createMenuItems(this.menuList);
-        this.mobileHeaderGradient = createMobileHeaderGradient();
         this.mobileMenuButtonImg = createMobileMenuButtonImg();
 
         this.addClassName("header");
@@ -46,18 +44,12 @@ public class HeaderView extends HorizontalLayout {
         logoImage.addClassName("header-logo");
         menuList.addClassName("menu-list");
 
-        this.add(logoImage, menuList, createMobileMenuButtonImg(), createMobileHeaderGradient());
+        this.add(logoImage, menuList, createMobileMenuButtonImg());
     }
 
     public Image createMobileMenuButtonImg(){
         final Image img = new Image("/img/mobile-menu-button.png","");
         img.addClassName("mobile-menu-button");
-        return img;
-    }
-
-    public Image createMobileHeaderGradient(){
-        final Image img = new Image("/img/mobile-header-gradient.png","");
-        img.addClassNames("mobile-header-gradient");
         return img;
     }
 

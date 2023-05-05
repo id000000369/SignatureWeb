@@ -37,6 +37,7 @@ public class WelcomePage extends Div {
     private final Image mainFirstMobileImg;
     private final Image mainSecondMobileImg;
     private final Image mainThirdMobileImg;
+    private final Image mobileHeaderGradient;
 
 
 //    private final Image firstSideIcon;
@@ -61,7 +62,6 @@ public class WelcomePage extends Div {
     private final Div fifteenDiv;
     private final Div sixteenDiv;
     private final Div columnContainer;
-
     private final MainLayout mainLayout;
 
     public WelcomePage(SignatureNavigator navigator, MainLayout mainLayout) {
@@ -104,26 +104,26 @@ public class WelcomePage extends Div {
         this.fifteenDiv = createFifteenColumn();
         this.sixteenDiv = createSixteenColumn();
         this.columnContainer = createColumnContainer();
+
         this.mainFirstMobileImg = createFirstMainMobileImg();
         this.mainSecondMobileImg = createSecondMainMobileImg();
         this.mainThirdMobileImg = createThirdMainMobileImg();
-
-
-
-
+        this.mobileHeaderGradient = createMobileHeaderGradient();
 
         this.add(createColumnContainer(),
 
-                createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg()
+                createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg(),
+                createMobileHeaderGradient()
 //                mainImg,
 //                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
 //                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
         );
     }
-
-
-
-
+    public Image createMobileHeaderGradient(){
+        final Image img = new Image("/img/mobile-header-gradient.png","");
+        img.addClassNames("mobile-header-gradient");
+        return img;
+    }
 
     public Image createFirstMainMobileImg(){
         final Image img = new Image("/img/main-first-mobile-background.png","");
