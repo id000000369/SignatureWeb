@@ -14,6 +14,7 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.forms.ReserveForm;
 import it.mifsoft.signature.web.ui.FooterView;
 import it.mifsoft.signature.web.ui.HeaderView;
+import it.mifsoft.signature.web.ui.menu.MenuItems;
 import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import org.springframework.stereotype.Component;
 
@@ -27,17 +28,21 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private final Image contentImage;
     private final FooterView footerView;
     private final ReserveForm reserveForm;
+    private final MenuItems menuItems;
     private final Div modalView;
+    private final Div menuItemsView;
     private boolean isModalVisible = false;
 
     public MainLayout(HeaderView headerView,
                       ContentLayout contentView,
                       FooterView footerView,
-                      ReserveForm reserveForm) {
+                      ReserveForm reserveForm,
+                      MenuItems menuItems) {
         this.headerView = headerView;
         this.contentView = contentView;
         this.footerView = footerView;
         this.reserveForm = reserveForm;
+        this.menuItems = menuItems;
 
         this.contentImage = createContentImg();
 
@@ -46,6 +51,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.getStyle().set("background-repeat", "repeat-x");
 
         this.modalView = createModalView(this.reserveForm);
+        this.menuItemsView = createMenuItemsView(this.menuItems);
         this.add(headerView);
     }
 
@@ -88,6 +94,25 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         return div;
     }
 
+    private Div createMenuItemsView(HtmlComponent form) {
+        final Div div = new Div();
+        div.setWidthFull();
+        div.setHeightFull();
+        FlexStyleUtils.doItCenteredRow(div.getElement());
+        div.getStyle().setPosition(Style.Position.ABSOLUTE);
+        div.getStyle().setLeft("0px");
+        div.getStyle().setTop("0px");
+        div.getStyle().setZIndex(3);
+        form.getStyle().setZIndex(Integer.MAX_VALUE);
+        div.getStyle().set("background", "rgba(255, 255, 255, 0.33)");
+        div.getStyle().set("backdrop-filter", "blur(10px)");
+        div.add(form);
+        div.addClickListener(event -> {
+
+        });
+        return div;
+    }
+
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
@@ -98,14 +123,11 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         });
         this.add(this.footerView);
     }
-
-
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
         final var location = event.getLocation();
         final String path = location.getPath();
         if (path.equals("main/welcome")) {
-
             this.headerView.yellowColor();
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
@@ -117,13 +139,11 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
         }
 
-
         if (path.equals("main/pictures")) {
             this.contentView.setClassName("content-view-pictures");
         } else {
             this.contentView.setClassName("content-view");
         }
-
 
         switch (path) {
             case "main/vines", "main/dishes", "main/pictures" -> {

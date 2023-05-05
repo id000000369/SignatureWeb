@@ -167,7 +167,7 @@
     visibility: hidden;
   }
   .adaptive-admin-label-text{
-    visibility: visible;
+    display: block;
     position: absolute;
     color: rgba(145, 121, 58, 1);
     font-style: normal;
@@ -178,7 +178,7 @@
     left: 44px;
   }
   .adaptive-phone-info-text{
-    visibility: visible;
+    display: block;
     position: absolute;
     color: rgba(255, 255, 255, 1);
     font-style: normal;
@@ -189,7 +189,7 @@
     left: 44px;
   }
   .adaptive-address-info-text{
-    visibility: visible;
+    display: block;
     position: absolute;
     color: rgba(255, 255, 255, 1);
     font-style: normal;
@@ -200,7 +200,7 @@
     left: 44px;
   }
   .adaptive-phone-button-img{
-    visibility: visible;
+    display: block;
     position: absolute;
     cursor: pointer;
     top: 20px;
