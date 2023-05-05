@@ -19,6 +19,7 @@
     display: none;
   }
   .adaptive-map {
+    display: block;
     position: absolute;
     top: 50px;
     left: 0;
@@ -37,6 +38,7 @@
   .adaptive-social-container {
     top: 62.5%;
     position: absolute;
+    display: block;
   }
   .adaptive-copy-rights-text {
     position: absolute;
@@ -47,6 +49,7 @@
     /* or 18px */
     text-align: center;
     color: #a0aeaf;
+    display: block;
   }
 
   .adaptive-address-info-text {
@@ -62,6 +65,7 @@
     white-space: break-spaces;
     text-align: center;
     color: #d5d7d2;
+    display: block;
   }
 
   .adaptive-contacts-logo{
@@ -69,6 +73,7 @@
     height: 65px;
     position: absolute;
     top: 16%;
+    display: block;
   }
 
   /*////////- HIDE ELEMETS -////////*/
