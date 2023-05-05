@@ -20,6 +20,7 @@ import org.springframework.stereotype.Component;
 @Route(value = "welcome", layout = ContentLayout.class)
 public class WelcomePage extends Div {
     private final SignatureNavigator navigator;
+    private final MainLayout mainLayout;
     private final ExpandableButton expositionButton;
     private final ExpandableButton aboutUsButton;
     private final ExpandableButton menuButton;
@@ -62,7 +63,7 @@ public class WelcomePage extends Div {
     private final Div fifteenDiv;
     private final Div sixteenDiv;
     private final Div columnContainer;
-    private final MainLayout mainLayout;
+
 
     public WelcomePage(SignatureNavigator navigator, MainLayout mainLayout) {
         this.navigator = navigator;

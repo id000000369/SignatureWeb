@@ -12,11 +12,14 @@
 @import url('./dish/dish-short.css');
 @import url('./tools/toggle-button.css');
 @import url('./main/main-adaptive.css');
+@import url('./menu-items/adaptive-menu-items.css');
+@import url('./contacts/adaptive-contacts.css');
 
 /*///////////- ADAPTIVE CSS -/////////////*/
 @import url('./reserve/adaptive-reserve.css');
 @import url('./footer/adaptive-footer.css');
 /*////////////////////////////////////////*/
+
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");
 @StyleSheet("context://fonts/FuturaNewLight-Reg/stylesheet.css")
 @CssImport(value = "./fonts.css", themeFor = "vaadin")
