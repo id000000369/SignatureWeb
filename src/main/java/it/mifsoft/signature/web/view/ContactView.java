@@ -80,7 +80,7 @@ public class ContactView extends Div {
         final HtmlComponent map = new HtmlComponent("div");
         map.getElement().setProperty("innerHTML", "<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A04b70d8dd3abbde806619bb744e739aa46ce275958140fbdb2ecd095244b134f&amp;source=constructor" +
                 "\" width=\"470\" " +
-                "height=\"525\" " +
+                "height=\"400\" " +
                 "zoom=\"30\" " +
                 "frameborder=\"0\"" +
                 "></iframe>");

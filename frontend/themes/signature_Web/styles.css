@@ -18,6 +18,7 @@
 /*///////////- ADAPTIVE CSS -/////////////*/
 @import url('./reserve/adaptive-reserve.css');
 @import url('./footer/adaptive-footer.css');
+@import url('./categories/adaptive-dishes.css');
 /*////////////////////////////////////////*/
 
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");

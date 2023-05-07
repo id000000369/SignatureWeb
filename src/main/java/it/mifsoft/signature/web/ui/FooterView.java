@@ -19,7 +19,7 @@ public class FooterView extends HorizontalLayout {
 
     private final HasModal modalContainer;
     private final ReserveForm reserveForm;
-
+    private final Div adaptiveSocialContainer;
     private final Image logoImage;
     private final H1 contactsText;
     public final Button reserveButton;
@@ -34,6 +34,9 @@ public class FooterView extends HorizontalLayout {
     private final Image ytIco;
     private final Image instaIco;
     private final H1 adaptiveContactsAddressInfo;
+    private final H1 adaptiveCopyRights;
+
+    private final Div footerContactsInfo;
     ////////////////////////////////////////
 
     public FooterView(HasModal modalContainer, ReserveForm reserveForm) {
@@ -55,14 +58,20 @@ public class FooterView extends HorizontalLayout {
         this.ytIco = createYtIco();
         this.instaIco = createInstaIco();
         this.adaptiveContactsAddressInfo = createAdaptiveContactsAddressInfo();
+        this.adaptiveSocialContainer = createAdaptiveSocialContainer();
+        this.adaptiveCopyRights = createAdaptiveCopyRights();
+        this.footerContactsInfo = createFooterContactsInfo();
+
         ////////////////////////////////////////
 
         this.addClassName("footer");
         this.add(this.logoImage, this.contactsText, this.reserveButton,
                 createAdminLabel(), createPhoneInfo(),
                 createAddressInfo(), createAdaptivePhoneImg(),
-                createAdaptiveSocialContainer(), createAdaptiveCopyRights(),
-                createAdaptiveContactsAddressInfo()
+
+               // createAdaptiveSocialContainer(), createAdaptiveCopyRights(),
+//                createAdaptiveContactsAddressInfo(),
+                createFooterContactsInfo()
                 );
     }
     public H1 createAdaptiveCopyRights() {
@@ -139,11 +148,22 @@ public class FooterView extends HorizontalLayout {
         img.addClassName("adaptive-phone-button-img");
         return img;
     }
-
     public H1 createAdaptiveContactsAddressInfo() {
         final H1 text = new H1("Москва, Котельническая набережная,\n дом 1/15, корпус В");
         text.addClassName("adaptive-contacts-address-info-text");
         return text;
     }
     /////////////////////////////////////////////////////////
+    public Div createFooterContactsInfo(){
+        final Div container = new Div();
+        container.add(adaptiveContactsAddressInfo, adaptiveSocialContainer, adaptiveCopyRights);
+        container.addClassName("footer-contacts-info");
+        return container;
+    }
+    public void showBottom() {
+        this.footerContactsInfo.setVisible(true);
+    }
+    public void hideBottom() {
+        this.footerContactsInfo.setVisible(false);
+    }
 }
