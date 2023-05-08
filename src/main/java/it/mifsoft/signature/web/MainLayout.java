@@ -144,7 +144,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
         }
     }
-
     public Image createContentImg() {
         final Image content = new Image("img/main-img.png", "");
         content.addClassName("content-img");
