@@ -41,7 +41,6 @@
     padding-top: 5%;
     padding-bottom: 5%;
     top: 51.5%;
-
     background-color: rgba(0, 32, 36, 1);
   }
 
@@ -60,11 +59,6 @@
     color: #a0aeaf;
     display: block;
   }
-
-  .adaptive-address-info-text {
-    display: none;
-  }
-
   .adaptive-contacts-address-info-text{
     padding-bottom: 4%;
     font-weight: 300;
