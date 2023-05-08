@@ -25,7 +25,7 @@
     left: 0;
   }
   .footer {
-    position: absolute;
+    position: sticky;
     top: 66%;
     display: flex;
     background-color: rgba(3, 45, 50, 1);

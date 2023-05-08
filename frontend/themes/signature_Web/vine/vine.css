@@ -139,7 +139,7 @@
 }
 
 .right-side{
-    width: 50vw;
+    width: 80vw;
     height: 100vh;
 }
 
@@ -180,9 +180,10 @@ vaadin-text-field::part(input-field){
     }
 
     .left-side{
+        width: 80vw;
+        height: 55vh;
         padding-top: 40px;
         display: grid;
-        height: 55vh;
     }
 
     .window-one-items{
@@ -190,7 +191,6 @@ vaadin-text-field::part(input-field){
     }
 
     .window{
-        width: 80vw;
         flex-direction: column;
         background: #002024;
         border-radius: 15px;

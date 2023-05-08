@@ -159,7 +159,7 @@
      /*/////////////ADAPTIVE FOOTER////////////////*/
   .footer {
     top: 79%;
-    position: absolute;
+    position: relative;
     display: flex;
     height: 200px;
   }
