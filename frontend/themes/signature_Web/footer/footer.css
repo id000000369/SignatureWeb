@@ -50,9 +50,9 @@
 .adaptive-phone-info-text {
   display: none;
 }
-/*.adaptive-address-info-text {
-
-}*/
+.adaptive-address-info-text {
+  display: none;
+}
 .adaptive-phone-button-img {
   display: none;
 }
