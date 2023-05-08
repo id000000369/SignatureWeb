@@ -164,7 +164,7 @@
     height: 200px;
   }
   .footer-button {
-    visibility: hidden;
+    display: none;
   }
   .adaptive-admin-label-text{
     display: block;

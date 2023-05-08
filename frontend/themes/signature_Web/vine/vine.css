@@ -3,7 +3,7 @@
     padding: 5px;
 }
 
-.window-main-items{
+.window-main-items {
     display: grid;
     padding: 5px;
 }
@@ -22,6 +22,7 @@
 }
 
 .window{
+    justify-content: unset;
     flex-direction: column;
     background: #002024;
     border-radius: 15px;
@@ -130,6 +131,24 @@
     margin: 10px;
 }
 
+.left-side{
+    display: grid;
+    justify-content: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+.right-side{
+    width: 50vw;
+    height: 100vh;
+}
+
+.vines-list-main{
+    padding: 40px;
+    display: flex;
+}
+
+
 vaadin-text-field::part(input-field) {
     border: none;
     border-radius: 0;
@@ -149,4 +168,74 @@ vaadin-text-field::part(input-field){
     color: rgba(160, 174, 175, 1);
     
     
+}
+
+@media(max-width: 489px) {
+
+    .vines-list-main{
+        padding: 40px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-side{
+        padding-top: 40px;
+        display: grid;
+        height: 55vh;
+    }
+
+    .window-one-items{
+        padding: 5px;
+    }
+
+    .window{
+        width: 80vw;
+        flex-direction: column;
+        background: #002024;
+        border-radius: 15px;
+        padding: 35px 0 35px 10px;
+    }
+
+    .region{
+        width: 100%;
+        margin-right: 5%;
+        font-size: 11px;
+        border-bottom: 1px solid rgba(127, 110, 55);
+    }
+
+    .fortress{
+        display: none;
+    }
+
+    .manufacturer {
+        display: none;
+    }
+
+    .volume{
+        display: none;
+    }
+
+    .sparklingWineOrChampagne{
+        width: 100%;
+        margin-right: 5%;
+        font-size: 11px;
+        border-bottom: 1px solid rgba(127, 110, 55);
+    }
+
+    .vine-items-container{
+        padding-left: 30px;
+    }
+
+    .signUpForATasting{
+        font-size: 15px;
+        cursor: pointer;
+        color: rgba(160, 174, 175, 1);
+        width: 90%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: aliceblue;
+        border-radius: 10px;
+        margin: 10px;
+    }
 }

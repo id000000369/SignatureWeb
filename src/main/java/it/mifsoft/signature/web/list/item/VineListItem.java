@@ -36,8 +36,6 @@ public class VineListItem extends Div {
         this.signUpForATasting = createSignUpForATastingText();
         this.verticalSeparator = createVerticalSeparator();
         this.itemsContainer = createItemsContainer();
-        this.getStyle().set("justify-content", "unset");
-
 
         addClassNames("window");
         add(createVerticalSeparator(), createItemsContainer());
