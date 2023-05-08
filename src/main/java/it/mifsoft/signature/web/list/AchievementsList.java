@@ -6,7 +6,6 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.list.item.AchievementListItem;
-import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -78,6 +77,10 @@ public class AchievementsList extends Div {
     public AchievementsList() {
         this.achievementsListItems = createListItems();
         this.achievementsListItems.forEach(this::add);
+        final Button button = new Button();
+        button.setText("Забронировать столик");
+        button.addClassName("achievement-reserve-a-table");
+        this.add(button);
         this.addClassName("achievements-list");
     }
 
@@ -135,6 +138,7 @@ public class AchievementsList extends Div {
                                String description,
                                String backgroundImage) {
             this(title, subtitle, description, backgroundImage, null, null);
+
         }
 
         public AchievementData(String title,

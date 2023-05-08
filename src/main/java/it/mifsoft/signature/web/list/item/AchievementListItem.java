@@ -2,8 +2,6 @@ package it.mifsoft.signature.web.list.item;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.Image;
 
 public class AchievementListItem extends Div {
     private final String imageUrl;
@@ -38,6 +36,8 @@ public class AchievementListItem extends Div {
         subTitle.addClassName("achievment-subtitle");
         return subTitle;
     }
+
+
 
 //    public H2 createDescriptionH() {
 //        final H2 description = new H2();

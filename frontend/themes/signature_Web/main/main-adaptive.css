@@ -158,13 +158,13 @@
   }
      /*/////////////ADAPTIVE FOOTER////////////////*/
   .footer {
-    position: absolute;
+    position: relative;
     display: flex;
     height: 200px;
     background-image: linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%); /* Градиентный фон, который переходит из синего в зеленый на 50% высоты */
   }
   .footer-button {
-    visibility: hidden;
+    display: none;
   }
   .adaptive-admin-label-text{
     display: block;

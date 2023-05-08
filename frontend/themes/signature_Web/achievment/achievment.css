@@ -4,6 +4,11 @@
     width: 100%;
     padding: 20px;
 }
+
+.achievement-reserve-a-table{
+    display: none;
+}
+
 .achievment-main {
     position: relative;
     min-height: calc(65vh - 1vh);
@@ -71,6 +76,8 @@
     padding: 10% 14%;
     color: aliceblue;
     height: 100px;
+    text-align: center;
+
 }
 
 .archiveListItem {
@@ -99,5 +106,20 @@
         border-radius: 15px;
         margin-left: 20px;
         margin-bottom: 15px;
+    }
+
+    .achievement-reserve-a-table {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid #FFFFFF;
+        color: rgb(238, 238, 238);
+        backdrop-filter: blur(20px);
+        border-radius: 15px;
+        font-size: 26px;
+        line-height: 40px;
+        padding: 40px;
+        font-weight: 200;
     }
 }
