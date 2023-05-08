@@ -20,7 +20,9 @@ public class ContactView extends Div {
     private final H1 adminLabel;
     private final H1 copyRights;
     private final HtmlComponent html = new HtmlComponent("div");
+    private final HtmlComponent adaptiveMap;
     private final Div mapContainer = new Div();
+    private final Image contactsLogo;
 
     public ContactView() {
         this.getElement().getStyle().set("font-family", "FuturaNewLight-Reg");
@@ -55,16 +57,35 @@ public class ContactView extends Div {
         this.phoneInfo = createPhoneInfo();
         this.adminLabel = createAdminLabel();
         this.copyRights = createCopyRights();
+        this.adaptiveMap = createAdaptiveMap();
+        this.contactsLogo = createContactsLogo();
 
         this.mapContainer.add(html);
         this.mapContainer.addClassName("map-container-view");
         this.html.addClassName("map-view");
 
         this.contactsContainer.add(mapContainer, createAddressInfo(), createAdminLabel(),
-                createPhoneInfo(), createSocialContainer(), createCopyRights());
+                createPhoneInfo(), createSocialContainer(), createCopyRights(), createAdaptiveMap()
+                );
 
         this.addClassName("contacts-main");
-        this.add(backgroundImg, contactsContainer);
+        this.add(contactsLogo, backgroundImg, contactsContainer);
+    }
+    private Image createContactsLogo(){
+        final Image img = new Image("img/adaptive-contacts-logo.png","");
+        img.addClassName("adaptive-contacts-logo");
+        return img;
+    }
+    private HtmlComponent createAdaptiveMap(){
+        final HtmlComponent map = new HtmlComponent("div");
+        map.getElement().setProperty("innerHTML", "<iframe src=\"https://yandex.ru/map-widget/v1/?um=constructor%3A04b70d8dd3abbde806619bb744e739aa46ce275958140fbdb2ecd095244b134f&amp;source=constructor" +
+                "\" width=\"470\" " +
+                "height=\"400\" " +
+                "zoom=\"30\" " +
+                "frameborder=\"0\"" +
+                "></iframe>");
+        map.addClassName("adaptive-map");
+        return map;
     }
     public Div createSocialContainer() {
         final Div container = new Div();

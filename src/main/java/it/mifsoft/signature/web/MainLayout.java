@@ -30,7 +30,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private final ReserveForm reserveForm;
     private final MenuItems menuItems;
     private final Div modalView;
-    private final Div menuItemsView;
     private boolean isModalVisible = false;
 
     public MainLayout(HeaderView headerView,
@@ -51,7 +50,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.getStyle().set("background-repeat", "repeat-x");
 
         this.modalView = createModalView(this.reserveForm);
-        this.menuItemsView = createMenuItemsView(this.menuItems);
         this.add(headerView);
     }
 
@@ -93,26 +91,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         });
         return div;
     }
-
-    private Div createMenuItemsView(HtmlComponent form) {
-        final Div div = new Div();
-        div.setWidthFull();
-        div.setHeightFull();
-        FlexStyleUtils.doItCenteredRow(div.getElement());
-        div.getStyle().setPosition(Style.Position.ABSOLUTE);
-        div.getStyle().setLeft("0px");
-        div.getStyle().setTop("0px");
-        div.getStyle().setZIndex(3);
-        form.getStyle().setZIndex(Integer.MAX_VALUE);
-        div.getStyle().set("background", "rgba(255, 255, 255, 0.33)");
-        div.getStyle().set("backdrop-filter", "blur(10px)");
-        div.add(form);
-        div.addClickListener(event -> {
-
-        });
-        return div;
-    }
-
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
@@ -149,12 +127,20 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             case "main/vines", "main/dishes", "main/pictures" -> {
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
                 this.headerView.yellowColor();
+                this.footerView.hideBottom();
             }
-            default -> this.getStyle().remove("background-image");
 
             case "main/contacts", "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
+                this.footerView.showBottom();
+            }
+            case "main/welcome" -> {
+                this.footerView.hideBottom();
+            }
+            default -> {
+                this.getStyle().remove("background-image");
+                this.footerView.showBottom();
             }
         }
     }

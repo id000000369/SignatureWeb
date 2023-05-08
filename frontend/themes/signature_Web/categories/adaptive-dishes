@@ -1,0 +1,14 @@
+@media only screen and (max-width: 470px) {
+  .categories-list-main {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #a0aeaf;
+    cursor: pointer;
+  }
+  .menu-list{
+    top: 50%;
+    position: absolute;
+  }
+}

@@ -1,0 +1,20 @@
+@media only screen and (max-width: 470) {
+  .adaptive-menu-items-container {
+    background-color: rgb(190, 37, 157);
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+  }
+  .expandable-button-container{
+    
+  }
+  .expandable-button {
+    width: 250px;
+  }
+
+  .bron-button{
+    position: absolute;
+    width: 250px;
+  }
+  
+}

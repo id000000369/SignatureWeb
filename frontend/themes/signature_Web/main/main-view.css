@@ -27,7 +27,20 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.adaptive-social-container {
+  display: none;
+}
+.adaptive-copy-rights-text {
+  display: none;
+}
 
+.adaptive-contacts-address-info-text{
+  display: none;
+}
+
+.adaptive-contacts-logo{
+  display: none;
+}
 
 /*//////- MAIN CSS -//////*/
 .content-view {

@@ -5,11 +5,8 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.router.Route;
+
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.ContentLayout;
-import it.mifsoft.signature.web.MainLayout;
-import it.mifsoft.signature.web.SignatureNavigator;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -34,6 +31,7 @@ public class ReserveForm extends Div {
     private final Image verticalSeparator;
     private final Div itemsContainer;
     private final Image closeIcon;
+
     /////////////- ADAPTIVE - //////////////
     private final Image adaptiveBackgroundImg;
     private final Image adaptiveReserveCloseIcon;
@@ -54,11 +52,13 @@ public class ReserveForm extends Div {
         this.verticalSeparator = createVerticalSeparator();
         this.itemsContainer = createItemsContainer();
         this.closeIcon = createCloseIcon();
+
         ////////////////ADAPTIVE///////////////////////////////////////////
         this.adaptiveBackgroundImg = createAdaptiveBackgroundImg();
         this.adaptiveHeaderLogo = createAdaptiveHeaderLogo();
         this.adaptiveReserveCloseIcon = createAdaptiveReserveCloseIcon();
         //////////////////////////////////////////////////////////////////
+
         this.add(createAdaptiveReserveCloseIcon(), createAdaptiveHeaderLogo(), createVerticalSeparator(),createCloseIcon(), createItemsContainer(), createAdaptiveBackgroundImg());
         this.addClassName("reserve-container");
     }

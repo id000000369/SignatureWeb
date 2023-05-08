@@ -17,18 +17,17 @@ import java.util.List;
 @Component
 @UIScope
 public class HeaderView extends HorizontalLayout {
-
     AbstractSignatureNavigator navigate;
     private final String LOGO_IMAGE_SRC = "https://i.ibb.co/GQm92bq/Vector-1.png";
 
     private Collection<String> menuItemsNames = List.of(
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
     );
-
     private final Image logoImage;
     private final MenuBar menuList;
     private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
+
     private final Image mobileMenuButtonImg;
 
     public HeaderView(SignatureNavigator navigator) {
@@ -50,6 +49,7 @@ public class HeaderView extends HorizontalLayout {
     public Image createMobileMenuButtonImg(){
         final Image img = new Image("/img/mobile-menu-button.png","");
         img.addClassName("mobile-menu-button");
+
         return img;
     }
 

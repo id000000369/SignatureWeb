@@ -1,0 +1,103 @@
+@media only screen and (max-width: 470px) {
+  .contacts-main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contacts-container {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 0px;
+  }
+
+  .map-container-view {
+    display: none;
+  }
+  .adaptive-map {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+  .footer {
+    position: absolute;
+    top: 66%;
+    display: flex;
+    background-color: rgba(3, 45, 50, 1);
+  }
+
+  .footer-contacts-view{
+    height: 333px;
+  }
+
+  .footer-contacts-info {
+    position: absolute;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    top: 51.5%;
+
+    background-color: rgba(0, 32, 36, 1);
+  }
+
+  .adaptive-social-container {
+    top: 62.5%;
+    display: block;
+    padding-bottom: 3.5%;
+  }
+  .adaptive-copy-rights-text {
+    top: 80%;
+    padding-bottom: 3.5%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: #a0aeaf;
+    display: block;
+  }
+
+  .adaptive-address-info-text {
+    display: none;
+  }
+
+  .adaptive-contacts-address-info-text{
+    padding-bottom: 4%;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    white-space: break-spaces;
+    text-align: center;
+    color: #d5d7d2;
+    display: block;
+  }
+
+  .adaptive-contacts-logo{
+    width: 163px;
+    height: 65px;
+    position: absolute;
+    top: 16%;
+    display: block;
+  }
+
+  /*////////- HIDE ELEMETS -////////*/
+  .social-container {
+    display: none;
+  }
+  .address-info-text {
+    display: none;
+  }
+  .admin-label-text {
+    display: none;
+  }
+  .phone-info-text {
+    display: none;
+  }
+  .copy-rights-text {
+    display: none;
+  }
+}

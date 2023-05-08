@@ -91,3 +91,9 @@
     border-top-left-radius: 10px;
     overflow:hidden;
 }
+
+
+/*Hide mobile css*/
+.adaptive-map {
+    display: none;
+}
