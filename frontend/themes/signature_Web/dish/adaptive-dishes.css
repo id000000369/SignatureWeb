@@ -1,0 +1,40 @@
+@media only screen and (max-width: 470px) {
+  .dish-previous-button {
+    display: none;
+  }
+  .dish-next-button {
+    display: none;
+  }
+
+  .main-component-dishes {
+    flex-direction: column;
+  }
+
+  .image-dish {
+    width: 100%;
+    height: 100%;
+    top: 50%;
+  }
+
+  .window-one-dishes {
+    position: absolute;
+    width: 382px;
+    top: 100%;
+  }
+
+  .window-two-dishes {
+    position: absolute;
+    width: 382px;
+    top: 150%;
+  }
+
+  .main-text-dish {
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 90%;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #ffffff;
+  }
+}

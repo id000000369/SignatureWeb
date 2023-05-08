@@ -184,4 +184,6 @@ public class FooterView extends HorizontalLayout {
         this.addressInfo.getStyle().set("display","block");
         this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
     }
+
+
 }
