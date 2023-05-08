@@ -12,6 +12,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.forms.ReserveForm;
+import it.mifsoft.signature.web.page.WelcomePage;
 import it.mifsoft.signature.web.ui.FooterView;
 import it.mifsoft.signature.web.ui.HeaderView;
 import it.mifsoft.signature.web.ui.menu.MenuItems;
@@ -36,7 +37,8 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                       ContentLayout contentView,
                       FooterView footerView,
                       ReserveForm reserveForm,
-                      MenuItems menuItems) {
+                      MenuItems menuItems)
+    {
         this.headerView = headerView;
         this.contentView = contentView;
         this.footerView = footerView;
@@ -105,11 +107,14 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     public void afterNavigation(AfterNavigationEvent event) {
         final var location = event.getLocation();
         final String path = location.getPath();
+
         if (path.equals("main/welcome")) {
             this.headerView.yellowColor();
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
             }
+            this.footerView.hideBottom();
+            this.footerView.changeFooterPosition();
             this.contentImage.setVisible(true);
         } else {
             if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
@@ -128,6 +133,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
                 this.headerView.yellowColor();
                 this.footerView.hideBottom();
+                this.footerView.hide();
             }
 
             case "main/contacts", "main/achievement" -> {
@@ -135,12 +141,8 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.headerView.whiteColor();
                 this.footerView.showBottom();
             }
-            case "main/welcome" -> {
-                this.footerView.hideBottom();
-            }
             default -> {
                 this.getStyle().remove("background-image");
-                this.footerView.showBottom();
             }
         }
     }

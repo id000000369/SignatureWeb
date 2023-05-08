@@ -29,13 +29,11 @@ public class FooterView extends HorizontalLayout {
     private final H1 phoneInfo;
     private final H1 adminLabel;
     private final Image adaptivePhoneImg;
-
     private final Image vkIco;
     private final Image ytIco;
     private final Image instaIco;
     private final H1 adaptiveContactsAddressInfo;
     private final H1 adaptiveCopyRights;
-
     private final Div footerContactsInfo;
     ////////////////////////////////////////
 
@@ -57,11 +55,11 @@ public class FooterView extends HorizontalLayout {
         this.vkIco = createVkIco();
         this.ytIco = createYtIco();
         this.instaIco = createInstaIco();
+
         this.adaptiveContactsAddressInfo = createAdaptiveContactsAddressInfo();
         this.adaptiveSocialContainer = createAdaptiveSocialContainer();
         this.adaptiveCopyRights = createAdaptiveCopyRights();
         this.footerContactsInfo = createFooterContactsInfo();
-
         ////////////////////////////////////////
 
         this.addClassName("footer");
@@ -161,9 +159,23 @@ public class FooterView extends HorizontalLayout {
         return container;
     }
     public void showBottom() {
-        this.footerContactsInfo.setVisible(true);
+        this.footerContactsInfo.getStyle().set("display", "block");
     }
     public void hideBottom() {
-        this.footerContactsInfo.setVisible(false);
+      //  this.footerContactsInfo.getStyle().set("display", "none");
+
+        this.adaptiveContactsAddressInfo.getStyle().set("display", "none");
+        this.adaptiveSocialContainer.getStyle().set("display", "none");
+        this.adaptiveCopyRights.getStyle().set("display", "none");
+    }
+
+    public void changeFooterPosition() {
+        this.getStyle().set("top", "80%");
+       // this.getStyle().set("height", "");
+        this.addressInfo.getStyle().set("display","block");
+        this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
+    }
+    public void hide() {
+        this.getStyle().set("display", "none");
     }
 }
