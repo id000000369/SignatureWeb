@@ -38,20 +38,28 @@ public class VineListItem extends Div {
         this.itemsContainer = createItemsContainer();
 
         addClassNames("window");
-        add(createVerticalSeparator(), createItemsContainer());
+        add(addVerticalSeparator(), createItemsContainer());
     }
 
-    public Div createItemsContainer(){
+    public Div createItemsContainer() {
         final Div items = new Div();
         items.add(windowMainItems(), windowOneItems(), windowTwoItems(), windowTreeItems());
         items.addClassName("vine-items-container");
         return items;
     }
-    public Image createVerticalSeparator(){
-        final Image image = new Image("/img/vertical-separator.png","");
+
+    public Div addVerticalSeparator() {
+        final Div items = new Div();
+        items.add(createVerticalSeparator());
+        return items;
+    }
+
+    public Image createVerticalSeparator() {
+        final Image image = new Image("/img/vertical-separator.png", "");
         image.addClassNames("vertical-separator");
         return image;
     }
+
     public Div windowMainItems() {
         Div items = new Div();
         items.add(mainText, subMainText);

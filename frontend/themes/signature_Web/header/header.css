@@ -5,7 +5,8 @@
 .header {
     width: 100%;
     display: flex;
-    padding-top: 40px; 
+    padding-top: 20px; 
+    padding-bottom: 40px;
     background-size: auto 100%;
     display: flex;
 }

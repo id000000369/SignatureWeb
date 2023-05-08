@@ -22,18 +22,17 @@
 }
 
 .window{
+    display: -webkit-inline-box;
     justify-content: unset;
     flex-direction: column;
     background: #002024;
     border-radius: 15px;
-    padding: 35px 0 35px 10px;
+    padding: 35px 0 0 10px;
 }
 
 .vertical-separator {
-    position: absolute;
-    height: 492px;
+    height: 63vh;
     padding-left: 15px;
-    top: 196px;
 }
 
 .vine-items-container{
@@ -49,8 +48,6 @@
     font-size: 25px;
 }
 
-
-
 .subMain {
     margin: 0;
     border: none;
@@ -61,10 +58,8 @@
     
 }
 
-
-
 .sparklingWineOrChampagne{
-    width: 45%;
+    width: 40%;
     margin-right: 5%;
     font-size: 11px;
     border-bottom: 1px solid rgba(127, 110, 55);
@@ -72,7 +67,7 @@
 }
 
 .region{
-    width: 45%;
+    width: 40%;
     margin-right: 5%;
     font-size: 11px;
     border-bottom: 1px solid rgba(127, 110, 55);
@@ -123,7 +118,7 @@
     font-size: 15px;
     cursor: pointer;
     color: rgba(160, 174, 175, 1);
-    width: 40%;
+    width: 55%;
     border-width: 1px;
     border-style: solid;
     border-color: aliceblue;
@@ -135,18 +130,17 @@
     display: grid;
     justify-content: center;
     width: 50vw;
-    height: 100vh;
+    
 }
 
 .right-side{
-    width: 80vw;
-    height: 100vh;
 }
 
 .vines-list-main{
     padding: 40px;
     display: flex;
 }
+
 
 
 vaadin-text-field::part(input-field) {
@@ -191,10 +185,10 @@ vaadin-text-field::part(input-field){
     }
 
     .window{
-        flex-direction: column;
+        display: -webkit-inline-box;
         background: #002024;
         border-radius: 15px;
-        padding: 35px 0 35px 10px;
+        padding: 35px 20px 0 10px;
     }
 
     .region{
@@ -237,5 +231,10 @@ vaadin-text-field::part(input-field){
         border-color: aliceblue;
         border-radius: 10px;
         margin: 10px;
+    }
+
+    .vertical-separator {
+        height: 54vh;
+        padding-left: 15px;
     }
 }
