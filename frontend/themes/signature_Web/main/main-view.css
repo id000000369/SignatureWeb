@@ -44,9 +44,9 @@ body::-webkit-scrollbar {
 
 /*//////- MAIN CSS -//////*/
 .content-view {
-  /*width: 100%;
+  /* width: 100%;
   height: 100%;
-  overflow-y: hidden;*/
+  overflow-y: hidden; */
   
 }
 
@@ -233,6 +233,7 @@ body::-webkit-scrollbar {
 
 /*//////////////////// Column positioning area ////////////////////*/
 .column-container {
+  top: 15.5%;
   width: calc((3500 * (100vh - 12.5vh)) / 1100);
   height: 100%;
   display: flex;
