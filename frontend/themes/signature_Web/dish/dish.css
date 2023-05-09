@@ -10,6 +10,10 @@
 
 }
 
+.adaptive-dishes-top-menu-img {
+    display: none;
+}
+
 .dish-next-button{
     display: flex;
     align-items: center;

@@ -53,6 +53,7 @@
 
   .adaptive-dishes-top-menu-img {
     position: absolute;
+    display: block;
     padding-bottom: 40%;
     top: 14%;
     left: 37%;
