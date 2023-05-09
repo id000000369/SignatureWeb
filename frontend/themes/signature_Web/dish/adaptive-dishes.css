@@ -17,15 +17,27 @@
   }
 
   .window-one-dishes {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     position: absolute;
     width: 382px;
     top: 100%;
+    padding: 5%;
   }
 
   .window-two-dishes {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background: rgba(0, 32, 36, 1);
     position: absolute;
     width: 382px;
-    top: 150%;
+    top: 144.3%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .main-text-dish {
@@ -34,7 +46,78 @@
     line-height: 90%;
     text-align: center;
     letter-spacing: 0.05em;
-
+    margin-top: 4%;
+    margin-bottom: 7%;
     color: #ffffff;
+  }
+
+  .adaptive-dishes-top-menu-img {
+    position: absolute;
+    padding-bottom: 40%;
+    top: 14%;
+    left: 37%;
+  }
+
+  .dots-indicator {
+    width: 15px;
+    height: 15px;
+  }
+
+  .peculiarities-text {
+    background: rgba(0, 32, 36, 1);
+    font-size: 26px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #91793a;
+  }
+
+  vaadin-text-field > label {
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #91793a;
+  }
+
+  .calories-text {
+    font-size: 22px;
+    line-height: 100%;
+    color: #a0aeaf;
+  }
+
+  .protein-text{
+    font-size: 22px;
+    line-height: 100%;
+    color: #a0aeaf;
+  }
+
+  .fats-text {
+    font-size: 22px;
+    line-height: 100%;
+    color: #a0aeaf;
+  }
+
+  .carbohydrates-text {
+    font-size: 22px;
+    line-height: 100%;
+    color: #a0aeaf;
+  }
+
+  .price-dish {
+  }
+
+  .main-dishes-text {
+    background: rgba(0, 32, 36, 1);
+    padding-bottom: 5%;
+    font-size: 26px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #91793a;
   }
 }

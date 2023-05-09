@@ -44,8 +44,10 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
         this.dotsIndicatorContainer = createDotsContainer();
         this.dotsIndicator = createDotsIndicator(state.dishes);
         this.dotsIndicatorContainer.add(this.dotsIndicator);
-        this.dotsIndicatorContainer.addClassName("dots-indicator-container");
 
+
+
+        dotsIndicatorContainer.addClassName("dots-indicator-container");
         previousButton.addClassNames("dish-previous-button");
         nextButton.addClassNames("dish-next-button");
         this.addClassNames("main-component-dishes");
@@ -55,6 +57,7 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
             moveTo(this.currentItem);
         }
     }
+
 
     private Div createDotsContainer() {
         final Div container = new Div();

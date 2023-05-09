@@ -1,0 +1,23 @@
+@media only screen and (max-width: 470px) {
+  .categories-list-main {
+    margin-top: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;  
+    color: #A0AEAF;
+    cursor: pointer;
+  }
+
+  .menu-list{
+    top: 50%;
+    position: absolute;
+  }
+
+  .category-list-item-main {
+    font-size: 20px;
+    line-height: 125%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}

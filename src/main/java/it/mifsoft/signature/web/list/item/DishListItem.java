@@ -87,7 +87,7 @@ public class DishListItem extends Div {
 
     public Div windowTwo() {
         Div items = new Div();
-        items.add(containerTreeElement(), ingredients);
+        items.add(ingredients, containerTreeElement());
         items.addClassNames("window-two-dishes");
         return items;
     }
@@ -175,7 +175,7 @@ public class DishListItem extends Div {
 
     public Label createIngredientsText() {
         Label ingredientsText = new Label();
-        ingredientsText.setText("ИНГРИДИЕНТЫ");
+        ingredientsText.setText("ИНГРЕДИЕНТЫ");
         ingredientsText.addClassNames("main-dishes-text");
         return ingredientsText;
     }

@@ -1,6 +1,7 @@
 package it.mifsoft.signature.web.list;
 
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.dto.MenuCategoryData;
 import it.mifsoft.signature.web.list.item.CategoryListItem;
@@ -25,19 +26,31 @@ public class CategoriesList extends Div {
 
     private final MenuCategoriesApiService categoriesApiService;
 
+    private final Image adaptiveDishesTopImg;
+
+
     public CategoriesList(DishesList dishesList,
                           MenuCategoriesApiService categoriesApiService) {
         this.categoriesApiService = categoriesApiService;
 
-        FlexStyleUtils.doItRow(this.getElement());
+        //FlexStyleUtils.doItRow(this.getElement());
 
         this.addClassNames("categories-list-main");
         this.dishesList = dishesList;
+        this.adaptiveDishesTopImg = createAdaptiveDishesTopImg();
 
         categoriesApiService.getAll().doOnSuccess(categories -> {
             this.categories = categories;
             this.updateCategories();
         }).block();
+
+        this.add(createAdaptiveDishesTopImg());
+    }
+
+    private Image createAdaptiveDishesTopImg() {
+        final Image img = new Image("img/dishes-menu-img.png","");
+        img.addClassName("adaptive-dishes-top-menu-img");
+        return img;
     }
 
     private List<CategoryListItem> createListItems() {

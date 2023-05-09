@@ -160,10 +160,16 @@ public class FooterView extends HorizontalLayout {
         return container;
     }
     public void showBottom() {
+//        this.footerContactsInfo.addClassName("footer-bottom-invisible");
+//        this.footerContactsInfo.removeClassName("footer-bottom-visible");
+
         this.footerContactsInfo.getStyle().set("display", "block");
     }
     public void hideBottom() {
-      //  this.footerContactsInfo.getStyle().set("display", "none");
+//        this.footerContactsInfo.addClassName("footer-bottom-visible");
+//        this.footerContactsInfo.removeClassName("footer-bottom-invisible");
+
+        this.footerContactsInfo.getStyle().set("display", "none");
         this.getStyle().set("display","block");
         this.adaptiveContactsAddressInfo.getStyle().set("display", "none");
         this.adaptiveSocialContainer.getStyle().set("display", "none");
@@ -182,6 +188,7 @@ public class FooterView extends HorizontalLayout {
 
     public void changeFooterStyle() {
         this.addressInfo.getStyle().set("display","block");
+
         this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
     }
 
