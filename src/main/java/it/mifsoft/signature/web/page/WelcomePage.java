@@ -2,13 +2,13 @@ package it.mifsoft.signature.web.page;
 
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
 import it.mifsoft.signature.web.MainLayout;
 import it.mifsoft.signature.web.SignatureNavigator;
+import it.mifsoft.signature.web.forms.ReserveForm;
 import it.mifsoft.signature.web.list.DishesShortList;
 import it.mifsoft.signature.web.ui.ExpandableButton;
 import it.mifsoft.signature.web.view.AboutView;
@@ -74,7 +74,7 @@ public class WelcomePage extends Div {
         this.vineGalleryButton = createVineGalleryButton();
         this.contactsButton = createContactsButton();
         this.guestButton = createGuestButton();
-        this.bronButton = createBronButton();
+        this.bronButton = createReserveButton();
 
         this.contactsLine = createContactsLine();
         this.bronLine = createBronLine();
@@ -367,11 +367,11 @@ public class WelcomePage extends Div {
         return guestButton;
     }
 
-    public ExpandableButton createBronButton() {
-        final ExpandableButton bronButton = new ExpandableButton("Забронировать столик");
-        bronButton.addClickListener(event -> this.mainLayout.showModal());
-        bronButton.addClassName("bron-button");
-        return bronButton;
+    public ExpandableButton createReserveButton() {
+        final ExpandableButton reserveButton = new ExpandableButton("Забронировать столик");
+        reserveButton.addClickListener(event -> this.mainLayout.showModal(new ReserveForm()));
+        reserveButton.addClassName("bron-button");
+        return reserveButton;
     }
 
     @Override

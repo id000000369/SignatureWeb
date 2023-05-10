@@ -13,7 +13,6 @@
 @import url('./tools/toggle-button.css');
 @import url('./main/main-adaptive.css');
 @import url('./menu-items/adaptive-menu-items.css');
-@import url('./contacts/adaptive-contacts.css');
 @import url('./dish/adaptive-dishes.css');
 @import url('./categories/adaptive-categories.css');
 
@@ -22,6 +21,8 @@
 @import url('./footer/adaptive-footer.css');
 @import url('./categories/adaptive-dishes.css');
 @import url('./dish/adaptive-dishes.css');
+@import url('./contacts/adaptive-contacts.css');
+@import url('./pictures/adaptive-pictures.css');
 /*////////////////////////////////////////*/
 
 @CssImport(value = "styles/components/vaadin-checkbox.css", themeFor = "vaadin-checkbox");

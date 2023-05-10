@@ -9,6 +9,7 @@ import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.AbstractSignatureNavigator;
 import it.mifsoft.signature.web.MainLayout;
 import it.mifsoft.signature.web.SignatureNavigator;
+import it.mifsoft.signature.web.list.MenuList;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -24,18 +25,22 @@ public class HeaderView extends HorizontalLayout {
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
     );
     private final Image logoImage;
-    private final MenuBar menuList;
+    private final MenuBar menuBar;
     private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
+    private final MainLayout mainLayout;
+    private final MenuList menuList;
 
     private final Image mobileMenuButtonImg;
 
-    public HeaderView(SignatureNavigator navigator) {
+    public HeaderView(SignatureNavigator navigator, MainLayout mainLayout, MenuList menuList) {
         this.navigator = navigator;
+        this.mainLayout = mainLayout;
+        this.menuList = menuList;
 
         this.logoImage = createImage();
-        this.menuList = createMenu();
-        this.menuItems = createMenuItems(this.menuList);
+        this.menuBar = createMenu();
+        this.menuItems = createMenuItems(this.menuBar);
         this.mobileMenuButtonImg = createMobileMenuButtonImg();
 
         this.addClassName("header");
@@ -48,6 +53,7 @@ public class HeaderView extends HorizontalLayout {
 
     public Image createMobileMenuButtonImg(){
         final Image img = new Image("/img/mobile-menu-button.png","");
+        img.addClickListener(event -> this.mainLayout.showModal(menuList));
         img.addClassName("mobile-menu-button");
 
         return img;

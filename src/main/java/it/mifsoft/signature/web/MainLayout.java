@@ -29,21 +29,23 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private final Image contentImage;
     private final FooterView footerView;
     private final ReserveForm reserveForm;
-    private final MenuItems menuItems;
-    private final Div modalView;
+   // private final MenuList menuList;
+    private Div modalView;
+   // private final Div menuListView;
     private boolean isModalVisible = false;
 
     public MainLayout(HeaderView headerView,
                       ContentLayout contentView,
                       FooterView footerView,
-                      ReserveForm reserveForm,
-                      MenuItems menuItems)
+                      ReserveForm reserveForm
+                    //  MenuList menuList
+                                                )
     {
         this.headerView = headerView;
         this.contentView = contentView;
         this.footerView = footerView;
         this.reserveForm = reserveForm;
-        this.menuItems = menuItems;
+     //   this.menuList = menuList;
 
         this.contentImage = createContentImg();
 
@@ -51,19 +53,24 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.getStyle().setOverflow(Style.Overflow.AUTO);
         this.getStyle().set("background-repeat", "repeat-x");
 
-        this.modalView = createModalView(this.reserveForm);
+       // this.menuListView = createMenuListView(this.menuList);
+
         this.add(headerView);
     }
 
-    public void showModal() {
+    public void showModal(HtmlComponent form) {
         if (isModalVisible) {
             return;
         }
-
+        final Div modalView = createModalView(form);
+        if (this.getChildren().anyMatch(c -> c == this.modalView)) {
+            this.remove(this.modalView);
+        }
         if (this.getChildren().noneMatch(c -> c == this.modalView)) {
-            this.add(this.modalView);
+            this.add(modalView);
             this.isModalVisible = true;
         }
+        this.modalView = modalView;
     }
     public void hideModal() {
         if (!isModalVisible) {
@@ -73,6 +80,25 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             this.remove(this.modalView);
             this.isModalVisible = false;
         }
+    }
+
+//    public void showMenuList() {
+//        if (isModalVisible) {
+//            return;
+//        }
+//
+//        if (this.getChildren().noneMatch(c -> c == this.menuListView)) {
+//            this.add(this.menuListView);
+//            this.isModalVisible = true;
+//        }
+//    }
+
+    private Div createMenuListView(HtmlComponent form) {
+        final Div div = new Div();
+        form.getStyle().setZIndex(Integer.MAX_VALUE);
+        div.addClassName("adaptive-menu-list-layout");
+        div.add(form);
+        return div;
     }
 
     private Div createModalView(HtmlComponent form) {
@@ -98,7 +124,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         super.onAttach(attachEvent);
         this.footerView.reserveButton.addClickListener((event) -> {
             if (!isModalVisible) {
-                showModal();
+               // showModal();
             }
         });
         this.add(this.footerView);
