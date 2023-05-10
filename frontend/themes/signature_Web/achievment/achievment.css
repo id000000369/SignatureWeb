@@ -93,7 +93,6 @@
 @media(max-width: 470px) {
 
     .achievements-list {
-        display: table-cell;
         width: 100%;
         padding: 20px;
     }
