@@ -29,12 +29,20 @@ public class PicturesList extends Div {
     public PicturesList(GalleryItemsApiService galleryItemsApiService) {
         this.galleryItemsApiService = galleryItemsApiService;
 
+
+
         galleryItemsApiService
                 .getAllByGalleryId(PICTURES_GALLERY_ID)
                 .doOnSuccess(this::updatePicturesList)
                 .subscribe();
 
         this.addClassName("achievements-list");
+    }
+
+    private Image createPicturesTopImg() {
+        final Image img = new Image("img/pictures-top-img.png", "");
+        img.addClassName("pictures-top-img");
+        return img;
     }
 
     private void updatePicturesList(List<GalleryItemsData> galleryItems) {
@@ -55,8 +63,7 @@ public class PicturesList extends Div {
     }
 
     private void moveTo(PictureListItem item) {
-        final String script = "document.getElementById('%s').scrollIntoView({behavior: 'smooth', " +
-                "block: 'center', inline: 'center'})";
+        final String script = "document.getElementById('%s').scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'center'})";
         if (item.getId().isPresent())
             item.getElement().executeJs(String.format(script, item.getId().get()));
     }

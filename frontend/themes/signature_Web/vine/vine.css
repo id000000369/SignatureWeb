@@ -166,6 +166,16 @@ vaadin-text-field::part(input-field){
 
 @media(max-width: 489px) {
 
+    .vines-top-img {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40%;
+        top: 13%;
+        left: 20%;
+        align-items: center;
+    }
+
     .vines-list-main{
         padding: 40px;
         display: grid;
@@ -176,7 +186,7 @@ vaadin-text-field::part(input-field){
     .left-side{
         width: 80vw;
         height: 55vh;
-        padding-top: 40px;
+        padding-top: 100px;
         display: grid;
     }
 

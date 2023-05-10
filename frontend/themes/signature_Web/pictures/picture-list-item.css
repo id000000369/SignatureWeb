@@ -78,27 +78,38 @@
 
     }
 
+    .pictures-top-img{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40%;
+        top: 13%;
+        left: 20%;
+        align-items: center;
+    }
+
     .picture {
         position: relative;
         flex-direction: column;
         display: flex;
         align-items: center;
         width: 35vw;
-        min-width: 60vw;
+        min-width: 70vw;
         background: #002024;
         border-radius: 15px;
         z-index: 1000;
-        margin-right: 5vw;
+        margin-right: 3vw;
     }
     
     .picture-main {
         display: flex;
         width: 100%;
         margin-left: 5vw;
+        margin-bottom: 0;
     }
 
     .image-picture {
-        width: 55vw;
+        width: 60vw;
         height: 50vh;
     }
 }
