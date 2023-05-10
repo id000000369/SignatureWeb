@@ -76,12 +76,19 @@ public class AchievementsList extends Div {
 
     public AchievementsList() {
         this.achievementsListItems = createListItems();
+        add(createAchievementsTopImg());
         this.achievementsListItems.forEach(this::add);
         final Button button = new Button();
         button.setText("Забронировать столик");
         button.addClassName("achievement-reserve-a-table");
         this.add(button);
         this.addClassName("achievements-list");
+    }
+
+    private Image createAchievementsTopImg() {
+        final Image img = new Image("img/achievements-top-img.png", "");
+        img.addClassName("achievements-top-img");
+        return img;
     }
 
 

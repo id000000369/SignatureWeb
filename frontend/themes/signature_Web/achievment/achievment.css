@@ -2,7 +2,11 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 20px;
+    padding: 150px 10px 10px 10px;
+}
+
+.achievements-top-img{
+    display: none;
 }
 
 .achievement-reserve-a-table{
@@ -93,9 +97,23 @@
 @media(max-width: 470px) {
 
     .achievements-list {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        padding: 20px;
+        max-width: 430px;
+        padding: 150px 10px 10px 10px;
     }
+    
+
+    .achievements-top-img{
+        position: absolute;
+        display: block;
+        padding-bottom: 40%;
+        top: 13%;
+        left: 40%;
+        align-items: center;
+    }
+    
 
     .achievment-main {
         position: relative;
@@ -120,5 +138,6 @@
         line-height: 40px;
         padding: 40px;
         font-weight: 200;
+        left: 10px;
     }
 }
