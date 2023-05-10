@@ -5,16 +5,13 @@
     position:absolute;
     flex-direction: column;
   }
-  .expandable-button-container{
-    
-  }
-  .expandable-button {
-    width: 250px;
+
+  .adaptive-menu-items {
+
   }
 
-  .bron-button{
-    position: absolute;
-    width: 250px;
+  .adaptive-menu-list-layout {
+
   }
   
 }
