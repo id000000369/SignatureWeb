@@ -12,6 +12,8 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.forms.ReserveForm;
+import it.mifsoft.signature.web.list.MenuList;
+import it.mifsoft.signature.web.list.item.MenuListItem;
 import it.mifsoft.signature.web.page.WelcomePage;
 import it.mifsoft.signature.web.ui.FooterView;
 import it.mifsoft.signature.web.ui.HeaderView;
@@ -22,32 +24,41 @@ import org.springframework.stereotype.Component;
 @Component
 @UIScope
 @Route(value = "/")
-public class MainLayout extends Div implements RouterLayout, AfterNavigationObserver {
+public class MainLayout extends Div implements RouterLayout, AfterNavigationObserver, HeaderView.HeaderViewDelegate {
 
     private final HeaderView headerView;
     private final ContentLayout contentView;
     private final Image contentImage;
     private final FooterView footerView;
     private final ReserveForm reserveForm;
-   // private final MenuList menuList;
+    private final MenuList menuList;
     private Div modalView;
+
    // private final Div menuListView;
     private boolean isModalVisible = false;
+
+    private final Image menuBackgroundImg;
 
     public MainLayout(HeaderView headerView,
                       ContentLayout contentView,
                       FooterView footerView,
-                      ReserveForm reserveForm
+                      ReserveForm reserveForm,
+                        MenuList menuList
                     //  MenuList menuList
                                                 )
     {
+
         this.headerView = headerView;
+        this.headerView.setDelegate(this);
+
         this.contentView = contentView;
         this.footerView = footerView;
         this.reserveForm = reserveForm;
-     //   this.menuList = menuList;
+        this.menuList = menuList;
 
         this.contentImage = createContentImg();
+        this.menuBackgroundImg = createMenuBackgroundImg();
+
 
         this.setHeight("100vh");
         this.getStyle().setOverflow(Style.Overflow.AUTO);
@@ -57,7 +68,15 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         this.add(headerView);
     }
-
+    public Image createMenuBackgroundImg() {
+        final Image img = new Image("img/main-menu-img.png","");
+        img.getStyle().set("position","absolute");
+        img.getStyle().set("width","100%");
+        img.getStyle().set("height","100%");
+       // img.getStyle().set("z-index","1");
+        img.addClassName("modal-menu-img");
+        return img;
+    }
     public void showModal(HtmlComponent form) {
         if (isModalVisible) {
             return;
@@ -109,11 +128,12 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().setPosition(Style.Position.ABSOLUTE);
         div.getStyle().setLeft("0px");
         div.getStyle().setTop("0px");
-        div.getStyle().setZIndex(3);
+       // div.getStyle().setZIndex(3);
         form.getStyle().setZIndex(Integer.MAX_VALUE);
-        div.getStyle().set("background", "rgba(255, 255, 255, 0.33)");
+        div.getStyle().set("background-color", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
-        div.add(form);
+        div.addClassName("modal-view-wrapper");
+        div.add(form, createMenuBackgroundImg());
         div.addClickListener(event -> {
 
         });
@@ -185,5 +205,10 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         final Image content = new Image("img/main-img.png", "");
         content.addClassName("content-img");
         return content;
+    }
+
+    @Override
+    public void showMenuList() {
+        this.showModal(menuList);
     }
 }

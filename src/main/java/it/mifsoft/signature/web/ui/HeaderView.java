@@ -18,9 +18,13 @@ import java.util.List;
 @Component
 @UIScope
 public class HeaderView extends HorizontalLayout {
+    public interface HeaderViewDelegate {
+        void showMenuList();
+    }
+    private HeaderViewDelegate delegate;
+
     AbstractSignatureNavigator navigate;
     private final String LOGO_IMAGE_SRC = "https://i.ibb.co/GQm92bq/Vector-1.png";
-
     private Collection<String> menuItemsNames = List.of(
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
     );
@@ -28,15 +32,10 @@ public class HeaderView extends HorizontalLayout {
     private final MenuBar menuBar;
     private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
-    private final MainLayout mainLayout;
-    private final MenuList menuList;
-
     private final Image mobileMenuButtonImg;
 
-    public HeaderView(SignatureNavigator navigator, MainLayout mainLayout, MenuList menuList) {
+    public HeaderView(SignatureNavigator navigator) {
         this.navigator = navigator;
-        this.mainLayout = mainLayout;
-        this.menuList = menuList;
 
         this.logoImage = createImage();
         this.menuBar = createMenu();
@@ -46,14 +45,17 @@ public class HeaderView extends HorizontalLayout {
         this.addClassName("header");
 
         logoImage.addClassName("header-logo");
-        menuList.addClassName("menu-list");
 
-        this.add(logoImage, menuList, createMobileMenuButtonImg());
+        this.add(logoImage, menuBar, createMobileMenuButtonImg());
     }
 
     public Image createMobileMenuButtonImg(){
         final Image img = new Image("/img/mobile-menu-button.png","");
-        img.addClickListener(event -> this.mainLayout.showModal(menuList));
+        img.addClickListener(event -> {
+            if (delegate != null) {
+                delegate.showMenuList();
+            }
+        });
         img.addClassName("mobile-menu-button");
 
         return img;
@@ -87,5 +89,9 @@ public class HeaderView extends HorizontalLayout {
     public void yellowColor() {
         this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
         this.logoImage.setSrc("/img/signature-yellow.png");
+    }
+
+    public void setDelegate(HeaderViewDelegate delegate) {
+        this.delegate = delegate;
     }
 }
