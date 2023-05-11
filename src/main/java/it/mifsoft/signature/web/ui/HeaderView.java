@@ -6,10 +6,9 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.AbstractSignatureNavigator;
 import it.mifsoft.signature.web.MainLayout;
+import it.mifsoft.signature.web.ModalDelegate;
 import it.mifsoft.signature.web.SignatureNavigator;
-import it.mifsoft.signature.web.list.MenuList;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -18,12 +17,9 @@ import java.util.List;
 @Component
 @UIScope
 public class HeaderView extends HorizontalLayout {
-    public interface HeaderViewDelegate {
-        void showMenuList();
-    }
-    private HeaderViewDelegate delegate;
 
-    AbstractSignatureNavigator navigate;
+    private ModalDelegate delegate;
+
     private final String LOGO_IMAGE_SRC = "https://i.ibb.co/GQm92bq/Vector-1.png";
     private Collection<String> menuItemsNames = List.of(
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
@@ -91,7 +87,7 @@ public class HeaderView extends HorizontalLayout {
         this.logoImage.setSrc("/img/signature-yellow.png");
     }
 
-    public void setDelegate(HeaderViewDelegate delegate) {
+    public void setDelegate(ModalDelegate delegate) {
         this.delegate = delegate;
     }
 }

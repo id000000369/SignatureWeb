@@ -2,7 +2,6 @@ package it.mifsoft.signature.web;
 
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.HtmlComponent;
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.dom.Style;
@@ -13,18 +12,15 @@ import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.forms.ReserveForm;
 import it.mifsoft.signature.web.list.MenuList;
-import it.mifsoft.signature.web.list.item.MenuListItem;
-import it.mifsoft.signature.web.page.WelcomePage;
 import it.mifsoft.signature.web.ui.FooterView;
 import it.mifsoft.signature.web.ui.HeaderView;
-import it.mifsoft.signature.web.ui.menu.MenuItems;
 import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import org.springframework.stereotype.Component;
 
 @Component
 @UIScope
 @Route(value = "/")
-public class MainLayout extends Div implements RouterLayout, AfterNavigationObserver, HeaderView.HeaderViewDelegate {
+public class MainLayout extends Div implements RouterLayout, AfterNavigationObserver, ModalDelegate {
 
     private final HeaderView headerView;
     private final ContentLayout contentView;
@@ -34,7 +30,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private final MenuList menuList;
     private Div modalView;
 
-   // private final Div menuListView;
+    // private final Div menuListView;
     private boolean isModalVisible = false;
 
     private final Image menuBackgroundImg;
@@ -43,10 +39,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                       ContentLayout contentView,
                       FooterView footerView,
                       ReserveForm reserveForm,
-                        MenuList menuList
-                    //  MenuList menuList
-                                                )
-    {
+                      MenuList menuList) {
 
         this.headerView = headerView;
         this.headerView.setDelegate(this);
@@ -64,19 +57,21 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.getStyle().setOverflow(Style.Overflow.AUTO);
         this.getStyle().set("background-repeat", "repeat-x");
 
-       // this.menuListView = createMenuListView(this.menuList);
+        // this.menuListView = createMenuListView(this.menuList);
 
         this.add(headerView);
     }
+
     public Image createMenuBackgroundImg() {
-        final Image img = new Image("img/main-menu-img.png","");
-        img.getStyle().set("position","absolute");
-        img.getStyle().set("width","100%");
-        img.getStyle().set("height","100%");
-       // img.getStyle().set("z-index","1");
+        final Image img = new Image("img/main-menu-img.png", "");
+        img.getStyle().set("position", "absolute");
+        img.getStyle().set("width", "100%");
+        img.getStyle().set("height", "100%");
+        // img.getStyle().set("z-index","1");
         img.addClassName("modal-menu-img");
         return img;
     }
+
     public void showModal(HtmlComponent form) {
         if (isModalVisible) {
             return;
@@ -91,15 +86,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         }
         this.modalView = modalView;
     }
-    public void hideModal() {
-        if (!isModalVisible) {
-            return;
-        }
-        if (this.getChildren().anyMatch(c -> c == this.modalView)) {
-            this.remove(this.modalView);
-            this.isModalVisible = false;
-        }
-    }
+
 
 //    public void showMenuList() {
 //        if (isModalVisible) {
@@ -128,7 +115,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().setPosition(Style.Position.ABSOLUTE);
         div.getStyle().setLeft("0px");
         div.getStyle().setTop("0px");
-       // div.getStyle().setZIndex(3);
+        // div.getStyle().setZIndex(3);
         form.getStyle().setZIndex(Integer.MAX_VALUE);
         div.getStyle().set("background-color", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
@@ -139,16 +126,18 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         });
         return div;
     }
+
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
         this.footerView.reserveButton.addClickListener((event) -> {
             if (!isModalVisible) {
-               // showModal();
+                // showModal();
             }
         });
         this.add(this.footerView);
     }
+
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
         final var location = event.getLocation();
@@ -183,7 +172,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.footerView.hide();
             }
 
-            case "main/contacts"-> {
+            case "main/contacts" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.showBottom();
@@ -201,6 +190,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
         }
     }
+
     public Image createContentImg() {
         final Image content = new Image("img/main-img.png", "");
         content.addClassName("content-img");
@@ -208,7 +198,23 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     }
 
     @Override
+    public void hideModal() {
+        if (!isModalVisible) {
+            return;
+        }
+        if (this.getChildren().anyMatch(c -> c == this.modalView)) {
+            this.remove(this.modalView);
+            this.isModalVisible = false;
+        }
+    }
+
+    @Override
     public void showMenuList() {
         this.showModal(menuList);
+    }
+
+    @Override
+    public void showReserveForm() {
+        this.showModal(reserveForm);
     }
 }

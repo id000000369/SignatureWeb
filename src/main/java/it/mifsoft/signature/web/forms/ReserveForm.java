@@ -30,12 +30,13 @@ public class ReserveForm extends Div {
     private final Label checkbox;
     private final Image verticalSeparator;
     private final Div itemsContainer;
-    private final Image closeIcon;
+//    private final Image closeIcon;
 
     /////////////- ADAPTIVE - //////////////
     private final Image adaptiveBackgroundImg;
-    private final Image adaptiveReserveCloseIcon;
-    private final Image adaptiveHeaderLogo;
+
+//    private final Image adaptiveReserveCloseIcon;
+//    private final Image adaptiveHeaderLogo;
     public ReserveForm() {
         this.firstHeaderText = createFirstHeaderText();
         this.name = createNameField();
@@ -51,22 +52,27 @@ public class ReserveForm extends Div {
         this.checkbox = createCheckbox();
         this.verticalSeparator = createVerticalSeparator();
         this.itemsContainer = createItemsContainer();
-        this.closeIcon = createCloseIcon();
+//        this.closeIcon = createCloseIcon();
 
         ////////////////ADAPTIVE///////////////////////////////////////////
         this.adaptiveBackgroundImg = createAdaptiveBackgroundImg();
-        this.adaptiveHeaderLogo = createAdaptiveHeaderLogo();
-        this.adaptiveReserveCloseIcon = createAdaptiveReserveCloseIcon();
+//        this.adaptiveHeaderLogo = createAdaptiveHeaderLogo();
+//        this.adaptiveReserveCloseIcon = createAdaptiveReserveCloseIcon();
         //////////////////////////////////////////////////////////////////
 
-        this.add(createAdaptiveReserveCloseIcon(), createAdaptiveHeaderLogo(), createVerticalSeparator(),createCloseIcon(), createItemsContainer(), createAdaptiveBackgroundImg());
+        this.add(
+//                createAdaptiveReserveCloseIcon(),
+//                createAdaptiveHeaderLogo(),
+                createVerticalSeparator(),
+//                createCloseIcon(),
+                createItemsContainer(), createAdaptiveBackgroundImg());
         this.addClassName("reserve-container");
     }
-    private final Image createAdaptiveReserveCloseIcon() {
-        final Image img = new Image("/img/gold-close-icon.png","");
-        img.addClassName("adaptive-reserve-close-icon");
-        return img;
-    }
+//    private final Image createAdaptiveReserveCloseIcon() {
+//        final Image img = new Image("/img/gold-close-icon.png","");
+//        img.addClassName("adaptive-reserve-close-icon");
+//        return img;
+//    }
     private final Image createAdaptiveHeaderLogo() {
         final Image img = new Image("/img/adaptive-header-logo.png","");
         img.addClassName("adaptive-header-logo");
@@ -77,11 +83,11 @@ public class ReserveForm extends Div {
         img.addClassName("adaptive-reserve-background-img");
         return img;
     }
-    private Image createCloseIcon(){
-        final Image icon = new Image("/img/close-icon.png","");
-        icon.addClassName("reserve-close-icon");
-        return icon;
-    }
+//    private Image createCloseIcon(){
+//        final Image icon = new Image("/img/close-icon.png","");
+//        icon.addClassName("reserve-close-icon");
+//        return icon;
+//    }
 
     private Div createItemsContainer(){
         final Div items = new Div();
