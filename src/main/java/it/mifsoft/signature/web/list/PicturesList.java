@@ -36,7 +36,7 @@ public class PicturesList extends Div {
                 .doOnSuccess(this::updatePicturesList)
                 .subscribe();
 
-        this.addClassName("achievements-list");
+        this.addClassName("picture-list");
     }
 
     private Image createPicturesTopImg() {
