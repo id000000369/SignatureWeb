@@ -10,7 +10,6 @@ public class MenuListItem extends Div {
         this.title = title;
         this.getStyle().set("width","382px");
         this.getStyle().set("height","80px");
-        this.getStyle().set("margin-bottom","2.5%");
         this.getStyle().set("display","flex");
         this.getStyle().set("justify-content","center");
         this.getStyle().set("align-items","center");
@@ -20,6 +19,7 @@ public class MenuListItem extends Div {
         this.getStyle().set("text-shadow","0px 4px 4px rgba(0, 0, 0, 0.25)");
         this.getStyle().set("box-shadow","0px 2px 2px rgba(0, 0, 0, 0.25)");
         this.getStyle().set("z-index","-1");
+        this.getStyle().set("margin-bottom","8px");
         this.addClassName("menu-item-main");
         this.setText(title);
     }
