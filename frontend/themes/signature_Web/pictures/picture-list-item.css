@@ -68,6 +68,14 @@
 
 @media(max-width: 489px) {
 
+
+    .picture-list {
+        display: flex;
+        width: 100%;
+        max-width: 430px;
+        padding: 150px 10px 10px 10px;
+    }
+
     .picture-image-style{
     min-height: 40vh;
     margin-top: 4%;
