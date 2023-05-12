@@ -7,12 +7,12 @@ public class FlexStyleUtils {
 
     public static void doItRow(Element element) {
         element.getStyle().setDisplay(Style.Display.FLEX);
-        element.getStyle().set("flex-direction","row");
+        element.getStyle().set("flex-direction", "row");
     }
 
     public static void doItColumn(Element element) {
         element.getStyle().setDisplay(Style.Display.FLEX);
-        element.getStyle().set("flex-direction","column");
+        element.getStyle().set("flex-direction", "column");
     }
 
     public static void doItCenteredRow(Element element) {

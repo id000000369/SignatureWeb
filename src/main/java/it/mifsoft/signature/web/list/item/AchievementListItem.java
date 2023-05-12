@@ -38,7 +38,6 @@ public class AchievementListItem extends Div {
     }
 
 
-
 //    public H2 createDescriptionH() {
 //        final H2 description = new H2();
 //        description.setText(this.description);

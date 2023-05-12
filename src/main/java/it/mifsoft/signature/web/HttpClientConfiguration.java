@@ -24,18 +24,22 @@ public class HttpClientConfiguration {
     public AnswersApiService answersApiService() {
         return new AnswersApiService(ANSWERS_CONTROLLER_NAME, webClient(ANSWERS_CONTROLLER_NAME));
     }
+
     @Bean
     public CustomerApiService customerApiService() {
         return new CustomerApiService(CUSTOMER_CONTROLLER_NAME, webClient(CUSTOMER_CONTROLLER_NAME));
     }
+
     @Bean
     public GalleriesApiService galleriesApiService() {
         return new GalleriesApiService(GALLERIES_CONTROLLER_NAME, webClient(CUSTOMER_CONTROLLER_NAME));
     }
+
     @Bean
     public GalleryItemsApiService galleryItemsApiService() {
         return new GalleryItemsApiService(GALLERY_ITEMS_CONTROLLER_NAME, webClient(GALLERY_ITEMS_CONTROLLER_NAME));
     }
+
     @Bean
     public LoginApiService loginApiService() {
         return new LoginApiService(LOGIN_CONTROLLER_NAME, webClient(LOGIN_CONTROLLER_NAME));
@@ -45,18 +49,22 @@ public class HttpClientConfiguration {
     public MenuCategoriesApiService menuCategoriesApiService() {
         return new MenuCategoriesApiService(MENU_CATEGORIES_CONTROLLER_NAME, webClient(MENU_CATEGORIES_CONTROLLER_NAME));
     }
+
     @Bean
     public MenuItemsApiService menuItemsApiService() {
         return new MenuItemsApiService(MENU_ITEMS_CONTROLLER_NAME, webClient(MENU_ITEMS_CONTROLLER_NAME));
     }
+
     @Bean
     public NewsApiService newsApiService() {
         return new NewsApiService(NEWS_CONTROLLER_NAME, webClient(NEWS_CONTROLLER_NAME));
     }
+
     @Bean
     public QuestionnairesApiService questionnairesApiService() {
         return new QuestionnairesApiService(QUESTIONNAIRES_CONTROLLER_NAME, webClient(QUESTIONNAIRES_CONTROLLER_NAME));
     }
+
     @Bean
     public QuestionsApiService questionsApiService() {
         return new QuestionsApiService(QUESTIONS_CONTROLLER_NAME, webClient(QUESTIONS_CONTROLLER_NAME));

@@ -35,7 +35,7 @@ public class ReserveForm extends Div {
     /////////////- ADAPTIVE - //////////////
     private final Image adaptiveBackgroundImg;
 
-//    private final Image adaptiveReserveCloseIcon;
+    //    private final Image adaptiveReserveCloseIcon;
 //    private final Image adaptiveHeaderLogo;
     public ReserveForm() {
         this.firstHeaderText = createFirstHeaderText();
@@ -68,18 +68,20 @@ public class ReserveForm extends Div {
                 createItemsContainer(), createAdaptiveBackgroundImg());
         this.addClassName("reserve-container");
     }
-//    private final Image createAdaptiveReserveCloseIcon() {
+
+    //    private final Image createAdaptiveReserveCloseIcon() {
 //        final Image img = new Image("/img/gold-close-icon.png","");
 //        img.addClassName("adaptive-reserve-close-icon");
 //        return img;
 //    }
     private final Image createAdaptiveHeaderLogo() {
-        final Image img = new Image("/img/adaptive-header-logo.png","");
+        final Image img = new Image("/img/adaptive-header-logo.png", "");
         img.addClassName("adaptive-header-logo");
         return img;
     }
+
     private final Image createAdaptiveBackgroundImg() {
-        final Image img = new Image("/img/adaptive-reserve-background-img.png","");
+        final Image img = new Image("/img/adaptive-reserve-background-img.png", "");
         img.addClassName("adaptive-reserve-background-img");
         return img;
     }
@@ -89,17 +91,19 @@ public class ReserveForm extends Div {
 //        return icon;
 //    }
 
-    private Div createItemsContainer(){
+    private Div createItemsContainer() {
         final Div items = new Div();
         items.add(reserveItems());
         items.addClassName("reserve-items-container");
         return items;
     }
+
     private Image createVerticalSeparator() {
-        final Image separator = new Image("/img/vertical-separator.png","");
+        final Image separator = new Image("/img/vertical-separator.png", "");
         separator.addClassNames("reserve-separator");
         return separator;
     }
+
     private Div createReminderTextContainer() {
         final Div container = new Div();
         container.add(reminderText, createCheckbox());

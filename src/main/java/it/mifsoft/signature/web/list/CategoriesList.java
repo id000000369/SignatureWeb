@@ -48,7 +48,7 @@ public class CategoriesList extends Div {
     }
 
     private Image createAdaptiveDishesTopImg() {
-        final Image img = new Image("img/dishes-menu-img.png","");
+        final Image img = new Image("img/dishes-menu-img.png", "");
         img.addClassName("adaptive-dishes-top-menu-img");
         return img;
     }
@@ -84,8 +84,6 @@ public class CategoriesList extends Div {
         });
         return listItem;
     }
-
-
 
 
 //    private MenuBar createMenu() {

@@ -46,13 +46,12 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
         this.dotsIndicatorContainer.add(this.dotsIndicator);
 
 
-
         dotsIndicatorContainer.addClassName("dots-indicator-container");
         previousButton.addClassNames("dish-previous-button");
         nextButton.addClassNames("dish-next-button");
         this.addClassNames("main-component-dishes");
 
-        this.add(dotsIndicatorContainer, previousButton,  scrollableContainer, nextButton);
+        this.add(dotsIndicatorContainer, previousButton, scrollableContainer, nextButton);
         if (this.currentItem != null) {
             moveTo(this.currentItem);
         }
@@ -103,7 +102,7 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
         previous.getStyle().setPosition(Style.Position.ABSOLUTE);
         previous.getStyle().setTop("14%");
         previous.getStyle().setLeft("0px");
-            previous.setSrc("/img/plate-left.png");
+        previous.setSrc("/img/plate-left.png");
         previous.addClickListener(this::previous);
         return previous;
     }
@@ -140,7 +139,8 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
 //                    listItem.getStyle().set("max-height", "100vh");
                     return listItem;
                 })
-                .toList();;
+                .toList();
+        ;
         this.currentItem = this.items.size() > 0 ? this.items.get(0) : null;
         getUI().ifPresent(ui -> ui.access(() -> items.forEach(scrollableContainer::add)));
     }
@@ -156,7 +156,7 @@ public class DishesList extends Div implements DotsIndicator.DotsIndicatorDelega
 
     private void updateDishes(final List<DishData> dishes, final long categoryId) {
         getUI().ifPresent(ui -> ui.access(() -> {
-            dishes.forEach(d -> System.out.println("Dish in category " + categoryId + " with name " +d.getName()));
+            dishes.forEach(d -> System.out.println("Dish in category " + categoryId + " with name " + d.getName()));
             this.scrollableContainer.removeAll();
             this.state.categoryId = categoryId;
             this.state.dishes = dishes;

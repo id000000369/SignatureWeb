@@ -10,7 +10,8 @@ import org.springframework.stereotype.Component;
 @UIScope
 public class VinesList extends Div {
     private final VineCategoriesList categoriesList = new VineCategoriesList();
-    public VinesList(){
+
+    public VinesList() {
         this.addClassNames("vines-list-main");
         setup();
     }

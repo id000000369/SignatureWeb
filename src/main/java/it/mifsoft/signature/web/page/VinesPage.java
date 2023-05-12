@@ -15,7 +15,8 @@ import org.springframework.stereotype.Component;
 @UIScope
 @Route(value = "vines", layout = ContentLayout.class)
 public class VinesPage extends Div {
-   private final VinesList vinesList;
+    private final VinesList vinesList;
+
     public VinesPage(VinesList vinesList) {
         this.addClassNames("vines-list-div");
         this.vinesList = vinesList;

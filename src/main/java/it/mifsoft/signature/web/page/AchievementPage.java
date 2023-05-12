@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class AchievementPage extends Div {
 
     private final AchievementsList achievementsList;
+
     public AchievementPage(AchievementsList achievementsList) {
 
         this.setWidthFull();

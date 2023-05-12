@@ -8,15 +8,35 @@ public class PageData<T> {
     private Object previous;
     private List<T> results;
 
-    public long getCount() { return count; }
-    public void setCount(long value) { this.count = value; }
+    public long getCount() {
+        return count;
+    }
 
-    public Object getNext() { return next; }
-    public void setNext(Object value) { this.next = value; }
+    public void setCount(long value) {
+        this.count = value;
+    }
 
-    public Object getPrevious() { return previous; }
-    public void setPrevious(Object value) { this.previous = value; }
+    public Object getNext() {
+        return next;
+    }
 
-    public List<T> getResults() { return results; }
-    public void setResults(List<T> value) { this.results = value; }
+    public void setNext(Object value) {
+        this.next = value;
+    }
+
+    public Object getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(Object value) {
+        this.previous = value;
+    }
+
+    public List<T> getResults() {
+        return results;
+    }
+
+    public void setResults(List<T> value) {
+        this.results = value;
+    }
 }

@@ -13,5 +13,5 @@ public class VineData {
     private String idealFor;
     private String additionally;
 
-    
+
 }
