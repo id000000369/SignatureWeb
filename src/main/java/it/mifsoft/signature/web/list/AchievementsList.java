@@ -5,6 +5,8 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.spring.annotation.UIScope;
+import it.mifsoft.signature.web.MainLayout;
+import it.mifsoft.signature.web.forms.ReserveForm;
 import it.mifsoft.signature.web.list.item.AchievementListItem;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +16,8 @@ import java.util.Optional;
 @Component
 @UIScope
 public class AchievementsList extends Div {
+    private final MainLayout mainLayout;
+
     private final List<AchievementData> achievements = List.of(
             new AchievementData(
                     "ОТ НАС",
@@ -74,12 +78,14 @@ public class AchievementsList extends Div {
     );
     private List<AchievementListItem> achievementsListItems;
 
-    public AchievementsList() {
+    public AchievementsList(MainLayout mainLayout) {
+        this.mainLayout = mainLayout;
         this.achievementsListItems = createListItems();
         add(createAchievementsTopImg());
         this.achievementsListItems.forEach(this::add);
         final Button button = new Button();
         button.setText("Забронировать столик");
+        button.addClickListener(event -> this.mainLayout.showModal(new ReserveForm()));
         button.addClassName("achievement-reserve-a-table");
         this.add(button);
         this.addClassName("achievements-list");
@@ -116,6 +122,7 @@ public class AchievementsList extends Div {
         if (data.buttonTitle.isPresent()) {
             final Button button = new Button();
             button.setText(data.buttonTitle.get());
+            button.addClickListener(event -> this.mainLayout.showModal(new ReserveForm()));
             button.addClassName("achievment-reserve-button");
             content.add(button);
         }
