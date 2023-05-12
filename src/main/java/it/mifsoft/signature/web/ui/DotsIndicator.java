@@ -3,6 +3,7 @@ package it.mifsoft.signature.web.ui;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.dom.Style;
+import it.mifsoft.signature.web.list.PicturesList;
 import it.mifsoft.signature.web.utils.FlexStyleUtils;
 
 import java.util.List;
@@ -41,6 +42,7 @@ public class DotsIndicator extends Div {
         this.addClassName("dots-indicator");
         setup();
     }
+
 
     private void setup() {
         FlexStyleUtils.doItCenteredRow(this.getElement());
@@ -93,7 +95,7 @@ public class DotsIndicator extends Div {
         void dotChangedAction(Dot oldDot, Dot newDot);
     }
 
-//    @CssImport("")
+    //    @CssImport("")
     public static class Dot extends Span {
 
         private final String id;

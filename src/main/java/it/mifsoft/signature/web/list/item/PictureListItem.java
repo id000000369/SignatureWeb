@@ -3,6 +3,7 @@ package it.mifsoft.signature.web.list.item;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.spring.annotation.UIScope;
+import it.mifsoft.signature.web.dto.DishData;
 import it.mifsoft.signature.web.dto.PicturesData;
 import org.springframework.stereotype.Component;
 
@@ -55,7 +56,7 @@ public class PictureListItem extends Div {
 
         configureAnimation();
 
-        add(imageI, mainTextH, middleDiv, descriptionH);
+        add(imageI, createMainContainer());
 
         this.isExpanded = isExpanded;
         if (isExpanded) {
@@ -65,12 +66,37 @@ public class PictureListItem extends Div {
         }
     }
 
+    public Div createMainContainer() {
+        final Div items = new Div();
+        items.add(addVerticalSeparator(), createItemsContainer());
+        items.addClassNames("picture-main-container");
+        return items;
+    }
+
+    public Div createItemsContainer() {
+        final Div items = new Div();
+        items.add(mainTextH, middleDiv, descriptionH);
+        return items;
+    }
+
     private void configureAnimation() {
         this.getStyle().setTransition("width 2s, height 2s");
         this.imageI.getStyle().setTransition("width 2s, height 2s, margin 2s, box-shadow 2s");
         this.mainTextH.getStyle().setTransition("visibility 2s, opacity 2s");
         this.middleDiv.getStyle().setTransition("visibility 2s, opacity 2s");
         this.descriptionH.getStyle().setTransition("visibility 2s, opacity 2s");
+    }
+
+    public Div addVerticalSeparator() {
+        final Div items = new Div();
+        items.add(createVerticalSeparator());
+        return items;
+    }
+
+    public Image createVerticalSeparator() {
+        final Image image = new Image("/img/vertical-separator.png", "");
+        image.addClassNames("vertical-separator-pictures");
+        return image;
     }
 
     public Div windowMainItems() {
@@ -162,5 +188,9 @@ public class PictureListItem extends Div {
 
     public boolean isExpanded() {
         return isExpanded;
+    }
+
+    public PicturesData getPictureData() {
+        return pictureData;
     }
 }

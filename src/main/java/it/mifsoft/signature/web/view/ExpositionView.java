@@ -11,7 +11,8 @@ import java.util.Collection;
 public class ExpositionView extends Div {
 
     private final Paragraph expositionText;
-    public  ExpositionView (){
+
+    public ExpositionView() {
         expositionText = new Paragraph();
 
         String contentTemplate = """

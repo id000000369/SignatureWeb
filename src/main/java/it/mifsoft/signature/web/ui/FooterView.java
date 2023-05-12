@@ -1,6 +1,5 @@
 package it.mifsoft.signature.web.ui;
 
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
@@ -9,7 +8,6 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.HasModal;
 import it.mifsoft.signature.web.forms.ReserveForm;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
@@ -68,11 +66,12 @@ public class FooterView extends HorizontalLayout {
                 createAdminLabel(), createPhoneInfo(),
                 createAddressInfo(), createAdaptivePhoneImg(),
 
-               // createAdaptiveSocialContainer(), createAdaptiveCopyRights(),
+                // createAdaptiveSocialContainer(), createAdaptiveCopyRights(),
 //                createAdaptiveContactsAddressInfo(),
                 createFooterContactsInfo()
-                );
+        );
     }
+
     public H1 createAdaptiveCopyRights() {
         final H1 text = new H1("© 2022 – 2023  ООО «Сигнатура арт ресторан рус». Все права защищены.");
         text.addClassName("adaptive-copy-rights-text");
@@ -91,13 +90,15 @@ public class FooterView extends HorizontalLayout {
         img.addClassName("vk-ico");
         return img;
     }
+
     public Image createYtIco() {
-        final Image img = new Image("img/yt-ico.png","");
+        final Image img = new Image("img/yt-ico.png", "");
         img.addClassName("yt-ico");
         return img;
     }
+
     public Image createInstaIco() {
-        final Image img = new Image("img/insta-ico.png","");
+        final Image img = new Image("img/insta-ico.png", "");
         img.addClassName("insta-ico");
         return img;
     }
@@ -132,45 +133,52 @@ public class FooterView extends HorizontalLayout {
         text.addClassName("adaptive-admin-label-text");
         return text;
     }
+
     private H1 createPhoneInfo() {
         final H1 text = new H1("+7 989 077 70 07");
         text.addClassName("adaptive-phone-info-text");
         return text;
     }
+
     private H1 createAddressInfo() {
         final H1 text = new H1("Котельническая наб., 1/15, к.В, Москва");
         text.addClassName("adaptive-address-info-text");
         return text;
     }
+
     private Image createAdaptivePhoneImg() {
-        final Image img = new Image("/img/adaptive-phone-img.png","");
+        final Image img = new Image("/img/adaptive-phone-img.png", "");
         img.addClassName("adaptive-phone-button-img");
         return img;
     }
+
     public H1 createAdaptiveContactsAddressInfo() {
         final H1 text = new H1("Москва, Котельническая набережная,\n дом 1/15, корпус В");
         text.addClassName("adaptive-contacts-address-info-text");
         return text;
     }
+
     /////////////////////////////////////////////////////////
-    public Div createFooterContactsInfo(){
+    public Div createFooterContactsInfo() {
         final Div container = new Div();
         container.add(adaptiveContactsAddressInfo, adaptiveSocialContainer, adaptiveCopyRights);
         container.addClassName("footer-contacts-info");
         return container;
     }
+
     public void showBottom() {
 //        this.footerContactsInfo.addClassName("footer-bottom-invisible");
 //        this.footerContactsInfo.removeClassName("footer-bottom-visible");
 
         this.footerContactsInfo.getStyle().set("display", "block");
     }
+
     public void hideBottom() {
 //        this.footerContactsInfo.addClassName("footer-bottom-visible");
 //        this.footerContactsInfo.removeClassName("footer-bottom-invisible");
 
         this.footerContactsInfo.getStyle().set("display", "none");
-        this.getStyle().set("display","block");
+        this.getStyle().set("display", "block");
         this.adaptiveContactsAddressInfo.getStyle().set("display", "none");
         this.adaptiveSocialContainer.getStyle().set("display", "none");
         this.adaptiveCopyRights.getStyle().set("display", "none");
@@ -178,16 +186,17 @@ public class FooterView extends HorizontalLayout {
 
     public void changeFooterPosition() {
         this.getStyle().set("top", "80%");
-       // this.getStyle().set("height", "");
-        this.addressInfo.getStyle().set("display","block");
-     //   this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
+        // this.getStyle().set("height", "");
+        this.addressInfo.getStyle().set("display", "block");
+        //   this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
     }
+
     public void hide() {
         this.getStyle().set("display", "none");
     }
 
     public void changeFooterStyle() {
-        this.addressInfo.getStyle().set("display","block");
+        this.addressInfo.getStyle().set("display", "block");
 
         this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
     }

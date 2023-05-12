@@ -36,7 +36,7 @@
 }
 
 .vine-items-container{
-    padding-left: 55px;
+    padding-left: 40px;
 }
 
 .mainWindow{
@@ -141,6 +141,10 @@
     display: flex;
 }
 
+.vines-top-img {
+    display: none;
+}
+
 
 
 vaadin-text-field::part(input-field) {
@@ -168,7 +172,7 @@ vaadin-text-field::part(input-field){
 
     .vines-top-img {
         position: absolute;
-        display: flex;
+        display: block;
         justify-content: center;
         padding-bottom: 40%;
         top: 13%;
@@ -198,7 +202,7 @@ vaadin-text-field::part(input-field){
         display: -webkit-inline-box;
         background: #002024;
         border-radius: 15px;
-        padding: 35px 20px 0 10px;
+        padding: 1px 10px 0 10px;
     }
 
     .region{
@@ -228,7 +232,7 @@ vaadin-text-field::part(input-field){
     }
 
     .vine-items-container{
-        padding-left: 30px;
+        padding-left: 0;
     }
 
     .signUpForATasting{
@@ -240,10 +244,11 @@ vaadin-text-field::part(input-field){
         border-style: solid;
         border-color: aliceblue;
         border-radius: 10px;
-        margin: 10px;
+        margin: 10px 10px 10px 20px;
     }
 
     .vertical-separator {
+        display: none;
         height: 54vh;
         padding-left: 15px;
     }

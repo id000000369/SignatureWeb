@@ -6,6 +6,7 @@ import com.vaadin.flow.component.html.Image;
 
 public class MenuListItem extends Div {
     private final String title;
+
     public MenuListItem(String title) {
         this.title = title;
         this.getStyle().set("width","382px");
@@ -20,6 +21,7 @@ public class MenuListItem extends Div {
         this.getStyle().set("box-shadow","0px 2px 2px rgba(0, 0, 0, 0.25)");
         this.getStyle().set("z-index","-1");
         this.getStyle().set("margin-bottom","8px");
+
         this.addClassName("menu-item-main");
         this.setText(title);
     }

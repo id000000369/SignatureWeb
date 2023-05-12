@@ -15,7 +15,6 @@ public class VineCategoryListItem extends Div {
     private boolean isSelected = false;
 
 
-
     public VineCategoryListItem(final VinesType type) {
         this.type = type;
         this.image = this.type.createImage();

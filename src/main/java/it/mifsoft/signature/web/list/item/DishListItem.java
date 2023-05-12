@@ -29,8 +29,8 @@ public class DishListItem extends Div {
     private final DishData dishData;
 
     public DishListItem(DishData dishData) {
-        this.dishData = dishData;
 
+        this.dishData = dishData;
         this.mainText = createMainText();
         this.peculiarities = createPeculiarities();
         this.calories = createCaloriesText();

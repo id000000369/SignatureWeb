@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class DishesPage extends Div {
     private final CategoriesList categoriesList;
     private final DishesList dishesList;
+
     public DishesPage(CategoriesList categoriesList, DishesList dishesList) {
         this.setWidthFull();
         this.setHeightFull();

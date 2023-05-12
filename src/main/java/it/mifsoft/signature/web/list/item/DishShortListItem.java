@@ -28,7 +28,7 @@ public class DishShortListItem extends Div {
         this.image = createImage();
 
         imageColumn = new Div();
-            imageColumn.addClassName("menu-image-column");
+        imageColumn.addClassName("menu-image-column");
         imageColumn.add(this.image);
 
         detailColumn = new Div();

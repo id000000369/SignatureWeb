@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 @Route(value = "contacts", layout = ContentLayout.class)
 public class ContactsPage extends Div {
     private final ContactView contactView;
+
     public ContactsPage(ContactView contactView) {
         this.contactView = contactView;
         this.add(contactView);

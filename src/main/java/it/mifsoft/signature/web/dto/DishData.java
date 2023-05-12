@@ -7,7 +7,8 @@ public class DishData {
     private double price;
     private String image;
 
-    public DishData() {}
+    public DishData() {
+    }
 
     public DishData(long id, String name, String description, double price, String image) {
         this.id = id;
