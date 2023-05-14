@@ -5,6 +5,7 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.textfield.TextField;
+import it.mifsoft.signature.web.dto.VineData;
 
 public class VineListItem extends Div {
 
@@ -22,7 +23,15 @@ public class VineListItem extends Div {
     private final Image verticalSeparator;
     private final Div itemsContainer;
 
-    public VineListItem() {
+    private final VineData data;
+
+    public VineData getData() {
+        return data;
+    }
+
+    public VineListItem(VineData data) {
+        this.data = data;
+
         this.mainText = createMainText();
         this.subMainText = createSubMainText();
         this.sparklingWineOrChampagneText = createSparklingWineOrChampagneText();
@@ -98,14 +107,14 @@ public class VineListItem extends Div {
 
     public H1 createMainText() {
         H1 main = new H1();
-        main.setText("ПОЛЬ РОЖЕ БРЮТ РЕЗЕРВ");
+        main.setText(data.getName());
         main.addClassNames("mainWindow");
         return main;
     }
 
     public H1 createSubMainText() {
         H1 subMain = new H1();
-        subMain.setText("POL ROGER, BRUT RESERVE. FRANCE,");
+        subMain.setText(data.getSubName());
         subMain.addClassNames("subMain");
         return subMain;
     }

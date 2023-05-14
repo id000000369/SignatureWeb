@@ -3,46 +3,38 @@ package it.mifsoft.signature.web.ui;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.dom.Style;
+import it.mifsoft.signature.web.dto.VineData;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class VinesCarousel extends Div {
 
-    private final List<String> vines = List.of(
-            "/img/bottle-2.png",
-            "/img/bottle-3.png",
-            "/img/bottle-5.png",
-            "/img/bottle-6.png",
-            "/img/bottle-8.png",
-            "/img/bottle-9.png",
-            "/img/bottle-10.png",
-            "/img/bottle-11.png",
-            "/img/bottle-12.png",
-            "/img/bottle-13.png",
-            "/img/bottle-14.png",
-            "/img/bottle-15.png",
-            "/img/bottle-16.png",
-            "/img/bottle-17.png",
-            "/img/bottle-18.png",
-            "/img/bottle-19.png",
-            "/img/bottle-20.png",
-            "/img/bottle-21.png",
-            "/img/bottle-22.png"
-    );
+    public interface Delegate {
+        void onVineChange(VineData vine);
+    }
+
+    private final List<VineData> vines;
     private final List<VinesCarouselItem> items;
 
     private int currentIndex = 5;
     private VinesCarouselItem currentItem;
     double fullWidth = 350;
 
-    public VinesCarousel() {
+    private Delegate delegate;
+
+    public VinesCarousel(List<VineData> vines) {
+        this.vines = vines;
         this.getStyle().setWidth("350px");
         this.getStyle().setHeight("502px");
         this.getStyle().setPosition(Style.Position.STICKY);
         this.getStyle().set("justify-content", "unset");
         this.items = createItems();
         this.items.forEach(item -> this.add(item.image));
+    }
+
+    public void setDelegate(Delegate delegate) {
+        this.delegate = delegate;
     }
 
     private List<VinesCarouselItem> createItems() {
@@ -60,14 +52,15 @@ public class VinesCarousel extends Div {
                 case 5 -> position = VinePositions.SIX;
                 default -> position = VinePositions.HIDDEN;
             }
-            return createCarouselItem(index, vine, position, isSymmetric);
+            return createCarouselItem(vine, index, vine.getImage(), position, isSymmetric);
         }).collect(Collectors.toList());
     }
 
-    private VinesCarouselItem createCarouselItem(int index, String imageUrl, VinePositions position, boolean isSymmetric) {
-        final VinesCarouselItem item = new VinesCarouselItem(String.valueOf(index), imageUrl, position, isSymmetric);
+    private VinesCarouselItem createCarouselItem(VineData data, int index, String imageUrl, VinePositions position, boolean isSymmetric) {
+        final VinesCarouselItem item = new VinesCarouselItem(data, String.valueOf(index), imageUrl, position, isSymmetric);
         item.image.addClickListener(event -> {
             this.currentIndex = index;
+            this.currentItem = item;
             this.items.forEach(it -> {
                 if (it.image.getId().isEmpty()) {
                     return;
@@ -87,17 +80,25 @@ public class VinesCarousel extends Div {
                 }
                 it.changePosition(newPosition, newIsSymmetric);
             });
-
+            if (delegate != null) {
+                delegate.onVineChange(item.data);
+            }
         });
         return item;
     }
 
     private class VinesCarouselItem {
+        final VineData data;
         final Image image;
         VinePositions position;
         boolean isSymmetric;
 
-        private VinesCarouselItem(String id, String imageUrl, VinePositions position, boolean isSymmetric) {
+        private VinesCarouselItem(VineData data,
+                                  String id,
+                                  String imageUrl,
+                                  VinePositions position,
+                                  boolean isSymmetric) {
+            this.data = data;
             this.position = position;
             this.isSymmetric = isSymmetric;
             this.image = createImage(imageUrl, id);
