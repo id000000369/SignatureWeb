@@ -99,7 +99,7 @@
     .achievements-list {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 95%;
         max-width: 430px;
         padding: 150px 10px 10px 10px;
     }
@@ -109,7 +109,7 @@
         position: absolute;
         display: block;
         padding-bottom: 40%;
-        top: 13%;
+        top: 18%;
         left: 40%;
         align-items: center;
     }
@@ -117,11 +117,11 @@
 
     .achievment-main {
         position: relative;
-        min-height: calc(65vh - 1vh);
+        min-height: calc(75vh - 1vh);
         min-width: 300px;
         background-repeat: no-repeat;
         border-radius: 15px;
-        margin-left: 20px;
+        margin-left: 0;
         margin-bottom: 15px;
     }
 
@@ -138,6 +138,5 @@
         line-height: 40px;
         padding: 40px;
         font-weight: 200;
-        left: 10px;
     }
 }
