@@ -41,7 +41,11 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         this.contentView = contentView;
         this.footerView = footerView;
+        this.footerView.setDelegate(this);
+
         this.reserveForm = reserveForm;
+        this.reserveForm.setDelegate(this);
+
         this.menuList = menuList;
 
         this.contentImage = createContentImg();

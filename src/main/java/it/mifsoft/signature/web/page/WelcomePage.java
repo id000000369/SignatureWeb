@@ -64,9 +64,12 @@ public class WelcomePage extends Div {
     private final Div sixteenDiv;
     private final Div columnContainer;
 
-    public WelcomePage(SignatureNavigator navigator, MainLayout mainLayout) {
+    private final ReserveForm reserveForm;
+
+    public WelcomePage(SignatureNavigator navigator, MainLayout mainLayout, ReserveForm reserveForm) {
         this.navigator = navigator;
         this.mainLayout = mainLayout;
+        this.reserveForm = reserveForm;
         this.expositionButton = createExpositionButton();
         this.aboutUsButton = createAboutUsButton();
         this.menuButton = createMenuButton();
@@ -370,7 +373,7 @@ public class WelcomePage extends Div {
 
     public ExpandableButton createReserveButton() {
         final ExpandableButton reserveButton = new ExpandableButton("Забронировать столик");
-        reserveButton.addClickListener(event -> this.mainLayout.showModal(new ReserveForm()));
+        reserveButton.addClickListener(event -> this.mainLayout.showReserveForm());
         reserveButton.addClassName("bron-button");
         return reserveButton;
     }

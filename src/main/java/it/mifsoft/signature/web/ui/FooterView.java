@@ -124,7 +124,7 @@ public class FooterView extends HorizontalLayout {
         button.setText("Забронировать столик");
         button.addClickListener(event -> {
             if (delegate != null) {
-                delegate.showMenuList();
+                delegate.showReserveForm();
             }
         });
         button.addClassName("footer-button");
@@ -204,5 +204,7 @@ public class FooterView extends HorizontalLayout {
         this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
     }
 
-
+    public void setDelegate(ModalDelegate delegate) {
+        this.delegate = delegate;
+    }
 }
