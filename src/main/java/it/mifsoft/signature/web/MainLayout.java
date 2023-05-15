@@ -21,7 +21,6 @@ import org.springframework.stereotype.Component;
 @UIScope
 @Route(value = "/")
 public class MainLayout extends Div implements RouterLayout, AfterNavigationObserver, ModalDelegate {
-
     private final HeaderView headerView;
     private final ContentLayout contentView;
     private final Image contentImage;
@@ -29,12 +28,8 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private final ReserveForm reserveForm;
     private final MenuList menuList;
     private Div modalView;
-
-    // private final Div menuListView;
     private boolean isModalVisible = false;
-
     private final Image menuBackgroundImg;
-
     public MainLayout(HeaderView headerView,
                       ContentLayout contentView,
                       FooterView footerView,
@@ -51,15 +46,13 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         this.contentImage = createContentImg();
         this.menuBackgroundImg = createMenuBackgroundImg();
-
+        
 
         this.addClassNames("main-layout");
 
         // this.menuListView = createMenuListView(this.menuList);
-
         this.add(headerView);
     }
-
     public Image createMenuBackgroundImg() {
         final Image img = new Image("img/main-menu-img.png", "");
         img.getStyle().set("position", "absolute");
@@ -69,7 +62,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         img.addClassName("modal-menu-img");
         return img;
     }
-
     public void showModal(HtmlComponent form) {
         if (isModalVisible) {
             return;
@@ -85,19 +77,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         }
         this.modalView = modalView;
     }
-
-
-//    public void showMenuList() {
-//        if (isModalVisible) {
-//            return;
-//        }
-//
-//        if (this.getChildren().noneMatch(c -> c == this.menuListView)) {
-//            this.add(this.menuListView);
-//            this.isModalVisible = true;
-//        }
-//    }
-
     private Div createMenuListView(HtmlComponent form) {
         final Div div = new Div();
         form.getStyle().setZIndex(Integer.MAX_VALUE);
@@ -105,7 +84,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.add(form);
         return div;
     }
-
     private Div createModalView(HtmlComponent form) {
         final Div div = new Div();
         div.setWidthFull();
@@ -114,7 +92,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().setPosition(Style.Position.ABSOLUTE);
         div.getStyle().setLeft("0px");
         div.getStyle().setTop("0px");
-        // div.getStyle().setZIndex(3);
+        div.getStyle().setZIndex(3);
         form.getStyle().setZIndex(Integer.MAX_VALUE);
         div.getStyle().set("background-color", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
@@ -125,7 +103,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         });
         return div;
     }
-
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
@@ -136,7 +113,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         });
         this.add(this.footerView);
     }
-
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
         final var location = event.getLocation();
@@ -147,7 +123,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
             }
-           // this.footerView.changeFooterStyle();
             this.footerView.hideBottom();
             this.footerView.changeFooterPosition();
             this.contentImage.setVisible(true);
@@ -179,7 +154,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("overflow-x", "hidden");
 
             }
-
             case "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
@@ -187,19 +161,16 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("overflow-x", "hidden");
                // this.footerView.changeFooterStyle();
             }
-
             default -> {
                 this.getStyle().remove("background-image");
             }
         }
     }
-
     public Image createContentImg() {
         final Image content = new Image("img/main-img.png", "");
         content.addClassName("content-img");
         return content;
     }
-
     @Override
     public void hideModal() {
         if (!isModalVisible) {

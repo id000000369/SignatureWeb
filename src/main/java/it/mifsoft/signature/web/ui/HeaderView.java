@@ -53,7 +53,6 @@ public class HeaderView extends HorizontalLayout {
             }
         });
         img.addClassName("mobile-menu-button");
-
         return img;
     }
 
@@ -92,7 +91,6 @@ public class HeaderView extends HorizontalLayout {
     public void setWhiteLogo() {
         this.logoImage.setSrc("/img/signature-white.png");
     }
-
     public void setDelegate(ModalDelegate delegate) {
         this.delegate = delegate;
     }

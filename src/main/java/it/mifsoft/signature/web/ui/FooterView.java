@@ -7,6 +7,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.HasModal;
+import it.mifsoft.signature.web.ModalDelegate;
 import it.mifsoft.signature.web.forms.ReserveForm;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 @UIScope
 public class FooterView extends HorizontalLayout {
-
+    private ModalDelegate delegate;
     private final HasModal modalContainer;
     private final ReserveForm reserveForm;
     private final Div adaptiveSocialContainer;
@@ -121,9 +122,11 @@ public class FooterView extends HorizontalLayout {
     private Button createReserveButton() {
         final Button button = new Button();
         button.setText("Забронировать столик");
-        //button.addClickListener(event -> this.modalContainer.showModal());
-//        button.addClickListener(event -> button.getUI().ifPresent(ui ->
-//                ui.navigate("main/reserve")));
+        button.addClickListener(event -> {
+            if (delegate != null) {
+                delegate.showMenuList();
+            }
+        });
         button.addClassName("footer-button");
         return button;
     }
