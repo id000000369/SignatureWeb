@@ -59,14 +59,17 @@ public class ReserveForm extends Div {
                 createItemsContainer(), createAdaptiveBackgroundImg(), createCloseModalBtn());
         this.addClassName("reserve-container");
     }
+
     public Image createCloseModalBtn() {
         final Image img = new Image("img/grey-close-icon.png","");
         img.addClickListener(event -> {
+            firstHeaderText.getStyle().set("color","red");
             delegate.hideModal();
         });
         img.addClassName("close-form-btn");
         return img;
     }
+
     private final Image createAdaptiveHeaderLogo() {
         final Image img = new Image("/img/adaptive-header-logo.png", "");
         img.addClassName("adaptive-header-logo");
@@ -78,6 +81,7 @@ public class ReserveForm extends Div {
         img.addClassName("adaptive-reserve-background-img");
         return img;
     }
+
     private Div createItemsContainer() {
         final Div items = new Div();
         items.add(reserveItems());

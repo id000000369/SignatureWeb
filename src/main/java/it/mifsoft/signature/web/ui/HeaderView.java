@@ -45,8 +45,6 @@ public class HeaderView extends HorizontalLayout {
         this.add(logoImage, menuBar, createMobileMenuButtonImg());
     }
 
-
-
     public Image createMobileMenuButtonImg() {
         final Image img = new Image("/img/mobile-menu-button.png", "");
         img.addClickListener(event -> {
@@ -93,9 +91,6 @@ public class HeaderView extends HorizontalLayout {
     public void setWhiteLogo() {
         this.logoImage.setSrc("/img/signature-white.png");
     }
-//    public void setCloseIcon() {
-//        this.mobileMenuButtonImg.setSrc("/img/gold-close-icon.png");
-//    }
     public void setDelegate(ModalDelegate delegate) {
         this.delegate = delegate;
     }

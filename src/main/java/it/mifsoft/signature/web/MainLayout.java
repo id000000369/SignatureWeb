@@ -176,10 +176,12 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             this.isModalVisible = false;
         }
     }
+
     @Override
     public void showMenuList() {
         this.showModal(menuList);
     }
+
     @Override
     public void showReserveForm() {
         this.showModal(reserveForm);
