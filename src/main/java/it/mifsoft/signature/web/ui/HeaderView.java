@@ -77,17 +77,13 @@ public class HeaderView extends HorizontalLayout {
     public void whiteColor() {
         this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
         this.logoImage.setSrc("/img/signature-white.png");
+        this.mobileMenuButtonImg.setSrc("/img/white-menu-btn.png");
     }
 
     public void yellowColor() {
         this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
         this.logoImage.setSrc("/img/signature-yellow.png");
-    }
-    public void setYellowLogo() {
-        this.logoImage.setSrc("/img/signature-yellow.png");
-    }
-    public void setWhiteMenuBtn() {
-        this.mobileMenuButtonImg.setSrc("/img/white-menu-btn.png");
+        
     }
     public void setWhiteLogo() {
         this.logoImage.setSrc("/img/signature-white.png");

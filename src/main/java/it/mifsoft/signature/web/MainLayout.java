@@ -80,7 +80,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         if (this.getChildren().noneMatch(c -> c == this.modalView)) {
             this.add(modalView);
             this.isModalVisible = true;
-            this.headerView.setYellowLogo();
+            this.headerView.yellowColor();
             this.reserveForm.setYellowCloseBtn();
         }
         this.modalView = modalView;
@@ -160,15 +160,14 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
                 this.headerView.yellowColor();
                 this.footerView.hideBottom();
-                this.hideModal();
                 this.footerView.hide();
+                this.hideModal();
             }
 
             case "main/contacts" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.showBottom();
-                this.headerView.setWhiteMenuBtn();
                 this.hideModal();
                 footerView.addClassNames("contacts-footer");
                 this.getStyle().set("overflow-x", "hidden");
@@ -178,13 +177,13 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.hideBottom();
-                this.headerView.setWhiteMenuBtn();
                 this.hideModal();
                // this.footerView.changeFooterStyle();
             }
             default -> {
                 this.getStyle().remove("background-image");
             }
+
         }
     }
     public Image createContentImg() {
