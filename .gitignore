@@ -14,3 +14,4 @@ frontend/generated
 bin/main/it/mifsoft/signature/web/MainLayout.class
 bin/main/it/mifsoft/signature/web/MainLayout.class
 bin/main/it/mifsoft/signature/web/MainLayout.class
+*.class
