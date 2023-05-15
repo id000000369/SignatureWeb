@@ -148,7 +148,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
             }
-            this.footerView.changeFooterStyle();
+           // this.footerView.changeFooterStyle();
             this.footerView.hideBottom();
             this.footerView.changeFooterPosition();
             this.contentImage.setVisible(true);
@@ -182,7 +182,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.hideBottom();
-                this.footerView.changeFooterStyle();
+               // this.footerView.changeFooterStyle();
             }
 
             default -> {

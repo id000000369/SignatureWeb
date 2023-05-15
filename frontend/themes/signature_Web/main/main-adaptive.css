@@ -164,11 +164,18 @@
     height: 75%;
   }
   /*/////////////ADAPTIVE FOOTER////////////////*/
+    
+
+  .adaptive-address-info-text {
+    display: block;
+  }
   .footer {
     top: 79%;
     position: relative;
     display: flex;
     height: 200px;
+    /* display: block;
+    background-image: linear-gradient(rgb(3, 45, 50) 50%, rgb(0, 32, 36) 50%); */
   }
   .footer-button {
     display: none;
