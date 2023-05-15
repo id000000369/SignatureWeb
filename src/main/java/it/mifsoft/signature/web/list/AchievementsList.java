@@ -122,7 +122,7 @@ public class AchievementsList extends Div {
         if (data.buttonTitle.isPresent()) {
             final Button button = new Button();
             button.setText(data.buttonTitle.get());
-            button.addClickListener(event -> this.mainLayout.showModal(new ReserveForm()));
+            button.addClickListener(event -> this.mainLayout.showReserveForm());
             button.addClassName("achievment-reserve-button");
             content.add(button);
         }

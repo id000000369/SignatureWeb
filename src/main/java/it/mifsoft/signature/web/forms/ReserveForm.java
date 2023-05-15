@@ -63,8 +63,7 @@ public class ReserveForm extends Div {
     public Image createCloseModalBtn() {
         final Image img = new Image("img/grey-close-icon.png","");
         img.addClickListener(event -> {
-            firstHeaderText.getStyle().set("color","red");
-            delegate.hideModal();
+            this.delegate.hideModal();
         });
         img.addClassName("close-form-btn");
         return img;
@@ -217,5 +216,9 @@ public class ReserveForm extends Div {
         guestPrefix.addClassName("guest-prefix");
         countField.setPrefixComponent(guestPrefix);
         return countField;
+    }
+
+    public void setDelegate(ModalDelegate delegate) {
+        this.delegate = delegate;
     }
 }
