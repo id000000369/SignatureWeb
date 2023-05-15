@@ -15,3 +15,8 @@ bin/main/it/mifsoft/signature/web/MainLayout.class
 bin/main/it/mifsoft/signature/web/MainLayout.class
 bin/main/it/mifsoft/signature/web/MainLayout.class
 *.class
+bin/main/it/mifsoft/signature/web/forms/ReserveForm.class
+bin/main/it/mifsoft/signature/web/ui/FooterView.class
+bin/main/it/mifsoft/signature/web/list/AchievementsList.class
+bin/main/it/mifsoft/signature/web/MainLayout.class
+bin/main/it/mifsoft/signature/web/page/WelcomePage.class
