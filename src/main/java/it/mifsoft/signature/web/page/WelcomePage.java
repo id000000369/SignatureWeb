@@ -64,7 +64,6 @@ public class WelcomePage extends Div {
     private final Div sixteenDiv;
     private final Div columnContainer;
 
-
     public WelcomePage(SignatureNavigator navigator, MainLayout mainLayout) {
         this.navigator = navigator;
         this.mainLayout = mainLayout;

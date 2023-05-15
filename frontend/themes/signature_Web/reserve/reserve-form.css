@@ -10,6 +10,16 @@
 }
 /*///////////////////////////////////////*/
 
+.close-form-btn {
+  height: 20.48px;
+  width: 20.48px;
+  position: absolute;
+  top: 3%;
+  left: 66.5%;
+  z-index: 1000;
+  cursor: pointer;
+}
+
 .reserve-container {
   background-color: rgba(0, 32, 36, 1);
   border-radius: 15px;
@@ -17,11 +27,6 @@
   align-items: center;
   padding: 0 7% 0 1.5%;
   display: flex;
-}
-
-.reserve-close-icon {
-  position: absolute;
-  width: 100%;
 }
 
 .reserve-separator {

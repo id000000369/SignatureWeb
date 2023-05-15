@@ -7,13 +7,15 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
 
 import com.vaadin.flow.spring.annotation.UIScope;
+import it.mifsoft.signature.web.MainLayout;
+import it.mifsoft.signature.web.ModalDelegate;
 import org.springframework.stereotype.Component;
 
 @Component
 @UIScope
 public class ReserveForm extends Div {
     private final H1 firstHeaderText;
-    //private final H1 secondHeaderText;
+    private ModalDelegate delegate;
     private final H1 reminderText;
     private final H1 infoText;
     private final TextField name;
@@ -30,14 +32,11 @@ public class ReserveForm extends Div {
     private final Label checkbox;
     private final Image verticalSeparator;
     private final Div itemsContainer;
-//    private final Image closeIcon;
-
-    /////////////- ADAPTIVE - //////////////
     private final Image adaptiveBackgroundImg;
-
-    //    private final Image adaptiveReserveCloseIcon;
-//    private final Image adaptiveHeaderLogo;
+    private final Image closeModalBtn;
     public ReserveForm() {
+     //   MainLayout mainLayout = new MainLayout();
+
         this.firstHeaderText = createFirstHeaderText();
         this.name = createNameField();
         this.phoneNumber = createPhoneNumberField();
@@ -52,28 +51,22 @@ public class ReserveForm extends Div {
         this.checkbox = createCheckbox();
         this.verticalSeparator = createVerticalSeparator();
         this.itemsContainer = createItemsContainer();
-//        this.closeIcon = createCloseIcon();
 
-        ////////////////ADAPTIVE///////////////////////////////////////////
         this.adaptiveBackgroundImg = createAdaptiveBackgroundImg();
-//        this.adaptiveHeaderLogo = createAdaptiveHeaderLogo();
-//        this.adaptiveReserveCloseIcon = createAdaptiveReserveCloseIcon();
-        //////////////////////////////////////////////////////////////////
-
+        this.closeModalBtn = createCloseModalBtn();
         this.add(
-//                createAdaptiveReserveCloseIcon(),
-//                createAdaptiveHeaderLogo(),
                 createVerticalSeparator(),
-//                createCloseIcon(),
-                createItemsContainer(), createAdaptiveBackgroundImg());
+                createItemsContainer(), createAdaptiveBackgroundImg(), createCloseModalBtn());
         this.addClassName("reserve-container");
     }
-
-    //    private final Image createAdaptiveReserveCloseIcon() {
-//        final Image img = new Image("/img/gold-close-icon.png","");
-//        img.addClassName("adaptive-reserve-close-icon");
-//        return img;
-//    }
+    public Image createCloseModalBtn() {
+        final Image img = new Image("img/grey-close-icon.png","");
+        img.addClickListener(event -> {
+            delegate.hideModal();
+        });
+        img.addClassName("close-form-btn");
+        return img;
+    }
     private final Image createAdaptiveHeaderLogo() {
         final Image img = new Image("/img/adaptive-header-logo.png", "");
         img.addClassName("adaptive-header-logo");
@@ -85,12 +78,6 @@ public class ReserveForm extends Div {
         img.addClassName("adaptive-reserve-background-img");
         return img;
     }
-//    private Image createCloseIcon(){
-//        final Image icon = new Image("/img/close-icon.png","");
-//        icon.addClassName("reserve-close-icon");
-//        return icon;
-//    }
-
     private Div createItemsContainer() {
         final Div items = new Div();
         items.add(reserveItems());
