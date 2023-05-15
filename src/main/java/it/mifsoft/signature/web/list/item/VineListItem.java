@@ -4,6 +4,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
 import it.mifsoft.signature.web.dto.VineData;
 
@@ -17,7 +18,7 @@ public class VineListItem extends Div {
     private final TextField fortressText;
     private final TextField volumeText;
     private final TextField manufacturerText;
-    private final TextField perfectForText;
+    private final TextArea perfectForText;
     private final TextField andAlsoText;
     private final Button signUpForATasting;
     private final Image verticalSeparator;
@@ -174,16 +175,16 @@ public class VineListItem extends Div {
         return volumeText;
     }
 
-    public TextField createPerfectForText() {
-        TextField perfectForText = new TextField();
+    public TextArea createPerfectForText() {
+        TextArea perfectForText = new TextArea();
         perfectForText.setReadOnly(true);
         perfectForText.getStyle().set("padding", "3px");
         perfectForText.setLabel("ИДЕАЛЬНО ПОДХОДИТ К");
-        perfectForText.setValue("Осьминогу на стейке томата, \" +\n" +
-                "                \"Палтус с жженым горошком, Томленая ножка кролика с рагу из овощей, \" +\n" +
-                "                \"Осьминогу на стейке томата, \" +\n" +
-                "                \"Палтус с жженым горошком, \" +\n" +
-                "                \"Томленая ножка кролика с рагу из овощей");
+        perfectForText.setValue("Осьминогу на стейке томата,\n" +
+                "Палтус с жженым горошком, Томленая ножка кролика с рагу из овощей\n" +
+                "Осьминогу на стейке томата\n" +
+                "Палтус с жженым горошком,\n" +
+                "Томленая ножка кролика с рагу из овощей");
         perfectForText.addClassNames("perfectFor");
         return perfectForText;
     }

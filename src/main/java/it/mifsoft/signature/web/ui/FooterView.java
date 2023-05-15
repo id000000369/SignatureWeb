@@ -62,6 +62,7 @@ public class FooterView extends HorizontalLayout {
 
         this.addClassName("footer");
 
+
         this.add(this.logoImage, this.contactsText, this.reserveButton,
                 createAdminLabel(), createPhoneInfo(),
                 createAddressInfo(), createAdaptivePhoneImg(),

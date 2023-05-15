@@ -53,9 +53,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.menuBackgroundImg = createMenuBackgroundImg();
 
 
-        this.setHeight("100vh");
-        this.getStyle().setOverflow(Style.Overflow.AUTO);
-        this.getStyle().set("background-repeat", "repeat-x");
+        this.addClassNames("main-layout");
 
         // this.menuListView = createMenuListView(this.menuList);
 
@@ -177,12 +175,16 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.showBottom();
+                footerView.addClassNames("contacts-footer");
+                this.getStyle().set("overflow-x", "hidden");
+
             }
 
             case "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.hideBottom();
+                this.getStyle().set("overflow-x", "hidden");
                // this.footerView.changeFooterStyle();
             }
 

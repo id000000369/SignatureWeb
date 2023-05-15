@@ -43,10 +43,11 @@ body::-webkit-scrollbar {
 }
 
 /*//////- MAIN CSS -//////*/
-.content-view {
-  /* width: 100%;
-  height: 100%;
-  overflow-y: hidden; */
+.main-layout {
+  background-repeat: repeat-x;
+  overflow: auto;
+  background-image: url(./img/contacts-background-img.png);
+  height: 100vh;
   
 }
 
@@ -325,4 +326,15 @@ body::-webkit-scrollbar {
 }
 
 .sixteen-empty-column {
+}
+
+@media(max-width: 470px) {
+
+  .main-layout{
+  background-repeat: repeat-x;
+  overflow: auto;
+  background-image: url(./img/contacts-background-img.png);
+  height: 100vh;
+  }
+
 }

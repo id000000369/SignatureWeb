@@ -17,6 +17,7 @@
 
 
 .vertical-separator-pictures {
+    display: none;
     height: 23vh;
     padding-left: 15px;
 }
