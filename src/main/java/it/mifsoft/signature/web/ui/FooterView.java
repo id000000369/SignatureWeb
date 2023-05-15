@@ -170,7 +170,7 @@ public class FooterView extends HorizontalLayout {
 //        this.footerContactsInfo.addClassName("footer-bottom-invisible");
 //        this.footerContactsInfo.removeClassName("footer-bottom-visible");
 
-        this.footerContactsInfo.getStyle().set("display", "block");
+       // this.footerContactsInfo.getStyle().set("display", "block");
     }
 
     public void hideBottom() {
@@ -178,7 +178,7 @@ public class FooterView extends HorizontalLayout {
 //        this.footerContactsInfo.removeClassName("footer-bottom-invisible");
 
         this.footerContactsInfo.getStyle().set("display", "none");
-        this.getStyle().set("display", "block");
+        //this.getStyle().set("display", "block");
         this.adaptiveContactsAddressInfo.getStyle().set("display", "none");
         this.adaptiveSocialContainer.getStyle().set("display", "none");
         this.adaptiveCopyRights.getStyle().set("display", "none");
