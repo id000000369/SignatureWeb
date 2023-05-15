@@ -98,7 +98,6 @@
 
     .achievements-list {
         display: flex;
-        overflow-x: hidden;
         flex-direction: column;
         width: 95%;
         max-width: 430px;

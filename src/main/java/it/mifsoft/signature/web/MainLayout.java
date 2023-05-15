@@ -46,7 +46,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         this.contentImage = createContentImg();
         this.menuBackgroundImg = createMenuBackgroundImg();
-        
+
 
         this.addClassNames("main-layout");
 
@@ -158,7 +158,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.hideBottom();
-                this.getStyle().set("overflow-x", "hidden");
                // this.footerView.changeFooterStyle();
             }
             default -> {
