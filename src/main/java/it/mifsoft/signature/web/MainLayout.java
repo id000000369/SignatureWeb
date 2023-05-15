@@ -83,6 +83,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         if (this.getChildren().noneMatch(c -> c == this.modalView)) {
             this.add(modalView);
             this.isModalVisible = true;
+            this.headerView.setYellowLogo();
         }
         this.modalView = modalView;
     }
@@ -132,7 +133,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         super.onAttach(attachEvent);
         this.footerView.reserveButton.addClickListener((event) -> {
             if (!isModalVisible) {
-                // showModal();
+
             }
         });
         this.add(this.footerView);
