@@ -17,9 +17,7 @@ import java.util.List;
 @Component
 @UIScope
 public class HeaderView extends HorizontalLayout {
-
     private ModalDelegate delegate;
-
     private final String LOGO_IMAGE_SRC = "https://i.ibb.co/GQm92bq/Vector-1.png";
     private Collection<String> menuItemsNames = List.of(
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
@@ -87,6 +85,9 @@ public class HeaderView extends HorizontalLayout {
     }
     public void setYellowLogo() {
         this.logoImage.setSrc("/img/signature-yellow.png");
+    }
+    public void setWhiteMenuBtn() {
+        this.mobileMenuButtonImg.setSrc("/img/white-menu-btn.png");
     }
     public void setWhiteLogo() {
         this.logoImage.setSrc("/img/signature-white.png");

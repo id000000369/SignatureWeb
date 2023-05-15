@@ -17,12 +17,12 @@ import java.util.List;
 @Component
 @UIScope
 public class MenuList extends Div {
-
     private ModalDelegate delegate;
     private final Image backgroundImg;
     private final SignatureNavigator navigator;
     private final Collection<Holder> menuItemsHolders;
     private final List<MenuListItem> listItems;
+
 
     public MenuList(SignatureNavigator navigator) {
         this.navigator = navigator;
@@ -31,13 +31,14 @@ public class MenuList extends Div {
         this.listItems.forEach(this::add);
         this.backgroundImg = createBackgroundImg();
 
+
         this.getStyle().set("border-radius", "16px");
 //        this.getStyle().set("width","100%");
 //        this.getStyle().set("height","100%");
         // this.getStyle().set("background-color","rgba(0,60,72)");
 
         this.addClassName("menu-list-container");
-        //  this.add(createBackgroundImg());
+
     }
 
     public void setDelegate(ModalDelegate delegate) {
@@ -58,6 +59,8 @@ public class MenuList extends Div {
                 new Holder("КОНТАКТЫ", event -> nav.navigateToContacts())
         );
     }
+
+
 
     private Image createBackgroundImg() {
         final Image img = new Image("img/main-menu-img.png", "");

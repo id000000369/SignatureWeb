@@ -29,6 +29,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private final MenuList menuList;
     private Div modalView;
     private boolean isModalVisible = false;
+    private final Image closeModalBtn;
     private final Image menuBackgroundImg;
     public MainLayout(HeaderView headerView,
                       ContentLayout contentView,
@@ -51,6 +52,8 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.contentImage = createContentImg();
         this.menuBackgroundImg = createMenuBackgroundImg();
 
+        this.closeModalBtn = createCloseModalBtn();
+        this.menuList.setDelegate(this);
 
         this.addClassNames("main-layout");
 
@@ -78,6 +81,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             this.add(modalView);
             this.isModalVisible = true;
             this.headerView.setYellowLogo();
+            this.reserveForm.setYellowCloseBtn();
         }
         this.modalView = modalView;
     }
@@ -88,6 +92,15 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.add(form);
         return div;
     }
+    public Image createCloseModalBtn() {
+        final Image img = new Image("img/gold-close-icon.png","");
+        img.addClickListener(event -> {
+            this.hideModal();
+        });
+        img.addClassName("close-menu-btn");
+        return img;
+    }
+
     private Div createModalView(HtmlComponent form) {
         final Div div = new Div();
         div.setWidthFull();
@@ -101,7 +114,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().set("background-color", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
         div.addClassName("modal-view-wrapper");
-        div.add(form, createMenuBackgroundImg());
+        div.add(createCloseModalBtn(), form, createMenuBackgroundImg());
         div.addClickListener(event -> {
 
         });
@@ -147,6 +160,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
                 this.headerView.yellowColor();
                 this.footerView.hideBottom();
+                this.hideModal();
                 this.footerView.hide();
             }
 
@@ -154,14 +168,18 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.showBottom();
+                this.headerView.setWhiteMenuBtn();
+                this.hideModal();
                 footerView.addClassNames("contacts-footer");
                 this.getStyle().set("overflow-x", "hidden");
-
             }
+
             case "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
                 this.footerView.hideBottom();
+                this.headerView.setWhiteMenuBtn();
+                this.hideModal();
                // this.footerView.changeFooterStyle();
             }
             default -> {

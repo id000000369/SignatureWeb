@@ -25,6 +25,12 @@
     border-radius: 0px;
     display: flex;
   }
+  .close-form-btn {
+    position: absolute;
+    left: 5%;
+    top: 2.5%;
+  }
+
   .adaptive-reserve-background-img {
     position: absolute;
     width: 100%;

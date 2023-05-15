@@ -35,7 +35,6 @@ public class ReserveForm extends Div {
     private final Image adaptiveBackgroundImg;
     private final Image closeModalBtn;
     public ReserveForm() {
-     //   MainLayout mainLayout = new MainLayout();
 
         this.firstHeaderText = createFirstHeaderText();
         this.name = createNameField();
@@ -69,10 +68,8 @@ public class ReserveForm extends Div {
         return img;
     }
 
-    private final Image createAdaptiveHeaderLogo() {
-        final Image img = new Image("/img/adaptive-header-logo.png", "");
-        img.addClassName("adaptive-header-logo");
-        return img;
+    public void setYellowCloseBtn() {
+        this.closeModalBtn.setSrc("/img/gold-close-icon.png");
     }
 
     private final Image createAdaptiveBackgroundImg() {
