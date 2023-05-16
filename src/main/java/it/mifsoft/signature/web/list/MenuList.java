@@ -23,14 +23,12 @@ public class MenuList extends Div {
     private final Collection<Holder> menuItemsHolders;
     private final List<MenuListItem> listItems;
 
-
     public MenuList(SignatureNavigator navigator) {
         this.navigator = navigator;
         this.menuItemsHolders = createMenuItemHolders(navigator);
         this.listItems = createMenuItems();
         this.listItems.forEach(this::add);
         this.backgroundImg = createBackgroundImg();
-
 
         this.getStyle().set("border-radius", "16px");
 //        this.getStyle().set("width","100%");
@@ -40,7 +38,6 @@ public class MenuList extends Div {
         this.addClassName("menu-list-container");
 
     }
-
     public void setDelegate(ModalDelegate delegate) {
         this.delegate = delegate;
     }
@@ -60,8 +57,6 @@ public class MenuList extends Div {
         );
     }
 
-
-
     private Image createBackgroundImg() {
         final Image img = new Image("img/main-menu-img.png", "");
         img.addClassName("main-menu-background-img");
@@ -80,7 +75,6 @@ public class MenuList extends Div {
     static class Holder {
         final String title;
         final ComponentEventListener<ClickEvent<Div>> listener;
-
         Holder(String title, ComponentEventListener<ClickEvent<Div>> listener) {
             this.title = title;
             this.listener = listener;

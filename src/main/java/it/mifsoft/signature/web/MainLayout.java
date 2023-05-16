@@ -96,6 +96,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         final Image img = new Image("img/gold-close-icon.png","");
         img.addClickListener(event -> {
             this.hideModal();
+            this.headerView.setVisible(true);
         });
         img.addClassName("close-menu-btn");
         return img;
@@ -170,23 +171,21 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.footerView.showBottom();
                 this.hideModal();
                 footerView.addClassNames("contacts-footer");
-//                this.getStyle().set("overflow-x", "hidden");
-
             }
 
             case "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
-                this.footerView.hideBottom();
+              //  this.footerView.hideBottom();
                 this.hideModal();
                // this.footerView.changeFooterStyle();
             }
             default -> {
                 this.getStyle().remove("background-image");
             }
-
         }
     }
+
     public Image createContentImg() {
         final Image content = new Image("img/main-img.png", "");
         content.addClassName("content-img");
@@ -200,6 +199,8 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         if (this.getChildren().anyMatch(c -> c == this.modalView)) {
             this.remove(this.modalView);
             this.isModalVisible = false;
+            this.headerView.setVisible(true);
+            this.footerView.setVisible(true);
         }
     }
 
