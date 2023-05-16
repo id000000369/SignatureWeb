@@ -142,8 +142,7 @@ body::-webkit-scrollbar {
   text-align: center;
   letter-spacing: 0.05em;
   font-size: 8px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 0px 15px 15px 15px;
   background: url("/img/cards-2.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -167,14 +166,18 @@ body::-webkit-scrollbar {
 }
 
 .bron-button {
-  width: 140%;
+  position: absolute;
+  width: 12%;
   border-top-left-radius: 0;
   font-size: 14px;
+  left: 6%;
+  top: 51.5%;
 }
+
 .bron-line {
   position: absolute;
-  left:50%;
-  top: -125%;
+  left: 10.5%;
+  top: 44%;
   width: 35px;
 }
 

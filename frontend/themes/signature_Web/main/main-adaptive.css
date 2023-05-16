@@ -146,14 +146,21 @@
   }
 
   .bron-button {
-  }
+    position: absolute;
+    width: 12%;
+    border-top-left-radius: 0;
+    font-size: 14px;
+    left: 3.29%;
+    top: 34%;
+}
 
   /*/////////////- HEADER -/////////////*/
   .header-logo {
     z-index: 10;
     width: 250px;
     height: 79px;
-    padding-left: 30%;
+    left: 25%;
+    position: relative;
   }
   .header {
     width: 100%;

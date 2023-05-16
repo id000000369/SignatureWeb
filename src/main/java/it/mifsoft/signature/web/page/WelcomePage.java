@@ -150,7 +150,7 @@ public class WelcomePage extends Div {
     public Div createColumnContainer() {
         final Div columnContainer = new Div();
         columnContainer.add(
-                fisrtDiv, secondDiv, thirdDiv, fourthDiv, fiveDiv, sixDiv, sevenDiv, eightDiv,
+                fisrtDiv, secondDiv, thirdDiv, fourthDiv, bronButton, bronLine, sixDiv, sevenDiv, eightDiv,
                 nineDiv, tenDiv, elevenDiv, twelveDiv, thirteenDiv, fourteenDiv, fifteenDiv, sixteenDiv
         );
         columnContainer.addClassName("column-container");
@@ -187,7 +187,7 @@ public class WelcomePage extends Div {
 
     public Div createFiveColumn() {
         final Div fiveColumn = new Div();
-        fiveColumn.add(bronButton, bronLine);
+        fiveColumn.add();
         fiveColumn.addClassName("five-top-empty-column");
         return fiveColumn;
     }
