@@ -171,16 +171,13 @@ public class FooterView extends HorizontalLayout {
     }
 
     public void showBottom() {
-//        this.footerContactsInfo.addClassName("footer-bottom-invisible");
-//        this.footerContactsInfo.removeClassName("footer-bottom-visible");
-
-       // this.footerContactsInfo.getStyle().set("display", "block");
+        this.footerContactsInfo.getStyle().set("display", "block");
+        this.footerContactsInfo.setVisible(true);
     }
 
     public void hideBottom() {
 //        this.footerContactsInfo.addClassName("footer-bottom-visible");
 //        this.footerContactsInfo.removeClassName("footer-bottom-invisible");
-
         this.footerContactsInfo.getStyle().set("display", "none");
         //this.getStyle().set("display", "block");
         this.adaptiveContactsAddressInfo.getStyle().set("display", "none");

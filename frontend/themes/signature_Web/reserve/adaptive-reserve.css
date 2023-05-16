@@ -178,18 +178,7 @@
     text-transform: uppercase;
   }
 
-  .adaptive-header-logo {
-    width: 317.77px;
-    height: 89px;
+  .modal-menu-img {
     display: block;
-    position: absolute;
-    top: 7%;
-    left: 28%;
-  }
-  .adaptive-reserve-close-icon {
-    display: block;
-    position: absolute;
-    top: 7.5%;
-    left: 4%;
   }
 }
