@@ -150,11 +150,10 @@
 
   /*/////////////- HEADER -/////////////*/
   .header-logo {
-    position: absolute;
     z-index: 10;
-    width: 317.77px;
-    height: 89px;
-    left: 18%;
+    width: 250px;
+    height: 79px;
+    padding-left: 30%;
   }
   .header {
     width: 100%;

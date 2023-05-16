@@ -151,8 +151,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.headerView.whiteColor();
                 this.footerView.showBottom();
                 footerView.addClassNames("contacts-footer");
-                this.getStyle().set("overflow-x", "hidden");
-
             }
             case "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
