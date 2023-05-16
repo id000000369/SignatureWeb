@@ -170,7 +170,8 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.footerView.showBottom();
                 this.hideModal();
                 footerView.addClassNames("contacts-footer");
-                this.getStyle().set("overflow-x", "hidden");
+//                this.getStyle().set("overflow-x", "hidden");
+
             }
 
             case "main/achievement" -> {

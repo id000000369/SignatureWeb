@@ -97,6 +97,7 @@
 
 .perfectFor{
     font-size: 11px;
+    color: rgba(160, 174, 175, 1);
 
     border-bottom: 1px solid rgba(127, 110, 55);
 }
@@ -145,39 +146,35 @@
     display: none;
 }
 
-
-
-vaadin-text-field::part(input-field) {
-    border: none;
-    border-radius: 0;
-    border-color: rgba(145, 121, 58, 1);
-    background-color: transparent;   
-}
-
 vaadin-text-field::part(label){
     font-size: 14px;
-
     color: rgba(145, 121, 58, 1);
-    
-
 }
+
+vaadin-text-area::part(label){
+    font-size: 14px;
+    color: rgba(145, 121, 58, 1);
+}
+
+vaadin-text-area > textarea {
+    color: rgba(160, 174, 175, 1);
+}
+
 
 vaadin-text-field::part(input-field){
     color: rgba(160, 174, 175, 1);
-    
-    
+    border: none;
+    border-radius: 0;
+    background-color: transparent;   
 }
 
 @media(max-width: 489px) {
 
     .vines-top-img {
-        position: absolute;
+        position: relative;
         display: block;
-        justify-content: center;
-        padding-bottom: 40%;
-        top: 18%;
-        left: 20%;
-        align-items: center;
+        margin-bottom: 10px;
+        left: 12%;
     }
 
     .vines-list-main{
@@ -189,8 +186,6 @@ vaadin-text-field::part(input-field){
 
     .left-side{
         width: 80vw;
-        /* height: 55vh; */
-        padding-top: 100px;
         display: grid;
     }
 
@@ -253,7 +248,4 @@ vaadin-text-field::part(input-field){
         height: 54vh;
         padding-left: 15px;
     }
-
-
-
 }
