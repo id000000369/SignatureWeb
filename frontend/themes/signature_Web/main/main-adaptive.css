@@ -168,6 +168,7 @@
   /*/////////////////////////////*/
   .column-container {
     height: 75%;
+    width: 0;
   }
   /*/////////////ADAPTIVE FOOTER////////////////*/
   .close-menu-btn {
