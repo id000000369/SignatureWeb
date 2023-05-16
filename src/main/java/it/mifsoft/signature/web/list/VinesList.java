@@ -1,6 +1,7 @@
 package it.mifsoft.signature.web.list;
 
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.dto.VineData;
 import it.mifsoft.signature.web.list.item.VineListItem;
@@ -65,7 +66,7 @@ public class VinesList extends Div implements VinesCarousel.Delegate {
         this.currentItem = new VineListItem(vines.get(0));
 
         this.leftSide.addClassNames("left-side");
-        this.leftSide.add(categoriesList, carousel);
+        this.leftSide.add(createVinesTopImg(), categoriesList, carousel);
 
         this.rightSide.addClassNames("right-side");
         this.rightSide.add(this.currentItem);
@@ -79,5 +80,11 @@ public class VinesList extends Div implements VinesCarousel.Delegate {
         this.rightSide.remove(this.currentItem);
         this.currentItem = new VineListItem(vine);
         this.rightSide.add(this.currentItem);
+    }
+
+    private Image createVinesTopImg() {
+        final Image img = new Image("img/vines-top-img.png", "");
+        img.addClassName("vines-top-img");
+        return img;
     }
 }

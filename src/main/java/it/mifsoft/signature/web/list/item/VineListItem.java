@@ -48,13 +48,7 @@ public class VineListItem extends Div {
         this.itemsContainer = createItemsContainer();
 
         addClassNames("window");
-        add(createVinesTopImg(), addVerticalSeparator(), createItemsContainer());
-    }
-
-    private Image createVinesTopImg() {
-        final Image img = new Image("img/vines-top-img.png", "");
-        img.addClassName("vines-top-img");
-        return img;
+        add( addVerticalSeparator(), createItemsContainer());
     }
 
     public Div createItemsContainer() {
