@@ -146,7 +146,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.add(this.contentImage);
             }
 //            this.footerView.hideBottom();
-//            this.footerView.changeFooterPosition();
+            this.footerView.changeFooterPosition();
             this.contentImage.setVisible(true);
         } else {
             if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
