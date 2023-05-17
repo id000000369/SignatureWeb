@@ -131,18 +131,22 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         });
         this.add(this.footerView);
     }
+
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
         final var location = event.getLocation();
         final String path = location.getPath();
 
+        updateFooterStateByPath(path);
+        updateHeaderStateByPath(path);
+
         if (path.equals("main/welcome")) {
-            this.headerView.yellowColor();
+            //this.headerView.yellowColor();
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
             }
-            this.footerView.hideBottom();
-            this.footerView.changeFooterPosition();
+//            this.footerView.hideBottom();
+//            this.footerView.changeFooterPosition();
             this.contentImage.setVisible(true);
         } else {
             if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
@@ -159,23 +163,23 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         switch (path) {
             case "main/vines", "main/dishes", "main/pictures" -> {
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
-                this.headerView.yellowColor();
-                this.footerView.hideBottom();
-                this.footerView.hide();
+                //this.headerView.yellowColor();
+//                this.footerView.hideBottom();
+//                this.footerView.hide();
                 this.hideModal();
             }
 
             case "main/contacts" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
-                this.headerView.whiteColor();
-                this.footerView.showBottom();
+                //this.headerView.whiteColor();
+//                this.footerView.showBottom();
                 this.hideModal();
                 footerView.addClassNames("contacts-footer");
             }
 
             case "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
-                this.headerView.whiteColor();
+                //this.headerView.whiteColor();
               //  this.footerView.hideBottom();
                 this.hideModal();
                // this.footerView.changeFooterStyle();
@@ -184,6 +188,65 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.getStyle().remove("background-image");
             }
         }
+    }
+
+    private void updateFooterStateByPath(String path) {
+        switch (path) {
+            case "main/vines", "main/dishes", "main/pictures" -> {
+                this.footerView.hide();
+            }
+            case "main/contacts" -> {
+                this.footerView.show();
+                updateFooterForState(FooterStates.FULL);
+            }
+            default -> {
+                this.footerView.show();
+                updateFooterForState(FooterStates.SHORT);
+            }
+        }
+    }
+
+    private void updateHeaderStateByPath(String path) {
+        switch (path) {
+            case "main/contacts","main/achievement" -> updateHeaderForState(HeaderStates.WHITE);
+            default -> updateHeaderForState(HeaderStates.GOLD);
+        }
+    }
+
+    private void updateFooterForState(FooterStates state) {
+        final String SHORT_CLASS_NAME = "short-footer";
+        final String FULL_CLASS_NAME = "full-footer";
+
+        if (state.equals(FooterStates.SHORT)) {
+            this.footerView.removeClassName(FULL_CLASS_NAME);
+            this.footerView.addClassName(SHORT_CLASS_NAME);
+        } else if (state.equals(FooterStates.FULL)) {
+            this.footerView.removeClassName(SHORT_CLASS_NAME);
+            this.footerView.addClassName(FULL_CLASS_NAME);
+        }
+    }
+
+    private void updateHeaderForState(HeaderStates state) {
+        final String GOLD_CLASS_NAME = "gold-header";
+        final String WHITE_CLASS_NAME = "white-header";
+
+        if (state.equals(HeaderStates.GOLD)) {
+            this.headerView.removeClassName(WHITE_CLASS_NAME);
+            this.headerView.addClassName(GOLD_CLASS_NAME);
+        } else if (state.equals(HeaderStates.WHITE)) {
+            this.headerView.removeClassName(GOLD_CLASS_NAME);
+            this.headerView.addClassName(WHITE_CLASS_NAME);
+        }
+    }
+
+    enum FooterStates {
+        SHORT,
+        FULL;
+    }
+
+    enum HeaderStates {
+        GOLD,
+        WHITE;
     }
 
     public Image createContentImg() {

@@ -1,3 +1,5 @@
+
+
 .footer {
   position: fixed;
   left: 0;
@@ -9,6 +11,34 @@
   text-align: center;
   justify-content: center;
   padding-bottom: 25px;
+}
+
+
+@media only screen and (max-width: 470px) {
+
+  .hidden-footer {
+    display: none;
+  }
+
+  .visible-footer {
+    display: block;
+  }
+
+  .short-footer > .adaptive-address-info-text {
+    display: block;
+  }
+  
+  .short-footer > .footer-contacts-info {
+    display: none;
+  }
+
+  .full-footer > .adaptive-address-info-text {
+    display: none;
+  }
+  
+  .full-footer > .footer-contacts-info {
+    display: block;
+  }
 }
 
 :host([theme~="spacing"]) {
