@@ -170,7 +170,7 @@ public class PictureListItem extends Div {
 
 
         this.imageI.getStyle().set("min-width", "20vw");
-        this.imageI.getStyle().set("min-height", "40vh");
+//        this.imageI.getStyle().set("min-height", "40vh");
 //        this.imageI.getStyle().set("max-width", "20vw");
 //        this.imageI.getStyle().set("max-height", "40vh");
         this.imageI.getStyle().set("margin-top", "4%");

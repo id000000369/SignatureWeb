@@ -157,9 +157,21 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         }
 
         switch (path) {
-            case "main/vines", "main/dishes", "main/pictures" -> {
+            case "main/dishes", "main/vines" -> {
+                this.getStyle().set("background-image", "url('./img/background-vine.png')");
+                this.headerView.logoImage.addClassNames("header-logo");
+                this.headerView.yellowColor();
+                this.footerView.hideBottom();
+                this.footerView.hide();
+                this.hideModal();
+            }
+
+
+
+            case "main/pictures" -> {
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
                 this.headerView.yellowColor();
+                this.headerView.logoImage.addClassNames("header-logo-pictures");
                 this.footerView.hideBottom();
                 this.footerView.hide();
                 this.hideModal();
