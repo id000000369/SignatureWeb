@@ -26,6 +26,17 @@
   z-index: 1;
 }
 
+.header-logo-pictures {
+  display: flex;
+  align-items: stretch;
+  width: 225px;
+  height: 60px;
+  padding-right: 8%;
+  padding-left: 3%;
+  cursor: pointer;
+  z-index: 1;
+}
+
 .close-menu-btn {
   display: none;
 }

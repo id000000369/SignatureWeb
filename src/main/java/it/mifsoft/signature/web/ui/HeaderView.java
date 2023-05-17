@@ -22,7 +22,7 @@ public class HeaderView extends HorizontalLayout {
     private Collection<String> menuItemsNames = List.of(
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
     );
-    private final Image logoImage;
+    public Image logoImage;
     private final MenuBar menuBar;
     private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
@@ -38,7 +38,7 @@ public class HeaderView extends HorizontalLayout {
 
         this.addClassName("header");
 
-        logoImage.addClassName("header-logo");
+//        logoImage.addClassName("header-logo");
 
         this.add(logoImage, menuBar, createMobileMenuButtonImg());
     }
