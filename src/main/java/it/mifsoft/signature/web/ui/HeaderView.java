@@ -2,6 +2,7 @@ package it.mifsoft.signature.web.ui;
 
 
 import com.vaadin.flow.component.contextmenu.MenuItem;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -18,11 +19,10 @@ import java.util.List;
 @UIScope
 public class HeaderView extends HorizontalLayout {
     private ModalDelegate delegate;
-    private final String LOGO_IMAGE_SRC = "https://i.ibb.co/GQm92bq/Vector-1.png";
     private Collection<String> menuItemsNames = List.of(
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
     );
-    public Image logoImage;
+    public Div logoImage;
     private final MenuBar menuBar;
     private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
@@ -37,9 +37,6 @@ public class HeaderView extends HorizontalLayout {
         this.mobileMenuButtonImg = createMobileMenuButtonImg();
 
         this.addClassName("header");
-
-//        logoImage.addClassName("header-logo");
-
         this.add(logoImage, menuBar, createMobileMenuButtonImg());
     }
 
@@ -54,9 +51,10 @@ public class HeaderView extends HorizontalLayout {
         return img;
     }
 
-    private Image createImage() {
-        Image logoImage = new Image();
-        logoImage.setSrc(LOGO_IMAGE_SRC);
+    private Div createImage() {
+        Div logoImage = new Div();
+//        logoImage.setSrc("");
+        logoImage.addClassName("header-logo");
         logoImage.addClickListener(event -> this.navigator.navigateToHome());
         return logoImage;
     }
@@ -74,22 +72,22 @@ public class HeaderView extends HorizontalLayout {
         }).toList();
     }
 
-    public void whiteColor() {
-        this.logoImage.getStyle().set("display","block");
-        this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
-        this.logoImage.setSrc("/img/signature-white.png");
-        this.mobileMenuButtonImg.setSrc("/img/white-menu-btn.png");
-    }
-
-    public void yellowColor() {
-        this.logoImage.getStyle().set("display","block");
-        this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
-        this.logoImage.setSrc("/img/signature-yellow.png");
-
-    }
-    public void setWhiteLogo() {
-        this.logoImage.setSrc("/img/signature-white.png");
-    }
+//    public void whiteColor() {
+//        this.logoImage.getStyle().set("display","block");
+//        this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
+//       // this.logoImage.setSrc("/img/signature-white.png");
+//        this.mobileMenuButtonImg.setSrc("/img/white-menu-btn.png");
+//    }
+//
+//    public void yellowColor() {
+//        this.logoImage.getStyle().set("display","block");
+//        this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
+//       // this.logoImage.setSrc("/img/signature-yellow.png");
+//
+//    }
+//    public void setWhiteLogo() {
+//        this.logoImage.setSrc("/img/signature-white.png");
+//    }
     public void setDelegate(ModalDelegate delegate) {
         this.delegate = delegate;
     }

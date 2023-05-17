@@ -80,7 +80,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         if (this.getChildren().noneMatch(c -> c == this.modalView)) {
             this.add(modalView);
             this.isModalVisible = true;
-            this.headerView.yellowColor();
+//            this.headerView.yellowColor();
             this.reserveForm.setYellowCloseBtn();
         }
         this.modalView = modalView;
@@ -132,6 +132,32 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.add(this.footerView);
     }
 
+    private boolean becomeWelcome(String path) {
+        if (path.equals("main/welcome")) {
+            if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
+                this.add(this.contentImage);
+            }
+            this.footerView.changeFooterPosition();
+            this.contentImage.setVisible(true);
+            return true;
+        } else {
+            if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
+                this.contentImage.setVisible(false);
+            }
+            return false;
+        }
+    }
+
+    private boolean becomePictures(String path) {
+        if (path.equals("main/pictures")) {
+            this.contentView.setClassName("content-view-pictures");
+            return true;
+        } else {
+            this.contentView.setClassName("content-view");
+            return false;
+        }
+    }
+
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
         final var location = event.getLocation();
@@ -139,70 +165,21 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         updateFooterStateByPath(path);
         updateHeaderStateByPath(path);
-
-        if (path.equals("main/welcome")) {
-            //this.headerView.yellowColor();
-            if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
-                this.add(this.contentImage);
-            }
-//            this.footerView.hideBottom();
-            this.footerView.changeFooterPosition();
-            this.contentImage.setVisible(true);
-        } else {
-            if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
-                this.contentImage.setVisible(false);
-            }
-        }
-
-        if (path.equals("main/pictures")) {
-            this.contentView.setClassName("content-view-pictures");
-        } else {
-            this.contentView.setClassName("content-view");
-        }
+        becomeWelcome(path);
+        becomePictures(path);
 
         switch (path) {
-            case "main/dishes", "main/vines" -> {
+            case "main/dishes", "main/vines", "main/pictures" -> {
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
-                this.headerView.logoImage.addClassNames("header-logo");
-                this.headerView.yellowColor();
-                this.footerView.hideBottom();
-                this.footerView.hide();
-                this.hideModal();
             }
-
-
-
-            case "main/pictures" -> {
-                this.getStyle().set("background-image", "url('./img/background-vine.png')");
-                this.headerView.logoImage.addClassNames("header-logo-pictures");
-
-
-//                this.headerView.yellowColor();
-//                this.footerView.hideBottom();
-//                this.footerView.hide();
-
-                this.hideModal();
-            }
-
-            case "main/contacts" -> {
+            case "main/contacts", "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
-                //this.headerView.whiteColor();
-//                this.footerView.showBottom();
-                this.hideModal();
-                footerView.addClassNames("contacts-footer");
-            }
-
-            case "main/achievement" -> {
-                this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
-                //this.headerView.whiteColor();
-              //  this.footerView.hideBottom();
-                this.hideModal();
-               // this.footerView.changeFooterStyle();
             }
             default -> {
                 this.getStyle().remove("background-image");
             }
         }
+        this.hideModal();
     }
 
     private void updateFooterStateByPath(String path) {
