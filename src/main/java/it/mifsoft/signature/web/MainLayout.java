@@ -141,7 +141,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         updateHeaderStateByPath(path);
 
         if (path.equals("main/welcome")) {
-            //this.headerView.yellowColor();
+            this.headerView.yellowColor();
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
             }
@@ -177,7 +177,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                 this.headerView.logoImage.addClassNames("header-logo-pictures");
 
 
-//                this.headerView.yellowColor();
+                this.headerView.yellowColor();
 //                this.footerView.hideBottom();
 //                this.footerView.hide();
 
@@ -186,7 +186,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
             case "main/contacts" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
-                //this.headerView.whiteColor();
+                this.headerView.whiteColor();
 //                this.footerView.showBottom();
                 this.hideModal();
                 footerView.addClassNames("contacts-footer");
@@ -194,7 +194,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
             case "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
-                //this.headerView.whiteColor();
+                this.headerView.whiteColor();
               //  this.footerView.hideBottom();
                 this.hideModal();
                // this.footerView.changeFooterStyle();
