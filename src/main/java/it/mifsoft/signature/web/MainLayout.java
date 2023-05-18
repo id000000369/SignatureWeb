@@ -31,6 +31,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private boolean isModalVisible = false;
     private final Image closeModalBtn;
     private final Image menuBackgroundImg;
+
     public MainLayout(HeaderView headerView,
                       ContentLayout contentView,
                       FooterView footerView,
@@ -60,6 +61,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         // this.menuListView = createMenuListView(this.menuList);
         this.add(headerView);
     }
+
     public Image createMenuBackgroundImg() {
         final Image img = new Image("img/main-menu-img.png", "");
         img.getStyle().set("position", "absolute");
@@ -69,6 +71,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         img.addClassName("modal-menu-img");
         return img;
     }
+
     public void showModal(HtmlComponent form) {
         if (isModalVisible) {
             return;
@@ -85,6 +88,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         }
         this.modalView = modalView;
     }
+
     private Div createMenuListView(HtmlComponent form) {
         final Div div = new Div();
         form.getStyle().setZIndex(Integer.MAX_VALUE);
@@ -92,8 +96,9 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.add(form);
         return div;
     }
+
     public Image createCloseModalBtn() {
-        final Image img = new Image("img/gold-close-icon.png","");
+        final Image img = new Image("img/gold-close-icon.png", "");
         img.addClickListener(event -> {
             this.hideModal();
             this.headerView.setVisible(true);
@@ -121,6 +126,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         });
         return div;
     }
+
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
@@ -171,12 +177,9 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
 
 
-
             case "main/pictures" -> {
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
                 this.headerView.logoImage.addClassNames("header-logo-pictures");
-
-
                 this.headerView.yellowColor();
 //                this.footerView.hideBottom();
 //                this.footerView.hide();
@@ -195,9 +198,9 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             case "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
                 this.headerView.whiteColor();
-              //  this.footerView.hideBottom();
+                //  this.footerView.hideBottom();
                 this.hideModal();
-               // this.footerView.changeFooterStyle();
+                // this.footerView.changeFooterStyle();
             }
             default -> {
                 this.getStyle().remove("background-image");
@@ -223,7 +226,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
     private void updateHeaderStateByPath(String path) {
         switch (path) {
-            case "main/contacts","main/achievement" -> updateHeaderForState(HeaderStates.WHITE);
+            case "main/contacts", "main/achievement" -> updateHeaderForState(HeaderStates.WHITE);
             default -> updateHeaderForState(HeaderStates.GOLD);
         }
     }
@@ -269,6 +272,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         content.addClassName("content-img");
         return content;
     }
+
     @Override
     public void hideModal() {
         if (!isModalVisible) {
