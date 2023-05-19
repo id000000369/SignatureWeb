@@ -66,6 +66,11 @@
     visibility: collapse;
   }
   /*//////- MAIN ADAPTIVE CSS -//////*/
+
+  .content-view {
+    height: 100%;
+    overflow: hidden;
+  }
   .mainFirstMobileImg {
     width: 100%;
     display: flex;
@@ -156,10 +161,27 @@
 }
 
   /*/////////////- HEADER -/////////////*/
+
+
+  .yellow-header-logo {
+    z-index: 10;
+    width: 318px;
+    height: 89px;
+    left: 25%;
+    position: relative;
+  }
+  .white-header-logo {
+    z-index: 10;
+    width: 318px;
+    height: 89px;
+    left: 25%;
+    position: relative;
+  }
+
   .header-logo {
     z-index: 10;
-    width: 250px;
-    height: 79px;
+    width: 318px;
+    height: 89px;
     left: 25%;
     position: relative;
   }

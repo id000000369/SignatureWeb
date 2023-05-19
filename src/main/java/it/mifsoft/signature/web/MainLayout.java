@@ -2,6 +2,7 @@ package it.mifsoft.signature.web;
 
 import com.vaadin.flow.component.AttachEvent;
 import com.vaadin.flow.component.HtmlComponent;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.dom.Style;
@@ -54,6 +55,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.menuBackgroundImg = createMenuBackgroundImg();
 
         this.closeModalBtn = createCloseModalBtn();
+
         this.menuList.setDelegate(this);
 
         this.addClassNames("main-layout");
@@ -83,7 +85,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         if (this.getChildren().noneMatch(c -> c == this.modalView)) {
             this.add(modalView);
             this.isModalVisible = true;
-//            this.headerView.yellowColor();
+            this.headerView.yellowColor();
             this.reserveForm.setYellowCloseBtn();
         }
         this.modalView = modalView;
@@ -97,14 +99,15 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         return div;
     }
 
-    public Image createCloseModalBtn() {
+        public Image createCloseModalBtn() {
+
         final Image img = new Image("img/gold-close-icon.png", "");
-        img.addClickListener(event -> {
-            this.hideModal();
-            this.headerView.setVisible(true);
-        });
-        img.addClassName("close-menu-btn");
-        return img;
+            img.addClickListener(event -> {
+                 this.headerView.setVisible(true);
+                 this.hideModal();
+            });
+            img.addClassName("close-menu-btn");
+            return img;
     }
 
     private Div createModalView(HtmlComponent form) {
@@ -132,7 +135,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         super.onAttach(attachEvent);
         this.footerView.reserveButton.addClickListener((event) -> {
             if (!isModalVisible) {
-
             }
         });
         this.add(this.footerView);
@@ -142,8 +144,9 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         if (path.equals("main/welcome")) {
             if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
                 this.add(this.contentImage);
+                this.headerView.yellowColor();
             }
-            this.footerView.changeFooterPosition();
+            //   this.footerView.changeFooterPosition();
             this.contentImage.setVisible(true);
             return true;
         } else {
@@ -157,6 +160,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private boolean becomePictures(String path) {
         if (path.equals("main/pictures")) {
             this.contentView.setClassName("content-view-pictures");
+            this.headerView.yellowColor();
             return true;
         } else {
             this.contentView.setClassName("content-view");
@@ -195,10 +199,20 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
             case "main/contacts" -> {
                 this.footerView.show();
+                this.footerView.changeFooterPosition();
+                this.footerView.showSocialMedia();
+                this.headerView.whiteColor();
                 updateFooterForState(FooterStates.FULL);
+            }
+            case "main/achievement" -> {
+                this.footerView.show();
+                this.footerView.changeAchievmentFooterPosition();
+                this.headerView.whiteColor();
+                updateFooterForState(FooterStates.SHORT);
             }
             default -> {
                 this.footerView.show();
+                this.footerView.changeMainFooterPosition();
                 updateFooterForState(FooterStates.SHORT);
             }
         }
@@ -206,8 +220,16 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
     private void updateHeaderStateByPath(String path) {
         switch (path) {
-            case "main/contacts", "main/achievement" -> updateHeaderForState(HeaderStates.WHITE);
-            default -> updateHeaderForState(HeaderStates.GOLD);
+            case "main/contacts", "main/achievement" -> {
+                this.headerView.whiteColor();
+//                this.headerView.setWhiteMenuBtnColor();
+                updateHeaderForState(HeaderStates.WHITE);
+            }
+            default -> {
+                this.headerView.yellowColor();
+//                this.headerView.setYellowMenuBtnColor();
+                 updateHeaderForState(HeaderStates.GOLD);
+            }
         }
     }
 

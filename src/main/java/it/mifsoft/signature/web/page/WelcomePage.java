@@ -112,7 +112,7 @@ public class WelcomePage extends Div {
         this.mainSecondMobileImg = createSecondMainMobileImg();
         this.mainThirdMobileImg = createThirdMainMobileImg();
         this.mobileHeaderGradient = createMobileHeaderGradient();
-
+        this.addClassName("main");
         this.add(createColumnContainer(),
 
                 createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg(),
@@ -121,6 +121,7 @@ public class WelcomePage extends Div {
 //                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
 //                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
         );
+
     }
 
     public Image createMobileHeaderGradient() {

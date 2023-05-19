@@ -21,42 +21,61 @@ public class HeaderView extends HorizontalLayout {
     private Collection<String> menuItemsNames = List.of(
             "О НАС", "ЭКСПОЗИЦИЯ", "ВИННАЯ ГАЛЕРЕЯ", "МЕНЮ", "КОНТАКТЫ"
     );
-    public Div logoImage;
+    public Image yellowLogoImage;
+    public Image whiteLogoImage;
+    public Image logoImage;
     private final MenuBar menuBar;
     private final List<MenuItem> menuItems;
     private final SignatureNavigator navigator;
-    private final Image mobileMenuButtonImg;
+    private final Image menuButtonImg;
 
     public HeaderView(SignatureNavigator navigator) {
         this.navigator = navigator;
 
-        this.logoImage = createImage();
+//        this.yellowLogoImage = createYellowLogo();
+//        this.whiteLogoImage = createWhiteLogo();
+        this.logoImage = createLogo();
+
         this.menuBar = createMenu();
         this.menuItems = createMenuItems(this.menuBar);
-        this.mobileMenuButtonImg = createMobileMenuButtonImg();
+        this.menuButtonImg = createMobileMenuButtonImg();
 
         this.addClassName("header");
         this.add(logoImage, menuBar, createMobileMenuButtonImg());
     }
 
     public Image createMobileMenuButtonImg() {
-        final Image img = new Image("/img/mobile-menu-button.png", "");
-        img.addClickListener(event -> {
+        final Image menuButtonImg = new Image();
+//        menuButtonImg.setSrc("");
+        menuButtonImg.addClickListener(event -> {
             if (delegate != null) {
                 delegate.showMenuList();
             }
         });
-        img.addClassName("mobile-menu-button");
-        return img;
+        menuButtonImg.addClassName("mobile-menu-button");
+        return menuButtonImg;
     }
-
-    private Div createImage() {
-        Div logoImage = new Div();
-//        logoImage.setSrc("");
-        logoImage.addClassName("header-logo");
-        logoImage.addClickListener(event -> this.navigator.navigateToHome());
-        return logoImage;
+    private Image createLogo() {
+        Image logo = new Image();
+        logo.setSrc("");
+        logo.addClassName("header-logo");
+        logo.addClickListener(event -> this.navigator.navigateToHome());
+        return logo;
     }
+//    private Image createYellowLogo() {
+//        Image yellowLogoImage = new Image();
+//        //yellowLogoImage.setSrc("img/signature-yellow.png");
+//        yellowLogoImage.addClassName("yellow-header-logo");
+//        yellowLogoImage.addClickListener(event -> this.navigator.navigateToHome());
+//        return yellowLogoImage;
+//    }
+//    private Image createWhiteLogo() {
+//        Image whiteLogoImage = new Image();
+//        //whiteLogoImage.setSrc("img/signature-white.png");
+//        whiteLogoImage.addClassName("white-header-logo");
+//        whiteLogoImage.addClickListener(event -> this.navigator.navigateToHome());
+//        return whiteLogoImage;
+//    }
 
     private MenuBar createMenu() {
         final MenuBar menu = new MenuBar();
@@ -71,21 +90,42 @@ public class HeaderView extends HorizontalLayout {
         }).toList();
     }
 
-    //    public void whiteColor() {
-//        this.logoImage.getStyle().set("display","block");
-//        this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
-//       // this.logoImage.setSrc("/img/signature-white.png");
-//        this.mobileMenuButtonImg.setSrc("/img/white-menu-btn.png");
+    public void whiteColor() {
+        this.logoImage.getStyle().set("display","block");
+        this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
+        this.logoImage.setSrc("/img/signature-white.png");
+        this.menuButtonImg.setSrc("/img/white-menu-btn.png");
+    }
+
+    public void yellowColor() {
+        this.logoImage.getStyle().set("display","block");
+        this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
+        this.logoImage.setSrc("/img/signature-yellow.png");
+        this.menuButtonImg.setSrc("/img/white-yellow-btn.png");
+
+    }
+
+//    public void setWhiteMenuBtnColor() {
+//        this.menuButtonImg.setSrc("/img/white-menu-btn.png");
 //    }
-//
-//    public void yellowColor() {
-//        this.logoImage.getStyle().set("display","block");
-//        this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
-//       // this.logoImage.setSrc("/img/signature-yellow.png");
-//
+//    public void setYellowMenuBtnColor() {
+//        this.menuButtonImg.setSrc("/img/yellow-menu-btn.png");
 //    }
-//    public void setWhiteLogo() {
-//        this.logoImage.setSrc("/img/signature-white.png");
+
+//    public void hideYellowLogo() {
+//        this.yellowLogoImage.getStyle().set("display","none");
+//    }
+//    public void hideWhiteLogo() {
+//        this.whiteLogoImage.getStyle().set("display","none");
+//    }
+//    public void showYellowLogo() {
+//      //  this.yellowLogoImage.getStyle().set("display","block");
+//        this.yellowLogoImage.setSrc("/img/signature-yellow.png");
+//    }
+//    public void showWhiteLogo() {
+//       // this.whiteLogoImage.getStyle().set("display","block");
+//        this.yellowLogoImage.setSrc("/img/signature-white.png");
+//
 //    }
     public void setDelegate(ModalDelegate delegate) {
         this.delegate = delegate;

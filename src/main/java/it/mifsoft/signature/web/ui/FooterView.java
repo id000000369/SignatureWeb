@@ -170,42 +170,64 @@ public class FooterView extends HorizontalLayout {
         return container;
     }
 
-    public void showBottom() {
-        this.footerContactsInfo.getStyle().set("display", "block");
-        this.footerContactsInfo.setVisible(true);
-    }
+//    public void showBottom() {
+//        this.footerContactsInfo.getStyle().set("display", "block");
+//        this.footerContactsInfo.setVisible(true);
+//    }
 
-    public void hideBottom() {
-//        this.footerContactsInfo.addClassName("footer-bottom-visible");
-//        this.footerContactsInfo.removeClassName("footer-bottom-invisible");
-        this.footerContactsInfo.getStyle().set("display", "none");
-        //this.getStyle().set("display", "block");
-        this.adaptiveContactsAddressInfo.getStyle().set("display", "none");
-        this.adaptiveSocialContainer.getStyle().set("display", "none");
-        this.adaptiveCopyRights.getStyle().set("display", "none");
-    }
+//    public void hideBottom() {
+////        this.footerContactsInfo.addClassName("footer-bottom-visible");
+////        this.footerContactsInfo.removeClassName("footer-bottom-invisible");
+//        this.footerContactsInfo.getStyle().set("display", "none");
+//        //this.getStyle().set("display", "block");
+//        this.adaptiveContactsAddressInfo.getStyle().set("display", "none");
+//        this.adaptiveSocialContainer.getStyle().set("display", "none");
+//        this.adaptiveCopyRights.getStyle().set("display", "none");
+//    }
 
     public void changeFooterPosition() {
-        this.getStyle().set("top", "80%");
+        this.getStyle().set("position", "absolute");
+        this.getStyle().set("top", "66%");
         // this.getStyle().set("height", "");
-        this.addressInfo.getStyle().set("display", "block");
+       // this.addressInfo.getStyle().set("display", "block");
         //   this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
     }
 
+    public void changeMainFooterPosition() {
+        this.getStyle().set("position", "absolute");
+        this.getStyle().set("top", "80%");
+        // this.getStyle().set("height", "");
+        // this.addressInfo.getStyle().set("display", "block");
+        //   this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
+    }
+
+    public void changeAchievmentFooterPosition() {
+        this.getStyle().set("position", "relative");
+        this.getStyle().set("top", "0");
+        // this.getStyle().set("height", "");
+        // this.addressInfo.getStyle().set("display", "block");
+        //   this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
+    }
+
+    public void showSocialMedia() {
+        this.adaptiveSocialContainer.getStyle().set("display", "block");
+    }
+
     public void hide() {
-        this.removeClassName("visible-footer");
-        this.addClassName("hidden-footer");
+//        this.removeClassName("visible-footer");
+//        this.addClassName("hidden-footer");
+        this.getStyle().set("display","none");
     }
-
     public void show() {
-        this.removeClassName("hidden-footer");
-        this.addClassName("visible-footer");
+        this.getStyle().set("display", "block");
+//        this.removeClassName("hidden-footer");
+//        this.addClassName("visible-footer");
     }
 
-    public void changeFooterStyle() {
-        this.addressInfo.getStyle().set("display", "block");
-        this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
-    }
+//    public void changeFooterStyle() {
+//        this.addressInfo.getStyle().set("display", "block");
+//        this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
+//    }
 
     public void setDelegate(ModalDelegate delegate) {
         this.delegate = delegate;
