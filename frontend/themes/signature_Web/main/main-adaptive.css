@@ -67,10 +67,7 @@
   }
   /*//////- MAIN ADAPTIVE CSS -//////*/
 
-  .content-view {
-    height: 100%;
-    overflow: hidden;
-  }
+
   .mainFirstMobileImg {
     width: 100%;
     display: flex;
