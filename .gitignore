@@ -21,3 +21,4 @@ bin/main/it/mifsoft/signature/web/list/AchievementsList.class
 bin/main/it/mifsoft/signature/web/MainLayout.class
 bin/main/it/mifsoft/signature/web/page/WelcomePage.class
 *.class
+*.class
