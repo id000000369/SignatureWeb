@@ -196,6 +196,7 @@ public class FooterView extends HorizontalLayout {
         this.removeClassName("visible-footer");
         this.addClassName("hidden-footer");
     }
+
     public void show() {
         this.removeClassName("hidden-footer");
         this.addClassName("visible-footer");

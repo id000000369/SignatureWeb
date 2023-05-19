@@ -7,7 +7,6 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.MainLayout;
 import it.mifsoft.signature.web.ModalDelegate;
 import it.mifsoft.signature.web.SignatureNavigator;
 import org.springframework.stereotype.Component;
@@ -72,7 +71,7 @@ public class HeaderView extends HorizontalLayout {
         }).toList();
     }
 
-//    public void whiteColor() {
+    //    public void whiteColor() {
 //        this.logoImage.getStyle().set("display","block");
 //        this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
 //       // this.logoImage.setSrc("/img/signature-white.png");

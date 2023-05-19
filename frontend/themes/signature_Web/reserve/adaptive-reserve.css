@@ -116,7 +116,7 @@
   }
   .reserve-button {
     position: relative;
-    width: 382px;
+    width: auto;
     height: 80px;
     background-color: rgba(145, 121, 58, 1);
     cursor: pointer;
