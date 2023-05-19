@@ -1,9 +1,7 @@
-.gold-header > div {
-  background: url('/img/signature-yellow.png') no-repeat;
+.gold-header-logo  {
 }
 
-.white-header > div {
-  background: url('/img/signature-white.png') no-repeat;
+.white-header-logo {
 }
 
 .header {
@@ -18,8 +16,8 @@
 .header-logo {
   display: flex;
   align-items: stretch;
-  width: 225px;
-  height: 90px;
+  width: 318px;
+  height: 89px;
   padding-right: 8%;
   padding-left: 3%;
   cursor: pointer;
