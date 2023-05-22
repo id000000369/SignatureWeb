@@ -209,7 +209,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
             case "main/achievement" -> {
                 this.footerView.show();
-              //  this.footerView.changeAchievmentFooterPosition();
+                this.footerView.addClassName("main-achievement-footer-position");
                 this.headerView.whiteColor();
                 updateFooterForState(FooterStates.SHORT);
             }

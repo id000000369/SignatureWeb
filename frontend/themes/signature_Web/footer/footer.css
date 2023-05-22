@@ -12,6 +12,11 @@
   padding-bottom: 25px;
 }
 
+.main-achievement-footer-position {
+  position: relative;
+  top: 80%;
+}
+
 .full-footer {
   top: 80%;
 }

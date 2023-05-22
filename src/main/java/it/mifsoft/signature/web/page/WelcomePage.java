@@ -123,8 +123,8 @@ public class WelcomePage extends Div {
 
         this.add(createMainContainer(),
 
-                createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg(),
-                createMobileHeaderGradient()
+                createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg()
+               // createMobileHeaderGradient()
 //                mainImg,
 //                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
 //                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
