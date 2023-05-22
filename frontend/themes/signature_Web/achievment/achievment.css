@@ -1,4 +1,5 @@
 .achievements-list {
+    overflow: auto;
     display: flex;
     flex-direction: row;
     width: 100%;

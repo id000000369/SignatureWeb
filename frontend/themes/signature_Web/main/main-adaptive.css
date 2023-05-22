@@ -159,6 +159,11 @@
 
   /*/////////////- HEADER -/////////////*/
 
+  .mobile-menu-button {
+    width: 25px;
+    height: 25px;
+    background-image: url('./img/white-menu-btn.png');
+  }
 
   .yellow-header-logo {
     z-index: 10;

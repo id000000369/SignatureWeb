@@ -48,6 +48,24 @@ body::-webkit-scrollbar {
   overflow-y: hidden;
 }
 
+.main-img {
+  width: calc((3500 * (100vh - 12.5vh)) / 1100);
+  height: calc(100vh - 14vh);
+}
+
+.main-container{
+  top: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  height: calc(100vh - 14vh);
+  position: absolute;
+}
+
+.content-view {
+  overflow: auto;
+}
+
 .header-logo {
   z-index: 10;
   width: 318px;
@@ -252,7 +270,7 @@ body::-webkit-scrollbar {
 .column-container {
   top: 15.5%;
   width: calc((3500 * (100vh - 12.5vh)) / 1100);
-  height: 100%;
+  height: calc(100vh - 27vh);
   display: flex;
   position: absolute;
   background-color: transparent;

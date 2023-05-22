@@ -61,6 +61,9 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.addClassNames("main-layout");
 
         // this.menuListView = createMenuListView(this.menuList);
+
+
+
         this.add(headerView);
     }
 
@@ -140,22 +143,22 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.add(this.footerView);
     }
 
-    private boolean becomeWelcome(String path) {
-        if (path.equals("main/welcome")) {
-            if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
-                this.add(this.contentImage);
-                this.headerView.yellowColor();
-            }
-            //   this.footerView.changeFooterPosition();
-            this.contentImage.setVisible(true);
-            return true;
-        } else {
-            if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
-                this.contentImage.setVisible(false);
-            }
-            return false;
-        }
-    }
+//    private boolean becomeWelcome(String path) {
+//        if (path.equals("main/welcome")) {
+//            if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
+//                this.add(this.contentImage);
+//                this.headerView.yellowColor();
+//            }
+//            //   this.footerView.changeFooterPosition();
+//            this.contentImage.setVisible(true);
+//            return true;
+//        } else {
+//            if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
+//                this.contentImage.setVisible(false);
+//            }
+//            return false;
+//        }
+//    }
 
     private boolean becomePictures(String path) {
         if (path.equals("main/pictures")) {
@@ -175,7 +178,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         updateFooterStateByPath(path);
         updateHeaderStateByPath(path);
-        becomeWelcome(path);
+      //  becomeWelcome(path);
         becomePictures(path);
 
         switch (path) {
@@ -206,7 +209,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
             case "main/achievement" -> {
                 this.footerView.show();
-                this.footerView.changeAchievmentFooterPosition();
+              //  this.footerView.changeAchievmentFooterPosition();
                 this.headerView.whiteColor();
                 updateFooterForState(FooterStates.SHORT);
             }

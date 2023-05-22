@@ -65,6 +65,8 @@ public class WelcomePage extends Div {
     private final Div columnContainer;
 
     private final ReserveForm reserveForm;
+    private final Div mainContainer;
+    private final Image backgroundImg;
 
     public WelcomePage(SignatureNavigator navigator, MainLayout mainLayout, ReserveForm reserveForm) {
         this.navigator = navigator;
@@ -112,8 +114,14 @@ public class WelcomePage extends Div {
         this.mainSecondMobileImg = createSecondMainMobileImg();
         this.mainThirdMobileImg = createThirdMainMobileImg();
         this.mobileHeaderGradient = createMobileHeaderGradient();
+
+        this.mainContainer = createMainContainer();
+        this.backgroundImg = createBackgroundImg();
+
         this.addClassName("main");
-        this.add(createColumnContainer(),
+
+
+        this.add(createMainContainer(),
 
                 createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg(),
                 createMobileHeaderGradient()
@@ -122,6 +130,19 @@ public class WelcomePage extends Div {
 //                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
         );
 
+    }
+    public Image createBackgroundImg() {
+        final Image img = new Image("img/main-img.png","");
+        img.getStyle().set("width","calc((3500 * (100vh - 12.5vh)) / 1100)");
+        img.getStyle().set("height","100%");
+        this.addClassName("main-img");
+        return img;
+    }
+    public Div createMainContainer() {
+        final Div container = new Div();
+        container.add(createBackgroundImg(), createColumnContainer());
+        container.addClassName("main-container");
+        return container;
     }
 
     public Image createMobileHeaderGradient() {

@@ -153,12 +153,6 @@ public class ReserveForm extends Div {
         return name;
     }
 
-//    public H1 createSecondHeaderText(){
-//        H1 name = new H1("СТОЛИК");
-//        name.addClassName("second-header-text");
-//        return name;
-//    }
-
     public H1 createReminderText() {
         H1 name = new H1("Напомните мне о бронировании");
         name.addClassName("reminder-text");
