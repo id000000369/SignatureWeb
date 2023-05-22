@@ -57,7 +57,7 @@ body::-webkit-scrollbar {
 
 .main-layout {
   background-repeat: repeat-x;
-  overflow: auto;
+  /* overflow: auto; */
   background-image: url(./img/contacts-background-img.png);
   height: 100vh;
   /* overflow-y: hidden; */
@@ -353,4 +353,12 @@ body::-webkit-scrollbar {
   overflow-x: hidden;
   }
 
+  .adaptive-social-container {
+    display: block;
+  }
+
+}
+
+.adaptive-social-container {
+  display: none;
 }

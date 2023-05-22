@@ -12,6 +12,14 @@
   padding-bottom: 25px;
 }
 
+.full-footer {
+  top: 80%;
+}
+
+.short-footer {
+  top: 80%;
+ }
+
 
 @media only screen and (max-width: 470px) {
 
@@ -37,6 +45,10 @@
   
   .full-footer > .footer-contacts-info {
     display: block;
+  }
+
+  .full-footer {
+    top: 66%;
   }
 }
 

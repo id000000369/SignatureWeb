@@ -200,7 +200,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             case "main/contacts" -> {
                 this.footerView.show();
                 this.footerView.changeFooterPosition();
-                this.footerView.showSocialMedia();
+                //this.footerView.showSocialMedia();
                 this.headerView.whiteColor();
                 updateFooterForState(FooterStates.FULL);
             }

@@ -1,5 +1,6 @@
 package it.mifsoft.signature.web.ui;
 
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
@@ -187,7 +188,8 @@ public class FooterView extends HorizontalLayout {
 
     public void changeFooterPosition() {
         this.getStyle().set("position", "absolute");
-        this.getStyle().set("top", "66%");
+       // this.getStyle().set("top", "66%");
+
         // this.getStyle().set("height", "");
        // this.addressInfo.getStyle().set("display", "block");
         //   this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
@@ -195,15 +197,15 @@ public class FooterView extends HorizontalLayout {
 
     public void changeMainFooterPosition() {
         this.getStyle().set("position", "absolute");
-        this.getStyle().set("top", "80%");
+        //this.getStyle().set("top", "80%");
         // this.getStyle().set("height", "");
         // this.addressInfo.getStyle().set("display", "block");
         //   this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
     }
 
     public void changeAchievmentFooterPosition() {
-        this.getStyle().set("position", "relative");
-        this.getStyle().set("top", "0");
+        //this.getStyle().set("position", "relative");
+        //this.getStyle().set("top", "80%");
         // this.getStyle().set("height", "");
         // this.addressInfo.getStyle().set("display", "block");
         //   this.getStyle().set("background-image", "linear-gradient(to bottom, rgba(3, 45, 50, 1) 50%, rgba(0, 32, 36, 1) 50%)");
@@ -219,10 +221,13 @@ public class FooterView extends HorizontalLayout {
         this.getStyle().set("display","none");
     }
     public void show() {
-        this.getStyle().set("display", "block");
+        this.getStyle().set("display", "flex");
+//        this.getStyle().set("top", "80%");
 //        this.removeClassName("hidden-footer");
 //        this.addClassName("visible-footer");
     }
+
+
 
 //    public void changeFooterStyle() {
 //        this.addressInfo.getStyle().set("display", "block");
