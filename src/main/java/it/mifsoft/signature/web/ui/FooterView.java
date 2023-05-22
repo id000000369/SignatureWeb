@@ -204,6 +204,7 @@ public class FooterView extends HorizontalLayout {
     }
 
     public void changeAchievmentFooterPosition() {
+        
         //this.getStyle().set("position", "relative");
         //this.getStyle().set("top", "80%");
         // this.getStyle().set("height", "");
