@@ -7,6 +7,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.ContentLayout;
 import it.mifsoft.signature.web.MainLayout;
+import it.mifsoft.signature.web.ModalDelegate;
 import it.mifsoft.signature.web.SignatureNavigator;
 import it.mifsoft.signature.web.forms.ReserveForm;
 import it.mifsoft.signature.web.list.DishesShortList;
@@ -123,8 +124,8 @@ public class WelcomePage extends Div {
 
         this.add(createMainContainer(),
 
-                createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg()
-               // createMobileHeaderGradient()
+                createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg(),
+                createMobileHeaderGradient()
 //                mainImg,
 //                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
 //                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
@@ -140,7 +141,7 @@ public class WelcomePage extends Div {
     }
     public Div createMainContainer() {
         final Div container = new Div();
-        container.add(createBackgroundImg(), createColumnContainer());
+        container.add(createBackgroundImg(), createColumnContainer(), createReserveButton());
         container.addClassName("main-container");
         return container;
     }
@@ -397,6 +398,7 @@ public class WelcomePage extends Div {
         final ExpandableButton reserveButton = new ExpandableButton("Забронировать столик");
         reserveButton.addClickListener(event -> this.mainLayout.showReserveForm());
         reserveButton.addClassName("bron-button");
+        reserveButton.addClassName("adaptive-main-reserve-btn");
         return reserveButton;
     }
 

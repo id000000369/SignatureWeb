@@ -121,11 +121,12 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().setPosition(Style.Position.ABSOLUTE);
         div.getStyle().setLeft("0px");
         div.getStyle().setTop("0px");
-        div.getStyle().setZIndex(3);
+        div.getStyle().setZIndex(33);
         form.getStyle().setZIndex(Integer.MAX_VALUE);
         div.getStyle().set("background-color", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
         div.addClassName("modal-view-wrapper");
+        div.addClassName("adaptive-view-wrapper");
         div.add(createCloseModalBtn(), form, createMenuBackgroundImg());
         div.addClickListener(event -> {
 
@@ -143,22 +144,22 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         this.add(this.footerView);
     }
 
-//    private boolean becomeWelcome(String path) {
-//        if (path.equals("main/welcome")) {
-//            if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
-//                this.add(this.contentImage);
-//                this.headerView.yellowColor();
-//            }
-//            //   this.footerView.changeFooterPosition();
-//            this.contentImage.setVisible(true);
-//            return true;
-//        } else {
-//            if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
-//                this.contentImage.setVisible(false);
-//            }
-//            return false;
-//        }
-//    }
+    private boolean becomeWelcome(String path) {
+        if (path.equals("main/welcome")) {
+            if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
+                this.add(this.contentImage);
+                this.headerView.yellowColor();
+            }
+            //   this.footerView.changeFooterPosition();
+            this.contentImage.setVisible(true);
+            return true;
+        } else {
+            if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
+                this.contentImage.setVisible(false);
+            }
+            return false;
+        }
+    }
 
     private boolean becomePictures(String path) {
         if (path.equals("main/pictures")) {

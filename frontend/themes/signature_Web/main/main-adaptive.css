@@ -66,7 +66,22 @@
     visibility: collapse;
   }
   /*//////- MAIN ADAPTIVE CSS -//////*/
+  .adaptive-view-wrapper{
+    z-index: 3;
+  }
 
+  .main-container {
+    display: none;
+  }
+  
+  .adaptive-main-reserve-btn {
+    display: block;
+    width: 12%;
+    border-top-left-radius: 0;
+    font-size: 14px;
+    top: 0; 
+    left: 0;
+}
 
   .mainFirstMobileImg {
     width: 100%;
