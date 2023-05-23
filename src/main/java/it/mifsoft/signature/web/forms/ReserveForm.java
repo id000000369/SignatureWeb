@@ -55,12 +55,13 @@ public class ReserveForm extends Div {
         this.closeModalBtn = createCloseModalBtn();
         this.add(
                 createVerticalSeparator(),
-                createItemsContainer(), createAdaptiveBackgroundImg(), createCloseModalBtn());
+                createItemsContainer(), createAdaptiveBackgroundImg(), closeModalBtn);
         this.addClassName("reserve-container");
     }
 
     public Image createCloseModalBtn() {
-        final Image img = new Image("img/grey-close-icon.png","");
+        final Image img = new Image();
+        img.setSrc("");
         img.addClickListener(event -> {
             this.delegate.hideModal();
         });
@@ -69,7 +70,12 @@ public class ReserveForm extends Div {
     }
 
     public void setYellowCloseBtn() {
-        this.closeModalBtn.setSrc("/img/gold-close-icon.png");
+        this.closeModalBtn.setSrc("img/gold-close-icon.png");
+    }
+
+    public void setGreyCloseBtn() {
+        this.closeModalBtn.setSrc("img/grey-close-icon.png");
+
     }
 
     private final Image createAdaptiveBackgroundImg() {

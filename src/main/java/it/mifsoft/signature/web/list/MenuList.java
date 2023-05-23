@@ -49,9 +49,8 @@ public class MenuList extends Div {
                 new Holder("ВИННАЯ ГАЛЕРЕЯ", event -> nav.navigateToVinesGallery()),
                 new Holder("МЕНЮ", event -> nav.navigateToMenu()),
                 new Holder("ЗАБРОНИРОВАТЬ СТОЛИК", event -> {
-                    if (delegate != null) {
-                        delegate.showReserveForm();
-                    }
+                    delegate.hideModal();
+                    delegate.showReserveForm();
                 }),
                 new Holder("КОНТАКТЫ", event -> nav.navigateToContacts())
         );

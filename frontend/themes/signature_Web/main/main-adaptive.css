@@ -132,7 +132,7 @@
     position: absolute;
     cursor: pointer;
     left: 28px;
-    top: 42px;
+    top: 30px;
     z-index: 1;
     width: 24px;
     height: 20px;
@@ -192,7 +192,7 @@
     z-index: 10;
     width: 318px;
     height: 89px;
-    left: 25%;
+    left: 15%;
     position: relative;
   }
 
@@ -207,11 +207,14 @@
   /*/////////////ADAPTIVE FOOTER////////////////*/
   .close-menu-btn {
     position: absolute;
-    top: 2.5%;
-    left: 4%;
+    top: 28px;
+    left: 20px;
     z-index: 1000;
     cursor: pointer;
     display: block;
+  }
+
+  .close-form-btn {
   }
 
   .adaptive-address-info-text {

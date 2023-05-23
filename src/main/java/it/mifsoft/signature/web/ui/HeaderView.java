@@ -41,7 +41,7 @@ public class HeaderView extends HorizontalLayout {
         this.menuButtonImg = createMobileMenuButtonImg();
 
         this.addClassName("header");
-        this.add(logoImage, menuBar, createMobileMenuButtonImg());
+        this.add(logoImage, menuBar, menuButtonImg);
     }
 
     public Image createMobileMenuButtonImg() {
@@ -94,23 +94,22 @@ public class HeaderView extends HorizontalLayout {
         this.logoImage.getStyle().set("display","block");
         this.menuItems.forEach(item -> item.getStyle().set("color", "#FFFFFF"));
         this.logoImage.setSrc("/img/signature-white.png");
-        this.menuButtonImg.setSrc("/img/white-menu-btn.png");
+     //   this.menuButtonImg.setSrc("/img/white-menu-btn.png");
     }
 
     public void yellowColor() {
         this.logoImage.getStyle().set("display","block");
         this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
         this.logoImage.setSrc("/img/signature-yellow.png");
-        this.menuButtonImg.setSrc("/img/yellow-menu-btn.png");
-
+     //   this.menuButtonImg.setSrc("/img/yellow-menu-btn.png");
     }
 
-//    public void setWhiteMenuBtnColor() {
-//        this.menuButtonImg.setSrc("/img/white-menu-btn.png");
-//    }
-//    public void setYellowMenuBtnColor() {
-//        this.menuButtonImg.setSrc("/img/yellow-menu-btn.png");
-//    }
+    public void setWhiteMenuBtnColor() {
+        this.menuButtonImg.setSrc("/img/white-menu-btn.png");
+    }
+    public void setYellowMenuBtnColor() {
+        this.menuButtonImg.setSrc("/img/yellow-menu-btn.png");
+    }
 
 //    public void hideYellowLogo() {
 //        this.yellowLogoImage.getStyle().set("display","none");

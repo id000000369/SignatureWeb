@@ -27,8 +27,8 @@
   }
   .close-form-btn {
     position: absolute;
-    left: 5%;
-    top: 2.5%;
+    left: 20px;
+    top: 30px;
   }
 
   .adaptive-reserve-background-img {

@@ -85,8 +85,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         if (this.getChildren().noneMatch(c -> c == this.modalView)) {
             this.add(modalView);
             this.isModalVisible = true;
-            this.headerView.yellowColor();
-            this.reserveForm.setYellowCloseBtn();
         }
         this.modalView = modalView;
     }
@@ -100,7 +98,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     }
 
         public Image createCloseModalBtn() {
-        final Image img = new Image("img/gold-close-icon.png", "");
+        final Image img = new Image("img/gold-close-icon.png","");
             img.addClickListener(event -> {
                  this.headerView.setVisible(true);
                  this.hideModal();
@@ -123,7 +121,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().set("backdrop-filter", "blur(10px)");
         div.addClassName("modal-view-wrapper");
         div.addClassName("adaptive-view-wrapper");
-        div.add(createCloseModalBtn(), form, createMenuBackgroundImg());
+        div.add(createCloseModalBtn(),form, createMenuBackgroundImg());
         div.addClickListener(event -> {
 
         });
@@ -181,12 +179,15 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         switch (path) {
             case "main/dishes", "main/vines", "main/pictures" -> {
                 this.getStyle().set("background-image", "url('./img/background-vine.png')");
+                this.headerView.setYellowMenuBtnColor();
             }
             case "main/contacts", "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
+                this.headerView.setWhiteMenuBtnColor();
             }
             case "main/welcome" -> {
                 this.addClassName("adaptive-main-layout");
+                this.headerView.setYellowMenuBtnColor();
             }
             default -> {
                 this.getStyle().remove("background-image");
@@ -299,5 +300,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     @Override
     public void showReserveForm() {
         this.showModal(reserveForm);
+        this.reserveForm.setYellowCloseBtn();
     }
 }
