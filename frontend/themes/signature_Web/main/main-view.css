@@ -12,10 +12,6 @@ body::-webkit-scrollbar {
   z-index: 33;
 }
 
-.adaptive-main-reserve-btn{
-  display: none;
-}
-
 /*Hide mobile css in main*/
 .mainFirstMobileImg {
   visibility: hidden;
@@ -110,6 +106,7 @@ body::-webkit-scrollbar {
 
 .exposition-button {
   width: 207%;
+  margin-top: 20%;
   z-index: 1000;
   font-size: 14px;
   border-bottom-right-radius: 0;
@@ -117,14 +114,14 @@ body::-webkit-scrollbar {
 .exposition-line {
   position: absolute;
   left:180%;
-  top: 20%;
+  top: 120%;
   width: 80px;
   height: 65px;
 }
 .exposition-view {
   position: absolute;
   z-index: 0;
-  top: 9px;
+  top: 30px;
   left: 0;
   border-bottom-left-radius: 15px;
   padding: 0px 10px 10px 10px;
@@ -163,6 +160,8 @@ body::-webkit-scrollbar {
 .about-us-button {
   width: 190%;
   font-size: 13px;
+  position: absolute;
+  top: 80px;
 }
 
 .about-us-view {
@@ -190,43 +189,55 @@ body::-webkit-scrollbar {
 }
 .art-img {
 }
+
 .menu-button {
   width: 245px;
   font-size: 13px;
   border-bottom-left-radius: 0px;
+  top: 65px;
+  position: absolute;
 }
+
 .menu-line {
   position: absolute;
-  top: -140%;
-  left: 15%;
-  width: 100px;
+  top: 17px;
+  left: 35px;
   height: 70px;
+  width: 100px;
 }
 
-.bron-button {
+.adaptive-main-reserve-btn{
+  display: none;
+}
+
+.main-reserve-button {
   position: absolute;
-  width: 12%;
+  width: 17%;
   border-top-left-radius: 0;
   font-size: 14px;
-  left: 6%;
-  top: 51.5%;
+  left: 8.5%;
+  top: 78.1%;
+  display: block;
 }
 
-.bron-line {
+.reserve-line {
   position: absolute;
   left: 10.5%;
-  top: 44%;
+  top: 61%;
   width: 35px;
 }
 
 .guest-button {
-  width: 170%;
   font-size: 12px;
+  position: absolute;
+  top: 20px;
+  width: 210px;
 }
+
 .guest-line {
   position: absolute;
-  left: 72%;
-  top: 60%;
+  left: 90px;
+  top: 41px;
   width: 35px;
   height: 80px;
 }
@@ -234,25 +245,30 @@ body::-webkit-scrollbar {
 .contacts-button {
   width: 195%;
   font-size: 13px;
+  position: absolute;
+  top: 26px;
 }
+
 .contacts-line {
   width: 120px;
-  height: 83px;
+  height: 77px;
   position: absolute;
-  left: 75%;
-  top: 20%;
+  left: 86px;
+  top: 42px;
 }
 .vine-gallery-button {
   width: 185%;
   font-size: 13px;
+  position: absolute;
+  top: 46px;
 }
 
 .vine-gallery-line {
   position: absolute;
   width: 115px;
   height: 55px;
-  left: 50%;
-  top: -100%;
+  left: 60px;
+  top: 12px;
 }
 
 .first-side-icon {
@@ -376,6 +392,10 @@ body::-webkit-scrollbar {
   background-image: url(./img/contacts-background-img.png);
   height: 100vh;
   overflow-x: hidden;
+  }
+
+  .adaptive-main-layout {
+    overflow-y: hidden;
   }
 
   .adaptive-social-container {

@@ -17,7 +17,6 @@ import it.mifsoft.signature.web.ui.FooterView;
 import it.mifsoft.signature.web.ui.HeaderView;
 import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import org.springframework.stereotype.Component;
-
 @Component
 @UIScope
 @Route(value = "/")
@@ -62,8 +61,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         // this.menuListView = createMenuListView(this.menuList);
 
-
-
         this.add(headerView);
     }
 
@@ -103,7 +100,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     }
 
         public Image createCloseModalBtn() {
-
         final Image img = new Image("img/gold-close-icon.png", "");
             img.addClickListener(event -> {
                  this.headerView.setVisible(true);
@@ -121,7 +117,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().setPosition(Style.Position.ABSOLUTE);
         div.getStyle().setLeft("0px");
         div.getStyle().setTop("0px");
-        div.getStyle().setZIndex(33);
+        //div.getStyle().setZIndex(33);
         form.getStyle().setZIndex(Integer.MAX_VALUE);
         div.getStyle().set("background-color", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
@@ -188,6 +184,9 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             }
             case "main/contacts", "main/achievement" -> {
                 this.getStyle().set("background-image", "url('./img/contacts-background-img.png')");
+            }
+            case "main/welcome" -> {
+                this.addClassName("adaptive-main-layout");
             }
             default -> {
                 this.getStyle().remove("background-image");

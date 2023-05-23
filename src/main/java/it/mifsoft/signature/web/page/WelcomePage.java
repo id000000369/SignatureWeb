@@ -28,11 +28,11 @@ public class WelcomePage extends Div {
     private final ExpandableButton vineGalleryButton;
     private final ExpandableButton contactsButton;
     private final ExpandableButton guestButton;
-    private final ExpandableButton bronButton;
+    private final ExpandableButton reserveButton;
 
     private final Image menuLine;
     private final Image contactsLine;
-    private final Image bronLine;
+    private final Image reserveLine;
     private final Image guestLine;
     private final Image vineGalleryLine;
     private final Image expositionLine;
@@ -79,10 +79,10 @@ public class WelcomePage extends Div {
         this.vineGalleryButton = createVineGalleryButton();
         this.contactsButton = createContactsButton();
         this.guestButton = createGuestButton();
-        this.bronButton = createReserveButton();
+        this.reserveButton = createReserveButton();
 
         this.contactsLine = createContactsLine();
-        this.bronLine = createBronLine();
+        this.reserveLine = createReserveLine();
         this.guestLine = createGuestLine();
         this.vineGalleryLine = createVineGalleryLine();
         this.expositionLine = createExpositionLine();
@@ -173,7 +173,7 @@ public class WelcomePage extends Div {
     public Div createColumnContainer() {
         final Div columnContainer = new Div();
         columnContainer.add(
-                fisrtDiv, secondDiv, thirdDiv, fourthDiv, bronButton, bronLine, sixDiv, sevenDiv, eightDiv,
+                fisrtDiv, secondDiv, thirdDiv, fourthDiv, reserveLine, sixDiv, sevenDiv, eightDiv,
                 nineDiv, tenDiv, elevenDiv, twelveDiv, thirteenDiv, fourteenDiv, fifteenDiv, sixteenDiv
         );
         columnContainer.addClassName("column-container");
@@ -326,9 +326,9 @@ public class WelcomePage extends Div {
         return line;
     }
 
-    public Image createBronLine() {
+    public Image createReserveLine() {
         final Image line = new Image("img/bron-line.png", "");
-        line.addClassName("bron-line");
+        line.addClassName("reserve-line");
         return line;
     }
 
@@ -397,7 +397,7 @@ public class WelcomePage extends Div {
     public ExpandableButton createReserveButton() {
         final ExpandableButton reserveButton = new ExpandableButton("Забронировать столик");
         reserveButton.addClickListener(event -> this.mainLayout.showReserveForm());
-        reserveButton.addClassName("bron-button");
+        reserveButton.addClassName("main-reserve-button");
         reserveButton.addClassName("adaptive-main-reserve-btn");
         return reserveButton;
     }

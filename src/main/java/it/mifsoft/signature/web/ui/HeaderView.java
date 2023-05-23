@@ -46,7 +46,7 @@ public class HeaderView extends HorizontalLayout {
 
     public Image createMobileMenuButtonImg() {
         final Image menuButtonImg = new Image();
-//        menuButtonImg.setSrc("");
+        menuButtonImg.setSrc("");
         menuButtonImg.addClickListener(event -> {
             if (delegate != null) {
                 delegate.showMenuList();
@@ -101,7 +101,7 @@ public class HeaderView extends HorizontalLayout {
         this.logoImage.getStyle().set("display","block");
         this.menuItems.forEach(item -> item.getStyle().set("color", "#91793a"));
         this.logoImage.setSrc("/img/signature-yellow.png");
-        this.menuButtonImg.setSrc("/img/white-yellow-btn.png");
+        this.menuButtonImg.setSrc("/img/yellow-menu-btn.png");
 
     }
 

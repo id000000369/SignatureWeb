@@ -35,7 +35,7 @@
   .exposition-line {
     visibility: collapse;
   }
-  .bron-line {
+  .reserve-line {
     visibility: collapse;
   }
   .contacts-line {
@@ -66,22 +66,26 @@
     visibility: collapse;
   }
   /*//////- MAIN ADAPTIVE CSS -//////*/
-  .adaptive-view-wrapper{
-    z-index: 3;
+  .modal-view-wrapper {
+    z-index: 1;
   }
 
   .main-container {
     display: none;
   }
-  
+
   .adaptive-main-reserve-btn {
-    display: block;
+    position: absolute;
     width: 12%;
     border-top-left-radius: 0;
     font-size: 14px;
-    top: 0; 
+    top: 0;
     left: 0;
-}
+  }
+
+  .main-reserve-button {
+    display: none;
+  }
 
   .mainFirstMobileImg {
     width: 100%;
@@ -163,21 +167,10 @@
     height: 470px;
   }
 
-  .bron-button {
-    position: absolute;
-    width: 12%;
-    border-top-left-radius: 0;
-    font-size: 14px;
-    left: 3.29%;
-    top: 34%;
-}
-
   /*/////////////- HEADER -/////////////*/
-
   .mobile-menu-button {
     width: 25px;
     height: 25px;
-    background-image: url('./img/white-menu-btn.png');
   }
 
   .yellow-header-logo {
@@ -202,7 +195,7 @@
     left: 25%;
     position: relative;
   }
-  
+
   .header {
     width: 100%;
   }
