@@ -1,16 +1,13 @@
 package it.mifsoft.signature.web.list;
 
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.dto.MenuCategoryData;
 import it.mifsoft.signature.web.list.item.CategoryListItem;
 import it.mifsoft.signature.web.service.MenuCategoriesApiService;
-import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -55,7 +52,7 @@ public class CategoriesList extends Div {
     private void updateCategories() {
         this.removeAll();
         this.listItems = createListItems();
-//        this.listItems.forEach(this::add);
+        this.listItems.forEach(this::add);
     }
 
     private CategoryListItem createItem(MenuCategoryData categoryData) {
