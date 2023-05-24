@@ -43,10 +43,24 @@ public class DishListItem extends Div {
         this.purchase = createPurchaseText();
         this.ingredients = createIngredientsText();
         this.dishIcon = createImage();
+
         this.addClassName("dish-list-item");
 
         add(mainText, mainComponent());
     }
+
+    private Image createAdaptiveDishesTopImg() {
+        final Image img = new Image("img/dishes-menu-img.png", "");
+        img.addClassName("adaptive-dishes-top-menu-img");
+        return img;
+    }
+
+//    public Div subComponent() {
+//        Div items = new Div();
+//        items.add(createAdaptiveDishesTopImg(), mainText);
+////        items.addClassNames("main-component-dishes");
+//        return items;
+//    }
 
     public Div mainComponent() {
         Div items = new Div();
