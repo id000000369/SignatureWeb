@@ -24,8 +24,8 @@ public class ReserveForm extends Div {
     private final TextField guestCount;
     private final Button reserveButton;
     private final Div buttonContainer;
-//    private final Div infoTextContainer;
-//    private final Div reminderTextContainer;
+    private final Div infoTextContainer;
+    private final Div reminderTextContainer;
     private final Image namePrefix = new Image();
     private final Image phonePrefix = new Image();
     private final Image guestPrefix = new Image();
@@ -34,7 +34,6 @@ public class ReserveForm extends Div {
     private final Div itemsContainer;
     private final Image adaptiveBackgroundImg;
     private final Image closeModalBtn;
-//    private final Div bottomItems;
     public ReserveForm() {
 
         this.firstHeaderText = createFirstHeaderText();
@@ -46,8 +45,8 @@ public class ReserveForm extends Div {
         this.infoText = createInfoText();
         this.reserveButton = createReserveButton();
         this.buttonContainer = createButtonContainer();
-//        this.infoTextContainer = createInfoTextContainer();
-//        this.reminderTextContainer = createReminderTextContainer();
+        this.infoTextContainer = createInfoTextContainer();
+        this.reminderTextContainer = createReminderTextContainer();
         this.checkbox = createCheckbox();
         this.verticalSeparator = createVerticalSeparator();
         this.itemsContainer = createItemsContainer();
@@ -59,15 +58,7 @@ public class ReserveForm extends Div {
                 createItemsContainer(), createAdaptiveBackgroundImg(), closeModalBtn);
         this.addClassName("reserve-container");
     }
-//    public Div createBottomItems() {
-//        final Div div = new Div();
-//        div.add(createReminderTextContainer());
-//        div.addClassName("bottom-items");
-//        return div;
-//    }
-    public void hide() {
-        this.getStyle().set("display","none");
-    }
+
     public Image createCloseModalBtn() {
         final Image img = new Image();
         img.setSrc("");
@@ -106,23 +97,23 @@ public class ReserveForm extends Div {
         return separator;
     }
 
-//    private Div createReminderTextContainer() {
-//        final Div container = new Div();
-//        container.add(reminderText, createCheckbox());
-//        container.addClassName("reminder-text-container");
-//        return container;
-//    }
-//
-//    private Div createInfoTextContainer() {
-//        final Div container = new Div();
-//        container.add(infoText);
-//        container.addClassName("info-text-container");
-//        return container;
-//    }
+    private Div createReminderTextContainer() {
+        final Div container = new Div();
+        container.add(reminderText, createCheckbox());
+        container.addClassName("reminder-text-container");
+        return container;
+    }
+
+    private Div createInfoTextContainer() {
+        final Div container = new Div();
+        container.add(infoText);
+        container.addClassName("info-text-container");
+        return container;
+    }
 
     private Div createButtonContainer() {
         final Div container = new Div();
-        container.add(reserveButton, infoText, reminderText, createCheckbox());
+        container.add(reserveButton);
         container.addClassName("reserve-button-container");
         return container;
     }
@@ -153,9 +144,9 @@ public class ReserveForm extends Div {
                 phoneNumber,
                 date,
                 guestCount,
-                createButtonContainer()
-//                createReminderTextContainer(),
-//                createInfoTextContainer()
+                createButtonContainer(),
+                createReminderTextContainer(),
+                createInfoTextContainer()
         );
 
         items.addClassName("reserve-items");

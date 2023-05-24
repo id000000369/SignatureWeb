@@ -102,9 +102,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         final Image img = new Image("img/gold-close-icon.png","");
             img.addClickListener(event -> {
                  this.headerView.setVisible(true);
-               // this.reserveForm.hide();
                  this.hideModal();
-
             });
             img.addClassName("close-menu-btn");
             return img;
