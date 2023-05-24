@@ -41,7 +41,7 @@ public class HeaderView extends HorizontalLayout {
         this.menuButtonImg = createMobileMenuButtonImg();
 
         this.addClassName("header");
-        this.add(logoImage, menuBar, menuButtonImg);
+        this.add(menuButtonImg, logoImage, menuBar);
     }
 
     public Image createMobileMenuButtonImg() {

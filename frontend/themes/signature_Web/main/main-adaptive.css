@@ -135,7 +135,7 @@
     display: block;
   }
   .mobile-menu-button {
-    position: absolute;
+    position: relative;
     cursor: pointer;
     left: 28px;
     top: 30px;
