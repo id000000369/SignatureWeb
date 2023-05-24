@@ -26,9 +26,7 @@
     display: flex;
   }
   .close-form-btn {
-    position: absolute;
-    left: 20px;
-    top: 30px;
+    display: none;
   }
 
   .adaptive-reserve-background-img {
