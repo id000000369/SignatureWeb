@@ -17,7 +17,7 @@
   .reserve-container {
     position: absolute;
     left: 0px;
-    background-color: rgba(0, 32, 36, 0.925);
+    background-color: rgba(0, 32, 36, 0);
     width: 100%;
     height: 100%;
     color: aliceblue;
@@ -52,8 +52,9 @@
     font-weight: 500;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    margin-bottom: 40px;
-  }
+    position: absolute;
+    top: 15%;
+}
   vaadin-text-field > input:placeholder-shown {
     color: rgba(160, 174, 175, 1);
     font-weight: 300;
@@ -114,60 +115,72 @@
     font-size: 22px;
     line-height: 150%;
   }
+  .reserve-button-container {
+    display: inline-block;
+    /* justify-content: center; */
+}
   .reserve-button {
-    position: relative;
-    width: auto;
-    height: 80px;
+    /* position: relative; */
+    width: 375px;
+    height: 70px;
     background-color: rgba(145, 121, 58, 1);
     cursor: pointer;
     border-radius: 16px;
-    align-items: center;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
+    /* align-items: center; */
+    /* font-style: normal; */
+    font-weight: 400;
+    /* font-size: 20px; */
     line-height: 100%;
-    top: 20px;
+    /* top: 20px; */
     text-align: center;
     letter-spacing: 0.07em;
     text-transform: uppercase;
-
     color: #ffffff;
-
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .reminder-text {
-    left: 15%;
-    color: rgba(160, 174, 175, 1);
-    padding: 25px 10px 25px 10px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 150%;
-    display: flex;
-    align-items: center;
-  }
-  .reminder-text-container {
-    position: absolute;
-    right: 60px;
-    top: 81%;
-  }
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 64px;
-    height: 32px;
-  }
-  .info-text {
-    position: absolute;
-    top: 90%;
-    white-space: break-spaces;
-    color: rgba(99, 121, 122, 1);
-    align-items: center;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-  }
+}
+.reminder-text {
+  margin-right: 54px;
+  left: 15%;
+  color: rgba(160, 174, 175, 1);
+  padding: 25px 10px 25px 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  /* position: absolute; */
+  display: contents;
+  /* left: 0; */
+  /* top: 0; */
+}
+.reminder-text-container {
+  position: absolute;
+  /* display: flex; */
+  /* margin-right: 10px; */
+  display: -webkit-inline-box;
+  right: 60px;
+  left: 40px;
+  top: 80%;
+}
+.switch {
+  /* position: relative; */
+  /* display: inline-block; */
+  /* width: 64px; */
+  /* height: 32px; */
+  margin-left: 20px;
+}
+.info-text {
+  position: absolute;
+  top: 85%;
+  white-space: break-spaces;
+  color: rgba(99, 121, 122, 1);
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14.7px;
+  line-height: 22px;
+}
   vaadin-text-field > label {
     color: rgba(145, 121, 58, 1);
     font-style: normal;
