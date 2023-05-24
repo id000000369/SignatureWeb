@@ -3,7 +3,6 @@ package it.mifsoft.signature.web.list.item;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.dto.DishData;
 import it.mifsoft.signature.web.dto.PicturesData;
 import org.springframework.stereotype.Component;
 
