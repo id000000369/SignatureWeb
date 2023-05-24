@@ -69,7 +69,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         img.getStyle().set("position", "absolute");
         img.getStyle().set("width", "100%");
         img.getStyle().set("height", "100%");
-        // img.getStyle().set("z-index","1");
+       // img.getStyle().set("z-index","1");
         img.addClassName("modal-menu-img");
         return img;
     }
@@ -85,6 +85,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         if (this.getChildren().noneMatch(c -> c == this.modalView)) {
             this.add(modalView);
             this.isModalVisible = true;
+            this.headerView.yellowColor();
         }
         this.modalView = modalView;
     }
@@ -289,6 +290,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             this.isModalVisible = false;
             this.headerView.setVisible(true);
             this.footerView.setVisible(true);
+            this.headerView.getStyle().set("display","block");
         }
     }
 

@@ -83,6 +83,10 @@
     left: 0;
   }
 
+  .adaptive-main-layout {
+    display: block;
+  }
+
   .main-reserve-button {
     display: none;
   }
@@ -95,6 +99,7 @@
     position: absolute;
     z-index: -1;
     visibility: visible;
+    display: block;
     animation: blink 9s infinite;
     opacity: 0;
   }
@@ -106,6 +111,7 @@
     position: absolute;
     z-index: -1;
     visibility: visible;
+    display: block;
     animation: blink 9s infinite;
     animation-delay: 3s;
   }

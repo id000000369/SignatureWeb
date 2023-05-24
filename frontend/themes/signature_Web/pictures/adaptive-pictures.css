@@ -4,5 +4,6 @@
         backdrop-filter: blur(0px);
         width: 100%;
         overflow-y: hidden;
+        z-index: 1;
     }
 }
