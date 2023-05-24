@@ -26,6 +26,7 @@ public class CategoriesList extends Div {
 
     private final MenuCategoriesApiService categoriesApiService;
 
+    private final Image adaptiveDishesTopImg;
 
 
     public CategoriesList(DishesList dishesList,
@@ -36,15 +37,21 @@ public class CategoriesList extends Div {
 
         this.addClassNames("categories-list-main");
         this.dishesList = dishesList;
+        this.adaptiveDishesTopImg = createAdaptiveDishesTopImg();
 
         categoriesApiService.getAll().doOnSuccess(categories -> {
             this.categories = categories;
             this.updateCategories();
         }).block();
 
+        this.add(createAdaptiveDishesTopImg());
     }
 
-
+    private Image createAdaptiveDishesTopImg() {
+        final Image img = new Image("img/dishes-menu-img.png", "");
+        img.addClassName("adaptive-dishes-top-menu-img");
+        return img;
+    }
 
     private List<CategoryListItem> createListItems() {
         return categories.stream()
@@ -55,7 +62,7 @@ public class CategoriesList extends Div {
     private void updateCategories() {
         this.removeAll();
         this.listItems = createListItems();
-//        this.listItems.forEach(this::add);
+        this.listItems.forEach(this::add);
     }
 
     private CategoryListItem createItem(MenuCategoryData categoryData) {
