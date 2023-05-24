@@ -1,13 +1,16 @@
 package it.mifsoft.signature.web.list;
 
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.spring.annotation.UIScope;
 import it.mifsoft.signature.web.dto.MenuCategoryData;
 import it.mifsoft.signature.web.list.item.CategoryListItem;
 import it.mifsoft.signature.web.service.MenuCategoriesApiService;
+import it.mifsoft.signature.web.utils.FlexStyleUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -23,6 +26,7 @@ public class CategoriesList extends Div {
 
     private final MenuCategoriesApiService categoriesApiService;
 
+    private final Image adaptiveDishesTopImg;
 
 
     public CategoriesList(DishesList dishesList,
@@ -33,15 +37,25 @@ public class CategoriesList extends Div {
 
         this.addClassNames("categories-list-main");
         this.dishesList = dishesList;
+        this.adaptiveDishesTopImg = createAdaptiveDishesTopImg();
 
-        categoriesApiService.getAll().doOnSuccess(categories -> {
+        Div container = new Div();
+        container.addClassNames("top-container-dishes");
+
+        container.add(String.valueOf(categoriesApiService.getAll().doOnSuccess(categories -> {
             this.categories = categories;
             this.updateCategories();
-        }).block();
+            this.add(createAdaptiveDishesTopImg());
+        }).block()));
+
 
     }
 
-
+    private Image createAdaptiveDishesTopImg() {
+        final Image img = new Image("img/dishes-menu-img.png", "");
+        img.addClassName("adaptive-dishes-top-menu-img");
+        return img;
+    }
 
     private List<CategoryListItem> createListItems() {
         return categories.stream()

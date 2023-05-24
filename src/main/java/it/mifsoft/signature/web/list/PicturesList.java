@@ -41,12 +41,6 @@ public class PicturesList extends Div implements DotsIndicator.DotsIndicatorDele
         this.dotsIndicator = createDotsIndicator(state.pictures);
         this.dotsIndicatorContainer.add(this.dotsIndicator);
 
-
-        galleryItemsApiService
-                .getAllByGalleryId(PICTURES_GALLERY_ID)
-                .doOnSuccess(this::updatePicturesList)
-                .subscribe();
-
         dotsIndicatorContainer.addClassName("dots-indicator-container");
 
         this.addClassName("picture-list");
@@ -127,6 +121,10 @@ public class PicturesList extends Div implements DotsIndicator.DotsIndicatorDele
     @Override
     protected void onAttach(AttachEvent attachEvent) {
         super.onAttach(attachEvent);
+        galleryItemsApiService
+                .getAllByGalleryId(PICTURES_GALLERY_ID)
+                .doOnSuccess(this::updatePicturesList)
+                .block();
         pictureListItems.stream()
                 .filter(i -> i.getId().orElse("").equals("1"))
                 .findFirst()
