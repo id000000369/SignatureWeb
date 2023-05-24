@@ -10,6 +10,10 @@
     flex-direction: column;
   }
 
+  .top-container-dishes {
+
+  }
+
   .image-dish {
     width: 450px;
     height: 450px;
@@ -40,7 +44,7 @@
 
   .main-text-dish {
     font-weight: 300;
-    font-size: 48px;
+    font-size: 45px;
     line-height: 90%;
     text-align: center;
     letter-spacing: 0.05em;
@@ -50,11 +54,10 @@
   }
 
   .adaptive-dishes-top-menu-img {
-    position: absolute;
+    position: relative;
     display: block;
     padding-bottom: 40%;
-    top: 14%;
-    left: 37%;
+    right: 100%;
   }
 
   .dots-indicator {

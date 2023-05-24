@@ -1,6 +1,5 @@
 @media only screen and (max-width: 470px) {
   .categories-list-main {
-    margin-top: 30%;
     align-items: center;
     justify-content: center;
     display: flex;  
