@@ -59,12 +59,7 @@ public class ReserveForm extends Div {
                 createItemsContainer(), createAdaptiveBackgroundImg(), closeModalBtn);
         this.addClassName("reserve-container");
     }
-//    public Div createBottomItems() {
-//        final Div div = new Div();
-//        div.add(createReminderTextContainer());
-//        div.addClassName("bottom-items");
-//        return div;
-//    }
+
     public void hide() {
         this.getStyle().set("display","none");
     }

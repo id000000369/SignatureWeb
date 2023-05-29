@@ -31,6 +31,10 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
     private boolean isModalVisible = false;
     private final Image closeModalBtn;
     private final Image menuBackgroundImg;
+    private final Image mainFirstMobileImg;
+    private final Image mainSecondMobileImg;
+    private final Image mainThirdMobileImg;
+    private final Div mainBackgroundContainer;
 
     public MainLayout(HeaderView headerView,
                       ContentLayout contentView,
@@ -57,11 +61,41 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         this.menuList.setDelegate(this);
 
+        this.mainFirstMobileImg = createFirstMainMobileImg();
+        this.mainSecondMobileImg = createSecondMainMobileImg();
+        this.mainThirdMobileImg = createThirdMainMobileImg();
+        this.mainBackgroundContainer = createMainBackgroundContainer();
+
         this.addClassNames("main-layout");
 
         // this.menuListView = createMenuListView(this.menuList);
-
         this.add(headerView);
+    }
+
+    public Div createMainBackgroundContainer() {
+        final Div div = new Div();
+        div.addClassName("main-background-img-container");
+        return div;
+    }
+    public Image createFirstMainMobileImg() {
+        final Image img = new Image("/img/main-first-mobile-background.png", "");
+        img.getStyle().set("display","block");
+        img.addClassNames("mainFirstMobileImg");
+        return img;
+    }
+
+    public Image createSecondMainMobileImg() {
+        final Image img = new Image("/img/main-second-mobile-background.png", "");
+        img.getStyle().set("display","block");
+        img.addClassNames("mainSecondMobileImg");
+        return img;
+    }
+
+    public Image createThirdMainMobileImg() {
+        final Image img = new Image("/img/main-third-mobile-background.png", "");
+        img.getStyle().set("display","block");
+        img.addClassNames("mainThirdMobileImg");
+        return img;
     }
 
     public Image createMenuBackgroundImg() {
@@ -104,7 +138,6 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
                  this.headerView.setVisible(true);
                // this.reserveForm.hide();
                  this.hideModal();
-
             });
             img.addClassName("close-menu-btn");
             return img;
@@ -119,15 +152,14 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
         div.getStyle().setLeft("0px");
         div.getStyle().setTop("0px");
         //div.getStyle().setZIndex(1);
-        form.getStyle().setZIndex(Integer.MAX_VALUE);
+        form.getStyle().setZIndex(3);
+        //Integer.MAX_VALUE
         div.getStyle().set("background-color", "rgba(255, 255, 255, 0.33)");
         div.getStyle().set("backdrop-filter", "blur(10px)");
         div.addClassName("modal-view-wrapper");
         div.addClassName("adaptive-view-wrapper");
         div.add(createCloseModalBtn(),form, createMenuBackgroundImg());
-        div.addClickListener(event -> {
-
-        });
+        div.addClickListener(event -> {});
         return div;
     }
 
@@ -143,16 +175,16 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
     private boolean becomeWelcome(String path) {
         if (path.equals("main/welcome")) {
-            if (this.getChildren().noneMatch(c -> c == this.contentImage)) {
-                this.add(this.contentImage);
+            if (this.getChildren().noneMatch(c -> c == this.mainBackgroundContainer)) {
+                this.add(this.mainBackgroundContainer);
                 this.headerView.yellowColor();
             }
             //   this.footerView.changeFooterPosition();
-            this.contentImage.setVisible(true);
+            this.mainBackgroundContainer.setVisible(true);
             return true;
         } else {
-            if (this.getChildren().anyMatch(c -> c == this.contentImage)) {
-                this.contentImage.setVisible(false);
+            if (this.getChildren().anyMatch(c -> c == this.mainBackgroundContainer)) {
+                this.mainBackgroundContainer.setVisible(false);
             }
             return false;
         }
@@ -176,7 +208,7 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
 
         updateFooterStateByPath(path);
         updateHeaderStateByPath(path);
-        //becomeWelcome(path);
+        becomeWelcome(path);
         becomePictures(path);
 
         switch (path) {
@@ -191,6 +223,10 @@ public class MainLayout extends Div implements RouterLayout, AfterNavigationObse
             case "main/welcome" -> {
                 this.addClassName("adaptive-main-layout");
                 this.headerView.setYellowMenuBtnColor();
+                this.mainBackgroundContainer.add(
+                        mainFirstMobileImg,
+                        mainSecondMobileImg,
+                        mainThirdMobileImg);
             }
             default -> {
                 this.getStyle().remove("background-image");

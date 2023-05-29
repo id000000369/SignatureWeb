@@ -36,9 +36,9 @@ public class WelcomePage extends Div {
     private final Image guestLine;
     private final Image vineGalleryLine;
     private final Image expositionLine;
-    private final Image mainFirstMobileImg;
-    private final Image mainSecondMobileImg;
-    private final Image mainThirdMobileImg;
+//    private final Image mainFirstMobileImg;
+//    private final Image mainSecondMobileImg;
+//    private final Image mainThirdMobileImg;
     private final Image mobileHeaderGradient;
 
 
@@ -110,10 +110,10 @@ public class WelcomePage extends Div {
         this.fifteenDiv = createFifteenColumn();
         this.sixteenDiv = createSixteenColumn();
         this.columnContainer = createColumnContainer();
-
-        this.mainFirstMobileImg = createFirstMainMobileImg();
-        this.mainSecondMobileImg = createSecondMainMobileImg();
-        this.mainThirdMobileImg = createThirdMainMobileImg();
+//
+//        this.mainFirstMobileImg = createFirstMainMobileImg();
+//        this.mainSecondMobileImg = createSecondMainMobileImg();
+//        this.mainThirdMobileImg = createThirdMainMobileImg();
         this.mobileHeaderGradient = createMobileHeaderGradient();
 
         this.mainContainer = createMainContainer();
@@ -122,15 +122,7 @@ public class WelcomePage extends Div {
         this.addClassName("main");
 
 
-        this.add(createMainContainer(),
-
-                createFirstMainMobileImg(), createSecondMainMobileImg(), createThirdMainMobileImg(),
-                createMobileHeaderGradient()
-//                mainImg,
-//                contactsLine, bronLine, guestLine, vineGalleryLine, expositionLine, menuLine,
-//                firstSideIcon, secondSideIcon, thirdSideIcon, fourthSideIcon
-        );
-
+        this.add(createMainContainer(), createMobileHeaderGradient());
     }
     public Image createBackgroundImg() {
         final Image img = new Image("img/main-img.png","");
@@ -139,6 +131,7 @@ public class WelcomePage extends Div {
         this.addClassName("main-img");
         return img;
     }
+
     public Div createMainContainer() {
         final Div container = new Div();
         container.add(createBackgroundImg(), createColumnContainer(), createReserveButton());
@@ -149,24 +142,6 @@ public class WelcomePage extends Div {
     public Image createMobileHeaderGradient() {
         final Image img = new Image("/img/mobile-header-gradient.png", "");
         img.addClassNames("mobile-header-gradient");
-        return img;
-    }
-
-    public Image createFirstMainMobileImg() {
-        final Image img = new Image("/img/main-first-mobile-background.png", "");
-        img.addClassNames("mainFirstMobileImg");
-        return img;
-    }
-
-    public Image createSecondMainMobileImg() {
-        final Image img = new Image("/img/main-second-mobile-background.png", "");
-        img.addClassNames("mainSecondMobileImg");
-        return img;
-    }
-
-    public Image createThirdMainMobileImg() {
-        final Image img = new Image("/img/main-third-mobile-background.png", "");
-        img.addClassNames("mainThirdMobileImg");
         return img;
     }
 

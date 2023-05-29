@@ -186,6 +186,7 @@
     left: 25%;
     position: relative;
   }
+
   .white-header-logo {
     z-index: 10;
     width: 318px;
@@ -213,7 +214,7 @@
   /*/////////////ADAPTIVE FOOTER////////////////*/
   .close-menu-btn {
     position: absolute;
-    top: 28px;
+    top: 50px;
     left: 20px;
     z-index: 1000;
     cursor: pointer;
