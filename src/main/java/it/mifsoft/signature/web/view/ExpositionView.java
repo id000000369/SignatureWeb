@@ -1,12 +1,7 @@
 package it.mifsoft.signature.web.view;
 
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Paragraph;
-
-import javax.swing.*;
-import java.util.Collection;
 
 public class ExpositionView extends Div {
 

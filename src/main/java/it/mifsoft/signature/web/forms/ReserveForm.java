@@ -1,13 +1,11 @@
 package it.mifsoft.signature.web.forms;
 
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.datetimepicker.DateTimePicker;
 import com.vaadin.flow.component.html.*;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.textfield.TextField;
-
 import com.vaadin.flow.spring.annotation.UIScope;
-import it.mifsoft.signature.web.MainLayout;
 import it.mifsoft.signature.web.ModalDelegate;
 import org.springframework.stereotype.Component;
 

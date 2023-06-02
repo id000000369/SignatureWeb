@@ -3,7 +3,6 @@ package it.mifsoft.signature.web.ui;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.dom.Style;
-import it.mifsoft.signature.web.list.PicturesList;
 import it.mifsoft.signature.web.utils.FlexStyleUtils;
 
 import java.util.List;
